@@ -13,18 +13,18 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="JDBC 通过I&#x2F;O操作对程序运行过程中出现的数据进行持久化，但保存下来的数据并不具备结构和逻辑，不便于管理与维护 通过关系型数据库，将数据进行存储，交由数据库进行维护，  关系型数据库是通过库和表分隔不同的数据，表中数据存储的方式是行列，区分相同格式的不同数据。    基础JDBC概念： JAVA Database Connectivity Java的数据库连接 JDBC为JAVA的一">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240418090602529.png">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240423230410644.png">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240424205748611.png">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240424205839547.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011234675.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235750.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235565.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235417.png">
 <meta property="article:published_time" content="2025-03-01T03:35:47.239Z">
-<meta property="article:modified_time" content="2024-09-16T12:46:05.491Z">
+<meta property="article:modified_time" content="2025-03-01T04:35:51.026Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="JDBC">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240418090602529.png">
+<meta name="twitter:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011234675.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -114,7 +114,7 @@
 <li>关系型数据库是通过库和表分隔不同的数据，表中数据存储的方式是行列，区分相同格式的不同数据。</li>
 </ul>
 </blockquote>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240418090602529.png" alt="image-20240418090602529"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011234675.png" alt="image-20240418090602529"></p>
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="JDBC-1"><a href="#JDBC-1" class="headerlink" title="JDBC"></a>JDBC</h3><h4 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h4><blockquote>
 <p>JAVA Database Connectivity Java的数据库连接</p>
 <p>JDBC为JAVA的一组独立于任何数据库管理系统的API</p>
@@ -216,7 +216,7 @@
 
 
 <h4 id="软编码——推荐"><a href="#软编码——推荐" class="headerlink" title="软编码——推荐"></a>软编码——推荐</h4><p>在根目录下创建db.properties配置文件</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240423230410644.png" alt="image-20240423230410644"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235750.png" alt="image-20240423230410644"> </p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://localhost:3306/atguigu</span></span><br><span class="line"><span class="attr">username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">password</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">initialSize</span>=<span class="string">10</span></span><br><span class="line"><span class="attr">maxActive</span>=<span class="string">20</span></span><br></pre></td></tr></table></figure>
 
 
@@ -252,9 +252,9 @@
 
 
 
-<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p><img src="E:\DeskTable\博客学习截图传输\image-20240424205748611.png" alt="image-20240424205748611"> </p>
+<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235565.png" alt="image-20240424205748611"> </p>
 <p>可以看到，如果使用Util版本的连接池，则会获取到三个不同的连接</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240424205839547.png" alt="image-20240424205839547"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235417.png" alt="image-20240424205839547"> </p>
 <p>而使用了Util2的连接池后，则一个线程里只会获取到一个链接，并且进行反复使用</p>
 <h3 id="DAO封装与BaseDAO工具类"><a href="#DAO封装与BaseDAO工具类" class="headerlink" title="DAO封装与BaseDAO工具类"></a>DAO封装与BaseDAO工具类</h3><blockquote>
 <p>DAO Data Access Object 数据访问对象</p>

@@ -13,19 +13,19 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="JavaWeb学习经验总结 本文档用于总结学习黑马的javaweb课程的知识点和内容，根据视频顺序进行总结  项目总览总览本项目，是一个实现了前后端发分离的单体架构项目。 单体架构：即一个项目所需的所有功能组件：包括业务逻辑，功能和交互组件都集成在一个环境当中，最终上限部署时打包在一个war包当中，并运行在一个服务器上。 经典的单体架构技术选择为：Java➕Spring MVC 此处引出黑马jav">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240818160911157.png">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240830150934607.png">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240830151846969.png">
-<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240830152431678.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239503.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239773.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239319.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239193.png">
 <meta property="article:published_time" content="2025-03-01T03:35:47.204Z">
-<meta property="article:modified_time" content="2024-09-16T12:24:31.777Z">
+<meta property="article:modified_time" content="2025-03-01T04:39:46.013Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="后端">
 <meta property="article:tag" content="黑马">
 <meta property="article:tag" content="单体架构">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240818160911157.png">
+<meta name="twitter:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239503.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -196,7 +196,7 @@
 <li><p>项目结构的统一构建</p>
 <ol>
 <li><p>使用maven工具构建项目，得到的项目都具有同样的目录结构</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240818160911157.png" alt="image-20240818160911157" style="zoom:50%;" /></li>
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239503.png" alt="image-20240818160911157" style="zoom:50%;" /></li>
 </ol>
 </li>
 </ol>
@@ -219,7 +219,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240830150934607.png" alt="image-20240830150934607"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239773.png" alt="image-20240830150934607"> </p>
 <h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><h4 id="依赖配置"><a href="#依赖配置" class="headerlink" title="依赖配置"></a>依赖配置</h4><p>添加dependencies标签后，</p>
 <p>使用dependency引入依赖坐标groupId，artifactId，version</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactid</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactid</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -228,7 +228,7 @@
 <ul>
 <li>直接依赖：在当前项目中通过依赖配置建立的依赖关系</li>
 <li>间接依赖：被依赖的资源如果配置了其他的依赖资源，这当前项目也会间接依赖其他资源</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240830151846969.png" alt="image-20240830151846969"></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239319.png" alt="image-20240830151846969"></li>
 </ul>
 <p><strong>排除依赖</strong>：也可以主动断开依赖的资源，被排除的依赖无需指定版本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;</span><br><span class="line">	&lt;version&gt;</span><br><span class="line">	&lt;exclusions&gt; 被排除的依赖</span><br><span class="line">		&lt;exclusion&gt;</span><br><span class="line">			&lt;groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;</span><br><span class="line">		&lt;/exclusions&gt;</span><br><span class="line">	&lt;exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
@@ -242,7 +242,7 @@
 <li>测试程序范围有效（test文件夹范围内）</li>
 <li>是否参与打包运行（package指令范围内）</li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240830152431678.png" alt="image-20240830152431678"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239193.png" alt="image-20240830152431678"> </p>
 <h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>三套独立的生命周期</p>
 <p><strong>clean</strong>：清理工作，移除上一次构建生成的文件</p>
 <p><strong>default</strong>：</p>

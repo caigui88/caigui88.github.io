@@ -686,7 +686,7 @@
 </ul>
 </li>
 <li><p><strong>存储转发传输 store-and-forward transmission</strong>：多数分组交换机在链路输入端使用。指的是在交换机能够开始向输出链路传输该分组的第一个比特之前，必须接收到整个分组</p>
-<p>假设有一个简单网络：<img src="E:\DeskTable\博客学习截图传输\image-20240605162345495.png" alt="image-20240605162345495"> </p>
+<p>假设有一个简单网络：<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241804.png" alt="image-20240605162345495"> </p>
 <p>源主机通过链路传输分组到路由器，假设发送方发送一个大小我 L bits 的分组，链路传输速率为 R bits&#x2F;s，则传输该分组的时间为：传输时延 L&#x2F;R s</p>
 <ul>
 <li>假设分组1的前沿先到达路由器，路由器采用存储转发机制</li>
@@ -770,7 +770,7 @@
 <li><p><strong>吞吐量</strong>：单位时间内通过某个网络（或信道、接口）的数据量，单位：$b&#x2F;s、kb&#x2F;s、Mb&#x2F;s$</p>
 </li>
 </ul>
-<h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4><p><img src="E:\DeskTable\博客学习截图传输\image-20240605170015617.png" alt="image-20240605170015617"> </p>
+<h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241713.png" alt="image-20240605170015617"> </p>
 <ul>
 <li><p><strong>nodal processing 节点处理时延</strong>：</p>
 <ul>
@@ -804,7 +804,7 @@
 </li>
 <li><p>交通强度 traffic intersity &#x3D; L*a &#x2F; R</p>
 </li>
-<li><p><img src="E:\DeskTable\博客学习截图传输\image-20240605201914573.png" alt="image-20240605201914573" style="zoom:50%;" /> <img src="E:\DeskTable\博客学习截图传输\image-20240605202000063.png" alt="image-20240605202000063" style="zoom: 80%;" /></p>
+<li><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241232.png" alt="image-20240605201914573" style="zoom:50%;" /> <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241233.png" alt="image-20240605202000063" style="zoom: 80%;" /></p>
 </li>
 <li><p><strong>transmission传输时延</strong>：将分组的所有比特推向链路(即传输,或者说发送)所需要的时间</p>
 <ul>
@@ -822,7 +822,7 @@
 </li>
 <li><p><strong>节点时延：</strong> </p>
 <ul>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240605201719133.png" alt="image-20240605201719133" style="zoom:50%;" /></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242712.png" alt="image-20240605201719133" style="zoom:50%;" /></li>
 </ul>
 </li>
 <li><p><strong>时延带宽积</strong>：$时延带宽积 &#x3D; 传播时延\times带宽$ ，又称为 <strong>以比特为单位的链路长度</strong></p>
@@ -922,7 +922,7 @@
 <li><p>其他六个层次都只加一个头部$H<del>n$ 只有在数据链路层会加上头部和尾部 $H</del>2<del>and</del>T~2$  </p>
 </li>
 <li><p>数据传输是端对端&#x2F;点对点的，需要考虑下一个端，且需要知道终点。</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240311100615910.png" alt="image-20240311100615910" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242324.png" alt="image-20240311100615910" /> 
 
 
 </li>
@@ -977,7 +977,7 @@
 </ol>
 </li>
 <li><p>图示：</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240316230731784.png" alt="image-20240316230731784" style="zoom:50%;" /></li>
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242940.png" alt="image-20240316230731784" style="zoom:50%;" /></li>
 </ol>
 <h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><blockquote>
 <p>研发网络应用程序核心是写出能够运行在不同端系统和通过网络彼此通信的程序。</p>
@@ -1040,7 +1040,7 @@
 <h5 id="进程和计算机网络之间的接口"><a href="#进程和计算机网络之间的接口" class="headerlink" title="进程和计算机网络之间的接口"></a>进程和计算机网络之间的接口</h5><ul>
 <li><p>进程通过一个称为**套接字(socket)**的软件接口向网络发送&#x2F;接受报文。</p>
 <p>host–socket–server工作图示：</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240317085036165.png" alt="image-20240317085036165" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242898.png" alt="image-20240317085036165" style="zoom:50%;" /> 
 </li>
 <li><p><strong>socket</strong>称为应用程序和网络之间的<strong>应用程序编程接口(Application Programming Interface API)</strong>。开发者可以控制socket在应用层端的一切。</p>
 </li>
@@ -1142,7 +1142,7 @@
 <li><p>必须为每一个请求的对象建立和维护一个全新的连接，加重了服务器负担。</p>
 </li>
 <li><p>每个对象经受双倍<em>RTT</em>的交付时延————一个<em>RTT</em>创建TCP，另一个用于请求和接收对象</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240318101113130.png" alt="image-20240318101113130" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242436.png" alt="image-20240318101113130" style="zoom:50%;" /> 
 </li>
 <li></li>
 </ol>
@@ -1246,7 +1246,7 @@
 </blockquote>
 <p>DNS是使用UDP的典例：</p>
 <p>进行一次DNS查询，将查询报文交给UDP，无需建立连接，主机的UDP为查询报文添加首部字段，而后交给网络层，网络层将报文段封装成数据报，发送给dns服务器进行查询，查询主机中的DNS应用这等待响应；若未收到响应，这试图向其他的dns服务器发送查询请求or报错未得到响应。</p>
-<h5 id="UDP报文段结构"><a href="#UDP报文段结构" class="headerlink" title="UDP报文段结构"></a>UDP报文段结构</h5><img src="E:\DeskTable\博客学习截图传输\image-20240523175429387.png" alt="image-20240523175429387" style="zoom:50%;" /> 
+<h5 id="UDP报文段结构"><a href="#UDP报文段结构" class="headerlink" title="UDP报文段结构"></a>UDP报文段结构</h5><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242311.png" alt="image-20240523175429387" style="zoom:50%;" /> 
 
 <ol>
 <li><p>首部四个字段，每个字段有2两个字节组成</p>
@@ -1366,7 +1366,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240527162540507.png" alt="image-20240527162540507"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242093.png" alt="image-20240527162540507"> </p>
 <p>在发送方有一个N大小的发送缓冲区和小于N的发送窗口，</p>
 <p>在接收方有一个大小为1的接收窗口，</p>
 <p>假设当前接收窗口指向为pkt_1，但到来的是pkt_2，首先抛弃掉pkt_2，在迟迟等不到pkt_1，接收方无法发送ACK_1，则发送方计时器超时，发送窗口和发送缓冲区不会向前移动，需要重新发送整个发送窗口内的分组，因为可能有一些分组比pkt_1先到达（例如pkt_2）当被舍弃了，则需要重新发送。</p>
@@ -1385,8 +1385,8 @@
 <li>有流量控制</li>
 </ul>
 <p><strong>报文段结构：</strong> </p>
-<p><img src="https://img-blog.csdnimg.cn/20200220102447235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYW5nXzAxMjI=,size_16,color_FFFFFF,t_70" alt="img"> </p>
-<p><img src="https://img-blog.csdnimg.cn/20210130112722747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19kb25n,size_16,color_FFFFFF,t_70" alt="img"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242029.png" alt="img"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242460.png" alt="img"> </p>
 <blockquote>
 <p>MSS：每个TCP报文段中数据字段的最大长度，仅为数据部分的字段，不包括TCP的head</p>
 </blockquote>
@@ -1528,7 +1528,7 @@
 <li>AIMD：线性增长、乘性减少</li>
 <li>超时事件后的保守策略</li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240529221931664.png" alt="image-20240529221931664"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242079.png" alt="image-20240529221931664"> </p>
 <h4 id="TCP吞吐量"><a href="#TCP吞吐量" class="headerlink" title="TCP吞吐量"></a>TCP吞吐量</h4><p>$ (\frac{CongWin}{2},CongWin)$ </p>
 <p>$吞吐量为：\frac{ \frac{CongWin}{2} + CongWin}{2 \times RTT} &#x3D; \frac{3}{4}\frac{CongWin}{RTT}$​ </p>
 <h2 id="网络层：概述"><a href="#网络层：概述" class="headerlink" title="网络层：概述"></a>网络层：概述</h2><blockquote>
@@ -1585,7 +1585,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240530120240222.png" alt="image-20240530120240222"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242143.png" alt="image-20240530120240222"> </p>
 <p>一类指标组成的服务称之为服务模型，而基于这种服务模型建立起来的协议的模型可以用这类服务模型来代指</p>
 <h3 id="路由器的组成"><a href="#路由器的组成" class="headerlink" title="路由器的组成"></a>路由器的组成</h3><p>路由：运行路由选择算法&#x2F;协议(RIP,OSPF,BGP)——生成流表</p>
 <p>转发：从输入到输出链路交互数据报——根据流表进行分组<strong>转发</strong></p>
@@ -1610,7 +1610,7 @@
 </li>
 </ul>
 <h3 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h3><h3 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h3><p>20 byte的TCP 20 byte的IP &#x3D; 40 bytes + app layer overhead</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240530144524045.png" alt="image-20240530144524045"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242655.png" alt="image-20240530144524045"> </p>
 <p>TTL(time to live)生存时间：每经过一个三层设备TTL-1，当TTL&#x3D;&#x3D;0时，数据包丢弃（向源主机发一个ICMP的错误信息报文通知源post）</p>
 <p>option，一般没有，可以有</p>
 <h4 id="IP的分片和重组"><a href="#IP的分片和重组" class="headerlink" title="IP的分片和重组"></a>IP的分片和重组</h4><p>FDDI</p>
@@ -1644,7 +1644,7 @@
 </ul>
 <p>互联网：点到点</p>
 <p>局域网：多点连接——通过交换机相连，</p>
-<p><img src="https://img-blog.csdnimg.cn/20190705095636130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3NzMyODI5,size_16,color_FFFFFF,t_70" alt="img"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242162.png" alt="img"> </p>
 <p>每个ip地址包含两个标识码ID：网络ID和主机ID</p>
 <ul>
 <li><p>A类地址：网络地址的最高位必须是“0”， 地址范围从1.0.0.0 到127.0.0.0， 共126个网络地址，全零和全1的地址不使用，$2^{7}-2$ </p>
@@ -1671,13 +1671,13 @@
 <li>主机部分：全为1——广播地址，这个网络的舍友主机</li>
 </ul>
 <p>回路地址：127.x.x.x，该地址为目标ip，则tcp\udp将分组传输到ip层时会回传，又称为测试地址</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240602222253233.png" alt="image-20240602222253233"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011242150.png" alt="image-20240602222253233"> </p>
 <p>IP编制：CIDR Classless InterDomaiin Routing</p>
 <p>无类域间路由</p>
 <ul>
 <li>子网部分可以在任意位置</li>
 <li>地址格式为：a.b.c.d&#x2F;x，x是地址中子网号的长度</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240602222546094.png" alt="image-20240602222546094"></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243270.png" alt="image-20240602222546094"></li>
 </ul>
 <h3 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h3><p>使用32位bit标识网络id和主机id</p>
 <p>两种标书方法：</p>
@@ -1685,11 +1685,11 @@
 <li>直接32位 1标识网络号，0标识主机号</li>
 <li>&#x2F;xx，标识前xx位为网络号</li>
 </ul>
-<h3 id="DHCP服务"><a href="#DHCP服务" class="headerlink" title="DHCP服务"></a>DHCP服务</h3><h4 id="动态分配的过程："><a href="#动态分配的过程：" class="headerlink" title="动态分配的过程："></a>动态分配的过程：</h4><p><img src="E:\DeskTable\博客学习截图传输\image-20240602224024681.png" alt="image-20240602224024681"> </p>
+<h3 id="DHCP服务"><a href="#DHCP服务" class="headerlink" title="DHCP服务"></a>DHCP服务</h3><h4 id="动态分配的过程："><a href="#动态分配的过程：" class="headerlink" title="动态分配的过程："></a>动态分配的过程：</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243726.png" alt="image-20240602224024681"> </p>
 <h3 id="SDN"><a href="#SDN" class="headerlink" title="SDN"></a>SDN</h3><p>集中化网络控制器</p>
 <p>匹配目标ip、源IP、目标端口、源端口</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240603092539337.png" alt="image-20240603092539337"> </p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240603092754178.png" alt="image-20240603092754178"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243300.png" alt="image-20240603092539337"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243987.png" alt="image-20240603092754178"> </p>
 <h2 id="网络层：控制平面"><a href="#网络层：控制平面" class="headerlink" title="网络层：控制平面"></a>网络层：控制平面</h2><blockquote>
 <p>决定数据如何走，传输过程</p>
 </blockquote>
@@ -1699,19 +1699,19 @@
 <p>子网聚集下，可以先当作子网到子网，减少工作量，到了子网后再在子网内找主机，提高效率，分治思想，一步步解决一个复杂的大问题，分成一个个子问题</p>
 <p>一个路由器代表着一个子网，则由子网到子网的路由相当于从路由器到路由器的路由</p>
 </blockquote>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240603093907802.png" alt="image-20240603093907802"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243422.png" alt="image-20240603093907802"> </p>
 <h4 id="最优化原则-optimality-principle"><a href="#最优化原则-optimality-principle" class="headerlink" title="最优化原则 optimality principle"></a>最优化原则 optimality principle</h4><ul>
 <li>汇集树 sink tree<ul>
 <li>此节点到所有其他节点的最优路径形成的树</li>
 <li>路由选择算法就是为所有路由器找到并使用汇集树</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240603101328110.png" alt="image-20240603101328110"> </li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243521.png" alt="image-20240603101328110"> </li>
 <li>找到的最优路径是一棵树而不是一个图，因为不可能存在环</li>
 </ul>
 </li>
 </ul>
 <h4 id="Link-State-LS"><a href="#Link-State-LS" class="headerlink" title="Link State LS"></a>Link State LS</h4><ul>
 <li>迪杰斯特拉算法——核心<ul>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240603112241395.png" alt="image-20240603112241395"></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243409.png" alt="image-20240603112241395"></li>
 </ul>
 </li>
 <li>LS应用情况：<ul>
@@ -1742,7 +1742,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240603210211955.png" alt="image-20240603210211955"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243391.png" alt="image-20240603210211955"> </p>
 <p>网络较大，将网络分成多个区域——自治系统AS，本区域的洪泛不会影响到其他区域area，而后是区域间进行分组传递交由area0去路由到目标主机的area，再到与目标相邻的路由器。</p>
 <h3 id="ISP之间路由选择：BGP"><a href="#ISP之间路由选择：BGP" class="headerlink" title="ISP之间路由选择：BGP"></a>ISP之间路由选择：BGP</h3><p>自治区AS之间的选择协议</p>
 <p>每个AS有一个BGP发言人，相邻的AS通过BGP发言人交换信息</p>
@@ -1756,16 +1756,16 @@
 <li>OSPF，用于自治系统，内部网关。采用IP报文</li>
 <li>BGP，用于自治系统之间，外部网关，因网络环境复杂，需要可靠传输，采用TCP报文</li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240603222249253.png" alt="image-20240603222249253"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243667.png" alt="image-20240603222249253"> </p>
 </blockquote>
-<h3 id="SDN控制平面"><a href="#SDN控制平面" class="headerlink" title="SDN控制平面"></a>SDN控制平面</h3><h3 id="ICMP：因特网控制报文协议"><a href="#ICMP：因特网控制报文协议" class="headerlink" title="ICMP：因特网控制报文协议"></a>ICMP：因特网控制报文协议</h3><p><img src="E:\DeskTable\博客学习截图传输\image-20240603222345159.png" alt="image-20240603222345159"> </p>
+<h3 id="SDN控制平面"><a href="#SDN控制平面" class="headerlink" title="SDN控制平面"></a>SDN控制平面</h3><h3 id="ICMP：因特网控制报文协议"><a href="#ICMP：因特网控制报文协议" class="headerlink" title="ICMP：因特网控制报文协议"></a>ICMP：因特网控制报文协议</h3><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243042.png" alt="image-20240603222345159"> </p>
 <p>支持主机或路由器：</p>
 <ul>
 <li>差错&#x2F;异常报告</li>
 <li>网络探询</li>
 </ul>
 <p>报文结构：</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240603222515556.png" alt="image-20240603222515556"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243232.png" alt="image-20240603222515556"> </p>
 <ul>
 <li><p>差错报文：</p>
 <ul>
@@ -1778,7 +1778,7 @@
 <li><p>参数问题：首部字段出问题</p>
 </li>
 <li><p>改变路由（重定向）：修改发送数据报去往的路由器到更好的路由器。</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240603223206089.png" alt="image-20240603223206089"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243582.png" alt="image-20240603223206089"> </p>
 </li>
 <li><p>不发生ICMP差错报文的情况：</p>
 <ul>
@@ -1994,7 +1994,7 @@
 <h4 id="ARP协议-地址解析协议"><a href="#ARP协议-地址解析协议" class="headerlink" title="ARP协议 地址解析协议"></a>ARP协议 地址解析协议</h4><p>ARP：输入进来一个子网IP，将其转换成对应的MAC地址并返回。</p>
 <p>ARP只作用于同一个子网上的主机和路由器接口解析IP地址</p>
 <p>每台主机或路由器存有一张ARP表，该表包含IP地址到MAC地址的映射关系，表项中含有一个TTL，指示从表中删除某对映射关系的时间</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240604164237575.png" alt="image-20240604164237575"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243579.png" alt="image-20240604164237575"> </p>
 <p>该表不必为子网中每台主机和路由器都包含一个表项，某些可能从未进入，某些可能过期了。</p>
 <p>一个通讯过程中：</p>
 <ul>
@@ -2039,7 +2039,7 @@
 <li>一个MAC地址</li>
 <li>通向该MAC地址的交换机接口</li>
 <li>表项放置在表中的时间</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240604195935508.png" alt="image-20240604195935508"> </li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243777.png" alt="image-20240604195935508"> </li>
 <li>查表的三种情况：</li>
 <li>假设有一个包含目的地址为dd-dd-dd-dd-dd-dd的帧，从接口x到达交换机：<ul>
 <li>表中无记录dd-dd-dd-dd-dd-dd的表项。这种情况下，对除了接口x以外的所有接口进行洪泛。</li>
@@ -2245,7 +2245,7 @@
 <p>则13（1101）+ 6（0110） &#x3D; 19（1 0011）&#x3D;&#x3D; 1（00001）&amp;&amp; 3（0011）</p>
 <p>**2421码： ** </p>
 <p>重定义的权值</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230919163128770.png" alt="image-20230919163128770" style="zoom:50%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243623.png" alt="image-20230919163128770" style="zoom:50%;" />
 
 <p><strong>其他的4位有权BCD码：</strong> </p>
 <p>5421码、5211码、4311码 —— 这三种对9互补，逢十进一</p>
@@ -2254,7 +2254,7 @@
 <p>$8421码 + (0011)_2$</p>
 <p><strong>其他的4位无权BCD码：</strong> </p>
 <p>格雷码（1）、格雷码（2）、格雷码（3）</p>
-<h4 id="一位全加器的表达式："><a href="#一位全加器的表达式：" class="headerlink" title="一位全加器的表达式："></a>一位全加器的表达式：</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="E:\DeskTable\博客学习截图传输\image-20231218090128576.png" alt="image-20231218090128576" style="zoom:67%;" /></h4><h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1KP411X71M?p=3&vd_source=9fb105320442648b8c6fe466cf6f8b5c">2020.03.04 浮点数的一般格式1</a></p>
+<h4 id="一位全加器的表达式："><a href="#一位全加器的表达式：" class="headerlink" title="一位全加器的表达式："></a>一位全加器的表达式：</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011243607.png" alt="image-20231218090128576" style="zoom:67%;" /></h4><h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1KP411X71M?p=3&vd_source=9fb105320442648b8c6fe466cf6f8b5c">2020.03.04 浮点数的一般格式1</a></p>
 <p>科学计数法：</p>
 <ul>
 <li>动态移动十进制小数点到约定位置，并使用10的指数来记录此小数点的位置</li>
@@ -2262,7 +2262,7 @@
 <li>可表示范围很大</li>
 <li>规格化数字</li>
 </ul>
-<img src="E:\DeskTable\博客学习截图传输\image-20230919092538911.png" alt="image-20230919092538911" style="zoom:50%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244008.png" alt="image-20230919092538911" style="zoom:50%;" />
 
 <p>数符：表示浮点数的符号</p>
 <p>阶符：</p>
@@ -2304,7 +2304,7 @@
 <p>使用<strong>异或运算</strong>操作进行偶校验，结果为0则未出错，结果为1则出错</p>
 <p>算数逻辑单元</p>
 <p>（Arithmetic and Logic Unit，ALU）</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230919213319875.png" alt="image-20230919213319875" style="zoom: 67%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244281.png" alt="image-20230919213319875" style="zoom: 67%;" />
 
 
 
@@ -2313,24 +2313,24 @@
 <p>规格化的原码表示—— S.1xxxxxx</p>
 <p>规格化补码表示—— 正数：0.1xxxxxx	负数：1.0xxxxxx</p>
 <h3 id="二进制的运算"><a href="#二进制的运算" class="headerlink" title="二进制的运算"></a>二进制的运算</h3><h4 id="二进制的乘法："><a href="#二进制的乘法：" class="headerlink" title="二进制的乘法："></a>二进制的乘法：</h4><p>补码的乘法运算规则：</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230921184009102.png" alt="image-20230921184009102" style="zoom:50%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244727.png" alt="image-20230921184009102" style="zoom:50%;" />
 
 <p>补码的编码值按位展开得到真值，正数符号位权值为<strong>1</strong>，负数符号位权值为**-1**</p>
 <h4 id="原码一位乘法："><a href="#原码一位乘法：" class="headerlink" title="原码一位乘法："></a>原码一位乘法：</h4><p>和手算一样</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230923105803490.png" alt="image-20230923105803490" style="zoom:27%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244121.png" alt="image-20230923105803490" style="zoom:27%;" />
 
 <p>加法次数和相乘的两个原码的位数相同</p>
 <h4 id="Booth法"><a href="#Booth法" class="headerlink" title="Booth法"></a>Booth法</h4><p>时序逻辑电路图</p>
 <p>无符号：Booth法的电路是时序逻辑电路，具有时钟信号控制</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230922162220296.png" alt="image-20230922162220296" style="zoom:50%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244402.png" alt="image-20230922162220296" style="zoom:50%;" />
 
 <h4 id="阵列乘法器"><a href="#阵列乘法器" class="headerlink" title="阵列乘法器"></a>阵列乘法器</h4><p>1）手算及单元电路</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230923101554580.png" alt="image-20230923101554580" style="zoom: 30%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244587.png" alt="image-20230923101554580" style="zoom: 30%;" />
 
 <p>2）、定点无符号数阵列乘法器</p>
 <p>组合逻辑电路因为不需要根据时钟周期进行移位累加，所使用的时间会少于移位累加的方法</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20230922170428659.png" alt="image-20230922170428659"></p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230923101344400.png" alt="image-20230923101344400" style="zoom:30%;" />
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244655.png" alt="image-20230922170428659"></p>
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244576.png" alt="image-20230923101344400" style="zoom:30%;" />
 
 
 
@@ -2341,9 +2341,9 @@
 <li>已知一个数的补码，求该数的绝对值</li>
 <li>已知一个数的绝对值，求该数的补码</li>
 </ol>
-<img src="E:\DeskTable\博客学习截图传输\image-20230923102304075.png" alt="image-20230923102304075" style="zoom:25%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244232.png" alt="image-20230923102304075" style="zoom:25%;" />
 
-<img src="E:\DeskTable\博客学习截图传输\image-20230923102750917.png" alt="image-20230923102750917" style="zoom:26.5%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244590.png" alt="image-20230923102750917" style="zoom:26.5%;" />
 
 <h4 id="二进制的除法"><a href="#二进制的除法" class="headerlink" title="二进制的除法"></a>二进制的除法</h4><h4 id="1）、原码除法"><a href="#1）、原码除法" class="headerlink" title="1）、原码除法"></a>1）、原码除法</h4><p>规则：</p>
 <ol>
@@ -2358,19 +2358,19 @@
 <li>将符号和绝对值拼接</li>
 </ol>
 <p>由手算引入逻辑实现</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20230923103943081.png" alt="image-20230923103943081" style="zoom:30%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011244797.png" alt="image-20230923103943081" style="zoom:30%;" />
 
 
 
-<h4 id="2）、恢复余数法"><a href="#2）、恢复余数法" class="headerlink" title="2）、恢复余数法"></a>2）、恢复余数法</h4><img src="E:\DeskTable\博客学习截图传输\image-20230923105332402.png" alt="image-20230923105332402" style="zoom:29.5%;" />
+<h4 id="2）、恢复余数法"><a href="#2）、恢复余数法" class="headerlink" title="2）、恢复余数法"></a>2）、恢复余数法</h4><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245398.png" alt="image-20230923105332402" style="zoom:29.5%;" />
 
 <h4 id="3）、不恢复余数法"><a href="#3）、不恢复余数法" class="headerlink" title="3）、不恢复余数法"></a>3）、不恢复余数法</h4><h1 align=center> 存储体系结构 </h1>
 
-<h2 id="CH8-计算机存储体系结构"><a href="#CH8-计算机存储体系结构" class="headerlink" title="CH8 计算机存储体系结构"></a>CH8 计算机存储体系结构</h2><h3 id="8-1基本概念"><a href="#8-1基本概念" class="headerlink" title="8.1基本概念"></a>8.1基本概念</h3><h4 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h4><img src="E:\DeskTable\博客学习截图传输\image-20231010221402861.png" alt="image-20231010221402861" style="zoom: 33%;" />
+<h2 id="CH8-计算机存储体系结构"><a href="#CH8-计算机存储体系结构" class="headerlink" title="CH8 计算机存储体系结构"></a>CH8 计算机存储体系结构</h2><h3 id="8-1基本概念"><a href="#8-1基本概念" class="headerlink" title="8.1基本概念"></a>8.1基本概念</h3><h4 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h4><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245083.png" alt="image-20231010221402861" style="zoom: 33%;" />
 
-<img src="E:\DeskTable\博客学习截图传输\image-20231010222309462.png" alt="image-20231010222309462" style="zoom: 50%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245730.png" alt="image-20231010222309462" style="zoom: 50%;" />
 
-<img src="E:\DeskTable\博客学习截图传输\image-20231010222624421.png" alt="image-20231010222624421" style="zoom:50%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245153.png" alt="image-20231010222624421" style="zoom:50%;" />
 
 <p>存储器的不同特性</p>
 <ul>
@@ -2511,7 +2511,7 @@
 </li>
 </ul>
 <p>计算机存储器图表表示：</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20231010165617847.png" alt="image-20231010165617847" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245430.png" alt="image-20231010165617847" style="zoom:50%;" /> 
 
 <h4 id="字节序"><a href="#字节序" class="headerlink" title="字节序"></a>字节序</h4><p>1、大端赋值</p>
 <p>字节排序</p>
@@ -2570,17 +2570,17 @@
 <h4 id="访问方式："><a href="#访问方式：" class="headerlink" title="访问方式："></a>访问方式：</h4><p>1、Sequential Access	顺序访问</p>
 <ol>
 <li>如果当前记录为1，那么为了读取记录N，需要读取记录1到N-1。</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20231207191223478.png" alt="image-20231207191223478" style="zoom: 50%;" /></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245993.png" alt="image-20231207191223478" style="zoom: 50%;" /></li>
 </ol>
 <p>2、Direct Access			直接访问</p>
 <ol>
 <li>访问是通过直接访问到达大致附近加上顺序搜索、计数或等待到达最终位置来完成的。</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20231207192656562.png" alt="image-20231207192656562" style="zoom:50%;" /></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245784.png" alt="image-20231207192656562" style="zoom:50%;" /></li>
 </ol>
 <p>3、Random Access		随机访问</p>
 <ol>
 <li>任何存储位置都可以随机选择并直接寻址和访问。</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20231207192628560.png" alt="image-20231207192628560" style="zoom:50%;" /></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245629.png" alt="image-20231207192628560" style="zoom:50%;" /></li>
 </ol>
 <p>内存访问时间：</p>
 <ol>
@@ -2633,13 +2633,13 @@
 </li>
 </ol>
 <h3 id="8-2-存储器及其部分概念"><a href="#8-2-存储器及其部分概念" class="headerlink" title="8.2 存储器及其部分概念"></a>8.2 存储器及其部分概念</h3><h4 id="1、SRAM"><a href="#1、SRAM" class="headerlink" title="1、SRAM"></a>1、SRAM</h4><p><strong>Static Random Access Memory</strong> 	<strong>静态随机存储器</strong> </p>
-<img src="E:\DeskTable\博客学习截图传输\image-20231020151241416.png" alt="image-20231020151241416" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245502.png" alt="image-20231020151241416" style="zoom:50%;" /> 
 
 <p>只要不断电,信息一直保持——静态</p>
 <p>初始加电后状态随机</p>
 <p>n个存储器构成n位存储单元</p>
 <p>熟练掌握以下SRAM的画法</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20231207173618008.png" alt="image-20231207173618008" style="zoom: 67%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245107.png" alt="image-20231207173618008" style="zoom: 67%;" /> 
 
 <p>对于一个SRAM需要的引脚数：</p>
 <p>以 $1K \times 1$ 为例：$1K \times 1 \rightarrow 2^{10} \times 1$ </p>
@@ -2662,10 +2662,10 @@
 <li>易失的，需要不断刷新</li>
 <li>不易被CMOS集成</li>
 </ol>
-<img src="E:\DeskTable\博客学习截图传输\image-20231208095542511.png" alt="image-20231208095542511" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245772.png" alt="image-20231208095542511" style="zoom:50%;" /> 
 
 <p>需要掌握以下图中一个DRAM的画法</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20231207174152063.png" alt="image-20231207174152063" style="zoom:67%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245615.png" alt="image-20231207174152063" style="zoom:67%;" /> 
 
 <p>对于一个DRAM需要的引脚数量位：</p>
 <p>以$64K \times 1$为例：</p>
@@ -2697,7 +2697,7 @@
 <p>假设cache槽数为8，</p>
 <p>将Main Memory每八个块切割为一组进行分组，在同一组内的相同位置，放在cache的同一个槽位内。</p>
 <p>即：</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20231207213537311.png" alt="image-20231207213537311" style="zoom:67%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245507.png" alt="image-20231207213537311" style="zoom:67%;" /> 
 
 <p>如图中，在Main Memory当中块号为2——$2<del>mod</del>8 &#x3D;&#x3D; 2$ ,同样的，块号为10——$10<del>mod</del>8&#x3D;&#x3D;2$ 则第2块和第10块放在cache的2号槽当中。 </p>
 <h4 id="2、全相联映射"><a href="#2、全相联映射" class="headerlink" title="2、全相联映射"></a>2、全相联映射</h4><p><strong>Fully Associative Mapping</strong> </p>
@@ -2707,14 +2707,14 @@
 <ol>
 <li>先将Cache进行分组，假设Cache内有8个槽，每2个槽为一组，可分为4组，如下图所示：</li>
 </ol>
-<img src="E:\DeskTable\博客学习截图传输\image-20231207214021904.png" alt="image-20231207214021904" style="zoom: 50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245317.png" alt="image-20231207214021904" style="zoom: 50%;" /> 
 
 <ol start="2">
 <li>将Main Memory 按照Cache的组数进行分组，即Cache分为4组，则Main Memory的每四块为一组。组内号对应着Cache的组号，假设Main Memory内有20个块，可分为5组，$块_0 $ 对应的组内号为0 ，则映射到Cache$组_0$ 的任意一个槽当中。</li>
 </ol>
 <p>分区——分组——分块</p>
 <p>目录表：</p>
- <img src="E:\DeskTable\博客学习截图传输\image-20231023100630364.png" alt="image-20231023100630364" style="zoom:33%;" />
+ <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245862.png" alt="image-20231023100630364" style="zoom:33%;" />
 
 <p>主存区号——主存组内块号——Cache组内块号——有效位</p>
 <p>主存地址：</p>
@@ -2768,7 +2768,7 @@
 </ol>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Et411E7D6/?spm_id_from=333.337.search-card.all.click&vd_source=9fb105320442648b8c6fe466cf6f8b5c">Cache与虚拟存储器_哔哩哔哩_bilibili</a> </p>
 <h4 id="2、段式虚存"><a href="#2、段式虚存" class="headerlink" title="2、段式虚存"></a>2、段式虚存</h4><ol>
-<li>虚拟地址组成：Virtual Segment Number+Offset<img src="E:\DeskTable\博客学习截图传输\image-20231210135304188.png" alt="image-20231210135304188" style="zoom: 67%;" /> </li>
+<li>虚拟地址组成：Virtual Segment Number+Offset <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245442.png" alt="image-20231210135304188" style="zoom: 67%;" /> </li>
 <li>段表内容：<ul>
 <li>段的起始位置</li>
 <li>段的大小</li>
@@ -2867,13 +2867,13 @@
 </ol>
 </li>
 </ol>
-<h4 id="2、指令的表示"><a href="#2、指令的表示" class="headerlink" title="2、指令的表示"></a>2、指令的表示</h4><p>指令的组成：<img src="E:\DeskTable\博客学习截图传输\image-20231214213936303.png" alt="image-20231214213936303" style="zoom: 67%;" /> 操作码字段和地址字段</p>
+<h4 id="2、指令的表示"><a href="#2、指令的表示" class="headerlink" title="2、指令的表示"></a>2、指令的表示</h4><p>指令的组成：<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245222.png" alt="image-20231214213936303" style="zoom: 67%;" /> 操作码字段和地址字段</p>
 <h4 id="3、指令地址字段的格式"><a href="#3、指令地址字段的格式" class="headerlink" title="3、指令地址字段的格式"></a>3、指令地址字段的格式</h4><ol>
 <li><p>零地址</p>
 </li>
 <li><p>一地址</p>
 <ol>
-<li>存在隐式调用<img src="E:\DeskTable\博客学习截图传输\image-20231214214238803.png" alt="image-20231214214238803" style="zoom:50%;" /></li>
+<li>存在隐式调用<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245651.png" alt="image-20231214214238803" style="zoom:50%;" /></li>
 </ol>
 </li>
 <li><p>二地址</p>
@@ -2882,10 +2882,10 @@
 </li>
 </ol>
 <h4 id="4、指令的长度："><a href="#4、指令的长度：" class="headerlink" title="4、指令的长度："></a>4、指令的长度：</h4><ol>
-<li><p>固定长度：所有指令有相同的长度<img src="E:\DeskTable\博客学习截图传输\image-20231215083957842.png" alt="image-20231215083957842"> </p>
+<li><p>固定长度：所有指令有相同的长度<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011245707.png" alt="image-20231215083957842"> </p>
 </li>
 <li><p>可变长度：指令可能会有不同的长度</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20231215084034340.png" alt="image-20231215084034340" style="zoom: 67%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246842.png" alt="image-20231215084034340" style="zoom: 67%;" /> 
 </li>
 <li><p>缩减指令长度方法</p>
 <ol>
@@ -2915,16 +2915,16 @@
 </li>
 </ul>
 <p>How should we design the instruction format?</p>
-<img src="E:\DeskTable\博客学习截图传输\02c3d0bfa744674125de773e1d082e8.jpg" alt="02c3d0bfa744674125de773e1d082e8" style="zoom: 25%;" /></li>
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246141.jpg" alt="02c3d0bfa744674125de773e1d082e8" style="zoom: 25%;" /></li>
 </ol>
-<h4 id="6、寻址模式"><a href="#6、寻址模式" class="headerlink" title="6、寻址模式"></a>6、寻址模式</h4><img src="E:\DeskTable\博客学习截图传输\image-20231215102613798.png" alt="image-20231215102613798" style="zoom: 67%;" />
+<h4 id="6、寻址模式"><a href="#6、寻址模式" class="headerlink" title="6、寻址模式"></a>6、寻址模式</h4><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246871.png" alt="image-20231215102613798" style="zoom: 67%;" />
 
 <ol>
 <li><p>立即寻址方式：操作数在指令中明确给出。</p>
 <ol>
 <li><p><strong>把我们实际要操作的数，直接存放在形式地址中</strong> </p>
 </li>
-<li><p><img src="https://pic4.zhimg.com/80/v2-5888816bbc50ab0983a356da892d010f_720w.webp" alt="img"></p>
+<li><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246126.webp" alt="img"></p>
 </li>
 <li><p>寻址特征为#，代表立即寻址的意思。</p>
 </li>
@@ -2938,30 +2938,30 @@
 <ol>
 <li><p>直接寻址指令中的地址码字段给的是<strong>操作数的有效位置</strong>，我们可以根据这个有效位置直接去内存中寻找操作数。</p>
 </li>
-<li><p><img src="https://pic4.zhimg.com/80/v2-5888816bbc50ab0983a356da892d010f_720w.webp" alt="img"> </p>
+<li><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246410.webp" alt="img"> </p>
 </li>
 <li><p>与立即寻址相比：直接寻址主要执行取指令访存1次，还有执行指令访存1次，一共访存2次。</p>
 </li>
 <li><p>原理流程图：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-aa9aa62ad61a4a3fb5a1679f220f4e10_720w.webp" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246400.webp" alt="img"></p>
 </li>
 </ol>
 </li>
 <li><p>绝对寻址方式：<strong>操作数位于内存位置； 该位置的地址在指令中明确给出。</strong> </p>
 <ol>
 <li>直接寻址的一种，指令包含数据在内存中的确切地址，CPU通过这个地址获取或存储数据。</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20231215161204849.png" alt="image-20231215161204849"></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246209.png" alt="image-20231215161204849"></li>
 </ol>
 </li>
 <li><p>寄存器寻址方式：操作数是处理器寄存器的内容； 寄存器的地址在指令中给出。</p>
 <p>和直接寻址原理一样，只是把访问主存改为访问寄存器。</p>
 <ol>
-<li><p><img src="https://pic3.zhimg.com/80/v2-7a52e37d708a9519badfe04efa58ce46_720w.webp" alt="img"></p>
+<li><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246954.webp" alt="img"></p>
 </li>
 <li><p>寄存器寻址主要执行取指令访存1次，由于访问的是寄存器因此<strong>不需要执行指令访存</strong>，一共访存1次。</p>
 </li>
 <li><p>原理流程图：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-4d0988f77082664805fd6f23d216b890_720w.webp" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246675.webp" alt="img"></p>
 </li>
 <li><p>**访问寄存器会比访问主存快得多。**但是寄存器数量也较少，可以看出地址码长度也是比访问主存的短的。</p>
 </li>
@@ -2969,18 +2969,18 @@
 </li>
 <li><p>寄存器间接寻址方式：操作数的有效地址是：出现在指令中的寄存器存储的内容。</p>
 <ol>
-<li><p><img src="https://pic4.zhimg.com/80/v2-15900f03362a4edea2063b156de593ff_720w.webp" alt="img"></p>
+<li><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246827.webp" alt="img"></p>
 </li>
 <li><p>寄存器间接寻址的指令中的地址码字段给的是<strong>操作数所在的寄存器位置</strong>，我们可以根据这个地址去寄存器中找到操作数的有效地址，再去内存中寻找操作数。</p>
 </li>
 <li><p>原理流程图：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-60b10bb53b31830cae565b3d63f675f3_720w.webp" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246748.webp" alt="img"></p>
 </li>
 </ol>
 </li>
 <li><p>变址寻址方式：操作数的有效地址是通过将常数值与寄存器（变址寄存器）的内容相加而生成的。</p>
 <ol>
-<li><p><img src="E:\DeskTable\博客学习截图传输\image-20231215161451624.png" alt="image-20231215161451624"></p>
+<li><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246460.png" alt="image-20231215161451624"></p>
 </li>
 <li><p>$EA &#x3D; X + [Ri]$ </p>
 <p><strong>X (offset)</strong>：指令中包含的常数值</p>
@@ -3050,7 +3050,7 @@
 <li>Instruction address generator</li>
 <li>Control circuitry</li>
 </ol>
-<img src="E:\DeskTable\博客学习截图传输\image-20231215210130431.png" alt="image-20231215210130431" style="zoom:50%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246557.png" alt="image-20231215210130431" style="zoom:50%;" />
 </li>
 <li></li>
 </ol>
@@ -3074,7 +3074,7 @@
 <ol>
 <li>核心：将多条指令执行时间进行重叠</li>
 <li>本质：在完成前一条指令之前执行下一条指令</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20231216111436816.png" alt="image-20231216111436816"></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246243.png" alt="image-20231216111436816"></li>
 </ol>
 <h4 id="2、回顾指令执行的五大步骤"><a href="#2、回顾指令执行的五大步骤" class="headerlink" title="2、回顾指令执行的五大步骤"></a>2、回顾指令执行的五大步骤</h4><ol>
 <li><p>Instruction Fetch  </p>
@@ -3088,9 +3088,9 @@
 <li><p>Write result into register</p>
 </li>
 </ol>
-<img src="E:\DeskTable\博客学习截图传输\image-20231216111805502.png" alt="image-20231216111805502" style="zoom: 80%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246014.png" alt="image-20231216111805502" style="zoom: 80%;" />
 
-<img src="E:\DeskTable\博客学习截图传输\image-20231216111829396.png" alt="image-20231216111829396" style="zoom:80%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246802.png" alt="image-20231216111829396" style="zoom:80%;" />
 
 <p>将原先的：上一条指令第五步结束后才进行下一指令的第一步的模式</p>
 <p>切换为：在上一条指令移码阶段的同时进行下一指令的取指令</p>
@@ -3104,7 +3104,7 @@
 <li><p>流水线深度&#x2F;Pipeline Depth：流水线中的步骤的个数。</p>
 </li>
 </ol>
-<h4 id="4、流水线的组成"><a href="#4、流水线的组成" class="headerlink" title="4、流水线的组成"></a>4、流水线的组成</h4><img src="E:\DeskTable\博客学习截图传输\image-20231216112503816.png" alt="image-20231216112503816" style="zoom: 67%;" />
+<h4 id="4、流水线的组成"><a href="#4、流水线的组成" class="headerlink" title="4、流水线的组成"></a>4、流水线的组成</h4><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246952.png" alt="image-20231216112503816" style="zoom: 67%;" />
 
 <ol>
 <li>流水线不改变原来的每个指令执行的时间延迟，完成每个指令所需的时间不变</li>
@@ -3266,10 +3266,10 @@
 <li>一种常见的语言处理器。</li>
 <li>它并不通过翻译的方式生成目标程序；解释器直接利用用户提供的输入执行源程序中指定对的操作。</li>
 </ol>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240311182629128.png" alt="image-20240311182629128"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240735.png" alt="image-20240311182629128"> </p>
 <h3 id="编译器和解释器对比"><a href="#编译器和解释器对比" class="headerlink" title="编译器和解释器对比"></a>编译器和解释器对比</h3><h4 id="相同点：都是一种语言实现系统"><a href="#相同点：都是一种语言实现系统" class="headerlink" title="相同点：都是一种语言实现系统"></a>相同点：都是一种语言实现系统</h4><h4 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h4><ol>
 <li><p>解释器边解释边执行。</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240311194928864.png" alt="image-20240311194928864"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240650.png" alt="image-20240311194928864"> </p>
 </li>
 <li><p>编译器对源代码总的进行编译并产生可直接使用的对象代码。</p>
 </li>
@@ -3316,7 +3316,7 @@
 <li><p>词法分析器读入组成源程序的<strong>字符流</strong>，并且将它们组成有意义的词素(lexeme)的序列，生成并输出一个词法单元序列，每个词法单元对应一个词素lexeme。</p>
 </li>
 <li><p>对于每个词素，词法分析器产生词法单元，该单元会传入下一步骤——<strong>语法分析</strong>当中。</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240312170757833.png" alt="image-20240312170757833" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240118.png" alt="image-20240312170757833" style="zoom:50%;" /> 
 </li>
 <li><p>词法分析器通常需要和符号表进行交互，当发现一个<strong>标识符</strong>的词素时，将该词素添加到符号表当中。<br>符号表条目的信息会在<strong>语义分析</strong>和<strong>代码生成</strong>步骤使用</p>
 </li>
@@ -3369,9 +3369,9 @@
 </ol>
 <h4 id="哨兵标记"><a href="#哨兵标记" class="headerlink" title="哨兵标记"></a>哨兵标记</h4><p>在缓冲区对的基础上，</p>
 <h3 id="扫描和token"><a href="#扫描和token" class="headerlink" title="扫描和token"></a>扫描和token</h3><ol>
-<li>扫描得到一个<strong>lexeme</strong>，将词素加上记号构成一个<strong>token</strong>。有些<strong>token</strong>只有<strong>token-name</strong>而没有<strong>token-attribute</strong>，例如保留关键字<strong>while</strong>：<img src="E:\DeskTable\博客学习截图传输\image-20240312170715066.png" alt="image-20240312170715066" style="zoom: 50%;" /> </li>
+<li>扫描得到一个<strong>lexeme</strong>，将词素加上记号构成一个<strong>token</strong>。有些<strong>token</strong>只有<strong>token-name</strong>而没有<strong>token-attribute</strong>，例如保留关键字<strong>while</strong>：<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240860.png" alt="image-20240312170715066" style="zoom: 50%;" /> </li>
 <li>扫描过程中，空格虽然算作一个词素，但并不将之存储，因为没有意义</li>
-<li>某些<strong>token</strong>含有属性<strong>attribute</strong>，用于存储关于这个<strong>token</strong>额外的信息，例如一个数123，则会存储为：<img src="E:\DeskTable\博客学习截图传输\image-20240312170546745.png" alt="image-20240312170546745" style="zoom:33%;" /></li>
+<li>某些<strong>token</strong>含有属性<strong>attribute</strong>，用于存储关于这个<strong>token</strong>额外的信息，例如一个数123，则会存储为：<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240675.png" alt="image-20240312170546745" style="zoom:33%;" /></li>
 </ol>
 <h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><blockquote>
 <p>正则表达式可以由较小的正则表达式按照规则递归构建：</p>
@@ -3451,7 +3451,7 @@
 <li><p>字符类：$[a_1 a_2 … a_n]$ $[a_1 a_2 … a_n]$形成一个逻辑上连续的序列，如连续的大写字母、小写字母或数位时：表示为$a_1 -a_n$，只写出序列的首尾符号，中间连词符隔开。如：[a-z]表示26个小写字母。</p>
 </li>
 <li><p>Lex的正则表达式</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240317200417333.png" alt="image-20240317200417333"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240451.png" alt="image-20240317200417333"></p>
 </li>
 </ol>
 <h3 id="词法单元的识别"><a href="#词法单元的识别" class="headerlink" title="词法单元的识别"></a>词法单元的识别</h3><blockquote>
@@ -3487,7 +3487,7 @@
 <li><p>为每个关键字建立单独的状态转换图。</p>
 <ul>
 <li><p>以then为例：</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240317215751827.png" alt="image-20240317215751827" style="zoom:67%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240322.png" alt="image-20240317215751827" style="zoom:67%;" />
 </li>
 <li><p>这样的状态转换图包含的状态表示看到该关键字的各个后续字母后的情况,最后是一个“非字母或数字”的测试,也就是检查后面是否为某个不可能成为标识符一部分的字符。</p>
 </li>
@@ -3611,7 +3611,7 @@
 <h3 id="从DFA生成分析算法"><a href="#从DFA生成分析算法" class="headerlink" title="从DFA生成分析算法"></a>从DFA生成分析算法</h3><h2 id="CH3-语法分析-Part-I"><a href="#CH3-语法分析-Part-I" class="headerlink" title="CH3: 语法分析(Part I)"></a>CH3: 语法分析(Part I)</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/501849448">学生角度————编译原理-语法分析详解</a> </p>
 <blockquote>
 <p>语法分析器从词法分析器得到一个由token组成的token序列，并验证这个token串可以由源语言的文法生成。</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240319141414360.png" alt="image-20240319141414360"> </p>
+<p><img src="D:\DeskTable\博客学习截图传输\image-20240319141414360.png" alt="image-20240319141414360"> </p>
 <p>词法分析阶段处理了多个字符组成的构造，如标识符；</p>
 <p>语法分析阶段因为词法分析已经完成了字符的token化，所以可以把原本由多个字符组成的标识符当作<strong>单元</strong>进行处理。</p>
 </blockquote>
@@ -3756,7 +3756,7 @@
 <li>将哈希值对桶数量（数组长度）<strong>capacity</strong> 取模，从而获取该 <strong>key</strong> 对应的数组索引 <strong>index</strong>。</li>
 <li>$index &#x3D; hash(key) % capacity$</li>
 </ol>
-<img src="E:\DeskTable\博客学习截图传输\image-20231013000021119.png" alt="image-20231013000021119" style="zoom: 80%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011246595.png" alt="image-20231013000021119" style="zoom: 80%;" />
 
 <h4 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h4><p>本质上看，哈希函数的作用是将所有 key 构成的输入空间映射到数组所有索引构成的输出空间，而输入空间往往远大于输出空间。因此，理论上一定存在<strong>多个输入对应相同输出</strong>的情况。而这种<strong>多对一</strong>的情况即被称为哈希冲突。</p>
 <h4 id="链式地址法"><a href="#链式地址法" class="headerlink" title="链式地址法"></a>链式地址法</h4><p>为解决哈希冲突的第一种方法——「链式地址 Separate Chaining」，原理即是：单元格转换为链表，将生成的键值对当作链表节点，将所有发生冲突的键值对都存储在同一链表中。</p>
@@ -3888,9 +3888,9 @@
 <h4 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h4><p>（Balanced Binary Tree）</p>
 <p>平衡二叉树（Balanced Binary Tree），也称为平衡二叉搜索树（Balanced Binary Search Tree），是一种特殊类型的二叉搜索树（BST），因二叉搜索树的查找效率取决于树的高度，因而进一步提出而平衡二叉搜索树来保持树的高度达到最小。</p>
 <h5 id="E-p："><a href="#E-p：" class="headerlink" title="E.p："></a>E.p：</h5><p>当输入序列 {1，2，3，4，5，6}，仍使用普通的二叉搜索树会退化成单链表：</p>
-<p><img src="https://img-blog.csdnimg.cn/20200711144946466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzYyMTkx,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247991.png" alt="img"></p>
 <p>但使用平衡二叉搜索树则是：当节点数目一定，保持树的左右两端保持平衡，树的查找效率最高。这种左右子树的高度相差不超过1的树为平衡二叉树。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200711145115978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzYyMTkx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247843.png" alt="在这里插入图片描述"></p>
 <h5 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h5><ol>
 <li>每个节点都包含一个值（通常是可比较的值）。</li>
 <li>对于每个节点：<ul>
@@ -3914,9 +3914,9 @@
 <p>左旋操作后，X会变成Y的左子节点，而Y会成为X的父节点，从而保持了树的平衡性。</p>
 <p>一直遍历，直到找到平衡因子的绝对值不为1的节点进行旋转操作。</p>
 <p><strong>40</strong>的右节点<strong>51</strong>的左节点<strong>46</strong>接到<strong>40</strong>的右节点，而后将<strong>40</strong>这一节点接到<strong>51</strong>的左节点，如下图所示：</p>
-<img src="https://img-blog.csdnimg.cn/2020071115165424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzYyMTkx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" style="zoom:80%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247501.png" alt="在这里插入图片描述" style="zoom:80%;" />
 
-<img src="https://img-blog.csdnimg.cn/20200711151718338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzYyMTkx,size_16,color_FFFFFF,t_70" alt="img" style="zoom:86%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247494.png" alt="img" style="zoom:86%;" />
 
 <h5 id="2-2-右旋（RR平衡旋转）操作的步骤如下："><a href="#2-2-右旋（RR平衡旋转）操作的步骤如下：" class="headerlink" title="2.2 右旋（RR平衡旋转）操作的步骤如下："></a>2.2 右旋（RR平衡旋转）操作的步骤如下：</h5><ol>
 <li>设定一个不平衡的节点为X，其左子树的高度比右子树高度高。</li>
@@ -3926,11 +3926,10 @@
 </ol>
 <p>右旋操作后，X会变成Y的右子节点，而Y会成为X的父节点，也能够保持树的平衡性。</p>
 <p>A处的节点左右失衡，找到失衡节点的左节点B，将B的右节点E和B断开，接入A的左节点，而后将A接入到B的右节点。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200711154951407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzYyMTkx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20200711155008636.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzYyMTkx,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247038.png" alt="在这里插入图片描述"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247169.png" alt="img"></p>
 <h5 id="2-3-双旋转（不平衡节点在内侧）"><a href="#2-3-双旋转（不平衡节点在内侧）" class="headerlink" title="2.3 双旋转（不平衡节点在内侧）"></a>2.3 双旋转（不平衡节点在内侧）</h5><p>先左后右双旋转（LR平衡旋转）</p>
 <p>左孩子右子树上插入新的节点，导致的不平衡</p>
-<p><img src="C:\Users\moru\AppData\Roaming\Typora\typora-user-images\image-20230918112359944.png" alt="image-20230918112359944"></p>
 <h5 id="2-4-代码模拟"><a href="#2-4-代码模拟" class="headerlink" title="2.4 代码模拟"></a>2.4 代码模拟</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">int</span> value;</span><br><span class="line"></span><br><span class="line">	TreeNode* left;</span><br><span class="line">	TreeNode* right;</span><br><span class="line">	<span class="type">int</span> height;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">TreeNode</span>(<span class="type">int</span> val) :<span class="built_in">value</span>(val), <span class="built_in">left</span>(<span class="literal">nullptr</span>), <span class="built_in">right</span>(<span class="literal">nullptr</span>), <span class="built_in">height</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">左右子树高度差绝对值小于1</span></span><br><span class="line"><span class="comment">左右子树也都是平衡二叉搜索树</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">每个节点具有其自身的高度</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AVLTree</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="comment">//根节点</span></span><br><span class="line">	TreeNode* root;</span><br><span class="line">	<span class="comment">//计算节点高度</span></span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">height</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (node == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> node-&gt;height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//平衡因子计算</span></span><br><span class="line">	<span class="comment">//平衡因子的计算是（当前节点的左子树高度减去右子树）</span></span><br><span class="line">	<span class="comment">//平衡因子大于1，说明左子树偏重</span></span><br><span class="line">	<span class="comment">//平衡因子小于-1，说明右子树偏重</span></span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">balanceFactor</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (node == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">height</span>(node-&gt;left) - <span class="built_in">height</span>(node-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//更新节点高度</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">updateHeight</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (node != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			node-&gt;height = <span class="number">1</span> + <span class="built_in">max</span>(<span class="built_in">height</span>(node-&gt;left), <span class="built_in">height</span>(node-&gt;right));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//左旋</span></span><br><span class="line">	<span class="function">TreeNode* <span class="title">rotateLeft</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">		TreeNode* newRoot = node-&gt;right;</span><br><span class="line">		node-&gt;right = newRoot-&gt;left;</span><br><span class="line">		newRoot-&gt;left = node;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">updateHeight</span>(node);</span><br><span class="line">		<span class="built_in">updateHeight</span>(newRoot);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> newRoot;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//右旋</span></span><br><span class="line">	<span class="function">TreeNode* <span class="title">rotateRight</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">		TreeNode* newRoot = node-&gt;left;</span><br><span class="line">		node-&gt;left = newRoot-&gt;right;</span><br><span class="line">		newRoot-&gt;right = node;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">updateHeight</span>(node);</span><br><span class="line">		<span class="built_in">updateHeight</span>(newRoot);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> newRoot;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//插入新节点</span></span><br><span class="line">	<span class="function">TreeNode* <span class="title">insertRecursion</span><span class="params">(TreeNode* current, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (current == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">TreeNode</span>(val);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (val &lt; current-&gt;value) &#123;</span><br><span class="line">			current-&gt;left = <span class="built_in">insertRecursion</span>(current-&gt;left, val);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (val &gt; current-&gt;value) &#123;</span><br><span class="line">			current-&gt;right = <span class="built_in">insertRecursion</span>(current-&gt;right, val);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">updateHeight</span>(current);</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> balance = <span class="built_in">balanceFactor</span>(current);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (balance &gt; <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (val &lt; current-&gt;left-&gt;value) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">rotateRight</span>(current);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				current-&gt;left = <span class="built_in">rotateLeft</span>(current-&gt;left);</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">rotateRight</span>(current);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (balance &lt; <span class="number">-1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (val &gt; current-&gt;right-&gt;value) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">rotateLeft</span>(current);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				current-&gt;right = <span class="built_in">rotateRight</span>(current-&gt;right);</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">rotateLeft</span>(current);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> current;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//查找节点</span></span><br><span class="line">	<span class="function"><span class="type">bool</span> <span class="title">findRecursion</span><span class="params">(TreeNode* current, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (current == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (val == current-&gt;value) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (val &lt; current-&gt;value) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">findRecursion</span>(current-&gt;left, val);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">findRecursion</span>(current-&gt;right, val);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//删除节点</span></span><br><span class="line">	<span class="function">TreeNode* <span class="title">removeRecursion</span><span class="params">(TreeNode* current, <span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!current) &#123;</span><br><span class="line">			<span class="keyword">return</span> current;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (val &lt; current-&gt;value) &#123;</span><br><span class="line">			current-&gt;left = <span class="built_in">removeRecursion</span>(current-&gt;left, val);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (val &gt; current-&gt;value) &#123;</span><br><span class="line">			current-&gt;right = <span class="built_in">removeRecursion</span>(current-&gt;right, val);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (current-&gt;left == <span class="literal">nullptr</span> || current-&gt;right == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">				TreeNode* temp = (current-&gt;left) ? current-&gt;left : current-&gt;right;</span><br><span class="line">				<span class="keyword">if</span> (temp == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">					temp = current;</span><br><span class="line">					current = <span class="literal">nullptr</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					*current = *temp;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">delete</span> temp;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				TreeNode* temp = <span class="built_in">findMin</span>(current-&gt;right);</span><br><span class="line">				current-&gt;value = temp-&gt;value;</span><br><span class="line">				current-&gt;right = <span class="built_in">removeRecursion</span>(current-&gt;right, temp-&gt;value);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (!current)</span><br><span class="line">			<span class="keyword">return</span> current;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">updateHeight</span>(current);</span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> balance = <span class="built_in">balanceFactor</span>(current);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (balance &gt; <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (val &gt; current-&gt;left-&gt;value) &#123;</span><br><span class="line">				current-&gt;left = <span class="built_in">rotateLeft</span>(current-&gt;left);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">rotateRight</span>(current);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (balance &lt; <span class="number">-1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (val &lt; current-&gt;right-&gt;value) &#123;</span><br><span class="line">				current-&gt;right = <span class="built_in">rotateRight</span>(current-&gt;right);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">rotateLeft</span>(current);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> current;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//查找子树的最小节点</span></span><br><span class="line">	<span class="function">TreeNode* <span class="title">findMin</span><span class="params">(TreeNode* current)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span> (current-&gt;left != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			current = current-&gt;left;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> current;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//前序遍历</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">preorderTraversal</span><span class="params">(TreeNode* current)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!current) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; current-&gt;value &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		<span class="built_in">preorderTraversal</span>(current-&gt;left);</span><br><span class="line">		<span class="built_in">preorderTraversal</span>(current-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//中序遍历</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">inorderTraversal</span><span class="params">(TreeNode* current)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!current)</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		<span class="built_in">inorderTraversal</span>(current-&gt;left);</span><br><span class="line">		cout &lt;&lt; current-&gt;value &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		<span class="built_in">inorderTraversal</span>(current-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//后序遍历</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">lastorderTraversal</span><span class="params">(TreeNode* current)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!current) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">lastorderTraversal</span>(current-&gt;left);</span><br><span class="line">		<span class="built_in">lastorderTraversal</span>(current-&gt;right);</span><br><span class="line">		cout &lt;&lt; current-&gt;value &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//构造函数进行成员变量初始化</span></span><br><span class="line">	<span class="built_in">AVLTree</span>() : <span class="built_in">root</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//析构函数释放内存空间</span></span><br><span class="line">	~<span class="built_in">AVLTree</span>() &#123;</span><br><span class="line">		<span class="built_in">clearTree</span>(root);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//插入函数外部接口</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">		root = <span class="built_in">insertRecursion</span>(root, val);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//删除函数外部接口</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">		root = <span class="built_in">removeRecursion</span>(root, val);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//查找函数外部接口</span></span><br><span class="line">	<span class="function"><span class="type">bool</span> <span class="title">find</span><span class="params">(<span class="type">int</span> val)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">findRecursion</span>(root, val);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//前序遍历外部接口</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">preorderTraversal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;前序遍历：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">preorderTraversal</span>(root);</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//中序遍历外部接口</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">inorderTraversal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;中序遍历：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">inorderTraversal</span>(root);</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//后序遍历外部接口</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">lastorderTraversal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;后序遍历：&quot;</span> &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">lastorderTraversal</span>(root);</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//释放树空间</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">clearTree</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (node) &#123;</span><br><span class="line">			<span class="built_in">clearTree</span>(node-&gt;left);</span><br><span class="line">			<span class="built_in">clearTree</span>(node-&gt;right);</span><br><span class="line">			<span class="keyword">delete</span> node;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
@@ -3940,9 +3939,9 @@
 <p>统计意义上的平衡树</p>
 <p>这种结构可以不考虑进行树的平衡调整。</p>
 <h5 id="单R-L型"><a href="#单R-L型" class="headerlink" title="单R&#x2F;L型"></a>单R&#x2F;L型</h5><p>根节点是查找节点的父节点。相当于直接将该节点提起，其他节点相对位置保持不变</p>
-<img src="https://img-blog.csdn.net/20151102155743401?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img" style="zoom: 67%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247990.png" alt="img" style="zoom: 67%;" />
 
-<img src="https://img-blog.csdn.net/20151102155639325?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img" style="zoom:73%;" />
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247091.png" alt="img" style="zoom:73%;" />
 
 <h5 id="RR-LL型："><a href="#RR-LL型：" class="headerlink" title="RR&#x2F;LL型："></a>RR&#x2F;LL型：</h5><h5 id="调整策略"><a href="#调整策略" class="headerlink" title="调整策略"></a>调整策略</h5><p>单旋转</p>
 <p>之字型</p>
@@ -3960,7 +3959,7 @@
 <p>红黑树广泛用于各种编程语言和数据结构中，包括C++的STL中的<code>std::map</code>和<code>std::set</code>，以及Java的<code>java.util.TreeMap</code>和<code>java.util.TreeSet</code>等。它们支持高效的搜索、插入和删除操作，并且在保持数据有序的同时，具有可预测的性能。</p>
 <p>红黑树的操作复杂度为O(log n)，其中n是树中节点的数量。这使得它成为许多算法和数据结构的重要组成部分，特别是需要高效插入和删除操作的情况下。</p>
 <h4 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h4><p>（多&#x2F;M路搜索树）</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20230922101648057.png" alt="image-20230922101648057"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011247382.png" alt="image-20230922101648057"></p>
 <p>（课本把终端节点当作叶子节点，所以“数据放在叶子节点”）</p>
 <h5 id="B树提出的主要目的："><a href="#B树提出的主要目的：" class="headerlink" title="B树提出的主要目的："></a>B树提出的主要目的：</h5><p>减少磁盘I&#x2F;O操作。</p>
 <p><strong>一颗m阶B树即是一颗平衡的m路搜索树</strong></p>
@@ -4018,7 +4017,7 @@
 <p>2、开放地址法（Closed Hash Tbales&#x2F;Open Adderssing）</p>
 <h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>1、二叉堆，简称堆：</p>
 <p>堆是一颗完全填满的二叉树(叶子节点可以不填满，但是需要从左到右填充)，即一颗完全二叉树</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20231008101022069.png" alt="image-20231008101022069"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011248001.png" alt="image-20231008101022069"></p>
 <h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>在前面所学的线性数据结构中，每个元素都只有一个直接前驱和一个直接后驱。而在树结构当作，元素划分为层，每一层与上一层形成明确的层次关系，数据有着一个唯一的前驱，可能有着多个后继，但各元素间的直接关系仍旧限制在相邻层次间。在图结构当中，各节点之间的关系是任意的，可以随意进行节点间的相连，任意两个在限定集合内的两个节点都都可以形成直接关系。</p>
 <h4 id="9-1-概念与定义"><a href="#9-1-概念与定义" class="headerlink" title="9.1 概念与定义"></a>9.1 概念与定义</h4><ol>
 <li><p>定义：</p>
@@ -4032,7 +4031,7 @@
 <li>有向图的有向边也称为&#x3D;&#x3D;弧&#x3D;&#x3D; 弧尾—&gt;弧头</li>
 <li>边集 <em>E</em> 是有向边集合。</li>
 <li>边连接的两个顶点是有序对：$&lt;v，w&gt;$ </li>
-<li>如图，表示的是有序对：$E&#x3D;{&lt;1,2&gt;,&lt;2,1&gt;,&lt;2,3&gt;}$ <img src="https://img-blog.csdnimg.cn/20210227111745661.png#pic_center" alt="在这里插入图片描述" style="zoom:67%;" /></li>
+<li>如图，表示的是有序对：$E&#x3D;{&lt;1,2&gt;,&lt;2,1&gt;,&lt;2,3&gt;}$ <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011248416.png" alt="在这里插入图片描述" style="zoom:67%;" /></li>
 </ul>
 </li>
 <li><p>无向图</p>
@@ -4055,7 +4054,7 @@
 <h2 id="五、-排序算法"><a href="#五、-排序算法" class="headerlink" title="五、 排序算法"></a>五、 排序算法</h2><p>算法可视化网站:</p>
 <p><a target="_blank" rel="noopener" href="https://visualgo.net/en">通过动画可视化数据结构和算法 - VisuAlgo</a></p>
 <p><a target="_blank" rel="noopener" href="https://visualgo.net/zh/sorting">排序（冒泡排序，选择排序，插入排序，归并排序，快速排序，计数排序，基数排序） - VisuAlgo</a> </p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011248819.png" alt="img"></p>
 <h3 id="引言"><a href="#引言" class="headerlink" title="引言:"></a>引言:</h3><ol>
 <li><p>「排序算法 Sorting Algorithm」用于对一组数据按照特定顺序进行排列。排序算法有着广泛的应用，因为有 序数据通常能够被更有效地查找、分析和处理。</p>
 </li>
@@ -4498,7 +4497,7 @@
 </li>
 <li><p>11：完成整个工作后，用户程序清除堆栈，还原回进行任何过程调用之前一样，SP自增。</p>
 </li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240610133629462.png" alt="image-20240610133629462" style="zoom:80%;" /></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241434.png" alt="image-20240610133629462" style="zoom:80%;" /></li>
 </ul>
 <h3 id="操作系统体系结构"><a href="#操作系统体系结构" class="headerlink" title="操作系统体系结构"></a>操作系统体系结构</h3><blockquote>
 <p>大内核、微内核、分层结构、模块化、外核</p>
@@ -4593,7 +4592,7 @@
 <p>进程是<strong>动态</strong>的，进程实例是<strong>静态</strong>的。</p>
 <p>操作系统<strong>以进程为单位进行资源的分配和调度</strong>。</p>
 <h4 id="进程模型"><a href="#进程模型" class="headerlink" title="进程模型"></a>进程模型</h4><p>软件可以视为一组进程的集合</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240610140621701.png" alt="image-20240610140621701" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241488.png" alt="image-20240610140621701" style="zoom:50%;" /> 
 
  
 
@@ -4660,7 +4659,7 @@
 </ul>
 </li>
 </ul>
- <img src="E:\DeskTable\博客学习截图传输\image-20240610172240806.png" alt="image-20240610172240806" style="zoom:50%;" /> 
+ <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241084.png" alt="image-20240610172240806" style="zoom:50%;" /> 
 
 <h3 id="线程-Thread"><a href="#线程-Thread" class="headerlink" title="线程 Thread"></a>线程 Thread</h3><h4 id="线程的概念"><a href="#线程的概念" class="headerlink" title="线程的概念"></a>线程的概念</h4><p>在进程当中划分出线程，是对一个进程中已得到CPU资源的一种利用的方式</p>
 <ul>
@@ -4824,7 +4823,7 @@ while (true) &#123;
 <h2 id="CH4—"><a href="#CH4—" class="headerlink" title="CH4—"></a>CH4—</h2><p>文件系统 File System</p>
 <p>directory 目录</p>
 <p>目录树</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240313110501430.png" alt="image-20240313110501430" style="zoom:50%;" /> 
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241444.png" alt="image-20240313110501430" style="zoom:50%;" /> 
 
 <p>UNIX中目录树唯一</p>
 <p>两种查找方式：</p>

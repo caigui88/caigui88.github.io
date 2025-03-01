@@ -104,7 +104,7 @@
 <li>关系型数据库是通过库和表分隔不同的数据，表中数据存储的方式是行列，区分相同格式的不同数据。</li>
 </ul>
 </blockquote>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240418090602529.png" alt="image-20240418090602529"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011234675.png" alt="image-20240418090602529"></p>
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="JDBC-1"><a href="#JDBC-1" class="headerlink" title="JDBC"></a>JDBC</h3><h4 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h4><blockquote>
 <p>JAVA Database Connectivity Java的数据库连接</p>
 <p>JDBC为JAVA的一组独立于任何数据库管理系统的API</p>
@@ -206,7 +206,7 @@
 
 
 <h4 id="软编码——推荐"><a href="#软编码——推荐" class="headerlink" title="软编码——推荐"></a>软编码——推荐</h4><p>在根目录下创建db.properties配置文件</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240423230410644.png" alt="image-20240423230410644"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235750.png" alt="image-20240423230410644"> </p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://localhost:3306/atguigu</span></span><br><span class="line"><span class="attr">username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">password</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">initialSize</span>=<span class="string">10</span></span><br><span class="line"><span class="attr">maxActive</span>=<span class="string">20</span></span><br></pre></td></tr></table></figure>
 
 
@@ -242,9 +242,9 @@
 
 
 
-<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p><img src="E:\DeskTable\博客学习截图传输\image-20240424205748611.png" alt="image-20240424205748611"> </p>
+<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235565.png" alt="image-20240424205748611"> </p>
 <p>可以看到，如果使用Util版本的连接池，则会获取到三个不同的连接</p>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240424205839547.png" alt="image-20240424205839547"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235417.png" alt="image-20240424205839547"> </p>
 <p>而使用了Util2的连接池后，则一个线程里只会获取到一个链接，并且进行反复使用</p>
 <h3 id="DAO封装与BaseDAO工具类"><a href="#DAO封装与BaseDAO工具类" class="headerlink" title="DAO封装与BaseDAO工具类"></a>DAO封装与BaseDAO工具类</h3><blockquote>
 <p>DAO Data Access Object 数据访问对象</p>
@@ -398,17 +398,17 @@
       
         <h1 id="Linux-使用指南"><a href="#Linux-使用指南" class="headerlink" title="Linux 使用指南"></a>Linux 使用指南</h1><h2 id="Ubuntu忘记密码的解决方法"><a href="#Ubuntu忘记密码的解决方法" class="headerlink" title="Ubuntu忘记密码的解决方法"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/Zhishuifuyue/article/details/113857580">Ubuntu忘记密码的解决方法</a></h2><p>下面是修改密码的详细步骤：</p>
 <p>1、重启Ubuntu系统，开机时长按shift（这里要注意鼠标按键必须是在虚拟机里，而不是在windows里）按键进入Ubuntu的GRUB菜单，选择Advance Options for ubuntu 选项，如下如所示：</p>
-<p><img src="/.%5CLinux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.assets%5Cfec9c9a697e5ed01ffb3105038f90f6b.png" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238114.png" alt="img"></p>
 <p>2、在高级模式中选择Recovery mode模式，<strong>按‘E’键进入编辑模式（必须先按E键，而不是Enter键）</strong>，如下图所示：  </p>
-<p><img src="/.%5CLinux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.assets%5C366b67cfdc3a25c97647345d3bcb17e1.png" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238633.png" alt="img"></p>
 <p>3、在编辑模式中通过上下键移动光标寻找到RO，并将其修改为RW模式，（刚开始看不到RO，按键盘向下箭头可以往下走）如下图所示，</p>
-<p><img src="/.%5CLinux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.assets%5Cdf4db19689d36cc2ae9721cbd6064f67.png" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238291.png" alt="img"></p>
 <p>ro改成rw后，按ctrl+ X 进入系统 ,正在进入系统，如下图：</p>
-<p><img src="/.%5CLinux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.assets%5Ce2c28b0d308a1b49dd31e6c10c7a9541.png" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238234.png" alt="img"></p>
 <p>4、进入系统后，会显示BIOS界面，选择root并回车确认，如下图所示：    </p>
-<p><img src="/.%5CLinux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.assets%5C961c8b758a0672e32186fad3e8d95818.png" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238745.png" alt="img"></p>
 <p>5、如上选择回车root，使用命令passwd修改密码，格式：passwd   用户名（自己的登录用户名），回车，然后会提示要求你输入新的密码，如下所示：</p>
-<p><img src="/.%5CLinux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.assets%5C84e4031b2caea9e11fc4f177f4eeb2aa.png" alt="img"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238010.png" alt="img"></p>
 <p>6、修改完成后，输入reboot 回车，重启系统，在登录界面使用刚修改的密码即可登录。</p>
 <h2 id="查询当前-IP"><a href="#查询当前-IP" class="headerlink" title="查询当前 IP"></a>查询当前 IP</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a</span><br></pre></td></tr></table></figure>
 
@@ -477,7 +477,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="Idea偏门设置"><a href="#Idea偏门设置" class="headerlink" title="Idea偏门设置"></a>Idea偏门设置</h1><h2 id="项目启动数量默认限制为5"><a href="#项目启动数量默认限制为5" class="headerlink" title="项目启动数量默认限制为5"></a>项目启动数量默认限制为5</h2><p>点开<em>settings</em>后可以看到在advanced settings里搜索temporary即可找到设置，修改默认数量即可</p>
-<p><img src="D:\Blog\source_posts\开发工具\idea偏门设置.assets\image-20241101225455911.png" alt="image-20241101225455911"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238608.png" alt="image-20241101225455911"></p>
 
       
     </div>
@@ -995,7 +995,7 @@
 <li><p>项目结构的统一构建</p>
 <ol>
 <li><p>使用maven工具构建项目，得到的项目都具有同样的目录结构</p>
-<img src="E:\DeskTable\博客学习截图传输\image-20240818160911157.png" alt="image-20240818160911157" style="zoom:50%;" /></li>
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239503.png" alt="image-20240818160911157" style="zoom:50%;" /></li>
 </ol>
 </li>
 </ol>
@@ -1018,7 +1018,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240830150934607.png" alt="image-20240830150934607"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239773.png" alt="image-20240830150934607"> </p>
 <h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><h4 id="依赖配置"><a href="#依赖配置" class="headerlink" title="依赖配置"></a>依赖配置</h4><p>添加dependencies标签后，</p>
 <p>使用dependency引入依赖坐标groupId，artifactId，version</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactid</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactid</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1027,7 +1027,7 @@
 <ul>
 <li>直接依赖：在当前项目中通过依赖配置建立的依赖关系</li>
 <li>间接依赖：被依赖的资源如果配置了其他的依赖资源，这当前项目也会间接依赖其他资源</li>
-<li><img src="E:\DeskTable\博客学习截图传输\image-20240830151846969.png" alt="image-20240830151846969"></li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239319.png" alt="image-20240830151846969"></li>
 </ul>
 <p><strong>排除依赖</strong>：也可以主动断开依赖的资源，被排除的依赖无需指定版本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;</span><br><span class="line">	&lt;version&gt;</span><br><span class="line">	&lt;exclusions&gt; 被排除的依赖</span><br><span class="line">		&lt;exclusion&gt;</span><br><span class="line">			&lt;groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;</span><br><span class="line">		&lt;/exclusions&gt;</span><br><span class="line">	&lt;exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
@@ -1041,7 +1041,7 @@
 <li>测试程序范围有效（test文件夹范围内）</li>
 <li>是否参与打包运行（package指令范围内）</li>
 </ul>
-<p><img src="E:\DeskTable\博客学习截图传输\image-20240830152431678.png" alt="image-20240830152431678"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239193.png" alt="image-20240830152431678"> </p>
 <h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>三套独立的生命周期</p>
 <p><strong>clean</strong>：清理工作，移除上一次构建生成的文件</p>
 <p><strong>default</strong>：</p>

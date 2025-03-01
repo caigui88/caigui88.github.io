@@ -13,16 +13,16 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Spring原理 学习spring较为底层的原理  容器接口 BeanFactory ApplicationContext的父接口 spring的核心容器，主要的ApplicationContext实现都【组合】了其功能  beanFactory管理容器 其中容器中的single instance bean都是由 DefaultSingletonBeanRegistry 的singletonObj">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="d:\Blog\source_posts\%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91\%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0\spring%E5%8E%9F%E7%90%86%E7%AF%87.assets\ConfigurableApplicationContext.png">
-<meta property="og:image" content="d:\Blog\source_posts\%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91\%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0\spring%E5%8E%9F%E7%90%86%E7%AF%87.assets\DefaultListableBeanFactory.png">
-<meta property="og:image" content="d:\Blog\source\_posts\%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91\%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0\spring%E5%8E%9F%E7%90%86%E7%AF%87.assets\image-20241029201137782.png">
-<meta property="og:image" content="d:\Blog\source_posts\%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91\%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0\spring%E5%8E%9F%E7%90%86%E7%AF%87.assets\ConfigurableApplicationContext-1730200572243-1.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228523.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228085.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228078.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228782.png">
 <meta property="article:published_time" content="2025-03-01T03:35:47.169Z">
-<meta property="article:modified_time" content="2024-12-30T11:43:11.558Z">
+<meta property="article:modified_time" content="2025-03-01T04:28:58.054Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习规划">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:\Blog\source_posts\%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91\%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0\spring%E5%8E%9F%E7%90%86%E7%AF%87.assets\ConfigurableApplicationContext.png">
+<meta name="twitter:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228523.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -108,7 +108,7 @@
         <h1 id="Spring原理"><a href="#Spring原理" class="headerlink" title="Spring原理"></a>Spring原理</h1><blockquote>
 <p>学习spring较为底层的原理</p>
 </blockquote>
-<h2 id="容器接口"><a href="#容器接口" class="headerlink" title="容器接口"></a>容器接口</h2><p><img src="D:\Blog\source_posts\后端开发\框架学习\spring原理篇.assets\ConfigurableApplicationContext.png" alt="ConfigurableApplicationContext"></p>
+<h2 id="容器接口"><a href="#容器接口" class="headerlink" title="容器接口"></a>容器接口</h2><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228523.png" alt="ConfigurableApplicationContext"></p>
 <h3 id="BeanFactory"><a href="#BeanFactory" class="headerlink" title="BeanFactory"></a>BeanFactory</h3><blockquote>
 <p><code>ApplicationContext</code>的父接口</p>
 <p>spring的<strong>核心容器</strong>，主要的<code>ApplicationContext</code>实现都【组合】了其功能</p>
@@ -118,7 +118,7 @@
 <h4 id="BeanFactory的功能"><a href="#BeanFactory的功能" class="headerlink" title="BeanFactory的功能"></a>BeanFactory的功能</h4><blockquote>
 <p>控制反转<em>IOC</em>，基本的依赖注入，Bean的生命周期的各种功能都由其实现类<code>DefaultListableBeanFactory</code>提供</p>
 </blockquote>
-<p><img src="D:\Blog\source_posts\后端开发\框架学习\spring原理篇.assets\DefaultListableBeanFactory.png" alt="DefaultListableBeanFactory"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228085.png" alt="DefaultListableBeanFactory"></p>
 <h4 id="BeanFactory实现的特点"><a href="#BeanFactory实现的特点" class="headerlink" title="BeanFactory实现的特点"></a>BeanFactory实现的特点</h4><h3 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h3><blockquote>
 </blockquote>
 <h4 id="ApplicationContext的功能"><a href="#ApplicationContext的功能" class="headerlink" title="ApplicationContext的功能"></a>ApplicationContext的功能</h4><p><code>ConfigurableApplicationContext interface</code>的继承&#x2F;实现图谱</p>
@@ -133,8 +133,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(context.getMessage(<span class="string">&quot;hi&quot;</span>,<span class="literal">null</span>, Locale.SIMPLIFIED_CHINESE));</span><br><span class="line">System.out.println(context.getMessage(<span class="string">&quot;hi&quot;</span>,<span class="literal">null</span>, Locale.ENGLISH));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<img src="D:\Blog\source\_posts\后端开发\框架学习\spring原理篇.assets\image-20241029201137782.png" alt="image-20241029201137782" style="zoom:80%;" /> 
-
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228078.png" alt="image-20241029201137782"> </p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="comment"># 国际化</span></span><br><span class="line">  <span class="attr">messages:</span></span><br><span class="line">    <span class="attr">basename:</span> <span class="string">i18n/messages</span></span><br><span class="line">    <span class="attr">encoding:</span> <span class="string">UTF-8</span></span><br></pre></td></tr></table></figure>
 
 <p>需注意，假如将 messages配置文件修改了路径，则需要额外在 <code>application.yml</code>当中专门进行配置，防止寻找不到messages.properties文件的位置</p>
@@ -186,7 +185,7 @@
 
 
 
-<p><img src="D:\Blog\source_posts\后端开发\框架学习\spring原理篇.assets\ConfigurableApplicationContext-1730200572243-1.png" alt="ConfigurableApplicationContext"></p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011228782.png" alt="ConfigurableApplicationContext-1730200572243-1"></p>
 <h3 id="事件解耦"><a href="#事件解耦" class="headerlink" title="事件解耦"></a>事件解耦</h3>
       
     </div>
