@@ -1,1391 +1,180 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Moru</title><meta name="author" content="moru"><meta name="copyright" content="moru"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="道虽迩，不行不至">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moru">
 <meta property="og:url" content="http://example.com/page/3/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="Moru">
+<meta property="og:description" content="道虽迩，不行不至">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:author" content="moru">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Moru',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Moru</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">Moru</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Mybatis/" title="mybatis学习">mybatis学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.241Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="content">MyBatis学习 什么是MyBatis 是一个持久化框架，用于简化JDBC的开发 结合JDBC的使用操作 五大步骤  建立驱动连接 连接数据库，获取连接对象 Connection 获取执行SQL的对象Statement，执行SQL，取得返回结果 封装返回结果 释放资源  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/JDBC/" title="JDBC">JDBC</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.239Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="content">JDBC  通过I/O操作对程序运行过程中出现的数据进行持久化，但保存下来的数据并不具备结构和逻辑，不便于管理与维护 通过关系型数据库，将数据进行存储，交由数据库进行维护，  关系型数据库是通过库和表分隔不同的数据，表中数据存储的方式是行列，区分相同格式的不同数据。    基础 JDBC 概念：  JAVA Database Connectivity Java的数据库连接 JDBC为JAVA的一组独立于任何数据库管理系统的API JDBC只提供接口规范，由各个数据库厂商提供实现，使用jar包，导入jar进行使用 体会接口编程，只关心接口和规范，无需关心实现  不同的数据库使用不同的驱动jar包 對JDBC的使用 Driver注冊驅動  Class.forName(&quot;com.sql.cj.jdbc.Driver&quot;); 儅使用JDBC鏈接數據庫時，需要加載數據庫特定的驅動程序，以便與數據庫進行通信，加載驅動程序的目的是爲了注冊驅動程序，使得JDBC...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/testWorkFlow/" title="无标题">无标题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.216Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span></div><div class="content">{"name":"package and deploy on AliyunCloud","on":{"push":{"branches":["future"]},"pull_request":{"branches":["future"]}},"jobs":{"build":{"runs-on":"ubuntu-latest","steps":[{"uses":"actions/checkout@v4"},{"name":"Set up JDK 11","uses":"actions/setup-java@v4","with":{"java-version":"17","distribution":"temurin","cache":"maven"}},{"name":"Build with Maven","run":"mvn -B package --file pom.xml"},{"name":"Update dependency...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/maven/" title="maven">maven</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.215Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">MAVEN  一套管理和构建java项目的工具 管理jar包，避免版本冲突  依赖的自动管理 在maven的pom.xml文件当中进行信息的配置，而后会自动下载所需要的依赖包 不需要手动导入jar包，实现了自动导入 统一项目结构  项目构建 POM文件中的常见配置 properties 12345678&lt;!-- 定义常用的属性--&gt;&lt;properties&gt;  &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;  &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;  &lt;java.version&gt;11&lt;/java.version&gt;  &lt;maven.compiler.source&gt;11&lt;/maven.compiler.source&gt; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Linux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="linux">linux</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.214Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">Linux 使用指南 Ubuntu忘记密码的解决方法 下面是修改密码的详细步骤： 1、重启Ubuntu系统，开机时长按shift（这里要注意鼠标按键必须是在虚拟机里，而不是在windows里）按键进入Ubuntu的GRUB菜单，选择Advance Options for ubuntu 选项，如下如所示：  2、在高级模式中选择Recovery mode模式，按‘E’键进入编辑模式（必须先按E键，而不是Enter键），如下图所示：  3、在编辑模式中通过上下键移动光标寻找到RO，并将其修改为RW模式，（刚开始看不到RO，按键盘向下箭头可以往下走）如下图所示，  ro改成rw后，按ctrl+ X 进入系统 ,正在进入系统，如下图：  4、进入系统后，会显示BIOS界面，选择root并回车确认，如下图所示：  5、如上选择回车root，使用命令passwd修改密码，格式：passwd   用户名（自己的登录用户名），回车，然后会提示要求你输入新的密码，如下所示：  6、修改完成后，输入reboot 回车，重启系统，在登录界面使用刚修改的密码即可登录。 查询当前 IP 1ip a </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/idea%E5%81%8F%E9%97%A8%E8%AE%BE%E7%BD%AE/" title="idea设置">idea设置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.212Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">Idea偏门设置 项目启动数量默认限制为5 点开settings后可以看到在advanced settings里搜索temporary即可找到设置，修改默认数量即可  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git%E5%AD%A6%E4%B9%A0/" title="git 使用总结">git 使用总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.211Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">GIT 概述 Git的作用  备份 代码还原 协同开发 追溯问题代码的编写人和编写时间  版本控制方式  集中式版本控制：版本库集中存放在中央服务器当中，team里每个人在需要对代码进行修改迭代时从中央服务器下载，在修改完后提交到中央版本库当中。例如：SVN和CVS 分布式版本控制：不存在“中央服务器”，每个人电脑上有一套完整的版本库。无需联网，多人协作时只需要各自修改的内容推送到team内每个成员， 就能看到对方的修改。例如Git  Git Git是分布式的，不需要中央服务器。而在实际使用中有一个中心服务器只是为了方便团队开发者交换修改的代码，该服务器相当于一个公共开发者永不关机的PC。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Github%20Action%20/" title="github-action">github-action</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.210Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">Github Action 前言 为了避免每次项目更新都进行手动的：打包、关闭旧版本程序和启动新版本程序等步骤，使用github提供的github-action来完成上述的过程的自动化实现。 什么是 Gitub-Actions？ GitHub Actions 是自动化工作流程工具，用于自动化构建、测试、部署和集成软件项目。它通过一系列事件、触发器和任务来执行各种操作，以实现持续集成和持续交付。 GitHub 允许你可以发布以及共享你自己的 Actions，别人可以通过市场找到你的 Actions 从而不需要在重复造轮子了。 什么是 CI/CD？ CI/CD 是持续集成（Continuous Integration）与持续交付 / 持续部署（Continuous Delivery/Continuous...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/" title="docker">docker</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.209Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></span></div><div class="content">Docker  学习路线： [单机版Docker]概述——安装——命令——镜像——容器数据卷——DockerFile——Docker网络原理——IDEA整合Docker [进阶版]Docker Compose——Docker Swarm（简化版的jenkins）  概述 开发和上线使用的是两套环境，应用环境，应用配置 开发 —— 运维；在我的电脑上正常，当迁移后出现了问题。 常见命令  docker pull：拉取image docker images：查看本地image docker rm -rf：强制删除容器 docker rmi：删除本地image docker build：根据dockerfile构建image docker save：将本地image以压缩包的形式保存下来，再通过docker load加载到本地 docker run：创建一个image的实例——容器container docker stop：停止一个容器container docker statr：重新开启处于停止状态的容器container  全部指令官方文档：Docker...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/JavaWeb%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" title="黑马➕Javaweb">黑马➕Javaweb</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-03-01T03:35:47.204Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></span></div><div class="content">JavaWeb学习经验总结  本文档用于总结学习黑马的javaweb课程的知识点和内容，根据视频顺序进行总结  项目总览 总览本项目，是一个实现了前后端发分离的单体架构项目。 单体架构：即一个项目所需的所有功能组件：包括业务逻辑，功能和交互组件都集成在一个环境当中，最终上限部署时打包在一个war包当中，并运行在一个服务器上。 经典的单体架构技术选择为：Java➕Spring MVC 此处引出黑马javaweb选择的框架：SSM框架。 SSM框架即为：Spring➕Spring MVC➕Mybatis，是一套标准的MVC模式：Model-View-Controller模式，模型、视图与控制器。 MVC模式三大部分：  **Model 模型：**即实际功能与业务逻辑的实现区域，同时具备对数据的直接访问权。 **Controller 控制器：**负责进行事件的处理并作出事件的响应。 **View...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">moru</div><div class="author-info-description">道虽迩，不行不至</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法">markdown语法</a><time datetime="2025-03-01T05:01:35.387Z" title="发表于 2025-03-01 13:01:35">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/" title="经典算法学习">经典算法学习</a><time datetime="2025-03-01T03:35:47.302Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/" title="Leetcode刷题题解">Leetcode刷题题解</a><time datetime="2025-03-01T03:35:47.301Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络学习">计算机网络学习</a><time datetime="2025-03-01T03:35:47.296Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/" title="计算机组成原理">计算机组成原理</a><time datetime="2025-03-01T03:35:47.295Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/"><span class="card-category-list-name">leetcode刷题</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/spring/"><span class="card-category-list-name">spring</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/typora/"><span class="card-category-list-name">typora</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">前端基础</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/"><span class="card-category-list-name">大学公共基础课</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/"><span class="card-category-list-name">学习规划路线</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">6</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/elasticsearch/" style="font-size: 1.1em; color: #999">elasticsearch</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 1.1em; color: #999">java底层</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 1.18em; color: #999ca1">基础</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 1.1em; color: #999">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">操作系统</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 1.1em; color: #999">非关系型</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/Mybatis/" style="font-size: 1.1em; color: #999">Mybatis</a> <a href="/tags/SQL/" style="font-size: 1.1em; color: #999">SQL</a> <a href="/tags/juc/" style="font-size: 1.1em; color: #999">juc</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.42em; color: #99a6b7">工具</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 1.1em; color: #999">软件架构设计</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.18em; color: #999ca1">前端</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 1.1em; color: #999">闲杂经验</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 1.1em; color: #999">设计架构</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.34em; color: #99a3b0">数据库</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 1.1em; color: #999">java框架</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">软件项目管理</a> <a href="/tags/JDBC/" style="font-size: 1.18em; color: #999ca1">JDBC</a> <a href="/tags/docker/" style="font-size: 1.1em; color: #999">docker</a> <a href="/tags/markdown/" style="font-size: 1.1em; color: #999">markdown</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 1.1em; color: #999">关系型</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 1.5em; color: #99a9bf">期末复习</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 1.1em; color: #999">高阶</a> <a href="/tags/linux/" style="font-size: 1.1em; color: #999">linux</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 1.1em; color: #999">刷题</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.1em; color: #999">微信小程序</a> <a href="/tags/github/" style="font-size: 1.1em; color: #999">github</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 1.1em; color: #999">js基础</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">算法</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 1.26em; color: #999fa8">大学专业课</a> <a href="/tags/java/" style="font-size: 1.18em; color: #999ca1">java</a> <a href="/tags/spring/" style="font-size: 1.1em; color: #999">spring</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 1.1em; color: #999">离散数学</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 1.1em; color: #999">html基础</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 1.34em; color: #99a3b0">后端</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.1em; color: #999">编译原理</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 1.1em; color: #999">软件设计</a> <a href="/tags/Java/" style="font-size: 1.34em; color: #99a3b0">Java</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 1.18em; color: #999ca1">单体架构</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
   
-    <article id="post-数据库/Mybatis" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Mybatis/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.241Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Mybatis/">mybatis学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <ul class="card-archive-list">
       
-        <h1 id="MyBatis学习"><a href="#MyBatis学习" class="headerlink" title="MyBatis学习"></a>MyBatis学习</h1><h2 id="什么是MyBatis"><a href="#什么是MyBatis" class="headerlink" title="什么是MyBatis"></a>什么是MyBatis</h2><p>是一个持久化框架，用于简化JDBC的开发</p>
-<h2 id="结合JDBC的使用操作"><a href="#结合JDBC的使用操作" class="headerlink" title="结合JDBC的使用操作"></a>结合JDBC的使用操作</h2><h3 id="五大步骤"><a href="#五大步骤" class="headerlink" title="五大步骤"></a>五大步骤</h3><ol>
-<li>建立驱动连接</li>
-<li>连接数据库，获取连接对象 Connection</li>
-<li>获取执行SQL的对象Statement，执行SQL，取得返回结果</li>
-<li>封装返回结果</li>
-<li>释放资源</li>
-</ol>
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/03/">
+            <span class="card-archive-list-date">
+              三月 2025
+            </span>
+            <span class="card-archive-list-count">54</span>
+          </a>
+        </li>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Mybatis/" data-id="cm7pquzi7001jr8v2coukau2d" data-title="mybatis学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/03/">
+            <span class="card-archive-list-date">
+              三月 2024
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
       
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据库/JDBC" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/JDBC/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.239Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/JDBC/">JDBC</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><blockquote>
-<p>通过I&#x2F;O操作对程序运行过程中出现的数据进行持久化，但保存下来的数据并不具备结构和逻辑，不便于管理与维护</p>
-<p>通过关系型数据库，将数据进行存储，交由数据库进行维护，</p>
-<ul>
-<li>关系型数据库是通过库和表分隔不同的数据，表中数据存储的方式是行列，区分相同格式的不同数据。</li>
-</ul>
-</blockquote>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011234675.png" alt="image-20240418090602529"></p>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="JDBC-1"><a href="#JDBC-1" class="headerlink" title="JDBC"></a>JDBC</h3><h4 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h4><blockquote>
-<p>JAVA Database Connectivity Java的数据库连接</p>
-<p>JDBC为JAVA的一组独立于任何数据库管理系统的API</p>
-<p>JDBC只提供接口规范，由各个数据库厂商提供实现，使用jar包，导入jar进行使用</p>
-<p>体会接口编程，只关心接口和规范，无需关心实现</p>
-</blockquote>
-<p>不同的数据库使用不同的驱动jar包</p>
-<h3 id="對JDBC的使用"><a href="#對JDBC的使用" class="headerlink" title="對JDBC的使用"></a>對JDBC的使用</h3><h4 id="Driver注冊驅動"><a href="#Driver注冊驅動" class="headerlink" title="Driver注冊驅動"></a>Driver注冊驅動</h4><ul>
-<li><code>Class.forName(&quot;com.sql.cj.jdbc.Driver&quot;);</code></li>
-<li>儅使用JDBC鏈接數據庫時，需要加載數據庫特定的驅動程序，以便與數據庫進行通信，加載驅動程序的目的是爲了注冊驅動程序，使得JDBC API能夠識別并與特定的數據庫進行交互。</li>
-<li>從JDK6開始，無需顯式調用<code>Class.forName()</code>來加載JDBC驅動程序，只要在類路徑中集成了對應的jar包，會自動在初始時完成驅動程序的注冊。</li>
-</ul>
-<h4 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a><code>Connection</code></h4><ul>
-<li><p>建立鏈接需要指定三個參數：數據庫url、用戶名、密碼</p>
-<ul>
-<li><p>URL：“jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;atguigu”</p>
-<p>jdbc:mysql&#x2F;&#x2F;IP地址：端口號&#x2F;數據庫名稱?參數鍵值對1&amp;參數鍵值對2</p>
-</li>
-</ul>
-</li>
-<li><p><code>Connection</code>接口還負責管理事務，<code>Connection</code>接口提供了<code>commit</code>和<code>rollback</code>方法，用戶提交事務和回滾事務。</p>
-</li>
-<li><p>可以創建<code>Statement</code>對象，用於執行SQL語句并與數據庫進行交互。</p>
-</li>
-<li><p>在使用JDBC技術時，必須要先獲取<code>Connection</code>對象，在使用完畢后，要釋放資源，避免資源浪費以及泄露。</p>
-</li>
-</ul>
-<h4 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a><code>Statement</code></h4><blockquote>
-<p>用於執行SQL語句並於數據庫進行交互</p>
-<p>通過<code>Statement</code>對象，可以向數據庫發送SQL語句並獲取執行結果</p>
-</blockquote>
-<ul>
-<li><p>結果可以是一個或多個</p>
-<ul>
-<li>增刪改：受影響行數單個結果</li>
-<li>查詢：單行單列，多行多列，單行多列</li>
-</ul>
-</li>
-<li><p>使用<code>Statement</code>會產生SQL注入的問題，即通過使用如‘’對SQL原來的結構進行破壞，使得SQL語句變成永真句，進而完成注入，非法訪問得到數據。</p>
-</li>
-</ul>
-<h4 id="PreparedStatement"><a href="#PreparedStatement" class="headerlink" title="PreparedStatement"></a>PreparedStatement</h4><blockquote>
-<p>本身為<code>Statement</code>的子接口，繼承于<code>Statement</code>接口，用於解決<code>Statement</code>SQL注入的問題。</p>
-</blockquote>
-<p>解決SQL注入的方法為：</p>
-<ul>
-<li>對傳入的SQL語句進行預編譯，使用一對<code>‘’</code>將用戶輸入的sql包裹起來，儅用戶輸入的語句含有‘’時，會將輸入的語句中的‘’使用轉義字符\‘和\’代替，以防止SQL注入的攻擊</li>
-<li></li>
-</ul>
-<h4 id="ResultSet"><a href="#ResultSet" class="headerlink" title="ResultSet"></a>ResultSet</h4><ul>
-<li><p><code>ResultSet.next()</code>首先判斷是否存在下一行，若有則游標向下移動一行；若無則停止。</p>
-</li>
-<li><p>然後使用<code>ResultSet.getXXX()</code>方法來根據列名讀取相應的數據。</p>
-</li>
-</ul>
-<blockquote>
-<p>將多個零散的數據封裝成一個數據————ORM</p>
-<p>ORM-Object Relative Mapping——對象-關係映射</p>
-<p>利用對象操縱數據庫中的表、</p>
-</blockquote>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li>语法问题</li>
-<li>库名出错</li>
-</ol>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="JDBC拓展"><a href="#JDBC拓展" class="headerlink" title="JDBC拓展"></a>JDBC拓展</h3><h4 id="实体类和ORM"><a href="#实体类和ORM" class="headerlink" title="实体类和ORM"></a>实体类和ORM</h4><blockquote>
-<p>一个表对应一种对象</p>
-<p>表中的一列数据对应对象的一种属性</p>
-<p>因为数据库中的数据是零散的，通过将数据库中的数据对应到Java当中的一个对象上，以对象作为载体进行数据的操作，这个载体就是实体类</p>
-<p>ORM-Object Relational Mapping</p>
-<p>对象到关系数据库的映射：在编程中，将面向对象的概念和数据库中表的概念对应起来，以面向对象的角度操作数据库中的数据——一张表对应一个类；一行数据对应一个实例；一列对应一个类的属性</p>
-</blockquote>
-<h4 id="主键回显"><a href="#主键回显" class="headerlink" title="主键回显"></a>主键回显</h4><p>新增+修改</p>
-<p>场景：用户注册，在成功注册后添加昵称</p>
-<p>修改刚刚注册的用户数据。</p>
-<h4 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h4><p>对于一次需要插入多个值，如果只是单纯采用for-i循环进行插入，由于需要多次进行建立连接的建立和断开，性能差，时间开销大：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testMoreInsert</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">		<span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/atguigu&quot;</span>;</span><br><span class="line">		<span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">		<span class="type">String</span> <span class="variable">pwd</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url,name,pwd);</span><br><span class="line">	</span><br><span class="line">		<span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;insert into  tmp(name,salary,age) values (?,?,?)&quot;</span>;</span><br><span class="line">		<span class="type">PreparedStatement</span> <span class="variable">preparedStatement</span> <span class="operator">=</span> connection.prepareStatement(sql);</span><br><span class="line">		</span><br><span class="line">		<span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">			preparedStatement.setString(<span class="number">1</span>,<span class="string">&quot;第&quot;</span>+i +<span class="string">&quot;人&quot;</span>);</span><br><span class="line">			preparedStatement.setDouble(<span class="number">2</span>,<span class="number">100.0</span>+i);</span><br><span class="line">			preparedStatement.setInt(<span class="number">3</span>,<span class="number">20</span>+i);</span><br><span class="line">			</span><br><span class="line">			preparedStatement.executeUpdate();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">long</span> <span class="variable">end</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">		</span><br><span class="line">		System.out.println(end - start);</span><br><span class="line">		</span><br><span class="line">		preparedStatement.close();</span><br><span class="line">		connection.close();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>因此采取批量操作：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testMoreInsert</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">	<span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/atguigu?rewriteBatchedStatements=true&quot;</span>;</span><br><span class="line">	<span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">	<span class="type">String</span> <span class="variable">pwd</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url, name, pwd);</span><br><span class="line">	</span><br><span class="line">	<span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;insert into  tmp(name,salary,age) values (?,?,?)&quot;</span>;</span><br><span class="line">	<span class="type">PreparedStatement</span> <span class="variable">preparedStatement</span> <span class="operator">=</span> connection.prepareStatement(sql);</span><br><span class="line">	</span><br><span class="line">	<span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">		preparedStatement.setString(<span class="number">1</span>, <span class="string">&quot;第&quot;</span> + i + <span class="string">&quot;人&quot;</span>);</span><br><span class="line">		preparedStatement.setDouble(<span class="number">2</span>, <span class="number">100.0</span> + i);</span><br><span class="line">		preparedStatement.setInt(<span class="number">3</span>, <span class="number">20</span> + i);</span><br><span class="line">		</span><br><span class="line">		preparedStatement.addBatch();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	preparedStatement.executeBatch();</span><br><span class="line">	<span class="type">long</span> <span class="variable">end</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">	</span><br><span class="line">	System.out.println(end - start);</span><br><span class="line">	</span><br><span class="line">	preparedStatement.close();</span><br><span class="line">	connection.close();</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过将多个值合并入同一条待执行的sql语句，则只需要建立一次连接即可完成值的插入，大大提高了效率</p>
-<h3 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h3><blockquote>
-<p>池技术的核心思想：通过对已创建资源的复用，避免不必要的重复创建和销毁。</p>
-</blockquote>
-<p>预先创建一部分Connection对象，通过配置，由连接池负责创建连接，管理连接，释放连接等操作</p>
-<h4 id="常见连接池"><a href="#常见连接池" class="headerlink" title="常见连接池"></a>常见连接池</h4><ul>
-<li>DBCP</li>
-<li>C3P0</li>
-<li>Proxool</li>
-<li>Druid 德鲁伊</li>
-<li>Hikari(shi ga li)</li>
-</ul>
-<h3 id="druid-德鲁伊"><a href="#druid-德鲁伊" class="headerlink" title="druid 德鲁伊"></a>druid 德鲁伊</h3><h4 id="硬编码"><a href="#硬编码" class="headerlink" title="硬编码"></a>硬编码</h4><p>将连接池的配置和java代码耦合在一起</p>
-<ul>
-<li>不利于更新与维护</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testHardCodeDruid</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * 硬编码：将连接池的配置信息和JAVA代码耦合</span></span><br><span class="line"><span class="comment">			1. 创建DruidDataSource连接池对象</span></span><br><span class="line"><span class="comment">		 	2. 设置连接池的配置信息</span></span><br><span class="line"><span class="comment">		 	3. 通过连接池获取连接对象</span></span><br><span class="line"><span class="comment">		 	4. 回收连接【不是释放】，将连接归还给连接池，进行复用</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//1. 创建DruidDataSource连接池对象</span></span><br><span class="line">		<span class="type">DruidDataSource</span> <span class="variable">druidDataSource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DruidDataSource</span>();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//2. 设置连接池的配置信息</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//2.1 必要配置信息</span></span><br><span class="line">		</span><br><span class="line">		druidDataSource.setDriverClassName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">		druidDataSource.setUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/atguigu&quot;</span>);</span><br><span class="line">		druidDataSource.setUsername(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">		druidDataSource.setPassword(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//2.2 非必要配置</span></span><br><span class="line">		druidDataSource.setInitialSize(<span class="number">10</span>); <span class="comment">//</span></span><br><span class="line">		druidDataSource.setMaxActive(<span class="number">20</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="type">DruidPooledConnection</span> <span class="variable">connection</span> <span class="operator">=</span> druidDataSource.getConnection();</span><br><span class="line">		</span><br><span class="line">		System.out.println(connection);</span><br><span class="line">		</span><br><span class="line">		connection.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="软编码——推荐"><a href="#软编码——推荐" class="headerlink" title="软编码——推荐"></a>软编码——推荐</h4><p>在根目录下创建db.properties配置文件</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235750.png" alt="image-20240423230410644"> </p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://localhost:3306/atguigu</span></span><br><span class="line"><span class="attr">username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">password</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">initialSize</span>=<span class="string">10</span></span><br><span class="line"><span class="attr">maxActive</span>=<span class="string">20</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testResourcesDruid</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">	<span class="comment">//1. 创建一个Properties集合，读取存储外部配置文件的key和value值</span></span><br><span class="line">	<span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//2. 读取外部配置文件，获取输入流，加载到Properties集合当中</span></span><br><span class="line">	<span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> DruidTest.class.getClassLoader().getResourceAsStream(<span class="string">&quot;db.properties&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	properties.load(inputStream);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//3. 基于Properties集合构建DruidDataSource连接池</span></span><br><span class="line">	<span class="type">DataSource</span> <span class="variable">dataSource</span> <span class="operator">=</span> DruidDataSourceFactory.createDataSource(properties);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//4. 通过连接池获取连接对象</span></span><br><span class="line">	<span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> dataSource.getConnection();</span><br><span class="line">	System.out.println(connection);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="HikariCP连接池使用"><a href="#HikariCP连接池使用" class="headerlink" title="HikariCP连接池使用"></a>HikariCP连接池使用</h3><h4 id="硬编码-1"><a href="#硬编码-1" class="headerlink" title="硬编码"></a>硬编码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testHardCodeHikari</span><span class="params">()</span><span class="keyword">throws</span> Exception&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 硬编码展示：</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//1. 创建HikariDataSource连接池对象</span></span><br><span class="line">	<span class="type">HikariDataSource</span> <span class="variable">hikariDataSource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HikariDataSource</span>();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//2. 设置配置信息</span></span><br><span class="line">	<span class="comment">//2.1 必须设置的配置信息</span></span><br><span class="line">	hikariDataSource.setDriverClassName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">	hikariDataSource.setJdbcUrl(<span class="string">&quot;jdbc:mysql://localhost/atguigu&quot;</span>);</span><br><span class="line">	hikariDataSource.setUsername(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">	hikariDataSource.setPassword(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//2.2 非必须设置的配置</span></span><br><span class="line">	hikariDataSource.setMinimumIdle(<span class="number">10</span>);</span><br><span class="line">	hikariDataSource.setMaximumPoolSize(<span class="number">20</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> hikariDataSource.getConnection();</span><br><span class="line">	System.out.println(connection);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	connection.close();</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="软编码"><a href="#软编码" class="headerlink" title="软编码"></a>软编码</h4><p><strong>Properties文件</strong></p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">driverClassName</span> = <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">jdbcUrl</span> = <span class="string">jdbc:mysql:///atguigu</span></span><br><span class="line"><span class="attr">username</span> = <span class="string">root</span></span><br><span class="line"><span class="attr">password</span> = <span class="string">root</span></span><br><span class="line"></span><br><span class="line"><span class="attr">minimumIdle</span> = <span class="string">10</span></span><br><span class="line"><span class="attr">maximumPoolSize</span> = <span class="string">20</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>Java代码</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testResourcesHikari</span><span class="params">()</span><span class="keyword">throws</span> Exception&#123;</span><br><span class="line">	<span class="comment">//1. 创建一个properties集合</span></span><br><span class="line">	<span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">	<span class="comment">//2. 读取外部配置文件，获取输入流，加载到Properties集合中</span></span><br><span class="line">	<span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span>  HikariTest.class.getClassLoader().getResourceAsStream(<span class="string">&quot;hikari.properties&quot;</span>);</span><br><span class="line">	<span class="comment">//3. 创建一个HikariCOnfig-连接池配置对象，将Properties集合传递进去</span></span><br><span class="line">	properties.load(inputStream);</span><br><span class="line">	</span><br><span class="line">	<span class="type">HikariConfig</span> <span class="variable">hikariConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HikariConfig</span>(properties);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//4. 基于HikariConfig连接池配置对象，构建HikariDataSource</span></span><br><span class="line">	<span class="type">HikariDataSource</span> <span class="variable">hikariDataSource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HikariDataSource</span>(hikariConfig);</span><br><span class="line">	</span><br><span class="line">	<span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> hikariDataSource.getConnection();</span><br><span class="line">	</span><br><span class="line">	System.out.println(connection);</span><br><span class="line">	</span><br><span class="line">	connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h2><h3 id="JDBC优化以及工具类封装"><a href="#JDBC优化以及工具类封装" class="headerlink" title="JDBC优化以及工具类封装"></a>JDBC优化以及工具类封装</h3><blockquote>
-<p>在用到了进阶篇的内容后，发现仍存在代码冗余的问题：</p>
-<ol>
-<li>一个项目中存在多个连接池；</li>
-<li>获取链接</li>
-<li>链接的回收</li>
-</ol>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JDBCUtil</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//插件一个连接池引用，因为需要提供给当前项目的全局进行使用，因此创建为公有的静态对象</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	*</span></span><br><span class="line"><span class="comment">	* DataSource 对象是 Java 中用于管理数据库连接的接口。</span></span><br><span class="line"><span class="comment">	* 它封装了与数据库的连接参数，允许程序通过该对象获取与数据库的连接，进行增删改查等操作。</span></span><br><span class="line"><span class="comment">	* */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> DataSource dataSource;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//在项目启动时，即创建连接池对象，赋值给dataSource</span></span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//创建配置对象</span></span><br><span class="line">			<span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//通过输入流得到配置文件当中的配置</span></span><br><span class="line">			<span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> JDBCUtil.class.getClassLoader()</span><br><span class="line">					.getResourceAsStream(<span class="string">&quot;db.properties&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//配置对象载入输入流得到的配置信息，完成配置实例的初始化</span></span><br><span class="line">			properties.load(inputStream);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//使用配置对象进行dataSource对象的创建和初始化</span></span><br><span class="line">			dataSource = DruidDataSourceFactory.createDataSource(properties);</span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//提供对外获取连接的方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title function_">getConn</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="comment">//通过得到的dataSource对象建立连接</span></span><br><span class="line">			<span class="keyword">return</span> dataSource.getConnection();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//提供对外回收连接的方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">release</span><span class="params">(Connection conn)</span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//将建立好的连接进行回收到连接池当中，以便其他需要连接的地方可以获取连接</span></span><br><span class="line">			conn.close();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用ThreadLocal进行优化"><a href="#使用ThreadLocal进行优化" class="headerlink" title="使用ThreadLocal进行优化"></a>使用ThreadLocal进行优化</h3><p>通过ThreadLocal让每个线程只使用一个连接进行数据库的操作，避免反复获取和回收连接导致的资源浪费。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.Senior.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSourceFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 1. 维护一个连接池对象，维护了一个线程绑定变量的ThreadLocal对象</span></span><br><span class="line"><span class="comment"> * 2. 对外提供在连接池中获取连接的方法</span></span><br><span class="line"><span class="comment"> * 3. 对外提供回收连接的方法,回收过程中，将要回收的连接从ThreadLocal当中移除</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * 目的是为了：一个线程在多次数据库操作过程中，使用同一个连接</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JDBCUtil2</span> &#123;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//插件一个连接池引用，因为需要提供给当前项目的全局进行使用，因此创建为公有的静态对象</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * DataSource 对象是 Java 中用于管理数据库连接的接口。</span></span><br><span class="line"><span class="comment">	 * 它封装了与数据库的连接参数，允许程序通过该对象获取与数据库的连接，进行增删改查等操作。</span></span><br><span class="line"><span class="comment">	 * */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> DataSource dataSource;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> ThreadLocal&lt;Connection&gt; threadLocal = <span class="keyword">new</span> <span class="title class_">ThreadLocal</span>&lt;&gt;();</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//在项目启动时，即创建连接池对象，赋值给dataSource</span></span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//创建配置对象</span></span><br><span class="line">			<span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//通过输入流得到配置文件当中的配置</span></span><br><span class="line">			<span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> com.Senior.util.JDBCUtil.class.getClassLoader()</span><br><span class="line">					.getResourceAsStream(<span class="string">&quot;db.properties&quot;</span>);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//配置对象载入输入流得到的配置信息，完成配置实例的初始化</span></span><br><span class="line">			properties.load(inputStream);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//使用配置对象进行dataSource对象的创建和初始化</span></span><br><span class="line">			dataSource = DruidDataSourceFactory.createDataSource(properties);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//提供对外获取连接的方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title function_">getConn</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//在ThreadLocal中获取Connection</span></span><br><span class="line">			<span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> threadLocal.get();</span><br><span class="line">			<span class="keyword">if</span> (conn == <span class="literal">null</span>) &#123;<span class="comment">//当conn==null时，证明threadLocal为空，即本次为第一次取连接</span></span><br><span class="line">				<span class="comment">//在连接池中，获取一个连接并存储在threadLocal当中</span></span><br><span class="line">				conn = dataSource.getConnection();</span><br><span class="line">				</span><br><span class="line">				threadLocal.set(conn);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//通过得到的dataSource对象建立连接</span></span><br><span class="line">			<span class="keyword">return</span> conn;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//提供对外回收连接的方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">release</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//将建立好的连接进行回收到连接池当中，以便其他需要连接的地方可以获取连接</span></span><br><span class="line">			<span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> threadLocal.get();</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> (conn != <span class="literal">null</span>) &#123;</span><br><span class="line">				threadLocal.remove();</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235565.png" alt="image-20240424205748611"> </p>
-<p>可以看到，如果使用Util版本的连接池，则会获取到三个不同的连接</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011235417.png" alt="image-20240424205839547"> </p>
-<p>而使用了Util2的连接池后，则一个线程里只会获取到一个链接，并且进行反复使用</p>
-<h3 id="DAO封装与BaseDAO工具类"><a href="#DAO封装与BaseDAO工具类" class="headerlink" title="DAO封装与BaseDAO工具类"></a>DAO封装与BaseDAO工具类</h3><blockquote>
-<p>DAO Data Access Object 数据访问对象</p>
-<p>让数据在JAVA中以对象的形式存在，做到：</p>
-<p>一张表对应一个实体类，一张表的操作对应一个DAO对象</p>
-<p>在JAVA操作数据库时，我们将对同一张表的增删改查作统一的维护，维护的类就属于DAO层面</p>
-<p>DAO只关注数据库的操作，供业务层Service调用</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/JDBC/" data-id="cm7pquzi7001kr8v21hc42gyf" data-title="JDBC" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-常用工具/testWorkFlow" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/testWorkFlow/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.216Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        {"name":"package and deploy on AliyunCloud","on":{"push":{"branches":["future"]},"pull_request":{"branches":["future"]}},"jobs":{"build":{"runs-on":"ubuntu-latest","steps":[{"uses":"actions/checkout@v4"},{"name":"Set up JDK 11","uses":"actions/setup-java@v4","with":{"java-version":"17","distribution":"temurin","cache":"maven"}},{"name":"Build with Maven","run":"mvn -B package --file pom.xml"},{"name":"Update dependency graph","uses":"advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6"}]}}}
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/testWorkFlow/" data-id="cm7pquzi6001fr8v2gmog5d2l" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-常用工具/maven" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/maven/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.215Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/maven/">maven</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="MAVEN"><a href="#MAVEN" class="headerlink" title="MAVEN"></a>MAVEN</h1><blockquote>
-<p>一套管理和构建java项目的工具</p>
-<p>管理jar包，避免版本冲突</p>
-</blockquote>
-<h2 id="依赖的自动管理"><a href="#依赖的自动管理" class="headerlink" title="依赖的自动管理"></a>依赖的自动管理</h2><p>在maven的pom.xml文件当中进行信息的配置，而后会自动下载所需要的依赖包</p>
-<p>不需要手动导入jar包，实现了自动导入</p>
-<h2 id="统一项目结构"><a href="#统一项目结构" class="headerlink" title="统一项目结构"></a>统一项目结构</h2><p> <img src="E:\DeskTable\博客学习截图传输\image-20240527155522617.png" alt="image-20240527155522617"> </p>
-<h2 id="项目构建"><a href="#项目构建" class="headerlink" title="项目构建"></a>项目构建</h2><h2 id="POM文件中的常见配置"><a href="#POM文件中的常见配置" class="headerlink" title="POM文件中的常见配置"></a>POM文件中的常见配置</h2><h3 id="properties"><a href="#properties" class="headerlink" title="properties"></a>properties</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 定义常用的属性--&gt;</span><br><span class="line">&lt;properties&gt;</span><br><span class="line">  &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">  &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">  &lt;java.version&gt;11&lt;/java.version&gt;</span><br><span class="line">  &lt;maven.compiler.source&gt;11&lt;/maven.compiler.source&gt;</span><br><span class="line">  &lt;maven.compiler.target&gt;11&lt;/maven.compiler.target&gt;</span><br><span class="line">&lt;/properties&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/maven/" data-id="cm7pquzi9001sr8v2awolct4r" data-title="maven" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-常用工具/Linux使用指南" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Linux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.214Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Linux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">linux</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Linux-使用指南"><a href="#Linux-使用指南" class="headerlink" title="Linux 使用指南"></a>Linux 使用指南</h1><h2 id="Ubuntu忘记密码的解决方法"><a href="#Ubuntu忘记密码的解决方法" class="headerlink" title="Ubuntu忘记密码的解决方法"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/Zhishuifuyue/article/details/113857580">Ubuntu忘记密码的解决方法</a></h2><p>下面是修改密码的详细步骤：</p>
-<p>1、重启Ubuntu系统，开机时长按shift（这里要注意鼠标按键必须是在虚拟机里，而不是在windows里）按键进入Ubuntu的GRUB菜单，选择Advance Options for ubuntu 选项，如下如所示：</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238114.png" alt="img"></p>
-<p>2、在高级模式中选择Recovery mode模式，<strong>按‘E’键进入编辑模式（必须先按E键，而不是Enter键）</strong>，如下图所示：  </p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238633.png" alt="img"></p>
-<p>3、在编辑模式中通过上下键移动光标寻找到RO，并将其修改为RW模式，（刚开始看不到RO，按键盘向下箭头可以往下走）如下图所示，</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238291.png" alt="img"></p>
-<p>ro改成rw后，按ctrl+ X 进入系统 ,正在进入系统，如下图：</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238234.png" alt="img"></p>
-<p>4、进入系统后，会显示BIOS界面，选择root并回车确认，如下图所示：    </p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238745.png" alt="img"></p>
-<p>5、如上选择回车root，使用命令passwd修改密码，格式：passwd   用户名（自己的登录用户名），回车，然后会提示要求你输入新的密码，如下所示：</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238010.png" alt="img"></p>
-<p>6、修改完成后，输入reboot 回车，重启系统，在登录界面使用刚修改的密码即可登录。</p>
-<h2 id="查询当前-IP"><a href="#查询当前-IP" class="headerlink" title="查询当前 IP"></a>查询当前 IP</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Linux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" data-id="cm7pquzi50016r8v27iued9wl" data-title="linux" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-常用工具/idea偏门设置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/idea%E5%81%8F%E9%97%A8%E8%AE%BE%E7%BD%AE/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.212Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/idea%E5%81%8F%E9%97%A8%E8%AE%BE%E7%BD%AE/">idea设置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Idea偏门设置"><a href="#Idea偏门设置" class="headerlink" title="Idea偏门设置"></a>Idea偏门设置</h1><h2 id="项目启动数量默认限制为5"><a href="#项目启动数量默认限制为5" class="headerlink" title="项目启动数量默认限制为5"></a>项目启动数量默认限制为5</h2><p>点开<em>settings</em>后可以看到在advanced settings里搜索temporary即可找到设置，修改默认数量即可</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011238608.png" alt="image-20241101225455911"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/idea%E5%81%8F%E9%97%A8%E8%AE%BE%E7%BD%AE/" data-id="cm7pquzi50019r8v216uq24kx" data-title="idea设置" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-常用工具/Git学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.211Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git%E5%AD%A6%E4%B9%A0/">git 使用总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="Git的作用"><a href="#Git的作用" class="headerlink" title="Git的作用"></a>Git的作用</h3><ol>
-<li>备份</li>
-<li>代码还原</li>
-<li>协同开发</li>
-<li>追溯问题代码的编写人和编写时间</li>
-</ol>
-<h3 id="版本控制方式"><a href="#版本控制方式" class="headerlink" title="版本控制方式"></a>版本控制方式</h3><ol>
-<li>集中式版本控制：版本库集中存放在中央服务器当中，team里每个人在需要对代码进行修改迭代时从中央服务器下载，在修改完后提交到中央版本库当中。例如：SVN和CVS</li>
-<li>分布式版本控制：不存在“中央服务器”，每个人电脑上有一套完整的版本库。无需联网，多人协作时只需要各自修改的内容推送到team内每个成员， 就能看到对方的修改。例如Git</li>
-</ol>
-<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>Git是分布式的，不需要中央服务器。而在实际使用中有一个中心服务器只是为了方便团队开发者交换修改的代码，该服务器相当于一个公共开发者永不关机的PC。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Git%E5%AD%A6%E4%B9%A0/" data-id="cm7pquzi4000zr8v2aqspepu5" data-title="git 使用总结" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-常用工具/Github Action " class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Github%20Action%20/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.210Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Github%20Action%20/">github-action</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Github-Action"><a href="#Github-Action" class="headerlink" title="Github Action"></a>Github Action</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为了避免每次项目更新都进行手动的：打包、关闭旧版本程序和启动新版本程序等步骤，使用github提供的github-action来完成上述的过程的自动化实现。</p>
-<h2 id="什么是-Gitub-Actions？"><a href="#什么是-Gitub-Actions？" class="headerlink" title="什么是 Gitub-Actions？"></a>什么是 Gitub-Actions？</h2><p>GitHub Actions 是自动化工作流程工具，用于自动化构建、测试、部署和集成软件项目。它通过一系列事件、触发器和任务来执行各种操作，以实现持续集成和持续交付。</p>
-<p>GitHub 允许你可以发布以及共享你自己的 Actions，别人可以通过市场找到你的 Actions 从而不需要在重复造轮子了。</p>
-<h2 id="什么是-CI-CD？"><a href="#什么是-CI-CD？" class="headerlink" title="什么是 CI&#x2F;CD？"></a>什么是 CI&#x2F;CD？</h2><p>CI&#x2F;CD 是持续集成（Continuous Integration）与持续交付 &#x2F; 持续部署（Continuous Delivery&#x2F;Continuous Deployment）的缩写，是一种软件开发实践和方法论。</p>
-<p>持续集成（CI）是指开发人员将其代码频繁地集成到共享代码存储库中，并通过自动化构建和测试流程来验证代码的正确性。这样可以确保团队成员的代码变更能够快速地集成到主干代码中，并减少代码集成过程中的错误。</p>
-<p>持续交付（CD）是指将通过持续集成产生的软件交付给质量保证团队进行进一步的自动化测试、部署和发布。持续交付的目标是确保软件始终处于可部署状态，以便可以随时交付给用户。</p>
-<p>持续部署（CD）是持续交付的进一步延伸，指将通过持续交付阶段产生的可部署软件自动地部署到生产环境中，使软件能够快速地、可靠地投入使用。</p>
-<p>通过采用 CI&#x2F;CD 实践，团队可以实现更快速、可靠、高质量的软件交付。自动化的构建、测试、部署和发布流程能够减少人为错误，提高开发团队的生产效率，并使软件交付过程更加可靠和可追踪。</p>
-<blockquote>
-<p>以上为概念性知识点，对github-action的原理有一个大概的了解，方便更好的理解实际脚本代码中的运行逻辑和含义。</p>
-</blockquote>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><blockquote>
-<p>一些基础术语</p>
-</blockquote>
-<ol>
-<li><p><strong>workflow （工作流程）</strong>： 持续集成一次运行的过程，就是一个 workflow。</p>
-<ol>
-<li><p>GitHub Actions 的配置文件叫做 workflow 文件，存放在代码仓库的<code>.github/workflows</code>目录</p>
-</li>
-<li><p>可以采用yaml格式文件作为 workflow 文件，一个</p>
-<p>库中可以有多个 workflow 文件，会各自按照对应的event条件执行。</p>
-<p>只要github发现有yml文件，且满足event条件，就会自动运行。</p>
-</li>
-</ol>
-</li>
-<li><p><strong>Event （事件）</strong>：触发工作流运行的动作，例如每次的push、pull_request等</p>
-</li>
-<li><p><strong>job （任务）</strong> ：每一个<strong>job</strong>都是工作流中独立的单元，</p>
-</li>
-<li><p><strong>step</strong>（步骤）：每个 job 由多个 step 构成，一步步完成。</p>
-</li>
-<li><p><strong>action</strong> （动作）：每个 step 可以依次执行一个或多个命令（action）。</p>
-</li>
-</ol>
-<h2 id="本项目的部署"><a href="#本项目的部署" class="headerlink" title="本项目的部署"></a>本项目的部署</h2><h3 id="流程分析"><a href="#流程分析" class="headerlink" title="流程分析"></a>流程分析</h3><p>本项目后端是以SpringBoot为框架搭建的单体架构，因此对于自动化部署的操作可以分解为：</p>
-<ol>
-<li>项目在本地修改成功后push到origin仓库</li>
-<li>参与者在origin仓库进行pull_request操作，更新upstream仓库的指定分支</li>
-<li>使用github action对于更新后的项目进行Maven构建，生成jar包</li>
-<li>将jar包添加到入docker镜像，并设置好运行规则</li>
-<li>将docker上传至个人的阿里云docker镜像源仓库</li>
-<li>服务器从项目docker镜像源处拉取docker镜像</li>
-<li>将拉取的镜像运行，指定端口号为8121</li>
-</ol>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>依据上面的思路，实现以下代码：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Test</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line"><span class="comment">#  push:</span></span><br><span class="line"><span class="comment">#    branches: [&quot;release/test&quot;]</span></span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span> [<span class="string">&quot;release/test&quot;</span>]</span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">compile:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Set</span> <span class="string">up</span> <span class="string">JDK</span> <span class="number">17</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-java@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">java-version:</span> <span class="string">&quot;17&quot;</span></span><br><span class="line">          <span class="attr">distribution:</span> <span class="string">&quot;adopt&quot;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># maven缓存，避免重复拉取，会影响速度</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dependies</span> <span class="string">Cache</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">~/.m2/repository</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;</span> <span class="string">runner.os</span> <span class="string">&#125;&#125;-maven-$&#123;&#123;</span> <span class="string">hashFiles(&#x27;**/pom.xml&#x27;)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            $&#123;&#123; runner.os &#125;&#125;-maven-</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">      <span class="comment"># 编译打包</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">with</span> <span class="string">Maven</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          mvn package -Dmaven.test.skip=true</span></span><br><span class="line"><span class="string"></span>        <span class="attr">working-directory:</span> <span class="string">./bookdone</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># 制作docker镜像并推送到阿里云容器镜像服务</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">build</span> <span class="string">and</span> <span class="string">push</span> <span class="string">docker</span> <span class="string">image</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"></span><br><span class="line">          <span class="comment"># 构建Docker镜像</span></span><br><span class="line">          <span class="string">docker</span> <span class="string">build</span> <span class="string">-t</span> <span class="string">$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;:latest</span> <span class="string">\</span></span><br><span class="line">            <span class="string">--build-arg</span> <span class="string">JAR_FILE=target/*.jar</span> <span class="string">\</span></span><br><span class="line">            <span class="string">-f</span> <span class="string">./bookdone/Dockerfile</span> <span class="string">./bookdone</span></span><br><span class="line"></span><br><span class="line">          <span class="comment"># 登录阿里云容器镜像服务</span></span><br><span class="line">          <span class="string">docker</span> <span class="string">login</span> <span class="string">--username=$&#123;&#123;secrets.ALIYUN_USERNAME&#125;&#125;</span> <span class="string">$&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125;</span> <span class="string">--password=$&#123;&#123;secrets.ALIYUN_PWD&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">          <span class="comment"># 上传镜像</span></span><br><span class="line">          <span class="string">docker</span> <span class="string">tag</span> <span class="string">$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;</span> <span class="string">$&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125;/$&#123;&#123;vars.REGISTRY_NAMESPACE&#125;&#125;/$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;:latest</span></span><br><span class="line"></span><br><span class="line">          <span class="string">docker</span> <span class="string">push</span> <span class="string">$&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125;/$&#123;&#123;vars.REGISTRY_NAMESPACE&#125;&#125;/$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;:latest</span></span><br><span class="line"></span><br><span class="line">          <span class="comment"># 登出</span></span><br><span class="line">          <span class="string">docker</span> <span class="string">logout</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># Step 2: 安装 SSH 客户端</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">SSH</span> <span class="string">client</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">sudo</span> <span class="string">apt-get</span> <span class="string">install</span> <span class="string">-y</span> <span class="string">openssh-client</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># Step 3: 使用 SSH 登录阿里云服务器并部署 Docker 镜像</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">to</span> <span class="string">Alibaba</span> <span class="string">Cloud</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          sshpass -p &quot;$&#123;&#123;secrets.SERVER_PWD&#125;&#125;&quot; ssh -o StrictHostKeyChecking=no $&#123;&#123;secrets.SERVER_USERNAME&#125;&#125;@$&#123;&#123;secrets.SERVER_IP&#125;&#125; &lt;&lt; EOF</span></span><br><span class="line"><span class="string">            echo &quot;1. docker login aliyun start==&gt;&quot;</span></span><br><span class="line"><span class="string">            echo $&#123;&#123;secrets.ALIYUN_PWD&#125;&#125; | docker login $&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125; --username=$&#123;&#123;secrets.ALIYUN_USERNAME&#125;&#125; --password-stdin</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">            <span class="string">echo</span> <span class="string">&quot;2. docker stop and remove old container&quot;</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">container</span> <span class="string">stop</span> <span class="string">$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;</span> <span class="string">||</span> <span class="literal">true</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">container</span> <span class="string">rm</span> <span class="string">$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;</span> <span class="string">||</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">            <span class="string">echo</span> <span class="string">&quot;3. docker image rm==&gt;&quot;</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">image</span> <span class="string">rm</span> <span class="string">$&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125;/$&#123;&#123;vars.REGISTRY_NAMESPACE&#125;&#125;/$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;</span> <span class="string">||</span> <span class="literal">true</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">image</span> <span class="string">rm</span> <span class="string">$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;</span> <span class="string">||</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">            <span class="string">echo</span> <span class="string">&quot;4. docker pull new image==&gt;&quot;</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">pull</span> <span class="string">$&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125;/$&#123;&#123;vars.REGISTRY_NAMESPACE&#125;&#125;/$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;:latest</span></span><br><span class="line"></span><br><span class="line">            <span class="string">echo</span> <span class="string">&quot;5. docker tag==&gt;&quot;</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">tag</span> <span class="string">$&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125;/$&#123;&#123;vars.REGISTRY_NAMESPACE&#125;&#125;/$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;:latest</span> <span class="string">bookdone:latest</span></span><br><span class="line"></span><br><span class="line">            <span class="string">echo</span> <span class="string">&quot;6. docker run new container==&gt;&quot;</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">container</span> <span class="string">run</span> <span class="string">-d</span> <span class="string">\</span></span><br><span class="line">              <span class="string">-p</span> <span class="number">8121</span><span class="string">:8121</span> <span class="string">\</span></span><br><span class="line">              <span class="string">--name</span> <span class="string">bookdone</span> <span class="string">\</span></span><br><span class="line">              <span class="string">-v</span> <span class="string">/home/lys/test/logs:/app/logs</span> <span class="string">\</span></span><br><span class="line">              <span class="string">$&#123;&#123;vars.IMAGE_NAME_PRE&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="string">echo</span> <span class="string">&quot;7. docker logout==&gt;&quot;</span></span><br><span class="line">            <span class="string">docker</span> <span class="string">logout</span></span><br><span class="line">          <span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">      <span class="comment"># Step 4: Docker登出</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Logout</span> <span class="string">from</span> <span class="string">Docker</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">docker</span> <span class="string">logout</span> <span class="string">$&#123;&#123;vars.REGISTRY_MIRROR&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="需要配置的变量："><a href="#需要配置的变量：" class="headerlink" title="需要配置的变量："></a>需要配置的变量：</h4><p><strong>secret-key</strong>：</p>
-<ol>
-<li><strong>ALIYUN_USERNAME</strong>：aliyun3766755971</li>
-<li><strong>ALIYUN_PWD</strong>：caigui0725</li>
-<li><strong>SERVER_USERNAME</strong>：root</li>
-<li><strong>SERVER_PWD</strong>: Xiaoyaxuan911.0</li>
-<li><strong>SERVER_IP</strong>：120.76.45.161</li>
-</ol>
-<p><strong>vars-key</strong>：</p>
-<ol>
-<li><strong>IMAGE_NAME_PRE</strong>：bookdone</li>
-<li><strong>REGISTRY_MIRROR</strong>：crpi-lu7jrqe86z5u10qs.cn-guangzhou.personal.cr.aliyuncs.com</li>
-<li><strong>REGISTRY_NAMESPACE</strong>：docker_repository4caigui</li>
-</ol>
-<h3 id="实际效果展示"><a href="#实际效果展示" class="headerlink" title="实际效果展示"></a>实际效果展示</h3><p><img src="E:\DeskTable\博客学习截图传输\image-20240920120709634.png" alt="image-20240920120709634"></p>
-<h2 id="规范化操作："><a href="#规范化操作：" class="headerlink" title="规范化操作："></a>规范化操作：</h2><h3 id="PR-操作流程"><a href="#PR-操作流程" class="headerlink" title="PR 操作流程"></a><strong>PR 操作流程</strong></h3><h4 id="Fork-库并创建分支"><a href="#Fork-库并创建分支" class="headerlink" title="Fork 库并创建分支"></a>Fork 库并创建分支</h4><ul>
-<li>每位贡献者从主库 <code>release/test</code> 分支 fork 项目至个人仓库，并创建新的开发分支（例如 <code>feature/xxx</code> 或 <code>bugfix/xxx</code>），确保开发分支命名规范，便于识别。</li>
-</ul>
-<h4 id="本地开发并提交代码"><a href="#本地开发并提交代码" class="headerlink" title="本地开发并提交代码"></a>本地开发并提交代码</h4><ul>
-<li><p>在本地进行开发、调试，确保提交内容符合代码规范。</p>
-</li>
-<li><p>提交时附上清晰的 commit message，例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">feat: 添加xxx功能</span><br><span class="line">fix: 修复xxx问题</span><br><span class="line">refactor: 重构xxx模块</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="Pull-Request-提交"><a href="#Pull-Request-提交" class="headerlink" title="Pull Request 提交"></a>Pull Request 提交</h4><ul>
-<li>当完成开发或修复后，将代码 push 到 fork 仓库，并向主库的 <code>release/test</code> 分支提交 PR（Pull Request）。</li>
-<li>在提交 PR 时，请确保以下几点：<ul>
-<li><strong>PR 标题</strong>清晰简明，包含任务编号（如适用），如 <code>feat: 添加登录接口 (#123)</code></li>
-<li><strong>PR 描述</strong>中包含详细的变更内容、相关 issue 链接、影响模块和测试策略等。</li>
-<li>在提交 PR 之前，请确保已在本地或 CI 环境中通过所有测试。</li>
-</ul>
-</li>
-</ul>
-<h4 id="PR-审核流程"><a href="#PR-审核流程" class="headerlink" title="PR 审核流程"></a>PR 审核流程</h4><ul>
-<li>团队成员或维护者对 PR 进行审核，确保代码质量和功能正确。</li>
-<li>审核通过后，PR 合并至 <code>release/test</code> 分支。</li>
-</ul>
-<p>在pr审核通过之后就会启动工作流以实现项目更新后的构建和服务器部署。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Github%20Action%20/" data-id="cm7pquzi40013r8v236b2613d" data-title="github-action" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-常用工具/Docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.209Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/">docker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><blockquote>
-<p>学习路线：</p>
-<p>[单机版Docker]概述——安装——命令——镜像——容器数据卷——DockerFile——Docker网络原理——IDEA整合Docker</p>
-<p>[进阶版]Docker Compose——Docker Swarm（简化版的jenkins）</p>
-</blockquote>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>开发和上线使用的是两套环境，应用环境，应用配置</p>
-<p>开发 —— 运维；在我的电脑上正常，当迁移后出现了问题。</p>
-<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><ol>
-<li><code>docker pull</code>：拉取image</li>
-<li><code>docker images</code>：查看本地image</li>
-<li><code>docker rm -rf</code>：强制删除容器</li>
-<li><code>docker rmi</code>：删除本地image</li>
-<li><code>docker build</code>：根据dockerfile构建image</li>
-<li><code>docker save</code>：将本地image以压缩包的形式保存下来，再通过<code>docker load</code>加载到本地</li>
-<li><code>docker run</code>：创建一个image的实例——容器container</li>
-<li><code>docker stop</code>：停止一个容器container</li>
-<li><code>docker statr</code>：重新开启处于停止状态的容器container</li>
-</ol>
-<p>全部指令官方文档：<a target="_blank" rel="noopener" href="https://docs.docker.com/">Docker 文档</a></p>
-<h2 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h2><p>本次docker之旅困难重重，对于vmware和ubuntu的熟练使用还是任重道远</p>
-<blockquote>
-<p>todo：仍旧未解决的vmware-tools安装失败问题，但是为了学习进度只能姑且放弃，后期再来找补。</p>
-</blockquote>
-<p>创建一个数据卷：</p>
-<ol>
-<li>数据卷的创建需要在容器创建时进行挂载，一旦容器创建好就不能再进行挂载。</li>
-<li>数据卷可以帮助我们在主机环境去管理容器当中的环境与内容，由于每一个容器都是只包括容器所需要的最低限度的运行程序和脚本，因此可能在容器中很多指令无法应用，进而难以对容器的配置或文件进行修改等操作，通过挂载数据卷，相当于多了一个操作接口，进而可以在主机环境中对容器内的文件或配置进行修改。</li>
-</ol>
-<h2 id="Dockfile语法"><a href="#Dockfile语法" class="headerlink" title="Dockfile语法"></a>Dockfile语法</h2><h3 id="镜像分层："><a href="#镜像分层：" class="headerlink" title="镜像分层："></a>镜像分层：</h3><ol>
-<li>Entrypoint入口：镜像运行入口，一般是程序启动的脚本和参数</li>
-<li>Layer 层：添加安装包、依赖、配置等，每次操作都形成新的一层</li>
-<li>BaseImage基础镜像：一些应用程序运行时所依赖的系统函数库、环境、配置和文件等</li>
-</ol>
-<h3 id="语法指令："><a href="#语法指令：" class="headerlink" title="语法指令："></a>语法指令：</h3><blockquote>
-<p>详细语法：<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/builder">官方文档</a></p>
-</blockquote>
-<p><code>from</code>：指定基础镜像</p>
-<p><code>env</code>：设置环境变量，可以在后面指令使用</p>
-<p><code>copy</code>：拷贝本地文件到镜像的指定目录</p>
-<p><code>run</code>：执行linux的shell命令，一般是安装过程的命令</p>
-<p><code>expose</code>：指定容器运行时监听的端口，给镜像使用者看，相当于一个端口使用说明</p>
-<p><code>entrypoint</code>：镜像中应用的启动命令，容器运行时调用</p>
-<h3 id="自定义镜像"><a href="#自定义镜像" class="headerlink" title="自定义镜像"></a>自定义镜像</h3><h2 id="容器网络"><a href="#容器网络" class="headerlink" title="容器网络"></a>容器网络</h2><p><code>docker network create network_name</code></p>
-<p><code>docker network connect network_name container_name</code></p>
-<p><code>docker run -d --name new_container --network network_name -p port_number image_name</code></p>
-<h2 id="Docker挂载数据库"><a href="#Docker挂载数据库" class="headerlink" title="Docker挂载数据库"></a>Docker挂载数据库</h2><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> --name mysql_container \</span></span><br><span class="line"><span class="language-bash">    -v /path/to/mysql-data:/var/lib/mysql \</span></span><br><span class="line"><span class="language-bash">    -v /path/to/my.cnf:/etc/mysql/my.cnf \</span></span><br><span class="line"><span class="language-bash">    -v /path/to/init.sql:/docker-entrypoint-initdb.d/init.sql \</span></span><br><span class="line"><span class="language-bash">    -e MYSQL_ROOT_PASSWORD=rootpassword \</span></span><br><span class="line"><span class="language-bash">    -p 3306:3306 \</span></span><br><span class="line"><span class="language-bash">    -d mysql:latest</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>docker-compose.yml文件的基本语法可以参考官方文档：</p>
-<p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/compose-file-v3/">https://docs.docker.com/compose/compose-file/compose-file-v3/</a></p>
-<p>docker-compose文件中可以定义多个相互关联的应用容器，每一个应用容器被称为一个服务（service）。由于service就是在定义某个应用的运行时参数，因此与<code>docker run</code>参数非常相似。</p>
-<p>举例来说，用docker run部署MySQL的命令如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name mysql \</span><br><span class="line">  -p 3306:3306 \</span><br><span class="line">  -e TZ=Asia/Shanghai \</span><br><span class="line">  -e MYSQL_ROOT_PASSWORD=123 \</span><br><span class="line">  -v ./mysql/data:/var/lib/mysql \</span><br><span class="line">  -v ./mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">  -v ./mysql/init:/docker-entrypoint-initdb.d \</span><br><span class="line">  --network hmall</span><br><span class="line">  mysql</span><br></pre></td></tr></table></figure>
-
-<p>如果用<code>docker-compose.yml</code>文件来定义，就是这样：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.8&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;3306:3306&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="number">123</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/conf:/etc/mysql/conf.d&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/data:/var/lib/mysql&quot;</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">new</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">new:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hmall</span></span><br></pre></td></tr></table></figure>
-
-<p>对比如下：</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>docker run 参数</strong></th>
-<th align="left"><strong>docker compose 指令</strong></th>
-<th align="left"><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">–name</td>
-<td align="left">container_name</td>
-<td align="left">容器名称</td>
-</tr>
-<tr>
-<td align="left">-p</td>
-<td align="left">ports</td>
-<td align="left">端口映射</td>
-</tr>
-<tr>
-<td align="left">-e</td>
-<td align="left">environment</td>
-<td align="left">环境变量</td>
-</tr>
-<tr>
-<td align="left">-v</td>
-<td align="left">volumes</td>
-<td align="left">数据卷配置</td>
-</tr>
-<tr>
-<td align="left">–network</td>
-<td align="left">networks</td>
-<td align="left">网络</td>
-</tr>
-</tbody></table>
-<p>明白了其中的对应关系，相信编写<code>docker-compose</code>文件应该难不倒大家。</p>
-<p>黑马商城部署文件：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.8&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;3306:3306&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="number">123</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/conf:/etc/mysql/conf.d&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/data:/var/lib/mysql&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/init:/docker-entrypoint-initdb.d&quot;</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line">  <span class="attr">hmall:</span></span><br><span class="line">    <span class="attr">build:</span> </span><br><span class="line">      <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">hmall</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:8080&quot;</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mysql</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;18080:18080&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;18081:18081&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./nginx/nginx.conf:/etc/nginx/nginx.conf&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./nginx/html:/usr/share/nginx/html&quot;</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hmall</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">hm-net:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hmall</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h3><p>编写好docker-compose.yml文件，就可以部署项目了。常见的命令：</p>
-<p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/reference/">https://docs.docker.com/compose/reference/</a></p>
-<p>基本语法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose [OPTIONS] [COMMAND]</span><br></pre></td></tr></table></figure>
-
-<p>其中，OPTIONS和COMMAND都是可选参数，比较常见的有：</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>类型</strong></th>
-<th align="left"><strong>参数或指令</strong></th>
-<th align="left"><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Options</td>
-<td align="left">-f</td>
-<td align="left">指定compose文件的路径和名称</td>
-</tr>
-<tr>
-<td align="left">-p</td>
-<td align="left">指定project名称。project就是当前compose文件中设置的多个service的集合，是逻辑概念</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">Commands</td>
-<td align="left">up</td>
-<td align="left">创建并启动所有service容器</td>
-</tr>
-<tr>
-<td align="left">down</td>
-<td align="left">停止并移除所有容器、网络</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">ps</td>
-<td align="left">列出所有启动的容器</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">logs</td>
-<td align="left">查看指定容器的日志</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">stop</td>
-<td align="left">停止容器</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">start</td>
-<td align="left">启动容器</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">restart</td>
-<td align="left">重启容器</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">top</td>
-<td align="left">查看运行的进程</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">exec</td>
-<td align="left">在指定的运行中容器中执行命令</td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<p>教学演示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.进入root目录</span></span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.删除旧容器</span></span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -qa)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.删除hmall镜像</span></span><br><span class="line">docker rmi hmall</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.清空MySQL数据</span></span><br><span class="line"><span class="built_in">rm</span> -rf mysql/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.启动所有, -d 参数是后台启动</span></span><br><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">[+] Building 15.5s (8/8) FINISHED</span><br><span class="line"> =&gt; [internal] load build definition from Dockerfile                                    0.0s</span><br><span class="line"> =&gt; =&gt; transferring dockerfile: 358B                                                    0.0s</span><br><span class="line"> =&gt; [internal] load .dockerignore                                                       0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 2B                                                         0.0s</span><br><span class="line"> =&gt; [internal] load metadata <span class="keyword">for</span> docker.io/library/openjdk:11.0-jre-buster             15.4s</span><br><span class="line"> =&gt; [1/3] FROM docker.io/library/openjdk:11.0-jre-buster@sha256:3546a17e6fb4ff4fa681c3  0.0s</span><br><span class="line"> =&gt; [internal] load build context                                                       0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 98B                                                        0.0s</span><br><span class="line"> =&gt; CACHED [2/3] RUN <span class="built_in">ln</span> -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; <span class="built_in">echo</span>   0.0s</span><br><span class="line"> =&gt; CACHED [3/3] COPY hm-service.jar /app.jar                                           0.0s</span><br><span class="line"> =&gt; exporting to image                                                                  0.0s</span><br><span class="line"> =&gt; =&gt; exporting layers                                                                 0.0s</span><br><span class="line"> =&gt; =&gt; writing image sha256:32eebee16acde22550232f2eb80c69d2ce813ed099640e4cfed2193f71  0.0s</span><br><span class="line"> =&gt; =&gt; naming to docker.io/library/root-hmall                                           0.0s</span><br><span class="line">[+] Running 4/4</span><br><span class="line"> ✔ Network hmall    Created                                                             0.2s</span><br><span class="line"> ✔ Container mysql  Started                                                             0.5s</span><br><span class="line"> ✔ Container hmall  Started                                                             0.9s</span><br><span class="line"> ✔ Container nginx  Started                                                             1.5s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.查看镜像</span></span><br><span class="line">docker compose images</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">CONTAINER           REPOSITORY          TAG                 IMAGE ID            SIZE</span><br><span class="line">hmall               root-hmall          latest              32eebee16acd        362MB</span><br><span class="line">mysql               mysql               latest              3218b38490ce        516MB</span><br><span class="line">nginx               nginx               latest              605c77e624dd        141MB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.查看容器</span></span><br><span class="line">docker compose ps</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">NAME                IMAGE               COMMAND                  SERVICE             CREATED             STATUS              PORTS</span><br><span class="line">hmall               root-hmall          <span class="string">&quot;java -jar /app.jar&quot;</span>     hmall               54 seconds ago      Up 52 seconds       0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp</span><br><span class="line">mysql               mysql               <span class="string">&quot;docker-entrypoint.s…&quot;</span>   mysql               54 seconds ago      Up 53 seconds       0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp, 33060/tcp</span><br><span class="line">nginx               nginx               <span class="string">&quot;/docker-entrypoint.…&quot;</span>   nginx               54 seconds ago      Up 52 seconds       80/tcp, 0.0.0.0:18080-18081-&gt;18080-18081/tcp, :::18080-18081-&gt;18080-18081/tcp</span><br></pre></td></tr></table></figure>
-
-<p>打开浏览器，访问：<a target="_blank" rel="noopener" href="http://192.168.246.129:8080/">http://192.168.246.129:8080</a></p>
-<h3 id="配置数据库"><a href="#配置数据库" class="headerlink" title="配置数据库"></a>配置数据库</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/Docker/" data-id="cm7pquzi40010r8v2gdo6dzz7" data-title="docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-后端/项目总结/JavaWeb学习经验总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/JavaWeb%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.204Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/JavaWeb%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">黑马➕Javaweb</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaWeb学习经验总结"><a href="#JavaWeb学习经验总结" class="headerlink" title="JavaWeb学习经验总结"></a>JavaWeb学习经验总结</h1><blockquote>
-<p>本文档用于总结学习黑马的javaweb课程的知识点和内容，根据视频顺序进行总结</p>
-</blockquote>
-<h1 id="项目总览"><a href="#项目总览" class="headerlink" title="项目总览"></a>项目总览</h1><p>总览本项目，是一个实现了前后端发分离的单体架构项目。</p>
-<p><strong>单体架构</strong>：即一个项目所需的所有功能组件：包括业务逻辑，功能和交互组件都集成在一个环境当中，最终上限部署时打包在一个war包当中，并运行在一个服务器上。</p>
-<p>经典的单体架构技术选择为：Java➕Spring MVC</p>
-<p>此处引出黑马javaweb选择的框架：SSM框架。</p>
-<p><strong>SSM框架</strong>即为：Spring➕Spring MVC➕Mybatis，是一套标准的MVC模式：Model-View-Controller模式，模型、视图与控制器。</p>
-<p><strong>MVC模式三大部分：</strong></p>
-<ol>
-<li>**Model 模型：**即实际功能与业务逻辑的实现区域，同时具备对数据的直接访问权。</li>
-<li>**Controller 控制器：**负责进行事件的处理并作出事件的响应。</li>
-<li>**View 视图：**提供给用户的可直观使用的交互场所，view可以通过用户的行为向控制器进行事件的传递并通过控制器间接与model进行交互</li>
-</ol>
-<p><strong>MVC的优缺：</strong></p>
-<ol>
-<li>低耦合度：每一层都职责分明，各层间采取接口的形式进行交互，某一层的改变不会影响其他层</li>
-<li>复用性高：低耦合其中一个优势就是复用性的提高，例如逻辑上的一个功能模块：支付，既可以具体实现为微信支付，也可以具体实现为支付宝支付、银行卡支付……</li>
-</ol>
-<p>**SSM框架各大部件：**a</p>
-<ol>
-<li><p>**持久层：**Dao(mapper)层</p>
-<ol>
-<li>对数据库具体的操作语句放在这一层</li>
-</ol>
-</li>
-<li><p>**业务层：**Service层</p>
-<ol>
-<li><p>Service负责实际的功能和业务逻辑，通过定义XXX_Service接口和对应的XXX_ServiceImplement来实现具体的功能</p>
-</li>
-<li><p>Service层向下直接和Dao层进行对接，</p>
-<p>向上直接和Controller对接</p>
-</li>
-</ol>
-</li>
-<li><p>**表现层：**Controller(header)层</p>
-<ol>
-<li>负责具体的业务控制流程，即控制业务功能的调用</li>
-</ol>
-</li>
-<li><p>**视图层：**View层</p>
-<ol>
-<li>与Controller层对接，负责将前端接收到的信号传递给Controller以完成对业务功能的调用。</li>
-</ol>
-</li>
-</ol>
-<p><strong>Spring：</strong></p>
-<p>Spring中最重要的几个概念：</p>
-<p><strong>DI(依赖注入):</strong></p>
-<p>由spring框架主动创建被调用类的对象（存储在IOC容器当中），并将创建出的对象注入到我们所声明的对象当中，在用户的视角里即，一个注解➕一个为类对象的声明即可调用一个未实例化的类对象。</p>
-<p><strong>IOC(控制反转)：</strong></p>
-<p>控制反转即<strong>控制权的反转</strong>，这里的控制权指的是仅需调用某个类对象当中的方法而不使用该类对象本身时，将该类对象的生命周期的管理控制权，通过IOC将该控制权交给第三方，由第三方进行统一调度管理。</p>
-<p>通过注解的方式，使用单例模式，为创建出的类对象进行装载</p>
-<p><strong>AOP(切面编程)：</strong></p>
-<p>在不改变原本代码模型的基础上，通过动态代理的技术，增加业务功能以满足需求。</p>
-<p><strong>SpringBoot：</strong></p>
-<p>基于Spring而进行升级的全新框架</p>
-<p><strong>核心组件：</strong></p>
-<p><strong>自动配置：</strong></p>
-<p>会自动根据添加的jar依赖，进行Spring应用程序合理的默认配置</p>
-<p><strong>起步依赖：</strong></p>
-<p>将常见的库整合起来，而开发时仅仅需要引入一个“spring-xx-xx-starter”起步依赖，即可导入依赖，避免了不同依赖间版本冲突和引入大量依赖的繁琐。</p>
-<p><strong>Mybatis：</strong></p>
-<p>核心是<strong>SqlSession</strong>，Mybatis是对jdbc的封装，使得对于数据库的操作更加简单清晰。</p>
-<h1 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h1><p>前端部分采用经典的模式：HTML➕CSS➕JavaScript➕Vue</p>
-<ol>
-<li>HTML负责网页的整体框架、元素与内容</li>
-<li>CSS负责元素的样式、外观</li>
-<li>JavaScript负责网页的行为，例如用户点击登录之后将登录信息打包以Json的形式发送到后端。</li>
-</ol>
-<p>通过编写HTML语句，将编写好的代码交给浏览器内核core进行处理，最终呈现出用户可使用的可视化网页。</p>
-<p>但是现今市面上的浏览器内核各不相同，对于某些技术的支持也参差不齐，因此会出现同一段代码在不同浏览器当中呈现的效果不同的问题。</p>
-<p><strong>HTML：</strong></p>
-<p>超文本标记语言：通过使用各种不同的标签，在可以显示文字的基础上还可以定义图片、音频、视频等内容。</p>
-<p><strong>CSS：</strong></p>
-<p>Cascading style sheet：层叠样式表，用于控制html页面的样式。</p>
-<h1 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h1><h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>一款用于管理和构建Java项目的工具，基于项目对象模型(Project Object Model，简称POM)</p>
-<p>可以做到：</p>
-<ol>
-<li><p>依赖的统一管理：</p>
-<ol>
-<li>仅需在pom文件中加入标签即可自动导入需要的依赖</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>项目结构的统一构建</p>
-<ol>
-<li><p>使用maven工具构建项目，得到的项目都具有同样的目录结构</p>
-<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239503.png" alt="image-20240818160911157" style="zoom:50%;" /></li>
-</ol>
-</li>
-</ol>
-<p><strong>Maven模型：</strong></p>
-<ul>
-<li>**项目对象模型：**Project Object Model，将每一个模块和项目抽象层一个对象模型，具备自己专属的坐标——jar包的唯一标识，用于定位资源的位置。</li>
-<li>**依赖管理模型：**Dependency</li>
-<li>**构建生命周期&#x2F;阶段：**Build lifecycle &amp; phases</li>
-</ul>
-<p><strong>Maven坐标</strong>：</p>
-<ol>
-<li>maven中的坐标是资源的唯一标识，通过该坐标可以唯一定位资源位置</li>
-<li>使用坐标来定义或引入项目中需要的依赖</li>
-</ol>
-<ul>
-<li>Maven坐标的组成：<ul>
-<li><strong>groupId</strong>：定义当前Maven项目隶属组织名称（一般为域名反写，如：com.itheima）</li>
-<li><strong>artifactId</strong>：定义当前Maven项目名称（通常是模块名称）</li>
-<li><strong>version</strong>：定义当前项目版本号</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239773.png" alt="image-20240830150934607"> </p>
-<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><h4 id="依赖配置"><a href="#依赖配置" class="headerlink" title="依赖配置"></a>依赖配置</h4><p>添加dependencies标签后，</p>
-<p>使用dependency引入依赖坐标groupId，artifactId，version</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactid</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactid</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="依赖传递"><a href="#依赖传递" class="headerlink" title="依赖传递"></a>依赖传递</h4><p>依赖会形成像子父类继承一样的关系，即具有传递性</p>
-<ul>
-<li>直接依赖：在当前项目中通过依赖配置建立的依赖关系</li>
-<li>间接依赖：被依赖的资源如果配置了其他的依赖资源，这当前项目也会间接依赖其他资源</li>
-<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239319.png" alt="image-20240830151846969"></li>
-</ul>
-<p><strong>排除依赖</strong>：也可以主动断开依赖的资源，被排除的依赖无需指定版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;</span><br><span class="line">	&lt;version&gt;</span><br><span class="line">	&lt;exclusions&gt; 被排除的依赖</span><br><span class="line">		&lt;exclusion&gt;</span><br><span class="line">			&lt;groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;</span><br><span class="line">		&lt;/exclusions&gt;</span><br><span class="line">	&lt;exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="依赖范围"><a href="#依赖范围" class="headerlink" title="依赖范围"></a>依赖范围</h4><p>依赖的默认使用范围是全局使用，但也可以通过<code>&lt;scope&gt; &lt;/scope&gt;</code>标签来设置其作用范围。</p>
-<p>作用范围：</p>
-<ul>
-<li>主程序范围有效（main文件夹范围内）</li>
-<li>测试程序范围有效（test文件夹范围内）</li>
-<li>是否参与打包运行（package指令范围内）</li>
-</ul>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011239193.png" alt="image-20240830152431678"> </p>
-<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>三套独立的生命周期</p>
-<p><strong>clean</strong>：清理工作，移除上一次构建生成的文件</p>
-<p><strong>default</strong>：</p>
-<ul>
-<li>核心工作，如：编译、测试、打包、安装、部署等</li>
-<li><strong>compile</strong>：编译项目源代码</li>
-<li><strong>test</strong>：使用合适的单元测试框架运行测试（junit）</li>
-<li><strong>packag</strong>：将编译后的文件打包，如jar和war</li>
-<li><strong>install</strong>：安装项目到本地仓库</li>
-</ul>
-<p><strong>site</strong>：生成报告、发布站点等</p>
-<h2 id="后端使用技术概况"><a href="#后端使用技术概况" class="headerlink" title="后端使用技术概况"></a>后端使用技术概况</h2><ol>
-<li><p><strong>IOC Inversion of Control 控制权反转</strong>：（是一种设计思想，而非具体的技术）</p>
-<ul>
-<li><p>在传统的Java程序中，一个对象的生成和回收的控制权掌握在程序员手中，程序员会依据所需去创建对象</p>
-<p>但是在spring框架中，一个对象的创建的控制权交给框架实现，由IOC容器统一管理这些对象的生命周期和对象间的关系，从而实现所谓的控制权反转</p>
-<p>使用IOC将原本组件间直接的依赖关系转换成组件——框架——组件的间接依赖关系，并由容器动态管理，进行了组件间的解耦</p>
-</li>
-<li><p>示例：</p>
-<ul>
-<li><pre><code class="language-java">public class FXNewsProvider &#123;
-   private IFXNewsListener newsListener = new DowJonesNewsListener();
-   private IFXNewsPersister newPersistener = new DowJonesNewsPersister();
-   public void getAndPersistNews() &#123;
-      String[] newsIds = newsListener.getAvailableNewsIds();
-      if(ArrayUtils.isEmpty(newsIds)) &#123;
-         return;
-      &#125;
-      for(String newsId : newsIds) &#123;
-         FXNewsBean newsBean = newsListener.getNewsByPK(newsId);
-         newPersistener.persistNews(newsBean);
-         newsListener.postProcessIfNecessary(newsId);
-      &#125;
-   &#125;
-&#125;
-</code></pre>
-</li>
-<li><p>在Java中，由于只存在类的概念而没有单独的函数，因此当我们需要调用某一个方法是通常需要去先创建一个对象，而后通过该对象进行方法的调用。</p>
-<p>但是本质上我们需要的只是调用方法，对象是不得已才创建的，因此只要是一个可以调用方法的对象，那么无所谓是我们创建的还是其他地方创建的</p>
-<p>在这种背景下，我们通过使用IOC容器，将对象的创建交给框架，框架只需要在我们用到这个对象时完成依赖注入，使对象可以正常使用即可</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>DI Dependency Injection 依赖注入</strong>：</p>
-<ul>
-<li>DI是IOC的一种实现方式，通过将对象的依赖关系注入到对象中；而不是由对象自己创建对象，形成依赖关系——即：<strong>组件之间依赖关系</strong>由容器在运行期间根据各种注解决定，形象的说，即<strong>由容器动态的将某个依赖关系注入到组件之中</strong>。</li>
-<li><strong>提升组件重用的频率，并为系统搭建一个灵活、可扩展的平台。</strong></li>
-</ul>
-</li>
-<li><p><strong>Spring AOP Aspect-Oriented Programming</strong></p>
-<blockquote>
-<p>Spring的另一大核心，面向切面编程，对OOP的一种补充</p>
-</blockquote>
-<ol>
-<li>一种编程范式，通过在程序中插入一个切入点，在不修改源代码的前提下给程序动态统一的添加额外的功能</li>
-<li>提供的几种类型的增强：<ol>
-<li><strong>前置增强(Before Advice)</strong>：</li>
-<li><strong>后置增强(After Advice)</strong>：</li>
-<li><strong>返回增强(After Returning Advice)</strong>：</li>
-<li><strong>异常增强(After Throwing Advice)</strong>：</li>
-<li><strong>环绕增强(Around Advice)</strong>：</li>
-</ol>
-</li>
-<li>使用动态代理技术，临时在内存中创建一个AOP对象，并将目标对象的源代码拷贝过来，插入到指定的增强位置中，从而实现额外功能的添加。</li>
-<li>核心概念：<ol>
-<li><strong>切面(Aspect)</strong>：相当于一个横切关注点的实例，包括了连接点和通知，可以通过配置文件、注解等方式定义切面。</li>
-<li><strong>连接点(Joinpoint)</strong>：可以被切面插入的点，最常用的连接点包括方法调用、方法执行过程中的某个时点等</li>
-<li><strong>通知(Advice)</strong>：连接点处执行的点，分为多种通知：前置、后置、环绕。</li>
-<li><strong>切点(Poingcut)</strong>：用于定义哪些连接点上应用通知。切点通过表达式定义</li>
-<li><strong>织入(Weaving)</strong>：将切面应用到目标对象并创建新的代理对象的过程，织入可以在运行时完成，也可以在编译时完成：编译期织入和运行期织入。</li>
-<li><strong>目标对象(Target)</strong>：</li>
-<li><strong>代理对象(Proxy)</strong>：</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p><strong>Spring AOP的两种动态代理：JDK动态代理和CGLIB动态代理</strong></p>
-<ol>
-<li>基于类型：JDK动态代理是基于接口的代理，CGLIB动态代理是基于类的代理。</li>
-<li>代理对象的创建：JDK通过Java自带的 java.lang.reflect.Proxy 创建代理对象，该对象必须实现一个或多个接口。CGLIB通过字节码生成技术创建代理对象，无需目标类实现接口，直接继承目标类。</li>
-<li>JDk运行时需要使用反射，性能较低；CGLIB通过生成字节码，避免反射，性能较优。</li>
-<li>JDk只能代理目标对象的接口方法，不能代理其父类中的方法；CGLIB可以代理目标类及其父类中的方法。</li>
-<li>JDK动态代理的核心是<code>InvocationHandler</code>接口和<code>Proxy</code>类；如果目标类没有实现接口，那么<code>SpringAOP</code>会选择使用<code>CGLIB</code>来动态代理目标类。</li>
-<li><code>CGLIB</code>是一个代码生成的类库，可以在运动时动态生成某个类的子类，通过<strong>继承</strong>来实现动态代理，如果类被标记为<code>final</code>，则无法使用<code>CGLIB</code>做动态代理。</li>
-</ol>
-</li>
-<li><p><strong>事务管理</strong>：</p>
-<ol>
-<li>确保一组操作的原子性，即要么全部成功，一起提交；如果某一项出现问题，则全部回滚，确保数据的一致性。</li>
-<li>在涉及到多个数据库操作或需要保证数据一致性的业务中，事务管理非常重要的</li>
-</ol>
-</li>
-<li><p><strong>全局异常处理</strong>：</p>
-<ol>
-<li>对后端程序中发生的所有异常都进行统一处理，提高项目的健壮性和可维护性</li>
-<li>可以使用全局异常处理将异常信息进行记录，返回完整的错误信息给前端，避免系统因未处理异常而崩溃</li>
-</ol>
-</li>
-<li><p><strong>过滤器</strong>：</p>
-<ol>
-<li>拦截请求或响应，对其进行处理或修改</li>
-<li>在请求到达Controller之前或响应返回给客户端之前，可以使用过滤器进行一些预处理或后处理的操作。</li>
-</ol>
-</li>
-<li><p><strong>拦截器</strong>：</p>
-<ol>
-<li>与过滤器功能基本一致，只不过拦截器更专注于对Controller的方法进行预处理和后处理</li>
-<li>在业务逻辑处理前后执行一些通用的操作，如权限验证、日志记录等。</li>
-</ol>
-</li>
-</ol>
-<h3 id="SSM框架"><a href="#SSM框架" class="headerlink" title="SSM框架"></a>SSM框架</h3><ol>
-<li><strong>Controller层</strong>：<ol>
-<li>处理用户请求，，调用相应的业务逻辑，并返回视图或数据给客户端</li>
-</ol>
-</li>
-<li></li>
-</ol>
-<h3 id="Alioss使用及配置"><a href="#Alioss使用及配置" class="headerlink" title="Alioss使用及配置"></a>Alioss使用及配置</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/JavaWeb%E5%AD%A6%E4%B9%A0%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" data-id="cm7pquzj0007jr8v2e6lfd9m5" data-title="黑马➕Javaweb" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.67px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 15px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 11.67px;">学习规划</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 18.33px;">工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.67px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 13.33px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/">markdown语法</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/">Leetcode刷题题解</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">56</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-03-01T09:39:28.989Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By moru</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

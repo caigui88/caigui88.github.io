@@ -1,219 +1,306 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>编译原理 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="编译原理CH1: 编译器介绍编译器概述 为什么需要编译器？ 因为计算机只能执行机器语言，而为了便于项目开发，人们需要使用高级程序语言提高效率。此时需要编译器将人能看懂但机器看不懂的高级程序语言转换为机器可以看得懂的机器码(machine code) 什么是编译器？  编译器也是一种程序或软件  其核心功能是将输入的源代码翻译为目标代码进行输出。 即将代码由一种语言转换为另一种语言的翻译软件">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>编译原理 | Moru</title><meta name="author" content="moru"><meta name="copyright" content="moru"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="编译原理 CH1: 编译器介绍 编译器概述  为什么需要编译器？ 因为计算机只能执行机器语言，而为了便于项目开发，人们需要使用高级程序语言提高效率。此时需要编译器将人能看懂但机器看不懂的高级程序语言转换为机器可以看得懂的机器码(machine code) 什么是编译器？   编译器也是一种程序或软件   其核心功能是将输入的源代码翻译为目标代码进行输出。 即将代码由一种语言转换为另一种语言的翻译软">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理">
 <meta property="og:url" content="http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="编译原理CH1: 编译器介绍编译器概述 为什么需要编译器？ 因为计算机只能执行机器语言，而为了便于项目开发，人们需要使用高级程序语言提高效率。此时需要编译器将人能看懂但机器看不懂的高级程序语言转换为机器可以看得懂的机器码(machine code) 什么是编译器？  编译器也是一种程序或软件  其核心功能是将输入的源代码翻译为目标代码进行输出。 即将代码由一种语言转换为另一种语言的翻译软件">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240735.png">
-<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240650.png">
-<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240118.png">
-<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240860.png">
-<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240675.png">
-<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240451.png">
-<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240322.png">
-<meta property="og:image" content="d:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240319141414360.png">
+<meta property="og:site_name" content="Moru">
+<meta property="og:description" content="编译原理 CH1: 编译器介绍 编译器概述  为什么需要编译器？ 因为计算机只能执行机器语言，而为了便于项目开发，人们需要使用高级程序语言提高效率。此时需要编译器将人能看懂但机器看不懂的高级程序语言转换为机器可以看得懂的机器码(machine code) 什么是编译器？   编译器也是一种程序或软件   其核心功能是将输入的源代码翻译为目标代码进行输出。 即将代码由一种语言转换为另一种语言的翻译软">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
 <meta property="article:published_time" content="2025-03-01T03:35:47.294Z">
 <meta property="article:modified_time" content="2025-03-01T04:40:59.204Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="moru">
 <meta property="article:tag" content="计算机四大件">
 <meta property="article:tag" content="大学专业课">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240735.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "编译原理",
+  "url": "http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2025-03-01T03:35:47.294Z",
+  "dateModified": "2025-03-01T04:40:59.204Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "moru",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-      <div class="outer">
-        <section id="main"><article id="post-课程学习/计算机重要基础/编译原理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.294Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      编译原理
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h1><h2 id="CH1-编译器介绍"><a href="#CH1-编译器介绍" class="headerlink" title="CH1: 编译器介绍"></a>CH1: 编译器介绍</h2><h3 id="编译器概述"><a href="#编译器概述" class="headerlink" title="编译器概述"></a>编译器概述</h3><blockquote>
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '编译原理',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Moru</span></a><a class="nav-page-title" href="/"><span class="site-name">编译原理</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">编译原理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-01T03:35:47.294Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-01T04:40:59.204Z" title="更新于 2025-03-01 12:40:59">2025-03-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="编译原理"><a class="header-anchor" href="#编译原理"></a>编译原理</h1>
+<h2 id="CH1-编译器介绍"><a class="header-anchor" href="#CH1-编译器介绍"></a>CH1: 编译器介绍</h2>
+<h3 id="编译器概述"><a class="header-anchor" href="#编译器概述"></a>编译器概述</h3>
+<blockquote>
 <p>为什么需要编译器？</p>
 <p>因为计算机只能执行机器语言，而为了便于项目开发，人们需要使用高级程序语言提高效率。此时需要编译器将人能看懂但机器看不懂的高级程序语言转换为机器可以看得懂的机器码(machine code)</p>
 <p>什么是编译器？</p>
 <ol>
-<li><p>编译器也是一种程序或软件</p>
+<li>
+<p>编译器也是一种程序或软件</p>
 </li>
-<li><p>其核心功能是将<strong>输入</strong>的<strong>源代码</strong>翻译为<strong>目标代码</strong>进行<strong>输出</strong>。</p>
+<li>
+<p>其核心功能是将<strong>输入</strong>的<strong>源代码</strong>翻译为<strong>目标代码</strong>进行<strong>输出</strong>。</p>
 <p>即将代码由一种语言转换为另一种语言的翻译软件</p>
 </li>
 </ol>
 </blockquote>
-<h3 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h3><ol>
+<h3 id="解释器"><a class="header-anchor" href="#解释器"></a>解释器</h3>
+<ol>
 <li>一种常见的语言处理器。</li>
 <li>它并不通过翻译的方式生成目标程序；解释器直接利用用户提供的输入执行源程序中指定对的操作。</li>
 </ol>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240735.png" alt="image-20240311182629128"> </p>
-<h3 id="编译器和解释器对比"><a href="#编译器和解释器对比" class="headerlink" title="编译器和解释器对比"></a>编译器和解释器对比</h3><h4 id="相同点：都是一种语言实现系统"><a href="#相同点：都是一种语言实现系统" class="headerlink" title="相同点：都是一种语言实现系统"></a>相同点：都是一种语言实现系统</h4><h4 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h4><ol>
-<li><p>解释器边解释边执行。</p>
-<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240650.png" alt="image-20240311194928864"> </p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240735.png" alt="image-20240311182629128"></p>
+<h3 id="编译器和解释器对比"><a class="header-anchor" href="#编译器和解释器对比"></a>编译器和解释器对比</h3>
+<h4 id="相同点：都是一种语言实现系统"><a class="header-anchor" href="#相同点：都是一种语言实现系统"></a>相同点：都是一种语言实现系统</h4>
+<h4 id="不同点："><a class="header-anchor" href="#不同点："></a>不同点：</h4>
+<ol>
+<li>
+<p>解释器边解释边执行。</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240650.png" alt="image-20240311194928864"></p>
 </li>
-<li><p>编译器对源代码总的进行编译并产生可直接使用的对象代码。</p>
+<li>
+<p>编译器对源代码总的进行编译并产生可直接使用的对象代码。</p>
 </li>
-<li><p>解释器运行程序基本没有预处理。</p>
+<li>
+<p>解释器运行程序基本没有预处理。</p>
 </li>
-<li><p>编译器做了许多拓展性的预处理，大部分都是靠编译器实现。</p>
+<li>
+<p>编译器做了许多拓展性的预处理，大部分都是靠编译器实现。</p>
 </li>
-<li><p>编译器和解释器配合使用，法力无边（参考JAVA）</p>
-</li>
-</ol>
-<h3 id="编译器结构"><a href="#编译器结构" class="headerlink" title="编译器结构"></a>编译器结构</h3><ol>
-<li><p><strong>Lexical analysis(Scanning)词法分析</strong>：识别description逻辑块。</p>
-</li>
-<li><p><strong>Syntax analysis(Parsing) 语法分析</strong>：识别逻辑块间的相互关系。</p>
-</li>
-<li><p><strong>Semantic analysis 语义分析</strong>：识别整个结构的意义。</p>
-</li>
-<li><p><strong>IR Generation 中间代码生成</strong>：设计一个可能符合的结构</p>
-</li>
-<li><p><strong>IR Optimization 中间代码优化</strong>：简化生成的目的结构</p>
-</li>
-<li><p><strong>Generation (最终)代码生成</strong>：产生目的结构</p>
-</li>
-<li><p><strong>Optimization 机器相关代码优化</strong>：优化最终结构</p>
+<li>
+<p>编译器和解释器配合使用，法力无边（参考JAVA）</p>
 </li>
 </ol>
-<h4 id="编译器的高层结构"><a href="#编译器的高层结构" class="headerlink" title="编译器的高层结构"></a>编译器的高层结构</h4><ol>
-<li>编译器具有非常<strong>模块化</strong>的高层结构<ol>
-<li>前端 <strong>Front End</strong> </li>
+<h3 id="编译器结构"><a class="header-anchor" href="#编译器结构"></a>编译器结构</h3>
+<ol>
+<li>
+<p><strong>Lexical analysis(Scanning)词法分析</strong>：识别description逻辑块。</p>
+</li>
+<li>
+<p><strong>Syntax analysis(Parsing) 语法分析</strong>：识别逻辑块间的相互关系。</p>
+</li>
+<li>
+<p><strong>Semantic analysis 语义分析</strong>：识别整个结构的意义。</p>
+</li>
+<li>
+<p><strong>IR Generation 中间代码生成</strong>：设计一个可能符合的结构</p>
+</li>
+<li>
+<p><strong>IR Optimization 中间代码优化</strong>：简化生成的目的结构</p>
+</li>
+<li>
+<p><strong>Generation (最终)代码生成</strong>：产生目的结构</p>
+</li>
+<li>
+<p><strong>Optimization 机器相关代码优化</strong>：优化最终结构</p>
+</li>
+</ol>
+<h4 id="编译器的高层结构"><a class="header-anchor" href="#编译器的高层结构"></a>编译器的高层结构</h4>
+<ol>
+<li>编译器具有非常<strong>模块化</strong>的高层结构
+<ol>
+<li>前端 <strong>Front End</strong></li>
 <li>后端 <strong>Back End</strong></li>
 </ol>
 </li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">	str1[&quot;源代码&quot;]</span><br><span class="line">	str2[&quot;词法分析&quot;]</span><br><span class="line">	str3[&quot;语法分析&quot;]</span><br><span class="line">	str4[&quot;语义分析&quot;]</span><br><span class="line">	str5[&quot;代码生成&quot;]</span><br><span class="line"></span><br><span class="line">	str1 --字符序列--&gt; str2 --token序列--&gt; str3 --抽象语法树--&gt; str4 --中间代码--&gt; str5</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="CH2-词法分析"><a href="#CH2-词法分析" class="headerlink" title="CH2: 词法分析"></a>CH2: 词法分析</h2><blockquote>
+<h2 id="CH2-词法分析"><a class="header-anchor" href="#CH2-词法分析"></a>CH2: 词法分析</h2>
+<blockquote>
 <p>编译器的第一个步骤称为<strong>词法分析(lexical analysis)</strong>&amp;<strong>扫描(Scanning)</strong>。</p>
 </blockquote>
-<h3 id="词法分析的工作："><a href="#词法分析的工作：" class="headerlink" title="词法分析的工作："></a>词法分析的工作：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">字符流--&gt;|词法分析器|记号流</span><br></pre></td></tr></table></figure>
-
+<h3 id="词法分析的工作："><a class="header-anchor" href="#词法分析的工作："></a>词法分析的工作：</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">字符流--&gt;|词法分析器|记号流</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p>词法分析器读入组成源程序的<strong>字符流</strong>，并且将它们组成有意义的词素(lexeme)的序列，生成并输出一个词法单元序列，每个词法单元对应一个词素lexeme。</p>
+<li>
+<p>词法分析器读入组成源程序的<strong>字符流</strong>，并且将它们组成有意义的词素(lexeme)的序列，生成并输出一个词法单元序列，每个词法单元对应一个词素lexeme。</p>
 </li>
-<li><p>对于每个词素，词法分析器产生词法单元，该单元会传入下一步骤——<strong>语法分析</strong>当中。</p>
+<li>
+<p>对于每个词素，词法分析器产生词法单元，该单元会传入下一步骤——<strong>语法分析</strong>当中。</p>
 <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240118.png" alt="image-20240312170757833" style="zoom:50%;" /> 
 </li>
-<li><p>词法分析器通常需要和符号表进行交互，当发现一个<strong>标识符</strong>的词素时，将该词素添加到符号表当中。<br>符号表条目的信息会在<strong>语义分析</strong>和<strong>代码生成</strong>步骤使用</p>
+<li>
+<p>词法分析器通常需要和符号表进行交互，当发现一个<strong>标识符</strong>的词素时，将该词素添加到符号表当中。<br>
+符号表条目的信息会在<strong>语义分析</strong>和<strong>代码生成</strong>步骤使用</p>
 </li>
-<li><p>词法分析器在编译器中的其他任务：</p>
+<li>
+<p>词法分析器在编译器中的其他任务：</p>
 <ol>
 <li>过滤源程序中的注释和空白(空格、换行符、制表符以及在输入中用于分隔词法单元的其他字符)。</li>
 <li>将编译器生成的错误信息和源程序的位置联系起来。</li>
 <li>如果源程序使用了宏预处理器，则宏的拓展也可以由词法分析器完成。</li>
 </ol>
 </li>
-<li><p>词法分析可分为两个阶段：</p>
+<li>
+<p>词法分析可分为两个阶段：</p>
 <ol>
-<li><p><strong>扫描阶段</strong>：完成一些不需要生成词法单元<strong>token</strong>的简单处理，如删除注释和将多个连续空白符压缩为一个。</p>
+<li>
+<p><strong>扫描阶段</strong>：完成一些不需要生成词法单元<strong>token</strong>的简单处理，如删除注释和将多个连续空白符压缩为一个。</p>
 </li>
-<li><p><strong>词法分析阶段</strong>：处理扫描阶段的输出并生成<strong>token</strong>。</p>
-</li>
-</ol>
-</li>
-<li><p>词法分析步骤将源代码的字符流转换为记号流，以待后续使用。</p>
+<li>
+<p><strong>词法分析阶段</strong>：处理扫描阶段的输出并生成<strong>token</strong>。</p>
 </li>
 </ol>
-<h3 id="词法单元、模式和词素"><a href="#词法单元、模式和词素" class="headerlink" title="词法单元、模式和词素"></a>词法单元、模式和词素</h3><h4 id="词法单元-Token"><a href="#词法单元-Token" class="headerlink" title="词法单元 Token"></a>词法单元 Token</h4><p><strong>token的组成</strong>：一个词法单元名和一个可选的属性值（不一定有）组成。</p>
+</li>
+<li>
+<p>词法分析步骤将源代码的字符流转换为记号流，以待后续使用。</p>
+</li>
+</ol>
+<h3 id="词法单元、模式和词素"><a class="header-anchor" href="#词法单元、模式和词素"></a>词法单元、模式和词素</h3>
+<h4 id="词法单元-Token"><a class="header-anchor" href="#词法单元-Token"></a>词法单元 Token</h4>
+<p><strong>token的组成</strong>：一个词法单元名和一个可选的属性值（不一定有）组成。</p>
 <p>（<strong>token-name</strong>，<strong>attribute-value</strong>）</p>
 <pre><code>  1. *token-name*：是一个表示某种词法单位的抽象符号，如：特定的关键字，或代表标识符的输入字符序列。
   2. *attribute-value*：多个词素和一个模式匹配，则词法分析器需要向编译器的后续阶段提供被匹配词素的附加信息。因而词法分析器和语法分析器的交互中，词法分析器需要向语法分析器不仅返回**token-name**，还要返回一个描述该词法单元的词素的**attribut-value**。（词法单元名字影响语法分析过程中的决定；属性值影响语法分析之后对这个词法单元的翻译，语义）
   3. 以标识符举例：**id**，和一个标识符相关的信息——词素、类型、首次出现位置（报错时使用）存放在符号表中。一个标识符的属性值是一个指向符号表中该标识符对应条目的指针。
 </code></pre>
-<h4 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h4><p><strong>模式的定义</strong>：描述了一个词法单元的词素可能具有的形式。</p>
-<h4 id="词素"><a href="#词素" class="headerlink" title="词素"></a>词素</h4><p><strong>词素的定义</strong>：源程序中的一个的字符序列，与某个词法单元的模式匹配，并被词法分析器识别为该词法单元的一个实例。</p>
-<h4 id="常见的词法单元类别："><a href="#常见的词法单元类别：" class="headerlink" title="常见的词法单元类别："></a>常见的词法单元类别：</h4><ol>
+<h4 id="模式"><a class="header-anchor" href="#模式"></a>模式</h4>
+<p><strong>模式的定义</strong>：描述了一个词法单元的词素可能具有的形式。</p>
+<h4 id="词素"><a class="header-anchor" href="#词素"></a>词素</h4>
+<p><strong>词素的定义</strong>：源程序中的一个的字符序列，与某个词法单元的模式匹配，并被词法分析器识别为该词法单元的一个实例。</p>
+<h4 id="常见的词法单元类别："><a class="header-anchor" href="#常见的词法单元类别："></a>常见的词法单元类别：</h4>
+<ol>
 <li>每个关键字有一个词法单元。一个关键字的模式就是其本身；</li>
 <li>表示运算符的词法单元。可以表示单个运算符；也快有表示一类运算符；</li>
 <li>一个表示所有标识符的词法单元；</li>
 <li>一个或多个表示常量的词法单元，如数字和字面值字符串；</li>
 <li>每一个标点符号有一个词法单元，比如左右括号、逗号和分号。</li>
 </ol>
-<h4 id="词法错误"><a href="#词法错误" class="headerlink" title="词法错误"></a>词法错误</h4><p>解决词法错误的策略：<strong>“恐慌模式”恢复</strong>。</p>
+<h4 id="词法错误"><a class="header-anchor" href="#词法错误"></a>词法错误</h4>
+<p>解决词法错误的策略：<strong>“恐慌模式”恢复</strong>。</p>
 <p>其他可能的错误恢复动作：</p>
 <ol>
 <li>从剩余的输入中删除一个字符。</li>
@@ -221,173 +308,210 @@
 <li>用一个字符来替换另一个字符。</li>
 <li>交换两个相邻字符。</li>
 </ol>
-<h3 id="输入缓冲"><a href="#输入缓冲" class="headerlink" title="输入缓冲"></a>输入缓冲</h3><h4 id="缓冲区对"><a href="#缓冲区对" class="headerlink" title="缓冲区对"></a>缓冲区对</h4><p>两个交替读入的缓冲区，每个缓冲区的容量为N（通常为磁盘大小）。当输入文件中的剩余字符不足<strong>N</strong>时，使用<strong>eof</strong>标记末尾。</p>
+<h3 id="输入缓冲"><a class="header-anchor" href="#输入缓冲"></a>输入缓冲</h3>
+<h4 id="缓冲区对"><a class="header-anchor" href="#缓冲区对"></a>缓冲区对</h4>
+<p>两个交替读入的缓冲区，每个缓冲区的容量为N（通常为磁盘大小）。当输入文件中的剩余字符不足<strong>N</strong>时，使用<strong>eof</strong>标记末尾。</p>
 <p><strong>两个指针</strong>：</p>
 <ol>
 <li><strong>lexemeBegin</strong> Pointer：该指针指向当前词素的开始处。</li>
 <li><strong>forward</strong> Pointer：向前扫描，直到发现匹配某个模式为止。</li>
 </ol>
-<h4 id="哨兵标记"><a href="#哨兵标记" class="headerlink" title="哨兵标记"></a>哨兵标记</h4><p>在缓冲区对的基础上，</p>
-<h3 id="扫描和token"><a href="#扫描和token" class="headerlink" title="扫描和token"></a>扫描和token</h3><ol>
-<li>扫描得到一个<strong>lexeme</strong>，将词素加上记号构成一个<strong>token</strong>。有些<strong>token</strong>只有<strong>token-name</strong>而没有<strong>token-attribute</strong>，例如保留关键字<strong>while</strong>：<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240860.png" alt="image-20240312170715066" style="zoom: 50%;" /> </li>
+<h4 id="哨兵标记"><a class="header-anchor" href="#哨兵标记"></a>哨兵标记</h4>
+<p>在缓冲区对的基础上，</p>
+<h3 id="扫描和token"><a class="header-anchor" href="#扫描和token"></a>扫描和token</h3>
+<ol>
+<li>扫描得到一个<strong>lexeme</strong>，将词素加上记号构成一个<strong>token</strong>。有些<strong>token</strong>只有<strong>token-name</strong>而没有<strong>token-attribute</strong>，例如保留关键字<strong>while</strong>：<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240860.png" alt="image-20240312170715066" style="zoom: 50%;" /></li>
 <li>扫描过程中，空格虽然算作一个词素，但并不将之存储，因为没有意义</li>
 <li>某些<strong>token</strong>含有属性<strong>attribute</strong>，用于存储关于这个<strong>token</strong>额外的信息，例如一个数123，则会存储为：<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240675.png" alt="image-20240312170546745" style="zoom:33%;" /></li>
 </ol>
-<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><blockquote>
+<h3 id="正则表达式"><a class="header-anchor" href="#正则表达式"></a>正则表达式</h3>
+<blockquote>
 <p>正则表达式可以由较小的正则表达式按照规则递归构建：</p>
 <ul>
-<li>每个正则表达式$r$标识一个语言$L(r)$ ，这个语言也是根据$r$的子表达式所表示的语言递归定义的。</li>
+<li>每个正则表达式<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>标识一个语言<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span> ，这个语言也是根据<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>的子表达式所表示的语言递归定义的。</li>
 </ul>
 </blockquote>
-<h4 id="归纳基础"><a href="#归纳基础" class="headerlink" title="归纳基础"></a>归纳基础</h4><p>给定字符集 $\Sigma &#x3D; {c_1,c_2,…c_n}$；</p>
+<h4 id="归纳基础"><a class="header-anchor" href="#归纳基础"></a>归纳基础</h4>
+<p>给定字符集 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi><mo>=</mo><mrow><msub><mi>c</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>c</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><msub><mi>c</mi><mi>n</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\Sigma = {c_1,c_2,...c_n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Σ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>；</p>
 <ol>
-<li>空串$\varepsilon$是正则表达式；若$L(\epsilon) &#x3D; {\epsilon}$，则该语言只包含空串；</li>
-<li>对于任意 $c \in \Sigma$ $c$​是正则表达式</li>
+<li>空串<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span>是正则表达式；若<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>ϵ</mi><mo stretchy="false">)</mo><mo>=</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">L(\epsilon) = {\epsilon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal">ϵ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span></span></span></span></span>，则该语言只包含空串；</li>
+<li>对于任意 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">c \in \Sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Σ</span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span>​是正则表达式</li>
 </ol>
-<h4 id="归纳步骤"><a href="#归纳步骤" class="headerlink" title="归纳步骤"></a>归纳步骤</h4><p>由小的正则表达式构造大的正则表达式有四种方式，假设$r$和$s$都是正则表达式，分别表示语言$L(r)$和$L(S)$，则有：</p>
+<h4 id="归纳步骤"><a class="header-anchor" href="#归纳步骤"></a>归纳步骤</h4>
+<p>由小的正则表达式构造大的正则表达式有四种方式，假设<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span>都是正则表达式，分别表示语言<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span>，则有：</p>
 <ol>
-<li><p>$(r)|(s)$是一个正则表达式，表示语言$L(r) \cup L(s)$；</p>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(r)|(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mord">∣</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span>是一个正则表达式，表示语言<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>∪</mo><mi>L</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(r) \cup L(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span>；</p>
 </li>
-<li><p>$(r)(s)$是一个正则表达式，表示语言$L(r)L(s)$；</p>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(r)(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span>是一个正则表达式，表示语言<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mi>L</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(r)L(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span>；</p>
 </li>
-<li><p>$(r)^<em>$是一个正则表达式，表示语言$(L(r))^</em>$；</p>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>r</mi><msup><mo stretchy="false">)</mo><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">(r)^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span>是一个正则表达式，表示语言<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><msup><mo stretchy="false">)</mo><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">(L(r))^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span>；</p>
 </li>
-<li><p>$(r)$是一个正则表达式，表示语言$L(r)$。</p>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>是一个正则表达式，表示语言<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span>。</p>
 </li>
 </ol>
-<p>如果$M$和$N$是正则表达式，则具有以下归纳关系：</p>
+<p>如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>是正则表达式，则具有以下归纳关系：</p>
 <ol>
-<li>选择 $M|N &#x3D; {M \cup N}$ </li>
-<li>连接 $MN &#x3D; {mn|m \in M,n \in N}$ </li>
-<li>闭包 $M^{*} &#x3D; {\varepsilon,M,MM,MMM,…}$</li>
+<li>选择 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi mathvariant="normal">∣</mi><mi>N</mi><mo>=</mo><mrow><mi>M</mi><mo>∪</mo><mi>N</mi></mrow></mrow><annotation encoding="application/x-tex">M|N = {M \cup N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span></li>
+<li>连接 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>N</mi><mo>=</mo><mrow><mi>m</mi><mi>n</mi><mi mathvariant="normal">∣</mi><mi>m</mi><mo>∈</mo><mi>M</mi><mo separator="true">,</mo><mi>n</mi><mo>∈</mo><mi>N</mi></mrow></mrow><annotation encoding="application/x-tex">MN = {mn|m \in M,n \in N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">MN</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">mn</span><span class="mord">∣</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span></li>
+<li>闭包 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>M</mi><mo lspace="0em" rspace="0em">∗</mo></msup><mo>=</mo><mrow><mi>ε</mi><mo separator="true">,</mo><mi>M</mi><mo separator="true">,</mo><mi>M</mi><mi>M</mi><mo separator="true">,</mo><mi>M</mi><mi>M</mi><mi>M</mi><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi></mrow></mrow><annotation encoding="application/x-tex">M^{*} = {\varepsilon,M,MM,MMM,...}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6887em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∗</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">ε</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">MM</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">MMM</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span></span></span></span></span></li>
 </ol>
-<h4 id="规定正则表达式优先级"><a href="#规定正则表达式优先级" class="headerlink" title="规定正则表达式优先级"></a>规定正则表达式优先级</h4><ol>
-<li>一元运算符$*$具有最高的优先级，并且是左结合；</li>
+<h4 id="规定正则表达式优先级"><a class="header-anchor" href="#规定正则表达式优先级"></a>规定正则表达式优先级</h4>
+<ol>
+<li>一元运算符<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∗</mo></mrow><annotation encoding="application/x-tex">*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord">∗</span></span></span></span>具有最高的优先级，并且是左结合；</li>
 <li>连接具有次高的优先级，是左结合；</li>
-<li>$|$​ 的优先级最低，是左结合;</li>
-<li>例如,我们可以根据这个约定将$(a)|(<del>(b*(c)</del>)$改写为$a|b^*c$。</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span></span></span></span>​ 的优先级最低，是左结合;</li>
+<li>例如,我们可以根据这个约定将<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi><mo stretchy="false">(</mo><mtext> </mtext><mo stretchy="false">(</mo><mi>b</mi><mo>∗</mo><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo><mtext> </mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a)|(~(b*(c)~)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mclose">)</span><span class="mord">∣</span><span class="mopen">(</span><span class="mspace nobreak"> </span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace nobreak"> </span><span class="mclose">)</span></span></span></span>改写为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi mathvariant="normal">∣</mi><msup><mi>b</mi><mo>∗</mo></msup><mi>c</mi></mrow><annotation encoding="application/x-tex">a|b^*c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mord mathnormal">c</span></span></span></span>。</li>
 </ol>
-<h4 id="正则表达式代数定律"><a href="#正则表达式代数定律" class="headerlink" title="正则表达式代数定律"></a>正则表达式代数定律</h4><table>
+<h4 id="正则表达式代数定律"><a class="header-anchor" href="#正则表达式代数定律"></a>正则表达式代数定律</h4>
+<table>
 <thead>
 <tr>
-<th align="left">定律</th>
-<th align="left">功能描述</th>
+<th style="text-align:left">定律</th>
+<th style="text-align:left">功能描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">$r</td>
-<td align="left">s&#x3D;s</td>
+<tbody>
+<tr>
+<td style="text-align:left">$r</td>
+<td style="text-align:left">s=s</td>
 </tr>
 <tr>
-<td align="left">$r</td>
-<td align="left">(s</td>
+<td style="text-align:left">$r</td>
+<td style="text-align:left">(s</td>
 </tr>
 <tr>
-<td align="left">$r(st)&#x3D;(rs)t$</td>
-<td align="left">连接是可结合的</td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo stretchy="false">(</mo><mi>s</mi><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>r</mi><mi>s</mi><mo stretchy="false">)</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">r(st)=(rs)t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">rs</span><span class="mclose">)</span><span class="mord mathnormal">t</span></span></span></span></td>
+<td style="text-align:left">连接是可结合的</td>
 </tr>
 <tr>
-<td align="left">$r(s</td>
-<td align="left">t)&#x3D;rs</td>
+<td style="text-align:left">$r(s</td>
+<td style="text-align:left">t)=rs</td>
 </tr>
 <tr>
-<td align="left">$\epsilon r&#x3D;r\epsilon&#x3D;r$</td>
-<td align="left">$\epsilon$是连接的单位元</td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mi>r</mi><mo>=</mo><mi>r</mi><mi>ϵ</mi><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">\epsilon r=r\epsilon=r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">ϵr</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">rϵ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span></span></span></span>是连接的单位元</td>
 </tr>
 <tr>
-<td align="left">$r^*&#x3D;(r</td>
-<td align="left">\epsilon)^*$</td>
+<td style="text-align:left">$r^*=(r</td>
+<td style="text-align:left">\epsilon)^*$</td>
 </tr>
 <tr>
-<td align="left">$r**&#x3D;r*$</td>
-<td align="left">$*$具有幂等性</td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>∗</mo><mo>∗</mo><mo>=</mo><mi>r</mi><mo>∗</mo></mrow><annotation encoding="application/x-tex">r**=r*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord">∗</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord">∗</span></span></span></span></td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∗</mo></mrow><annotation encoding="application/x-tex">*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord">∗</span></span></span></span>具有幂等性</td>
 </tr>
-</tbody></table>
-<h4 id="正则表达式拓展"><a href="#正则表达式拓展" class="headerlink" title="正则表达式拓展"></a>正则表达式拓展</h4><ol>
-<li><p>至少一个实例：单目运算符$+$表示以一个正则表达式的正闭包。</p>
+</tbody>
+</table>
+<h4 id="正则表达式拓展"><a class="header-anchor" href="#正则表达式拓展"></a>正则表达式拓展</h4>
+<ol>
+<li>
+<p>至少一个实例：单目运算符<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">+</span></span></span></span>表示以一个正则表达式的正闭包。</p>
 </li>
-<li><p>0个或1个实例：单目运算符$?$表示“0个或一个实例</p>
+<li>
+<p>0个或1个实例：单目运算符<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">?</mo></mrow><annotation encoding="application/x-tex">?</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mclose">?</span></span></span></span>表示“0个或一个实例</p>
 </li>
-<li><p>字符类：$[a_1 a_2 … a_n]$ $[a_1 a_2 … a_n]$形成一个逻辑上连续的序列，如连续的大写字母、小写字母或数位时：表示为$a_1 -a_n$，只写出序列的首尾符号，中间连词符隔开。如：[a-z]表示26个小写字母。</p>
+<li>
+<p>字符类：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[a_1 a_2 ... a_n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">...</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[a_1 a_2 ... a_n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">...</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>形成一个逻辑上连续的序列，如连续的大写字母、小写字母或数位时：表示为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>−</mo><msub><mi>a</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">a_1 -a_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，只写出序列的首尾符号，中间连词符隔开。如：[a-z]表示26个小写字母。</p>
 </li>
-<li><p>Lex的正则表达式</p>
+<li>
+<p>Lex的正则表达式</p>
 <p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240451.png" alt="image-20240317200417333"></p>
 </li>
 </ol>
-<h3 id="词法单元的识别"><a href="#词法单元的识别" class="headerlink" title="词法单元的识别"></a>词法单元的识别</h3><blockquote>
+<h3 id="词法单元的识别"><a class="header-anchor" href="#词法单元的识别"></a>词法单元的识别</h3>
+<blockquote>
 <p>用正则表达式来表示一个模式，用模式来匹配词素</p>
 </blockquote>
 <ul>
-<li>让词法分析器消除空白符<ul>
-<li>方法：让词法分析器去识别：$ws \rightarrow (blank|tab|newline)^*$ </li>
+<li>让词法分析器消除空白符
+<ul>
+<li>方法：让词法分析器去识别：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>s</mi><mo>→</mo><mo stretchy="false">(</mo><mi>b</mi><mi>l</mi><mi>a</mi><mi>n</mi><mi>k</mi><mi mathvariant="normal">∣</mi><mi>t</mi><mi>a</mi><mi>b</mi><mi mathvariant="normal">∣</mi><mi>n</mi><mi>e</mi><mi>w</mi><mi>l</mi><mi>i</mi><mi>n</mi><mi>e</mi><msup><mo stretchy="false">)</mo><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">ws \rightarrow (blank|tab|newline)^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03148em;">ank</span><span class="mord">∣</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ab</span><span class="mord">∣</span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">wl</span><span class="mord mathnormal">in</span><span class="mord mathnormal">e</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span></li>
 <li>blank、tab及newline是用于表示具有同样名字的ASCII字符的抽象符号。</li>
-<li>当我们识别到$ws$时,我们并不将它返回给语法分析器,而是从这个空白之后的字符开始继续进行词法分析。返回给语法分析器的是下一个词法单元。</li>
+<li>当我们识别到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">ws</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">s</span></span></span></span>时,我们并不将它返回给语法分析器,而是从这个空白之后的字符开始继续进行词法分析。返回给语法分析器的是下一个词法单元。</li>
 </ul>
 </li>
 </ul>
-<h4 id="状态转移图"><a href="#状态转移图" class="headerlink" title="状态转移图"></a>状态转移图</h4><blockquote>
+<h4 id="状态转移图"><a class="header-anchor" href="#状态转移图"></a>状态转移图</h4>
+<blockquote>
 <p>将模式转换成具有特定风格的流图</p>
 </blockquote>
 <p><strong>重要约定</strong>：</p>
 <ul>
-<li>某些状态定义为接受状态或最终状态。双圈表示接受状态<ul>
+<li>某些状态定义为接受状态或最终状态。双圈表示接受状态
+<ul>
 <li>接受状态可执行的动作：向语法分析器返回一个词法单元和相关属性值</li>
 </ul>
 </li>
-<li>如果需要forward回退一个位置（即相应词素并不包括那个在最后一部使我们到达接受状态的符号）则将在该接受状态的附近加上$*$​。</li>
+<li>如果需要forward回退一个位置（即相应词素并不包括那个在最后一部使我们到达接受状态的符号）则将在该接受状态的附近加上<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∗</mo></mrow><annotation encoding="application/x-tex">*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord">∗</span></span></span></span>​。</li>
 <li>有一个状态指定为开始状态&amp;初始状态，该状态由一条没有出发结点的、标号为“start”的边指明。在读入任何输入符号之前，状态转换图总是位于它的开始状态。</li>
 </ul>
-<h4 id="保留字和标识符的识别"><a href="#保留字和标识符的识别" class="headerlink" title="保留字和标识符的识别"></a>保留字和标识符的识别</h4><h5 id="两种处理看起来很像标识符的保留字："><a href="#两种处理看起来很像标识符的保留字：" class="headerlink" title="两种处理看起来很像标识符的保留字："></a>两种处理看起来很像标识符的保留字：</h5><ul>
-<li><p>初始化时就将各个保留字填入符号表中。</p>
+<h4 id="保留字和标识符的识别"><a class="header-anchor" href="#保留字和标识符的识别"></a>保留字和标识符的识别</h4>
+<h5 id="两种处理看起来很像标识符的保留字："><a class="header-anchor" href="#两种处理看起来很像标识符的保留字："></a>两种处理看起来很像标识符的保留字：</h5>
+<ul>
+<li>
+<p>初始化时就将各个保留字填入符号表中。</p>
 <ul>
 <li>任何词法分析时不在符号表中的标识符都不可能是一个保留字</li>
 <li></li>
 </ul>
 </li>
-<li><p>为每个关键字建立单独的状态转换图。</p>
+<li>
+<p>为每个关键字建立单独的状态转换图。</p>
 <ul>
-<li><p>以then为例：</p>
+<li>
+<p>以then为例：</p>
 <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011240322.png" alt="image-20240317215751827" style="zoom:67%;" />
 </li>
-<li><p>这样的状态转换图包含的状态表示看到该关键字的各个后续字母后的情况,最后是一个“非字母或数字”的测试,也就是检查后面是否为某个不可能成为标识符一部分的字符。</p>
+<li>
+<p>这样的状态转换图包含的状态表示看到该关键字的各个后续字母后的情况,最后是一个“非字母或数字”的测试,也就是检查后面是否为某个不可能成为标识符一部分的字符。</p>
 </li>
-<li><p>如果采用这个方法,我们必须设定词法单元之间的优先级,使得当一个词素同时匹配id的模式和关键字的模式时,优先识别保留字词法单元,而不是id词法单元。</p>
+<li>
+<p>如果采用这个方法,我们必须设定词法单元之间的优先级,使得当一个词素同时匹配id的模式和关键字的模式时,优先识别保留字词法单元,而不是id词法单元。</p>
 </li>
 </ul>
 </li>
 </ul>
 <p>词法规则是一个Patamer集合，会有许许多多种正则表达式，许许多多种模式去匹配。</p>
-<h4 id="冲突解决两种经典方案"><a href="#冲突解决两种经典方案" class="headerlink" title="冲突解决两种经典方案"></a>冲突解决两种经典方案</h4><ul>
-<li><p>最长子串原则：</p>
+<h4 id="冲突解决两种经典方案"><a class="header-anchor" href="#冲突解决两种经典方案"></a>冲突解决两种经典方案</h4>
+<ul>
+<li>
+<p>最长子串原则：</p>
 <ul>
 <li>自动机：用新的匹配得到的token去替换已经匹配到的token，进入<code>last-match</code>，当所有模式都卡住时返回<code>last-match</code>。</li>
 </ul>
 </li>
-<li><p>优先级规则：如果最长的可能前缀与多个模式匹配，选择优先级高的进行匹配。</p>
+<li>
+<p>优先级规则：如果最长的可能前缀与多个模式匹配，选择优先级高的进行匹配。</p>
 </li>
 </ul>
-<h3 id="有限状态自动机"><a href="#有限状态自动机" class="headerlink" title="有限状态自动机"></a>有限状态自动机</h3><blockquote>
+<h3 id="有限状态自动机"><a class="header-anchor" href="#有限状态自动机"></a>有限状态自动机</h3>
+<blockquote>
 <p>字符流转换为token的核心是有穷自动机。</p>
 </blockquote>
 <ul>
 <li>有穷自动机是识别器 recognizer，只能对每个可能输入串简单地回答“是&amp;否”。</li>
-<li>分类：<ul>
+<li>分类：
+<ul>
 <li>不确定的有穷自动机 NFA</li>
 <li>确定的有穷自动机 DFA</li>
 </ul>
 </li>
 <li>两种自动机能识别的语言集合是一样的，这些语言的集合正好是正则表达式描述的语言的集合————正则语言(RE，regular language)</li>
 </ul>
-<h4 id="NFA-不确定的自动机"><a href="#NFA-不确定的自动机" class="headerlink" title="NFA 不确定的自动机"></a>NFA 不确定的自动机</h4><blockquote>
-<p>$(Σ,S,T,S_0,{S_n})$ </p>
+<h4 id="NFA-不确定的自动机"><a class="header-anchor" href="#NFA-不确定的自动机"></a>NFA 不确定的自动机</h4>
+<blockquote>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo separator="true">,</mo><mi>S</mi><mo separator="true">,</mo><mi>T</mi><mo separator="true">,</mo><msub><mi>S</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>S</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(Σ,S,T,S_0,{S_n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">Σ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
 <p>符号集，有穷的状态集合，变迁函数，开始状态，接受状态集</p>
 </blockquote>
 <p>一个不确定的有穷自动机(NFA)由以下几个部分组成:</p>
 <ul>
 <li>一个有穷的状态集合S。</li>
-<li>一个输入符号集合$Σ$,即输入字母表(input alphabet)。我们假设代表空串的$\epsilon$不是$Σ$中的元素。</li>
-<li>一个转换函数(transition function),它为每个状态和$Σ∪{\epsilon}$​中的每个符号都给出了相应的后继状态(next state)的集合。</li>
-<li>S中的一个状态$s_0$被指定为开始状态,或者说初始状态。</li>
+<li>一个输入符号集合<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">Σ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Σ</span></span></span></span>,即输入字母表(input alphabet)。我们假设代表空串的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span></span></span></span>不是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">Σ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Σ</span></span></span></span>中的元素。</li>
+<li>一个转换函数(transition function),它为每个状态和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi><mo>∪</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">Σ∪{\epsilon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Σ</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span></span></span></span></span>​中的每个符号都给出了相应的后继状态(next state)的集合。</li>
+<li>S中的一个状态<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">s_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>被指定为开始状态,或者说初始状态。</li>
 <li>S的一个子集F被指定为接受状态(或者说终止状态的)集合。</li>
 </ul>
 <p>将自动机表示为一张转换图：</p>
@@ -396,18 +520,21 @@
 </blockquote>
 <ol>
 <li>同一个符号可以标记从同一状态出发到达多个目标状态的多条边</li>
-<li>一条边的标号不仅可以是输入字母表中的符号，也可以是空符号串$\varepsilon$。</li>
+<li>一条边的标号不仅可以是输入字母表中的符号，也可以是空符号串<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span>。</li>
 </ol>
-<h4 id="自动机中输入字符串的接受"><a href="#自动机中输入字符串的接受" class="headerlink" title="自动机中输入字符串的接受"></a>自动机中输入字符串的接受</h4><ul>
+<h4 id="自动机中输入字符串的接受"><a class="header-anchor" href="#自动机中输入字符串的接受"></a>自动机中输入字符串的接受</h4>
+<ul>
 <li>一个NFA accpet输入字符串xx，当且仅当对应的转换图中存在一条从开始状态到某个接受状态的路径，使该路径中各条边上的标号组成符号串x。</li>
-<li>路径中的$\varepsilon$标号将被忽略，因为<strong>空串不影响根据路径得到的字符串</strong></li>
+<li>路径中的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span>标号将被忽略，因为<strong>空串不影响根据路径得到的字符串</strong></li>
 </ul>
 <p>由一个NFA定义(或接受)的语言是从开始状态到某个接受状态的所有路径上的标号串的集合。</p>
-<h3 id="DFA-确定的有穷自动机"><a href="#DFA-确定的有穷自动机" class="headerlink" title="DFA 确定的有穷自动机"></a>DFA 确定的有穷自动机</h3><ol>
-<li>没有输入$\varepsilon$变迁</li>
+<h3 id="DFA-确定的有穷自动机"><a class="header-anchor" href="#DFA-确定的有穷自动机"></a>DFA 确定的有穷自动机</h3>
+<ol>
+<li>没有输入<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span>变迁</li>
 <li>一个不会变迁到多个状态：每个状态s和每个输入符号a，有且只有一条标号为a的边离开s。</li>
 </ol>
-<h3 id="RE转换成NFA：Thompson算法"><a href="#RE转换成NFA：Thompson算法" class="headerlink" title="RE转换成NFA：Thompson算法"></a>RE转换成NFA：Thompson算法</h3><blockquote>
+<h3 id="RE转换成NFA：Thompson算法"><a class="header-anchor" href="#RE转换成NFA：Thompson算法"></a>RE转换成NFA：Thompson算法</h3>
+<blockquote>
 <p>只有一个开始状态&amp;接受状态；</p>
 </blockquote>
 <p><strong>算法转换步骤</strong>：</p>
@@ -417,87 +544,109 @@
 <li>将原来的开始和接受状态转换为中间状态</li>
 <li>用空变迁来连接开始状态和接受状态到中间状态的变迁</li>
 </ol>
-<h3 id="NFA转换成DFA：子集构造算法"><a href="#NFA转换成DFA：子集构造算法" class="headerlink" title="NFA转换成DFA：子集构造算法"></a>NFA转换成DFA：子集构造算法</h3><h4 id="NFA和DFA的区别"><a href="#NFA和DFA的区别" class="headerlink" title="NFA和DFA的区别"></a>NFA和DFA的区别</h4><ol>
+<h3 id="NFA转换成DFA：子集构造算法"><a class="header-anchor" href="#NFA转换成DFA：子集构造算法"></a>NFA转换成DFA：子集构造算法</h3>
+<h4 id="NFA和DFA的区别"><a class="header-anchor" href="#NFA和DFA的区别"></a>NFA和DFA的区别</h4>
+<ol>
 <li>空变迁</li>
 <li>多重变迁</li>
 </ol>
-<h4 id="子集构造算法"><a href="#子集构造算法" class="headerlink" title="子集构造算法"></a>子集构造算法</h4><blockquote>
+<h4 id="子集构造算法"><a class="header-anchor" href="#子集构造算法"></a>子集构造算法</h4>
+<blockquote>
 <p>思想核心是——讲构造得到的DFA的每个状态去对应原来NFA的一个状态集合。</p>
 <p>NFA和DFA的状态数量大致相同</p>
 </blockquote>
-<h4 id="在NFA状态集上的操作"><a href="#在NFA状态集上的操作" class="headerlink" title="在NFA状态集上的操作"></a>在NFA状态集上的操作</h4><table>
+<h4 id="在NFA状态集上的操作"><a class="header-anchor" href="#在NFA状态集上的操作"></a>在NFA状态集上的操作</h4>
+<table>
 <thead>
 <tr>
-<th align="left">操作</th>
-<th align="left">描述</th>
+<th style="text-align:left">操作</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">$\varepsilon-closure(s)$</td>
-<td align="left">能够从NFA的状态s开始只通过$\varepsilon$转换到达的NFA状态集合</td>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>−</mo><mi>c</mi><mi>l</mi><mi>o</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>e</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\varepsilon-closure(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">ε</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">os</span><span class="mord mathnormal">u</span><span class="mord mathnormal">re</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:left">能够从NFA的状态s开始只通过<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span>转换到达的NFA状态集合</td>
 </tr>
 <tr>
-<td align="left">$\varepsilon-closure(T)$</td>
-<td align="left">能够从T中某个NFA状态s开始，只通过$\varepsilon$转换到达的NFA状态集合，即$\cup _{s\in T}\varepsilon-closure(s)$</td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>−</mo><mi>c</mi><mi>l</mi><mi>o</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>e</mi><mo stretchy="false">(</mo><mi>T</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\varepsilon-closure(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">ε</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">os</span><span class="mord mathnormal">u</span><span class="mord mathnormal">re</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:left">能够从T中某个NFA状态s开始，只通过<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span>转换到达的NFA状态集合，即<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∪</mo><mrow><mi>s</mi><mo>∈</mo><mi>T</mi></mrow></msub><mi>ε</mi><mo>−</mo><mi>c</mi><mi>l</mi><mi>o</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>e</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\cup _{s\in T}\varepsilon-closure(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7607em;vertical-align:-0.1774em;"></span><span class="mord"><span class="mbin">∪</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1774em;"><span></span></span></span></span></span></span><span class="mord mathnormal">ε</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">os</span><span class="mord mathnormal">u</span><span class="mord mathnormal">re</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span></td>
 </tr>
 <tr>
-<td align="left">$move(T,a)$</td>
-<td align="left">能够从T中某个状态s出发通过标号为a的转换到达的NFA状态集合</td>
+<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>o</mi><mi>v</mi><mi>e</mi><mo stretchy="false">(</mo><mi>T</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">move(T,a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:left">能够从T中某个状态s出发通过标号为a的转换到达的NFA状态集合</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol>
-<li><p>是为了消除以上NFA和DFA的区别</p>
+<li>
+<p>是为了消除以上NFA和DFA的区别</p>
 </li>
-<li><p>子集构造法将多重变迁的多种状态构成一个集合，然后让同一个输入由原来的<strong>变迁到多种状态</strong>变成现在的<strong>变迁到同一个状态集合</strong>。</p>
+<li>
+<p>子集构造法将多重变迁的多种状态构成一个集合，然后让同一个输入由原来的<strong>变迁到多种状态</strong>变成现在的<strong>变迁到同一个状态集合</strong>。</p>
 <p>在得到等价状态集合的时候需要消除空变迁，即所有由空变迁可达的状态都是等价状态集合的元素。</p>
 <p>将开始状态可达的状态包含入一个状态集合中，然后用其中一个集合符号进行代表。</p>
 </li>
-<li><p>构造结束：当DFA的状态表不在产生新的元素的改变，即集合不在因为输入而改变，</p>
+<li>
+<p>构造结束：当DFA的状态表不在产生新的元素的改变，即集合不在因为输入而改变，</p>
 <ol>
-<li>需要求一个$\varepsilon$闭包 $\varepsilon-closure(I) &#x3D; I \cup \Sigma S$ </li>
+<li>需要求一个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span>闭包 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>−</mo><mi>c</mi><mi>l</mi><mi>o</mi><mi>s</mi><mi>u</mi><mi>r</mi><mi>e</mi><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo><mo>=</mo><mi>I</mi><mo>∪</mo><mi mathvariant="normal">Σ</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">\varepsilon-closure(I) = I \cup \Sigma S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">ε</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">os</span><span class="mord mathnormal">u</span><span class="mord mathnormal">re</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Σ</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></li>
 <li>则会停止NFA到DFA的转换，得到了最简子集。</li>
 </ol>
 </li>
 </ol>
-<h3 id="DFA的最小化：Hopcroft算法"><a href="#DFA的最小化：Hopcroft算法" class="headerlink" title="DFA的最小化：Hopcroft算法"></a>DFA的最小化：Hopcroft算法</h3><p>简化DFA，将构建出的DFA最小化</p>
+<h3 id="DFA的最小化：Hopcroft算法"><a class="header-anchor" href="#DFA的最小化：Hopcroft算法"></a>DFA的最小化：Hopcroft算法</h3>
+<p>简化DFA，将构建出的DFA最小化</p>
 <ol>
 <li>将同类型的n个会转化到等价状态的状态进行等价合并（若A是中间状态，但B是接受状态，则A和B不可以合并）</li>
 </ol>
-<h4 id="等价状态"><a href="#等价状态" class="headerlink" title="等价状态"></a>等价状态</h4><p>等价标准：</p>
+<h4 id="等价状态"><a class="header-anchor" href="#等价状态"></a>等价状态</h4>
+<p>等价标准：</p>
 <ul>
 <li>s和t都是接受状态或都是非接受状态</li>
 </ul>
 <p>树的数据结构可以用来表达嵌套结构。</p>
-<h3 id="从DFA生成分析算法"><a href="#从DFA生成分析算法" class="headerlink" title="从DFA生成分析算法"></a>从DFA生成分析算法</h3><h2 id="CH3-语法分析-Part-I"><a href="#CH3-语法分析-Part-I" class="headerlink" title="CH3: 语法分析(Part I)"></a>CH3: 语法分析(Part I)</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/501849448">学生角度————编译原理-语法分析详解</a> </p>
+<h3 id="从DFA生成分析算法"><a class="header-anchor" href="#从DFA生成分析算法"></a>从DFA生成分析算法</h3>
+<h2 id="CH3-语法分析-Part-I"><a class="header-anchor" href="#CH3-语法分析-Part-I"></a>CH3: 语法分析(Part I)</h2>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/501849448">学生角度————编译原理-语法分析详解</a></p>
 <blockquote>
 <p>语法分析器从词法分析器得到一个由token组成的token序列，并验证这个token串可以由源语言的文法生成。</p>
-<p><img src="D:\DeskTable\博客学习截图传输\image-20240319141414360.png" alt="image-20240319141414360"> </p>
+<p><img src="D:%5CDeskTable%5C%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93%5Cimage-20240319141414360.png" alt="image-20240319141414360"></p>
 <p>词法分析阶段处理了多个字符组成的构造，如标识符；</p>
 <p>语法分析阶段因为词法分析已经完成了字符的token化，所以可以把原本由多个字符组成的标识符当作<strong>单元</strong>进行处理。</p>
 </blockquote>
-<h3 id="语法分析的任务"><a href="#语法分析的任务" class="headerlink" title="语法分析的任务"></a>语法分析的任务</h3><ol>
-<li><p>还原token序列所描述的语法结构；</p>
+<h3 id="语法分析的任务"><a class="header-anchor" href="#语法分析的任务"></a>语法分析的任务</h3>
+<ol>
+<li>
+<p>还原token序列所描述的语法结构；</p>
 <p>Recover the structure described by that series of tokens.</p>
 </li>
-<li><p>对token序列构成的不符合文法要求的结构进行报错</p>
+<li>
+<p>对token序列构成的不符合文法要求的结构进行报错</p>
 <p>Report errors if those tokens do not properly encode a structure.</p>
 </li>
 </ol>
-<h4 id="语法分析器分为三类："><a href="#语法分析器分为三类：" class="headerlink" title="语法分析器分为三类："></a>语法分析器分为三类：</h4><ol>
+<h4 id="语法分析器分为三类："><a class="header-anchor" href="#语法分析器分为三类："></a>语法分析器分为三类：</h4>
+<ol>
 <li>通用的</li>
 <li>自顶向下的</li>
 <li>自底向上的</li>
 </ol>
-<h3 id="上下文无关文法和推导"><a href="#上下文无关文法和推导" class="headerlink" title="上下文无关文法和推导"></a>上下文无关文法和推导</h3><blockquote>
+<h3 id="上下文无关文法和推导"><a class="header-anchor" href="#上下文无关文法和推导"></a>上下文无关文法和推导</h3>
+<blockquote>
 <p>上下文无关文法——简称“文法”。</p>
 </blockquote>
 <p>Derivation————得到上下文无关法</p>
-<h4 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h4><ul>
-<li><p>一个终结符号集合(也称“词法单元”)：终结符号是该文法所定义的语言的基本符号的集合。</p>
+<h4 id="组成"><a class="header-anchor" href="#组成"></a>组成</h4>
+<ul>
+<li>
+<p>一个终结符号集合(也称“词法单元”)：终结符号是该文法所定义的语言的基本符号的集合。</p>
 </li>
-<li><p>一个非终结符号集合(也称“语法变量”)：每个非终结符号表示一个终结符号串的集合。</p>
+<li>
+<p>一个非终结符号集合(也称“语法变量”)：每个非终结符号表示一个终结符号串的集合。</p>
 </li>
-<li><p>一个产生式集合：主要用来表示某个构造的某种书写形式，其中每个产生式包括：</p>
+<li>
+<p>一个产生式集合：主要用来表示某个构造的某种书写形式，其中每个产生式包括：</p>
 <ul>
 <li>一个称为产生式头或左部的非终结符号；</li>
 <li>一个箭头；</li>
@@ -505,29 +654,51 @@
 </ul>
 <p>如果产生式头非终结符号代表一个构造，那么该产生式体就代表该构造的一种书写方式。</p>
 </li>
-<li><p>指定一个非终结符号为开始符号。</p>
+<li>
+<p>指定一个非终结符号为开始符号。</p>
 </li>
 </ul>
-<h3 id="分析树和二义性文法"><a href="#分析树和二义性文法" class="headerlink" title="分析树和二义性文法"></a>分析树和二义性文法</h3><h3 id="自顶向下分析"><a href="#自顶向下分析" class="headerlink" title="自顶向下分析"></a>自顶向下分析</h3><p>LR(0)</p>
+<h3 id="分析树和二义性文法"><a class="header-anchor" href="#分析树和二义性文法"></a>分析树和二义性文法</h3>
+<h3 id="自顶向下分析"><a class="header-anchor" href="#自顶向下分析"></a>自顶向下分析</h3>
+<p>LR(0)</p>
 <p>LR(1)</p>
 <p>SLR(1)</p>
 <p>LALR(1)</p>
-<h3 id="递归下降分析算法"><a href="#递归下降分析算法" class="headerlink" title="递归下降分析算法"></a>递归下降分析算法</h3><h2 id="CH5-语法分析-Part-II"><a href="#CH5-语法分析-Part-II" class="headerlink" title="CH5: 语法分析(Part II)"></a>CH5: 语法分析(Part II)</h2><h3 id="LL-1-分析算法"><a href="#LL-1-分析算法" class="headerlink" title="LL(1)分析算法"></a>LL(1)分析算法</h3><h3 id="LL-1-分析的冲突处理"><a href="#LL-1-分析的冲突处理" class="headerlink" title="LL(1)分析的冲突处理"></a>LL(1)分析的冲突处理</h3><h3 id="LR-0-分析算法"><a href="#LR-0-分析算法" class="headerlink" title="LR(0)分析算法"></a>LR(0)分析算法</h3><h3 id="SLR分析算法"><a href="#SLR分析算法" class="headerlink" title="SLR分析算法"></a>SLR分析算法</h3><h3 id="LR-1-分析算法"><a href="#LR-1-分析算法" class="headerlink" title="LR(1)分析算法"></a>LR(1)分析算法</h3><h3 id="LR-1-分析工具"><a href="#LR-1-分析工具" class="headerlink" title="LR(1)分析工具"></a>LR(1)分析工具</h3><p>采取管道过滤器的架构</p>
+<h3 id="递归下降分析算法"><a class="header-anchor" href="#递归下降分析算法"></a>递归下降分析算法</h3>
+<h2 id="CH5-语法分析-Part-II"><a class="header-anchor" href="#CH5-语法分析-Part-II"></a>CH5: 语法分析(Part II)</h2>
+<h3 id="LL-1-分析算法"><a class="header-anchor" href="#LL-1-分析算法"></a>LL(1)分析算法</h3>
+<h3 id="LL-1-分析的冲突处理"><a class="header-anchor" href="#LL-1-分析的冲突处理"></a>LL(1)分析的冲突处理</h3>
+<h3 id="LR-0-分析算法"><a class="header-anchor" href="#LR-0-分析算法"></a>LR(0)分析算法</h3>
+<h3 id="SLR分析算法"><a class="header-anchor" href="#SLR分析算法"></a>SLR分析算法</h3>
+<h3 id="LR-1-分析算法"><a class="header-anchor" href="#LR-1-分析算法"></a>LR(1)分析算法</h3>
+<h3 id="LR-1-分析工具"><a class="header-anchor" href="#LR-1-分析工具"></a>LR(1)分析工具</h3>
+<p>采取管道过滤器的架构</p>
 <p>源代码input – 词法分析器lexical Analysis – output token序列（存储于符号表）input – 语法分析器 syntax Analysis – output 语法树 input – 语义分析器（理解语句的意思）— 带注解的语法树</p>
 <p>语义分析：</p>
 <ol>
 <li>从类型检测开始。</li>
 <li></li>
 </ol>
-<p>语法指导的翻译SDD<br>符号表是一个使用hash table的表 便于查询和搜索 核心是search<br>语法和词法分析是 类型检查</p>
-<p>TAC three address code 三地址码拓展<br>中间代码：为了方便优化代码，方便计算上的优化。采取优化方法。<br>中间代码的翻译称为与机器无关的翻译<br>生成代码称为与机器有关的翻译</p>
-<p>语法分析的目的：<br>分词，token抽取<br>基于词法规则来进行分词<br>词法规则的描述：正则表达式 Regular expression</p>
+<p>语法指导的翻译SDD<br>
+符号表是一个使用hash table的表 便于查询和搜索 核心是search<br>
+语法和词法分析是 类型检查</p>
+<p>TAC three address code 三地址码拓展<br>
+中间代码：为了方便优化代码，方便计算上的优化。采取优化方法。<br>
+中间代码的翻译称为与机器无关的翻译<br>
+生成代码称为与机器有关的翻译</p>
+<p>语法分析的目的：<br>
+分词，token抽取<br>
+基于词法规则来进行分词<br>
+词法规则的描述：正则表达式 Regular expression</p>
 <ol>
 <li>检查词法错误，使用的token是否正确；</li>
 <li></li>
 </ol>
-<p>原子正则表达式<br>a和空串<br>递归的方式</p>
-<p>复合复杂的正则表达式<br>4种操作</p>
+<p>原子正则表达式<br>
+a和空串<br>
+递归的方式</p>
+<p>复合复杂的正则表达式<br>
+4种操作</p>
 <ol>
 <li>R1 R2 的串</li>
 <li>R1 union R2 并集</li>
@@ -535,163 +706,15 @@
 <li>括号()区分union集使用</li>
 </ol>
 <p>patern————使用正则表达式 RE表示&amp;自动机 FA</p>
-<p>自动机，FA：过于复杂，难以理解，机器易于阅读，刻画算法过程。对算法动态转移的直观展示，转移的过程也是翻译的问题。<br>正则表达式 RE：易于理解，人易于阅读，对规则的静态描述。</p>
-<p>正则表达式+自动tb机，融合优点。<br>正则表达式容易地转换为自动机</p>
+<p>自动机，FA：过于复杂，难以理解，机器易于阅读，刻画算法过程。对算法动态转移的直观展示，转移的过程也是翻译的问题。<br>
+正则表达式 RE：易于理解，人易于阅读，对规则的静态描述。</p>
+<p>正则表达式+自动tb机，融合优点。<br>
+正则表达式容易地转换为自动机</p>
 <p>如何将RE转换问DFA</p>
-<p>Scanner program generator<br>输入正则表达式集合<br>输出Scanner code<br>flex 词法生成器<br>bis语法生成器</p>
+<p>Scanner program generator<br>
+输入正则表达式集合<br>
+输出Scanner code<br>
+flex 词法生成器<br>
+bis语法生成器</p>
 <p>tb</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" data-id="cm7pquzic0028r8v26kog8xej" data-title="编译原理" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          计算机组成原理
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">数据结构</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.67px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 15px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 11.67px;">学习规划</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 18.33px;">工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.67px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 13.33px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/">markdown语法</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/">Leetcode刷题题解</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">moru</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Moru</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/">计算机四大件</a><a class="post-meta__tags" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/">大学专业课</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">数据结构</div></div><div class="info-2"><div class="info-item-1">数据结构 一、引言 数据结构三要素:   逻辑结构   存储结构（物理结构）   具体的运算，即包含基础操作：数据的访问、添加、删除、更新   为什么要有数据结构: 数据结构的提出是为了满足实际生产需求当作遇到的数据存储空间的分配问题,良好的空间分配方式可以提高程序的效率,降低成本,提高产能,因而数据结构并不高深,取之于生活再用之于生活。 二、线性数据结构 数组(Array) 特点  数组内元素具有相同的类型 每个元素对应一个唯一的索引，可以通过索引对数组内元素进行操作 数组大小在创建时固定，因而数组长度和元素个数可知 在内存中连续存储，可以进行高效的随机访问——通过索引直接访问   链表(Linked List) 栈(Stack) 用顺序表进行模拟： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546public class MyStack&#123;    public int[] elem;    public int usedSize = 0;   ...</div></div></div></a><a class="pagination-related" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/" title="计算机组成原理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">计算机组成原理</div></div><div class="info-2"><div class="info-item-1"> 计算机组成原理  CH1 计算机基本知识 计算机类型：  嵌入式计算机 个人计算机 服务器和企业系统 超级计算机和网络计算机  计算机五大部件：  输入单元——Input Unit 输出单元——Output Unit 存储设——Memory 运算逻辑单元——ALU Arithmetic and Logic Unit 控制单元——Control Unit  3、程序运行 4、计算机发展 CH9 Arithmetic 数的表示 数据   数据本身毫无意义，但可以用来在统一观念下进行特定的解释，创造出抽象的概念，赋予其特定场景下的含义。   硬件实现的数据类型——数据表示   软件实现的数据类型——数据结构   整数的表示  有符号整数，符号位为0表示为正；符号位为1表示为负  出于各种原因，针对二进制数，设计出了以下几种二进制编码   原码   反码   补码   移码   原码：   一个数的绝对值的二进制表示   特点：    含有+0（0000 0000）和-0（1111...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/" title="计算机组成原理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-01</div><div class="info-item-2">计算机组成原理</div></div><div class="info-2"><div class="info-item-1"> 计算机组成原理  CH1 计算机基本知识 计算机类型：  嵌入式计算机 个人计算机 服务器和企业系统 超级计算机和网络计算机  计算机五大部件：  输入单元——Input Unit 输出单元——Output Unit 存储设——Memory 运算逻辑单元——ALU Arithmetic and Logic Unit 控制单元——Control Unit  3、程序运行 4、计算机发展 CH9 Arithmetic 数的表示 数据   数据本身毫无意义，但可以用来在统一观念下进行特定的解释，创造出抽象的概念，赋予其特定场景下的含义。   硬件实现的数据类型——数据表示   软件实现的数据类型——数据结构   整数的表示  有符号整数，符号位为0表示为正；符号位为1表示为负  出于各种原因，针对二进制数，设计出了以下几种二进制编码   原码   反码   补码   移码   原码：   一个数的绝对值的二进制表示   特点：    含有+0（0000 0000）和-0（1111...</div></div></div></a><a class="pagination-related" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-01</div><div class="info-item-2">操作系统</div></div><div class="info-2"><div class="info-item-1">操作系统 CH1—基本概念概述 操作系统：  是一台将复杂的执行细节隐藏， 向用户提供虚拟的易于使用的功能的一种机器。 一种资源管理机器  进程：  正在执行的一个程序就是一个进程 为了描述和控制进程的运行    一个称为command interpret或shell的进程从终端读取命令。   一个进程可以创建一个或多个子进程，从而构成进程树。   UNIX有一个共同的父进程：root   进程块 PCB 为了便于描述和控制进程的运行，OS为进程定义了一种数据结构“进程块 PCB（Process Control Block）”，每创建一个进程，即是为某个程序设置了一个PCB，用于对该进程进行控制和管理。进程任务完成则收回PCB，代表进程消亡。 至此，PCB是进程存在的唯一标志。 进程的状态   running   blocked(阻塞，不可抢占CPU资源)   ready(可抢占CPU资源状态)   不同种类的ID   UID：Each person authorized to use a system is assigned a User...</div></div></div></a><a class="pagination-related" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-01</div><div class="info-item-2">数据结构</div></div><div class="info-2"><div class="info-item-1">数据结构 一、引言 数据结构三要素:   逻辑结构   存储结构（物理结构）   具体的运算，即包含基础操作：数据的访问、添加、删除、更新   为什么要有数据结构: 数据结构的提出是为了满足实际生产需求当作遇到的数据存储空间的分配问题,良好的空间分配方式可以提高程序的效率,降低成本,提高产能,因而数据结构并不高深,取之于生活再用之于生活。 二、线性数据结构 数组(Array) 特点  数组内元素具有相同的类型 每个元素对应一个唯一的索引，可以通过索引对数组内元素进行操作 数组大小在创建时固定，因而数组长度和元素个数可知 在内存中连续存储，可以进行高效的随机访问——通过索引直接访问   链表(Linked List) 栈(Stack) 用顺序表进行模拟： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546public class MyStack&#123;    public int[] elem;    public int usedSize = 0;   ...</div></div></div></a><a class="pagination-related" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-01</div><div class="info-item-2">计算机网络学习</div></div><div class="info-2"><div class="info-item-1">计算机网络 计算机网络与因特网  ——本章task：  介绍基本术语和概念  构成网络的基本硬件和软件组成：  从网络边缘——网络中运行的端系统和网络应用； 再到网络核心——传输数据的链路和交换机以及将端系统与网络核心相连接的接入网和物理媒体。     计算机网络中数据的时延、丢包和吞吐量 端到端吞吐量和时延的定量模型：  模型兼顾了传输、传播和排队时延等因素   体系结构原则：  协议分层和服务模型     计网概念简述 概念   计算机网络是一个将分散的、具有独立功能的计算机系统，通过通信设备和线路连接起来，由功能完善的软件实现资源共享和信息传递的系统 本质即是由若干个节点和连接这些节点的链路组成的一张网   计网的结构组成  ——由三大要素组成：硬件、软件...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">moru</div><div class="author-info-description">道虽迩，不行不至</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">编译原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CH1-%E7%BC%96%E8%AF%91%E5%99%A8%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">CH1: 编译器介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">编译器概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">解释器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E5%92%8C%E8%A7%A3%E9%87%8A%E5%99%A8%E5%AF%B9%E6%AF%94"><span class="toc-number">1.1.3.</span> <span class="toc-text">编译器和解释器对比</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%82%B9%EF%BC%9A%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">相同点：都是一种语言实现系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9%EF%BC%9A"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">不同点：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.4.</span> <span class="toc-text">编译器结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E9%AB%98%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">编译器的高层结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CH2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">CH2: 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E5%B7%A5%E4%BD%9C%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">词法分析的工作：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%8D%95%E5%85%83%E3%80%81%E6%A8%A1%E5%BC%8F%E5%92%8C%E8%AF%8D%E7%B4%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">词法单元、模式和词素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%8D%95%E5%85%83-Token"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">词法单元 Token</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8D%E7%B4%A0"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">词素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%8D%E6%B3%95%E5%8D%95%E5%85%83%E7%B1%BB%E5%88%AB%EF%BC%9A"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">常见的词法单元类别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E9%94%99%E8%AF%AF"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">词法错误</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%BC%93%E5%86%B2"><span class="toc-number">1.2.3.</span> <span class="toc-text">输入缓冲</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%AF%B9"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">缓冲区对</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%A8%E5%85%B5%E6%A0%87%E8%AE%B0"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">哨兵标记</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%AB%E6%8F%8F%E5%92%8Ctoken"><span class="toc-number">1.2.4.</span> <span class="toc-text">扫描和token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.2.5.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E7%BA%B3%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">归纳基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%92%E7%BA%B3%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">归纳步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E5%AE%9A%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">规定正则表达式优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%A3%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.2.5.4.</span> <span class="toc-text">正则表达式代数定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8B%93%E5%B1%95"><span class="toc-number">1.2.5.5.</span> <span class="toc-text">正则表达式拓展</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%8D%95%E5%85%83%E7%9A%84%E8%AF%86%E5%88%AB"><span class="toc-number">1.2.6.</span> <span class="toc-text">词法单元的识别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E5%9B%BE"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">状态转移图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%9D%E7%95%99%E5%AD%97%E5%92%8C%E6%A0%87%E8%AF%86%E7%AC%A6%E7%9A%84%E8%AF%86%E5%88%AB"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">保留字和标识符的识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%A4%84%E7%90%86%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E5%83%8F%E6%A0%87%E8%AF%86%E7%AC%A6%E7%9A%84%E4%BF%9D%E7%95%99%E5%AD%97%EF%BC%9A"><span class="toc-number">1.2.6.2.1.</span> <span class="toc-text">两种处理看起来很像标识符的保留字：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E4%B8%A4%E7%A7%8D%E7%BB%8F%E5%85%B8%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.6.3.</span> <span class="toc-text">冲突解决两种经典方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.2.7.</span> <span class="toc-text">有限状态自动机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NFA-%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">NFA 不确定的自动机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%9C%BA%E4%B8%AD%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%A5%E5%8F%97"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">自动机中输入字符串的接受</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFA-%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">1.2.8.</span> <span class="toc-text">DFA 确定的有穷自动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RE%E8%BD%AC%E6%8D%A2%E6%88%90NFA%EF%BC%9AThompson%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.9.</span> <span class="toc-text">RE转换成NFA：Thompson算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NFA%E8%BD%AC%E6%8D%A2%E6%88%90DFA%EF%BC%9A%E5%AD%90%E9%9B%86%E6%9E%84%E9%80%A0%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.10.</span> <span class="toc-text">NFA转换成DFA：子集构造算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NFA%E5%92%8CDFA%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.10.1.</span> <span class="toc-text">NFA和DFA的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E9%9B%86%E6%9E%84%E9%80%A0%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.10.2.</span> <span class="toc-text">子集构造算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8NFA%E7%8A%B6%E6%80%81%E9%9B%86%E4%B8%8A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.10.3.</span> <span class="toc-text">在NFA状态集上的操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFA%E7%9A%84%E6%9C%80%E5%B0%8F%E5%8C%96%EF%BC%9AHopcroft%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.11.</span> <span class="toc-text">DFA的最小化：Hopcroft算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E7%8A%B6%E6%80%81"><span class="toc-number">1.2.11.1.</span> <span class="toc-text">等价状态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8EDFA%E7%94%9F%E6%88%90%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.12.</span> <span class="toc-text">从DFA生成分析算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CH3-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-Part-I"><span class="toc-number">1.3.</span> <span class="toc-text">CH3: 语法分析(Part I)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">语法分析的任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%88%86%E4%B8%BA%E4%B8%89%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">语法分析器分为三类：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E5%92%8C%E6%8E%A8%E5%AF%BC"><span class="toc-number">1.3.2.</span> <span class="toc-text">上下文无关文法和推导</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E6%88%90"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">组成</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E6%A0%91%E5%92%8C%E4%BA%8C%E4%B9%89%E6%80%A7%E6%96%87%E6%B3%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">分析树和二义性文法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E5%88%86%E6%9E%90"><span class="toc-number">1.3.4.</span> <span class="toc-text">自顶向下分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E4%B8%8B%E9%99%8D%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">递归下降分析算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CH5-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-Part-II"><span class="toc-number">1.4.</span> <span class="toc-text">CH5: 语法分析(Part II)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.1.</span> <span class="toc-text">LL(1)分析算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E5%88%86%E6%9E%90%E7%9A%84%E5%86%B2%E7%AA%81%E5%A4%84%E7%90%86"><span class="toc-number">1.4.2.</span> <span class="toc-text">LL(1)分析的冲突处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-0-%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.3.</span> <span class="toc-text">LR(0)分析算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SLR%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.4.</span> <span class="toc-text">SLR分析算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-1-%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.5.</span> <span class="toc-text">LR(1)分析算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LR-1-%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.6.</span> <span class="toc-text">LR(1)分析工具</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法">markdown语法</a><time datetime="2025-03-01T05:01:35.387Z" title="发表于 2025-03-01 13:01:35">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/" title="经典算法学习">经典算法学习</a><time datetime="2025-03-01T03:35:47.302Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/" title="Leetcode刷题题解">Leetcode刷题题解</a><time datetime="2025-03-01T03:35:47.301Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络学习">计算机网络学习</a><time datetime="2025-03-01T03:35:47.296Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/" title="计算机组成原理">计算机组成原理</a><time datetime="2025-03-01T03:35:47.295Z" title="发表于 2025-03-01 11:35:47">2025-03-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By moru</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
