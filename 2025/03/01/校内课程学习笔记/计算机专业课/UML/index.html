@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>UML期末复习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="UML期末复习复习重点：考试题型： ·选择题 十个题目 一个三分 总共三十分     名词解释 五题，一题两分，总共十分 建议英文作答  OOD OOP   简答题 两题 共十五分  建模题 两个题目 十五分  定义一些类，画一个类图  定义一个用例，写出用例文本   例子 重点了解：  ATM机  银行业务  火车订票   用例图的基本元素有4种：用例、参与者、关系和系统边界。  用例描述：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UML期末复习">
+<meta property="og:url" content="http://example.com/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/UML/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="UML期末复习复习重点：考试题型： ·选择题 十个题目 一个三分 总共三十分     名词解释 五题，一题两分，总共十分 建议英文作答  OOD OOP   简答题 两题 共十五分  建模题 两个题目 十五分  定义一些类，画一个类图  定义一个用例，写出用例文本   例子 重点了解：  ATM机  银行业务  火车订票   用例图的基本元素有4种：用例、参与者、关系和系统边界。  用例描述：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\71848f12752245f42ab5ebce023e42c.jpg">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606094247177.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11390895-3e64c8069a8d2f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1070/format/webp">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616094443039.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616090655810.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606142728372.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607205850660.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606135027508.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606135116865.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606135148086.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606135244204.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606135413057.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606135558542.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606140037670.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240606140228153.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607211351972.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616112009375.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616112041542.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616112056664.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616113555303.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616113538539.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616113641726.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607203205694.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607203756699.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607203805072.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607204139502.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607204250317.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607204435728.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607204811135.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607204857372.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607205002423.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607205052354.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607200419814.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607200443625.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607200512938.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607200302461.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240607205242219.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240608174207705.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616104214737.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240616104710871.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240419090210330.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240419091413982.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240419091807866.png">
+<meta property="og:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\image-20240419170436795.png">
+<meta property="article:published_time" content="2025-03-01T03:35:47.258Z">
+<meta property="article:modified_time" content="2025-02-19T14:49:17.923Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="期末复习">
+<meta property="article:tag" content="软件设计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="e:\DeskTable\%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%88%AA%E5%9B%BE%E4%BC%A0%E8%BE%93\71848f12752245f42ab5ebce023e42c.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-校内课程学习笔记/计算机专业课/UML" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/UML/" class="article-date">
+  <time class="dt-published" datetime="2025-03-01T03:35:47.258Z" itemprop="datePublished">2025-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      UML期末复习
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="UML期末复习"><a href="#UML期末复习" class="headerlink" title="UML期末复习"></a>UML期末复习</h1><h2 id="复习重点："><a href="#复习重点：" class="headerlink" title="复习重点："></a>复习重点：</h2><h3 id="考试题型："><a href="#考试题型：" class="headerlink" title="考试题型："></a>考试题型：</h3><ol>
+<li><p>·选择题 十个题目 一个三分 总共三十分</p>
+<img src="E:\DeskTable\博客学习截图传输\71848f12752245f42ab5ebce023e42c.jpg" alt="71848f12752245f42ab5ebce023e42c" style="zoom:50%;" />  
+</li>
+<li><p>名词解释 五题，一题两分，总共十分 建议英文作答</p>
+<ul>
+<li>OOD</li>
+<li>OOP</li>
+</ul>
+</li>
+<li><p>简答题 两题 共十五分</p>
+</li>
+<li><p>建模题 两个题目 十五分</p>
+<ol>
+<li><p>定义一些类，画一个类图</p>
+</li>
+<li><p>定义一个用例，写出用例文本 </p>
+<ol>
+<li><p>例子 重点了解：</p>
+<ol>
+<li>ATM机 </li>
+<li>银行业务 </li>
+<li>火车订票</li>
+</ol>
+</li>
+<li><p>用例图的基本元素有4种：用例、参与者、关系和系统边界。</p>
+</li>
+<li><p>用例描述：</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240606094247177.png" alt="image-20240606094247177"> </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11390895-3e64c8069a8d2f96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1070/format/webp" alt="img"></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>综合分析设计题 四个小题目 总共三十分</p>
+<ol>
+<li><p>例子：</p>
+<ol>
+<li>智能家居</li>
+<li>汽车租赁</li>
+<li>dd车</li>
+</ol>
+</li>
+<li><p>第一题：用例模型，用例文本；领域模型（不写方法）</p>
+</li>
+<li><p>第二题：</p>
+</li>
+<li><p>第三题：</p>
+</li>
+<li><p>第四题：采用某一种模式，对状态图或类图做一个设计的修正</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="考点："><a href="#考点：" class="headerlink" title="考点："></a>考点：</h3><p>名词解释和简答</p>
+<p>设计模式 patern：是一套被已命名的、多数人知晓的、经过验证的经验总结而出的软件开发模式。设计模式提供了一种通用的设计方案，帮助开发者在面对常见的设计问题时，能够快速找到合适的解决办法。视频7.39</p>
+<p>什么是uml：UML（Unified Modeling Language，统一建模语言）是一种用于描述、构建、文档化系统制品的可视化语言</p>
+<p>UP Unified Process，统一过程：一种构造面向对象系统的迭代软件开发过程。</p>
+<p>RUP（Rational Unified Process）是对统一过程的精细化，RUP采用迭代、增量和面向对象的方法，以提高软件开发的效率和质量。</p>
+<p>OOA（Object-Oriented Analysis，面向对象分析）此过程把现实需求转换成领域模型问题，强调在问题领域内发现和描述对象或概念</p>
+<p>OOD（Object-Oriented Design，面向对象设计）此过程将领域模型转化成逻辑框架，强调定义软件对象以及它们之间的协作方式以实现需求。</p>
+<p>OOP（Object-Oriented Programming，面向对象编程）此过程根据OOD的制品进行编码以实现需求。在面向对象编程中，程序被组织为对象的集合，每个对象都包含数据（属性）和行为（方法）。</p>
+<ol>
+<li><p><strong>里氏替换原则（Liskov Substitution Principle，LSP）</strong>：</p>
+<ol>
+<li>子类必须能够替换成它们的基类是核心原则。</li>
+<li>子类型必须能够替换其基类型的任何地方，并且不会导致意外的行为。换句话说，任何基类的实例都应该可以被其子类的实例替换，而程序的行为不会受到影响。</li>
+<li>这确保了基类和子类之间的一致性和互换性。</li>
+</ol>
+</li>
+<li><p><strong>开闭原则（Open&#x2F;Closed Principle，OCP）</strong>：</p>
+<ol>
+<li>软件实体（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。这意味着应该通过扩展现有代码来添加新功能，而不是修改现有代码。</li>
+</ol>
+</li>
+<li><p>**GRASP（General Responsibility Assignment Software Patterns，通用责任分配软件模式）**是一组设计模式，旨在帮助开发人员在面向对象设计过程中分配责任和定义类的行为。17章  P199 和 25章 P300</p>
+<ol>
+<li>九大类GRASP设计模型</li>
+</ol>
+<ul>
+<li><strong>创建者（Creator）</strong>：<ul>
+<li>创建者模式帮助确定哪个类负责创建某类的新实例。将创建责任委派给称为具体工厂或抽象工厂的辅助类。创建者模式推荐将创建实例的责任委派给具有相关信息的类，以避免耦合度过高。</li>
+<li>相关的模式或原则：<ul>
+<li>低耦合</li>
+<li>具体工厂和抽象工厂</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>信息专家（Information Expert）&#x2F; 专家（Expert）</strong>：重要<ul>
+<li>把责任分配给具有实现该责任所必须的信息的对象</li>
+</ul>
+</li>
+<li><strong>低耦合（Low Coupling）</strong>：重要<ul>
+<li>低耦合模式帮助减少类之间的依赖关系。通过将依赖关系限制在少数必要的类之间，可以使系统更易于维护和修改。</li>
+</ul>
+</li>
+<li><strong>高内聚（High Cohesion）</strong>：重要<ul>
+<li>高内聚模式帮助确保类的成员之间存在良好的关联，以便于实现类的目标。高内聚的类更易于理解和维护。</li>
+</ul>
+</li>
+<li><strong>控制器（Controller）</strong>：重要<ul>
+<li>控制器模式帮助<strong>确定哪个类负责处理用户请求并调用适当的操作</strong>。控制器通常充当系统的中心协调者。</li>
+</ul>
+</li>
+<li><strong>多态（Polymorphism）</strong>：<ul>
+<li>多态模式允许对象对同一消息作出不同的响应，提高了代码的灵活性和可扩展性。</li>
+</ul>
+</li>
+<li><strong>纯虚构（Pure Fabrication）</strong>：<ul>
+<li>纯虚构模式帮助确定是否需要创建一个新的类来实现特定的功能，即使在现实世界中并不存在该类的概念。</li>
+</ul>
+</li>
+<li><strong>间接性（Indirection</strong>：重要</li>
+<li><strong>防止变异（protected variations）</strong>：</li>
+<li>参见：开闭原则 </li>
+<li>不和陌生人说话</li>
+</ul>
+</li>
+<li><p>GoF设计模式，一组设计模式，由一本书中提出，分为以下三大类</p>
+<ul>
+<li><p><strong>工厂模式（Factory Pattern）</strong>：抽象工厂模式的简化</p>
+</li>
+<li><p><strong>抽象工厂模式（Abstract Factory Pattern）</strong>：解决如何创造实现相同接口的一族相关的类 可以定义一个工厂接口 为每一族要创建的事物定义一个具体工厂类</p>
+</li>
+<li><p><strong>单例模式（Singleton Pattern）</strong>：解决单实例类的对象全局可见性和单点访问 可以对类定义静态方法以返回单实例 类似私有变量通过定义静态方法返回变量值</p>
+</li>
+<li><p><strong>适配器模式（Adapter Pattern）</strong>：解决不相容的接口问题，为具有不同接口的类似构件提供稳定接口</p>
+<p>和哪些其他模式有关系：</p>
+<ol>
+<li><p>隐藏外部系统的资源适配器可以视为外观对象，即与外观模式相关，资源适配器使用单一对象封装了对子系统或系统的访问，这与外观模式的本质是一致的。</p>
+<p>适配器可以用来适配外观模式中不同的子系统接口，从而使得外观模式可以为客户端提供一个简化的统一接口。</p>
+</li>
+<li><p>适配器与代理模式，适配器模式有时可以看作是代理模式的特殊形式，特别是当适配器用来代理一个目标对象，并将其接口适配为客户端期望的接口时。</p>
+</li>
+<li><p>适配器与策略模式，因为某些策略方案的接口可能并不适配与</p>
+</li>
+<li><p>在组合模式中，适配器可以用来统一处理叶子节点和容器节点的接口，使得客户端可以一致地对待组合中的所有对象。</p>
+</li>
+<li><p>支持防止变异</p>
+</li>
+</ol>
+</li>
+<li><p><strong>组合模式（Composite Pattern）</strong>：</p>
+</li>
+<li><p><strong>外观模式（Facade Pattern）</strong>：解决对一组完全不同的实现或接口需要公共统一接口的问题 可以使用外观对象封装子系统 外观对象提供唯一和统一的接口 并负责与子系统构件进行协作</p>
+</li>
+<li><p><strong>代理模式（Proxy Pattern）</strong>：</p>
+</li>
+<li><p><strong>观察者模式（Observer Pattern）</strong>：定义“订阅者”或“监听者”接口。订阅者实现接口，发布者可以动态关注某时间的订阅者，并在事件发生时通知它们</p>
+</li>
+<li><p><strong>状态模式（State Pattern）</strong>：状态模式跟类图和状态图有什么关系</p>
+<ol>
+<li>状态图允许一个对象内部状态发生改变的时候，改变它的行为能力，一个对象的状态发生改变，相应的行为发生改变，</li>
+</ol>
+</li>
+<li><p>**策略模式（Strategy Pattern） **：重点</p>
+<p>解决设计变化但相关的算法或政策 可以在单独的类中分别定义每种算法或政策策略 差不多就是多态+细化方法和类</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Subsystem和package的区别是什么?</strong>：</p>
+<p>   <strong>答案:</strong> </p>
+<ol>
+<li>Subsystem具有行为，package不提供行为</li>
+<li>Subsystem完全封装了内部实现，package没有完全封装。</li>
+<li>Subsystem很容易被替换，package不一定能够容易的被替换。</li>
+</ol>
+</li>
+</ol>
+<h1 id="UML内容复习"><a href="#UML内容复习" class="headerlink" title="UML内容复习"></a>UML内容复习</h1><h2 id="课本的知识迭代方式："><a href="#课本的知识迭代方式：" class="headerlink" title="课本的知识迭代方式："></a>课本的知识迭代方式：</h2><p><img src="E:\DeskTable\博客学习截图传输\image-20240616094443039.png" alt="image-20240616094443039"></p>
+<h2 id="什么是UML"><a href="#什么是UML" class="headerlink" title="什么是UML"></a>什么是UML</h2><p>UML全称为：Unified Modeling Language，统一建模语言，是用来描述、构建和文档化系统制品的可视化语言。</p>
+<h2 id="UML的三种透视图"><a href="#UML的三种透视图" class="headerlink" title="UML的三种透视图"></a>UML的三种透视图</h2><ol>
+<li>概念透视图 Conceptual perspective</li>
+<li>规格说明透视图 Specification perspective</li>
+<li>实现透视图 Implementation perspective</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240616090655810.png" alt="image-20240616090655810"></li>
+</ol>
+<h3 id="不同视图中“类”的含义"><a href="#不同视图中“类”的含义" class="headerlink" title="不同视图中“类”的含义"></a>不同视图中“类”的含义</h3><p>Conceptual perspective 中称之为 domain concept 或 conceptual class，领域模型表示的就是conceptual perspective。</p>
+<ol>
+<li>Conceptual class：在概念透视图中使用。UP领域明显中包含概念类</li>
+<li>Software class：表示软件构件在规格说明或实现透视图中的类</li>
+<li>Implementation class：特定OO语言中的类</li>
+</ol>
+<h2 id="可视化建模的优点"><a href="#可视化建模的优点" class="headerlink" title="可视化建模的优点"></a>可视化建模的优点</h2><ol>
+<li>提高沟通和理解</li>
+<li>支持系统分析和设计</li>
+<li>提高开发效率和质量</li>
+<li>支持维护和拓展</li>
+</ol>
+<h2 id="OO"><a href="#OO" class="headerlink" title="OO"></a>OO</h2><h3 id="OO-面向对象"><a href="#OO-面向对象" class="headerlink" title="OO 面向对象"></a>OO 面向对象</h3><p>指的是“对象”概念的编程范式，对象可以包含属性和方法，对象是类的实例，类定义了属性和方法</p>
+<h3 id="OOA-面向对象分析analysis：专注于问题领域"><a href="#OOA-面向对象分析analysis：专注于问题领域" class="headerlink" title="OOA 面向对象分析analysis：专注于问题领域"></a>OOA 面向对象分析analysis：专注于问题领域</h3><p>强调在问题领域内发现和描述对象（或概念）</p>
+<h3 id="OOD-面向对象设计：专注于软件实现的分析"><a href="#OOD-面向对象设计：专注于软件实现的分析" class="headerlink" title="OOD 面向对象设计：专注于软件实现的分析"></a>OOD 面向对象设计：专注于软件实现的分析</h3><p>强调定义软件对象以及它们如何协作以实现需求</p>
+<h3 id="OOP-面向对象编程：使用对象和类将OOD的制品转化为可执行的代码"><a href="#OOP-面向对象编程：使用对象和类将OOD的制品转化为可执行的代码" class="headerlink" title="OOP 面向对象编程：使用对象和类将OOD的制品转化为可执行的代码"></a>OOP 面向对象编程：使用对象和类将OOD的制品转化为可执行的代码</h3><h2 id="RUP-rational-unified-process-统一过程"><a href="#RUP-rational-unified-process-统一过程" class="headerlink" title="RUP rational unified process 统一过程"></a>RUP rational unified process 统一过程</h2><h3 id="什么是UP"><a href="#什么是UP" class="headerlink" title="什么是UP"></a>什么是UP</h3><p>UP是一种构造面向对象系统的迭代软件开发过程。最常用的是RUP</p>
+<blockquote>
+<p>重构 refactoring	持续集成 continuous integration</p>
+</blockquote>
+<p>强调<strong>迭代和增量式开发 iterative and incremental development</strong>，旨在通过一系列与定义的阶段来管理软件项目的各个方面</p>
+<p>功能进行迭代升级，系统规模进行增量式增长</p>
+<p>迭代开发需要得到快速反馈：来自用户、开发人员和测试的反馈</p>
+<h3 id="UP项目的四个阶段："><a href="#UP项目的四个阶段：" class="headerlink" title="UP项目的四个阶段："></a>UP项目的四个阶段：</h3><ol>
+<li>初始阶段 inception phase</li>
+<li>细化迭代 elaboration phase</li>
+<li>构造阶段 construction phase</li>
+<li>移交阶段 transition phase</li>
+</ol>
+<h3 id="主要特点："><a href="#主要特点：" class="headerlink" title="主要特点："></a>主要特点：</h3><blockquote>
+<p>discipline 科目——知识的分支	artifact 制品</p>
+</blockquote>
+<h2 id="敏捷开发-agile-development"><a href="#敏捷开发-agile-development" class="headerlink" title="敏捷开发 agile development"></a>敏捷开发 agile development</h2><p>应用时间定量的迭代和进化式开发，使用自适应计划，倡导增量交付并包含其他提倡敏捷性的价值和实践</p>
+<h2 id="用例模型："><a href="#用例模型：" class="headerlink" title="用例模型："></a>用例模型：</h2><p>use case model</p>
+<p>撰写一个用例文本需要的东西：</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240606142728372.png" alt="image-20240606142728372"></p>
+<h2 id="UML的一些基本概念"><a href="#UML的一些基本概念" class="headerlink" title="UML的一些基本概念"></a>UML的一些基本概念</h2><h3 id="事物"><a href="#事物" class="headerlink" title="事物"></a>事物</h3><h4 id="结构事物"><a href="#结构事物" class="headerlink" title="结构事物"></a>结构事物</h4><ol>
+<li>类</li>
+<li>接口</li>
+<li>协作</li>
+<li>用例</li>
+<li>主动类</li>
+<li>构件</li>
+<li>节点</li>
+</ol>
+<h4 id="行为事物"><a href="#行为事物" class="headerlink" title="行为事物"></a>行为事物</h4><ol>
+<li>交互</li>
+<li>状态机</li>
+<li>活动</li>
+</ol>
+<h4 id="分组事物"><a href="#分组事物" class="headerlink" title="分组事物"></a>分组事物</h4><ol>
+<li>包</li>
+</ol>
+<h4 id="注销事物"><a href="#注销事物" class="headerlink" title="注销事物"></a>注销事物</h4><ol>
+<li>注解</li>
+</ol>
+<p>用例就是需求，用例需要包含所有涉众关注点的事物</p>
+<h2 id="九大种表示图"><a href="#九大种表示图" class="headerlink" title="九大种表示图"></a>九大种表示图</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: UML Graph</span><br><span class="line">---</span><br><span class="line">classDiagram</span><br><span class="line">    UML图 &lt;|-- 结构图</span><br><span class="line">    UML图 &lt;|-- 行为图</span><br><span class="line">    </span><br><span class="line">    结构图 &lt;|-- 类图</span><br><span class="line">    结构图 &lt;|-- 对象图</span><br><span class="line">    结构图 &lt;|-- 组件图</span><br><span class="line">    结构图 &lt;|-- 部署图</span><br><span class="line">    </span><br><span class="line">    行为图 &lt;|-- 交互图</span><br><span class="line">    行为图 &lt;|-- 活动图</span><br><span class="line">    行为图 &lt;|-- 状态图</span><br><span class="line">    行为图 &lt;|-- 用例图</span><br><span class="line">    </span><br><span class="line">    交互图 &lt;|-- 顺序图</span><br><span class="line">    交互图 &lt;|-- 时序图</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<h2 id="元模型"><a href="#元模型" class="headerlink" title="元模型"></a>元模型</h2><p><img src="E:\DeskTable\博客学习截图传输\image-20240607205850660.png" alt="image-20240607205850660"></p>
+<h2 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h2><ol>
+<li>**用例图的组成元素：**参与者，参与者间的关系组成，用例，系统边界</li>
+<li><strong>参与者 actors：</strong> <img src="E:\DeskTable\博客学习截图传输\image-20240606135027508.png" alt="image-20240606135027508"> <ol>
+<li>主要primary参与者：寻求服务的，首先做出动作</li>
+<li>协助supporting参与者：提供服务的，响应主要参与者的动作，</li>
+<li>幕后offstage参与者：不重要</li>
+</ol>
+</li>
+<li><strong>用例 use cases：</strong> <ul>
+<li>一个椭圆➕用例名称<img src="E:\DeskTable\博客学习截图传输\image-20240606135116865.png" alt="image-20240606135116865"> </li>
+<li>用例就是一组相关的成功和失败场景的集合</li>
+<li>场景 scenario：参与者和系统间的活动和交互，也可以叫做用例实例 use case instance</li>
+</ul>
+</li>
+<li>**系统边界 system Board：**一个方形➕系统名称<img src="E:\DeskTable\博客学习截图传输\image-20240606135148086.png" alt="image-20240606135148086"> </li>
+<li><strong>参与者间的关系 relationships：</strong><ol>
+<li>关联：<ol>
+<li>表示形式：一根<strong>实线</strong>连在参与者和用例中间</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240606135244204.png" alt="image-20240606135244204"></li>
+</ol>
+</li>
+<li>泛化：<ol>
+<li>表示一个用例（子用例）继承自另一个用例（父用例），子用例继承了父用例的所有属性和行为，并可以增加新的行为或修改继承的行为。</li>
+<li>表示形式：用一根带有空心三角形的实线连接</li>
+<li>其实就是一种继承关系，子用例包含有父用例的功能，但是又可以有自己的特殊功能</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240606135413057.png" alt="image-20240606135413057"></li>
+</ol>
+</li>
+<li>包含：<ol>
+<li>表示形式：一根带箭头的虚线，同时虚线上写上《include》的标签</li>
+<li>包含用例一定会执行，即在录入成绩时一定会执行保存成绩，但保存成绩不一定会启动录入成绩</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240606135558542.png" alt="image-20240606135558542"></li>
+</ol>
+</li>
+<li>拓展：<ol>
+<li>拓展关系用于描述一种可选的、条件性的行为。</li>
+<li>表示形式：一根带箭头的虚线，同时虚线上写上《extend》的标签</li>
+<li>拓展用例需要满足某种条件才会执行，如忘记密码功能是在登录时满足了条件“用户不记得密码”才会执行的</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240606140037670.png" alt="image-20240606140037670"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240606140228153.png" alt="image-20240606140228153"> <ol>
+<li>以上图中，教师和“录入成绩、修改成绩、删除成绩、查询成绩、登录”几个用例是关联关系，即教师可以进入这几个场景当中；</li>
+<li>录入成绩、修改成绩 和 保存成绩时包含关系，因为每次录入成绩和修改成绩最终都需要将录入结果和修改结果保存，否则该操作无意义，则保存成绩一定会执行</li>
+<li>登录 和 微信登录、手机登录 是泛化关系，就像父类和子类一样，子类继承有父类的特性，即无论是微信登录还是手机登录，本质都是一种登录操作，但是根据其具体场景又会有各自的特性</li>
+<li>登录 和 忘记密码 是拓展关系，忘记密码是登录的拓展，但是忘记密码操作只有在满足“用户忘记了密码”这一条件时才会执行，则拓展不是一定执行的。</li>
+</ol>
+</li>
+</ol>
+<h3 id="用例种类："><a href="#用例种类：" class="headerlink" title="用例种类："></a>用例种类：</h3><ol>
+<li>具体用例：由参与者发起，完成了参与者所期望的完整行为</li>
+<li>抽象用例：无法单独存在，必须作为其他用例的子功能用例</li>
+<li>基础用例：包含有其他用例的用例&#x2F;被其他用例拓展或泛化的用例</li>
+<li>附加用例：被其他用例包含的、拓展&#x2F;泛化了其他用例的用例</li>
+</ol>
+<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><p>描述系统中的类，以及各个类之间的静态关系。</p>
+<h3 id="组成元素"><a href="#组成元素" class="headerlink" title="组成元素"></a>组成元素</h3><ul>
+<li><p>类：</p>
+<ul>
+<li><p>名称 必须有</p>
+</li>
+<li><p>属性 可见性 + 属性名称</p>
+</li>
+<li><p>操作</p>
+</li>
+<li><p>关键字</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607211351972.png" alt="image-20240607211351972"></p>
+</li>
+<li><p>构造型</p>
+<p>也使用《》表示，如《stereotype》</p>
+</li>
+<li><p>特性：元素特征已命名的值</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="类间的关系："><a href="#类间的关系：" class="headerlink" title="类间的关系："></a>类间的关系：</h3><h4 id="泛化（Generalization）"><a href="#泛化（Generalization）" class="headerlink" title="泛化（Generalization）"></a>泛化（Generalization）</h4><ol>
+<li>一种<strong>继承</strong>关系，表示一般与特殊的关系，<strong>指定了子类如何继承父类</strong>的所有特征和行为。</li>
+<li>从特型指向泛型</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240616112009375.png" alt="image-20240616112009375"></li>
+</ol>
+<h4 id="实现（Realization）"><a href="#实现（Realization）" class="headerlink" title="实现（Realization）"></a>实现（Realization）</h4><ol>
+<li>实现是一种类与接口的关系，表示类是接口所有特征和行为的实现。</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240616112041542.png" alt="image-20240616112041542"></li>
+</ol>
+<h4 id="关联（Association）"><a href="#关联（Association）" class="headerlink" title="关联（Association）"></a>关联（Association）</h4><ol>
+<li><p>关联是一种拥有的关系，它使一个类知道另一个类的属性和方法；</p>
+<ol>
+<li><p>关联可以是双向的，也可以是单向的。</p>
+<p>双向的关联可以有两个箭头或者没有箭头</p>
+<p>单向的关联有一个箭头。</p>
+</li>
+<li><p><img src="E:\DeskTable\博客学习截图传输\image-20240616112056664.png" alt="image-20240616112056664"> </p>
+</li>
+<li><p>指的是<code>类与类之间的联接</code>，<strong><code>它使一个类知道另一个类的属性和方法（实例变量体现）</code></strong>。A类依赖于B对象,并且<code>把B作为A的一个成员变量</code>, 则A和B存在关联关系.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h5><p>一个A对象属于B对象，一个B对象属于A对象</p>
+<h5 id="单向的一对多"><a href="#单向的一对多" class="headerlink" title="单向的一对多"></a>单向的一对多</h5><p>A类的一个实例可以关联到B类的多个实例，但是反过来不成立</p>
+<p>例如：学校和学生，一个学校可以有很多个学生实例，但是一个学生只能有一个学校实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+-----------------+            +-----------------+</span><br><span class="line">|      School     |<span class="number">1</span>--------&gt;* |     Student     |</span><br><span class="line">+-----------------+            +-----------------+</span><br><span class="line">| - name: String  |            | - name: String  |</span><br><span class="line">| - address: String |          | - age: <span class="type">int</span>      |</span><br><span class="line">+-----------------+            +-----------------+</span><br><span class="line">| + getStudents() |            +-----------------+</span><br><span class="line">+-----------------+            </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>**“1”**表示“学校”一方的一个实例。</p>
+<p>**“*”**表示“学生”一方的多个实例。</p>
+<h5 id="单向的多对一"><a href="#单向的多对一" class="headerlink" title="单向的多对一"></a>单向的多对一</h5><p>A类的多个实例可以关联到B类的一个实例，当反过来就不成立了</p>
+<p>依旧是学生和学校的例子，只不过这一次箭头由学生指向学校</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+-----------------+            +-----------------+</span><br><span class="line">|     Student     |*--------&gt;<span class="number">1</span> |      School     |</span><br><span class="line">+-----------------+            +-----------------+</span><br><span class="line">| - name: String  |            | - name: String  |</span><br><span class="line">| - age: <span class="type">int</span>      |            | - address: String |</span><br><span class="line">| - school: School|            +-----------------+</span><br><span class="line">+-----------------+            </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="双向一对多、多对一"><a href="#双向一对多、多对一" class="headerlink" title="双向一对多、多对一"></a>双向一对多、多对一</h5><ol>
+<li><p>类关联，即几个类之间含有关联关系</p>
+</li>
+<li><p>关联类</p>
+</li>
+</ol>
+<h4 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h4><ol>
+<li>聚合是整体与部分的关系，且<strong>部分可以离开整体而单独存在</strong>。如车和轮胎是整体和部分的关系，轮胎离开车仍然可以存在。</li>
+<li>聚合关系是关联关系的一种，是强的关联关系；关联和聚合在语法上无法区分，必须考察具体的逻辑关系。</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240616113555303.png" alt="image-20240616113555303"></li>
+</ol>
+<h4 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h4><ol>
+<li>组合是整体与部分的关系，但<strong>部分不能离开整体而单独存在</strong>。如公司和部门是整体和部分的关系，没有公司就不存在部门</li>
+<li>组合关系是关联关系的一种，是比聚合关系还要强的关系，它要求普通的聚合关系中代表整体的对象负责代表部分的对象的生命周期。</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240616113538539.png" alt="image-20240616113538539"></li>
+</ol>
+<h4 id="依赖（Dependency）"><a href="#依赖（Dependency）" class="headerlink" title="依赖（Dependency）"></a>依赖（Dependency）</h4><ol>
+<li>依赖是一种使用的关系，即一个类的实现需要另一个类的协助，所以要尽量不使用双向的互相依赖</li>
+<li>依赖关系：指的是类与类之间的联接。依赖关系表示<code>一个类依赖于另一个类的定义</code>。一般而言，依赖关系在Java语言中体现为<code>成员变量、局域变量、方法的形参、方法返回值</code>，或者对<strong>静态方法的调用。</strong></li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240616113641726.png" alt="image-20240616113641726"></li>
+</ol>
+<h2 id="对象图"><a href="#对象图" class="headerlink" title="对象图"></a>对象图</h2><p>UML对象图只能在系统某一时间段存在</p>
+<p>特定的时刻捕捉到静态的系统视图。</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607203205694.png" alt="image-20240607203205694"> </p>
+<p>在名称处格式为：对象名称:类型</p>
+<p>下面则为具体的属性的值</p>
+<h2 id="顺序图（也称为时序图-序列图）"><a href="#顺序图（也称为时序图-序列图）" class="headerlink" title="顺序图（也称为时序图&#x2F;序列图）"></a>顺序图（也称为时序图&#x2F;序列图）</h2><h3 id="组成元素："><a href="#组成元素：" class="headerlink" title="组成元素："></a>组成元素：</h3><ol>
+<li><p>对象或参与者 Objects or Participants</p>
+<ol>
+<li>在图的顶部，矩形框表示</li>
+</ol>
+</li>
+<li><p>生命线 lifeline</p>
+<ol>
+<li>从对象或参与者延伸出来的垂直<strong>虚线</strong>，表示对象在时间上的存在</li>
+</ol>
+</li>
+<li><p>激活：在生命线上覆盖一段矩形长条，代表对象处于活动状态</p>
+<ol>
+<li>一条消息代表的事件激活了一个对象，直到事件结束再次进入休眠</li>
+</ol>
+</li>
+<li><p>消息 Message</p>
+<ol>
+<li>对象间传递的消息<ol>
+<li><p>同步消息用实线实心三角箭头表示 </p>
+<p>（注意看激活）消息发生者会阻塞以等待返回消息</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607203756699.png" alt="image-20240607203756699"> </p>
+</li>
+<li><p>异步消息用实线普通箭头表示 （注意看激活）</p>
+<p>消息发送者不会阻塞，继续执行自己的事情，不在意返回消息</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607203805072.png" alt="image-20240607203805072"> </p>
+</li>
+<li><p>返回消息用虚线普通箭头表示</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607204139502.png" alt="image-20240607204139502"></p>
+</li>
+<li><p>需要强调消息发送时间（消息发送时间不可忽略）的：将消息先向下走表示</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607204250317.png" alt="image-20240607204250317"> </p>
+</li>
+<li><p>重入消息</p>
+<p>相当于一种递归</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607204435728.png" alt="image-20240607204435728"> </p>
+</li>
+<li><p>无触发和无接受消息</p>
+<p>和系统外有关的消息，使用无触发和无接受</p>
+</li>
+<li><p>对象销毁</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607204811135.png" alt="image-20240607204811135"> </p>
+</li>
+<li><p>执行控制逻辑：</p>
+<ol>
+<li><p><img src="E:\DeskTable\博客学习截图传输\image-20240607204857372.png" alt="image-20240607204857372"> </p>
+</li>
+<li><p>条件分支：一个带有虚线的方框</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607205002423.png" alt="image-20240607205002423"> </p>
+</li>
+<li><p>可选项：</p>
+</li>
+<li><p>循环：loop框和break框（只执行一次）</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607205052354.png" alt="image-20240607205052354"></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>对象的创建</p>
+</li>
+</ol>
+<h2 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h2><p>与流程图几乎一模一样，活动图是流程图的一个扩充</p>
+<p>有助于使工作流和业务过程可视化的图</p>
+<p>是状态图的一种特殊形式</p>
+<h4 id="组成元素-1"><a href="#组成元素-1" class="headerlink" title="组成元素"></a>组成元素</h4><ul>
+<li>泳道：与执行对象挂钩，一个泳道代表一种执行对象<ul>
+<li>清楚明了地列出了流程中有哪些参与者</li>
+<li>每一类参与者的职责划分明确</li>
+</ul>
+</li>
+<li>开始节点</li>
+<li>结束节点</li>
+<li>事件:<ul>
+<li>矩形带三角<img src="E:\DeskTable\博客学习截图传输\image-20240607200419814.png" alt="image-20240607200419814"> 发送事件</li>
+<li>矩形缺三角<img src="E:\DeskTable\博客学习截图传输\image-20240607200443625.png" alt="image-20240607200443625"> 接收事件</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240607200512938.png" alt="image-20240607200512938"> 时间事件</li>
+</ul>
+</li>
+<li>分叉和汇合</li>
+<li>带箭头的实线：代表控制权的转移</li>
+<li>分支和合并</li>
+<li>事件机制</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240607200302461.png" alt="image-20240607200302461"></li>
+</ul>
+<h2 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h2><h2 id="协作图"><a href="#协作图" class="headerlink" title="协作图"></a>协作图</h2><p>显示对象间的动态合作关系。</p>
+<h2 id="组件图"><a href="#组件图" class="headerlink" title="组件图"></a>组件图</h2><p>组件和对象</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240607205242219.png" alt="image-20240607205242219"> </p>
+<p>组件图 &#x3D; 构件（Component）+接口（Interface）+关系（Relationship）+端口（Port）+连接器（Connector）。</p>
+<p>组件图不描述该系统的功能，但它描述了使用这些功能的组件。</p>
+<p>表示系统中构件与构件之间，类或接口与构件之间的关系图。</p>
+<p>表现为依赖关系，定义的类或接口与类之间的关系表现为依赖关系或实现关系。</p>
+<p>由组件、接口和组件之间联系构成，描述的是在软件系统中遵从并实现一组接口的物理的、可替换的软件模块。</p>
+<h2 id="配置图"><a href="#配置图" class="headerlink" title="配置图"></a>配置图</h2><p>用来建模系统的物理部署。</p>
+<p>部署图由节点以及节点之间的关系组成。</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="领域模型"><a href="#领域模型" class="headerlink" title="领域模型"></a>领域模型</h3><h2 id="GRASP设计模式"><a href="#GRASP设计模式" class="headerlink" title="GRASP设计模式"></a>GRASP设计模式</h2><p>本质是一类OO设计原则</p>
+<h3 id="创建者模式-Creator-Mode"><a href="#创建者模式-Creator-Mode" class="headerlink" title="创建者模式 Creator Mode"></a>创建者模式 Creator Mode</h3><ul>
+<li>可以将创建 类A 实例的职责分配给 类B 的条件：<ul>
+<li>B 和 A 的关系是包含或组合</li>
+<li>B记录A</li>
+<li>B 使用 A 很多</li>
+<li>B 具有可以初始化 A 的数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="专家模式-Expert-Mode"><a href="#专家模式-Expert-Mode" class="headerlink" title="专家模式 Expert Mode"></a>专家模式 Expert Mode</h3><p>给定键值，谁可以知道 类A 对象的相关信息</p>
+<p>决定如何分配职责（给方法、字段等）的原则。</p>
+<p>分配职责的原则是信息专家，即把职责分配 给具有完成此职责所需信息的 对象</p>
+<h3 id="低耦合"><a href="#低耦合" class="headerlink" title="低耦合"></a>低耦合</h3><p>耦合：元素和其他元素的连接、感知以及依赖的程度的度量</p>
+<p>实现低耦合的一个目的就是：减少 B类 因为 A类 发生变化而发生的变化</p>
+<p>注：高耦合本身不是问题，出问题的是高耦合情况下，当耦合对象当中存在不稳定元素时，会影响整个系统</p>
+<h3 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h3><p>控制器对象是非用户界面，负责接收或处理系统事件的对象。</p>
+<p>控制器模式的主要目的是<strong>处理系统事件</strong>，即用户的输入和外部系统的请求。控制器模式通过一个中介对象来协调这些事件，使得系统的其他部分能够专注于各自的职责。</p>
+<p><strong>应用场景</strong>： 控制器模式通常在以下情况下使用：</p>
+<ul>
+<li>当系统接收到外部输入（如用户交互、API请求）时，需要一个对象来处理这些输入并协调系统的响应。</li>
+<li>通过控制器对象来封装系统的入口点，确保系统的核心逻辑与输入处理分离。</li>
+</ul>
+<p>问题：哪个对象要处理输入系统事件？ </p>
+<p>解决方案：应该由用例控制器来处理用例所有的系统事件，也可以用在一个以上的用例。例如“创建用户”或“删除用户”的用例，可以用同一个类别，称为UserController，而不是用二个个别的用例控制器。</p>
+<p>控制器需将需其他对象来完成的工作给对应对象。</p>
+<h3 id="高内聚"><a href="#高内聚" class="headerlink" title="高内聚"></a>高内聚</h3><h4 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h4><p><strong>职责单一</strong>：</p>
+<ul>
+<li>一个高内聚的模块或类通常只负责一个主要功能或职责。这意味着它的所有方法和属性都围绕这个主要功能展开。</li>
+</ul>
+<p><strong>相关性强</strong>：</p>
+<ul>
+<li>模块或类内部的所有元素（如属性和方法）都应该高度相关，共同实现一个具体的功能。例如，订单类的所有方法和属性都与订单管理相关。</li>
+</ul>
+<p><strong>易于维护</strong>：</p>
+<p><strong>低耦合</strong>：</p>
+<h4 id="高内聚的优点"><a href="#高内聚的优点" class="headerlink" title="高内聚的优点"></a>高内聚的优点</h4><ol>
+<li>提高代码的可维护性、</li>
+<li>可读性和</li>
+<li>可重用性</li>
+<li>减少复杂性。</li>
+</ol>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>当相关选择和行为随类型不同时，多态的操作可以相应的改变职责的分配</p>
+<h3 id="纯虚构"><a href="#纯虚构" class="headerlink" title="纯虚构"></a>纯虚构</h3><p>在现实领域不存在的的，但为了将某些特定功能抽离出来所设计的纯虚构的臆想的类，不存在领域模型中，只是为了方便开放而捏造的概念。</p>
+<h4 id="纯虚构的对象可以分为两类："><a href="#纯虚构的对象可以分为两类：" class="headerlink" title="纯虚构的对象可以分为两类："></a>纯虚构的对象可以分为两类：</h4><ul>
+<li>通过表示解析 representational decomposition 所产生的选择：因为在系统的领域模型当中就已经明确有 ，所以进行了类对象的创建<ul>
+<li>侧重于系统的静态结构，通过分解系统来展示其组成部分以及这些部分之间的关系。</li>
+<li>关注的是系统的各个组成部分如何组织在一起，形成一个完整的系统</li>
+</ul>
+</li>
+<li>通过行为解析 behavioral decomposition 所产生的选择：因为在实现系统的过程中需要某一个类，但是该类的存在在现实领域模型中找不到依据，只是为了方便开发，将一系列行为或方法组织起来（十分类似于java的工具类）<ul>
+<li>侧重于系统的动态行为，通过分解系统的操作来展示其工作方式和交互过程。</li>
+<li>关注系统的操作、事件和交互模式。</li>
+</ul>
+</li>
+</ul>
+<h3 id="间接性"><a href="#间接性" class="headerlink" title="间接性"></a>间接性</h3><p>为了避免多个事物间直接耦合，将职责分配给中介对象，使其作为其他构件或服务之间的媒介。引入一层中间性和多态来降低系统组件之间的耦合度，增加系统的灵活性和可扩展性。</p>
+<h3 id="防止变异-PV"><a href="#防止变异-PV" class="headerlink" title="防止变异 PV"></a>防止变异 PV</h3><p>数据封装、接口、多态、间接性和标准化</p>
+<p>Liskov替换原则 LSP</p>
+<p>don’t talk to strangers ：不要历经远距离的对象结构路径去向远距离的间接对象发送信息，该规则的应用可以防止因结构变异而产生的变异</p>
+<p>修改设计，使每个类只与其直接关联的对象交互。</p>
+<h4 id="信息隐藏-information-hiding"><a href="#信息隐藏-information-hiding" class="headerlink" title="信息隐藏 information hiding"></a>信息隐藏 information hiding</h4><p>等价于PV模式</p>
+<h4 id="开放-封闭原则-Open-closed-Principle-OCP"><a href="#开放-封闭原则-Open-closed-Principle-OCP" class="headerlink" title="开放-封闭原则 Open-closed Principle OCP"></a>开放-封闭原则 Open-closed Principle OCP</h4><p>基本等价于PV模式和信息隐藏</p>
+<p>“对xx封闭” 意思是 X变化时不会对客户产生影响。</p>
+<h2 id="GoF设计模式"><a href="#GoF设计模式" class="headerlink" title="GoF设计模式"></a>GoF设计模式</h2><h3 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h3><blockquote>
+<p>支持防止变异，因为adapter应用了接口和多态polymorphism的间接对象</p>
+</blockquote>
+<p>一种结构性设计模式，将类的接口转换成客户希望的另一个接口。可以使得原本由于接口不兼容不能一起工作的类可以一起工作</p>
+<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><ul>
+<li><p><strong>接口不兼容</strong>：当你希望使用一个已经存在的类，但它的接口并不符合你的需求。</p>
+</li>
+<li><p><strong>复用已有的类</strong>：在不改变已有代码的情况下，使用新的接口复用已有的类。</p>
+</li>
+<li><p><strong>适配不同的接口</strong>：使得两个不兼容的接口可以一起工作。</p>
+</li>
+</ul>
+<h4 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h4><ul>
+<li><p>目的接口 Target Interface</p>
+</li>
+<li><p>现有接口 Adaptee 需要被适配的接口</p>
+</li>
+<li><p>适配器 Adapter 一个实现了目标接口的类，包含现有接口的实例，并在目标接口的方法中调用现有接口的方法</p>
+</li>
+<li><p><img src="E:\DeskTable\博客学习截图传输\image-20240608174207705.png" alt="image-20240608174207705"></p>
+</li>
+</ul>
+<h3 id="抽象工厂模式-Abstract-Factory"><a href="#抽象工厂模式-Abstract-Factory" class="headerlink" title="抽象工厂模式 Abstract Factory"></a>抽象工厂模式 Abstract Factory</h3><p>对于抽象工厂的一种简化就是 简单&#x2F;具体工厂。</p>
+<p>在上面适配器模式的基础上，会引申出一个问题，由谁来创建这些适配器，显然，由领域对象来创建是不符合领域对象的职责的，因此需要找一个同样是纯虚构的概念类来创建这些适配器，并由领域对象来调用这个概念类以达到使用适配器的目的。</p>
+<p>这个纯虚构的概念类就是“工厂”，也就是形成了所谓的工厂模式</p>
+<h3 id="单例模式-Singleton"><a href="#单例模式-Singleton" class="headerlink" title="单例模式 Singleton"></a>单例模式 Singleton</h3><blockquote>
+<p>通常用于工厂或外观模式</p>
+</blockquote>
+<p>细想工厂模式，适配器由工厂来创建，但是谁来创建工厂，又如何使用工厂，总不能套娃地创建一个创建工厂的工厂吧。</p>
+<p>在这里需注意，我们使用工厂的目的是为了方便调度适配器同时将创建适配器的职责分离出来，意味着在整个项目当中：</p>
+<ol>
+<li>我们其实只需要该工厂类的<strong>一个实例</strong>；</li>
+<li>同时这个实例是不由其他领域内的类创建的</li>
+<li>且这个实例在整个项目的任意位置都可以被访问和使用。</li>
+</ol>
+<p>由以上的要求实践出了单例模式</p>
+<p>即在工厂类中定义一个该工厂类的静态实例，并在工厂内进行初始化。</p>
+<p>关键思想是：在类中定义<strong>静态方法getInstance</strong>，提供工厂类的唯一实例。</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240616104214737.png" alt="image-20240616104214737"> </p>
+<p>下划线代表静态属性&#x2F;方法</p>
+<p>在类名处写上1表示只可以创建一个实例</p>
+<p>对于单例模式有两种加载方式：</p>
+<ol>
+<li>lazy initialization 懒加载：等待需要时再初始化工厂</li>
+<li>eager initialization 预先加载：在程序编译阶段就初始化工厂</li>
+</ol>
+<p>adaptor、factory、singleton三种模式应用于设计</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240616104710871.png" alt="image-20240616104710871"> </p>
+<h3 id="策略-Strategy"><a href="#策略-Strategy" class="headerlink" title="策略 Strategy"></a>策略 Strategy</h3><p>策略 的创建同样可以由工厂来实现。</p>
+<p>如使用一个StrategyFactory负责创建所有的策略。</p>
+<p><strong>策略模式</strong>是一种行为设计模式，允许在运行时选择算法的方式。通过定义一系列算法，将每个算法封装起来，并使它们可以互换，策略模式让算法独立于使用它们的客户端变化。</p>
+<h4 id="UML表示"><a href="#UML表示" class="headerlink" title="UML表示"></a>UML表示</h4><p>策略模式的UML图通常包括以下部分：</p>
+<ol>
+<li><strong>Context（上下文）</strong>：维护一个对策略对象的引用。</li>
+<li><strong>Strategy（策略）</strong>：这是一个接口，定义了所有支持的算法的公共方法。</li>
+<li><strong>ConcreteStrategy（具体策略）</strong>：实现了策略接口的具体算法。</li>
+</ol>
+<h3 id="组合-Composite"><a href="#组合-Composite" class="headerlink" title="组合 Composite"></a>组合 Composite</h3><p><strong>组合模式</strong>是一种结构设计模式</p>
+<p>组合模式通过将对象组合成树形结构，使得客户端可以一致地处理单个对象和组合对象。</p>
+<p>为原子对象和组合对象定义同一个父类或同一个接口，并去具体实现不同的细节，但是就可以通过统一的方法来处理原子对象和组合对象</p>
+<h3 id="外观-Faced"><a href="#外观-Faced" class="headerlink" title="外观 Faced"></a>外观 Faced</h3><p>对一组完全不同的实现或接口（如子系统中的实现和接口）需要公共、统一的接口。可能会与子系统内部 的大量事物耦合</p>
+<p>对子系统定义唯一的接触点——外观对象封装子系统。该外观对象提供唯一和统一的接口，并负责与子系统构件进行协作。</p>
+<h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>外观模式的主要目的是简化复杂系统的使用，使得客户端可以通过一个简单的接口访问复杂子系统的功能，而不需要了解子系统的内部细节。</p>
+<h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h4><p>外观模式通常包括以下角色：</p>
+<ul>
+<li><strong>Facade</strong>：外观类，提供简单的接口调用子系统的功能。</li>
+<li><strong>Subsystem Classes</strong>：子系统类，实际实现系统功能的类，客户端直接使用这些类可能会非常复杂。</li>
+</ul>
+<p>外观模式通过提供一个高层接口<strong>简化</strong>了复杂系统的<strong>使用</strong>。</p>
+<p>一个系统中包含有多个子系统用来完成功能的实现，但是客户不需要关心子系统具体的实现，只需要得到一个系统给的总开关即可。</p>
+<h3 id="观察者-Observer（发布-订阅（Publish-Subscribe））-委派事件模型"><a href="#观察者-Observer（发布-订阅（Publish-Subscribe））-委派事件模型" class="headerlink" title="观察者 Observer（发布-订阅（Publish-Subscribe））&#x2F; 委派事件模型"></a>观察者 Observer（发布-订阅（Publish-Subscribe））&#x2F; 委派事件模型</h3><p>它定义了对象间的一对多依赖关系，使得每当一个对象改变状态时，其相关依赖对象都会被<strong>自动通知并更新</strong>。</p>
+<p>观察者模式常用于实现事件处理系统，例如GUI框架中的事件监听器，或者订阅发布系统。</p>
+<h3 id="代理Proxy"><a href="#代理Proxy" class="headerlink" title="代理Proxy"></a>代理Proxy</h3><h3 id="命令-Command"><a href="#命令-Command" class="headerlink" title="命令 Command"></a>命令 Command</h3><h3 id="状态-State"><a href="#状态-State" class="headerlink" title="状态 State"></a>状态 State</h3><h2 id="课本逐章笔记："><a href="#课本逐章笔记：" class="headerlink" title="课本逐章笔记："></a>课本逐章笔记：</h2><h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h3><p>课本内容：</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240419090210330.png" alt="image-20240419090210330" style="zoom:50%;" /> 
+
+<h3 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h3><p>UML：一种标准的图形表示法，统一建模语言-Unified modeling language，描述、构造和文档化系统制品的可视化语言。</p>
+<p>UML不过是将面向对象的思想进行图形化的工具，学习重点关注的还是：对象的设计思想————“OOA&#x2F;D”</p>
+<p>三种应用：</p>
+<ol>
+<li>作为草图</li>
+<li>作为蓝图————相对详细的设计图<ol>
+<li>逆向工程：对现有代码结构进行可视化</li>
+<li>代码生成：</li>
+</ol>
+</li>
+<li>作为编程语言</li>
+</ol>
+<h4 id="OOA-D原则与模式："><a href="#OOA-D原则与模式：" class="headerlink" title="OOA&#x2F;D原则与模式："></a>OOA&#x2F;D原则与模式：</h4><ol>
+<li>职责驱动设计-<strong>reponsibility-driven design</strong></li>
+<li>将一些经典的设计问题的解决方案提炼出来作为经典的“设计模式<strong>pattern</strong>”</li>
+</ol>
+<h4 id="用例："><a href="#用例：" class="headerlink" title="用例："></a>用例：</h4><p>OOD需要进行先决条件————需求分析-<strong>requirement analysis</strong>，再需求分析中通常包含用例-<strong>use case</strong>的编写。</p>
+<h4 id="迭代开发、敏捷模式、敏捷UP"><a href="#迭代开发、敏捷模式、敏捷UP" class="headerlink" title="迭代开发、敏捷模式、敏捷UP"></a>迭代开发、敏捷模式、敏捷UP</h4><p>迭代开发过程</p>
+<h4 id="敏捷模式："><a href="#敏捷模式：" class="headerlink" title="敏捷模式："></a>敏捷模式：</h4><p>强调以UML作为草图的应用的方式，最普通的使用UML的方法。</p>
+<h4 id="三种透视图："><a href="#三种透视图：" class="headerlink" title="三种透视图："></a>三种透视图：</h4><ol>
+<li>概念透视图</li>
+<li>规格说明（软件）透视图：用UML图来描述软件的抽象物或具有规格说明和接口的构件</li>
+<li>实现（软件）透视图：描述特定技术的软件实现</li>
+</ol>
+<p>在UML当中，矩形框被称为<strong>类-class</strong>。</p>
+<p>在领域模式中的UML框被称为领域概念-domain concept或概念类-conceptual class，</p>
+<p>OO开发中最重要的能力是软件对象职责的划分</p>
+<p>分析：强调对问题和需求的调查研究，但并不是可使用的解决方案</p>
+<p>设计：强调满足需求的概念上的解决方案，但并非其实现。最终设计的具体实现表达了完整的设计</p>
+<p>面向对象分析：在问题领域内发现和描述对象，抽象出所面对问题当中存在的对象</p>
+<p>面向对象设计：定义对象以及对象属性，定义对象间的协作方式以及实现需求</p>
+<h3 id="定义领域模式"><a href="#定义领域模式" class="headerlink" title="定义领域模式"></a><strong>定义领域模式</strong></h3><blockquote>
+<p>该模型是对真实世界中概念和想象的可视化，也称为“概念对象模型”</p>
+</blockquote>
+<p>面向对象分析的结果表示为领域模型-domain model</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240419091413982.png" alt="image-20240419091413982" style="zoom:50%;" /> 
+
+<blockquote>
+<p>模型描述了分析出的对象、对象间的关联关系和对象的属性与行为</p>
+</blockquote>
+<h3 id="定义交互图"><a href="#定义交互图" class="headerlink" title="定义交互图"></a><strong>定义交互图</strong></h3><ol>
+<li><p>顺序图-sequence diagram：</p>
+<blockquote>
+<p>uml一种交互图</p>
+</blockquote>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240419091807866.png" alt="image-20240419091807866"></p>
+</li>
+</ol>
+<h3 id="定义设计类图"><a href="#定义设计类图" class="headerlink" title="定义设计类图"></a><strong>定义设计类图</strong></h3><p><strong>design class diagram</strong>：有效表示类定义的静态视图</p>
+<h3 id="迭代、进化和敏捷"><a href="#迭代、进化和敏捷" class="headerlink" title="迭代、进化和敏捷"></a>迭代、进化和敏捷</h3><blockquote>
+<p>相对于顺序或“瀑布-waterfall”生命周期，迭代和进化式开发-iterative and evolutionary development对部分系统及早地引入编程和测试，并进行重复。</p>
+</blockquote>
+<h3 id="UP模型–Unified-process-model"><a href="#UP模型–Unified-process-model" class="headerlink" title="UP模型–Unified process model"></a>UP模型–Unified process model</h3><blockquote>
+<p>UP模型具有良好的兼容性，十分灵活开放，同时鼓励引进其他迭代方法中有效的实践。</p>
+<p>UP可以将普遍认可的最佳实践结起来。</p>
+</blockquote>
+<p><strong>软件开发过程-software development process</strong>描述了构造、部署以及维护软件的方式。</p>
+<p><strong>统一过程UP</strong>：一种构造面向对象系统的迭代软件开发过程，</p>
+<p><strong>Rational UP-Rational Unified Process RUP</strong>是对统一过程的详细精化。</p>
+<h3 id="其他迭代方法："><a href="#其他迭代方法：" class="headerlink" title="其他迭代方法："></a>其他迭代方法：</h3><ol>
+<li>极限编程-<strong>Extreme Programming XP</strong></li>
+<li>Scrum</li>
+<li>重构-refactoring</li>
+<li>持续集成-continuous integration</li>
+<li>动态系统开发方法-DSDM Dynamic Systems Development Methodogy</li>
+<li>ASD-Adaptive ware Development</li>
+</ol>
+<h3 id="迭代与进化式开发"><a href="#迭代与进化式开发" class="headerlink" title="迭代与进化式开发"></a>迭代与进化式开发</h3><h4 id="迭代开发-iterative-development"><a href="#迭代开发-iterative-development" class="headerlink" title="迭代开发-iterative development"></a>迭代开发-iterative development</h4><ol>
+<li>UP与大多数其他现代方法中的重要实践。</li>
+<li>迭代的生命周期基于对经过多次迭代的系统进行持续扩张和精化，并以循环反馈和调整为核心驱动力。</li>
+<li>随时间推移，系统进行了增量式地发展和完善，因而该方法也成为<strong>迭代和增量式开发</strong>-iterative and incremental development</li>
+<li>也因为反馈和调整使规格说明和设计不断进化，所以这种方式也称为<strong>迭代和进化式开发</strong>-iterative and evolutionary development</li>
+<li>迭代产出的是最终系统的子集，对这些子集进行整合得到最终的产品</li>
+</ol>
+<h3 id="瀑布生命周期"><a href="#瀑布生命周期" class="headerlink" title="瀑布生命周期"></a>瀑布生命周期</h3><blockquote>
+<p>瀑布（或顺序）生命周期过程，试图在编程之前就定义所有或大部分的需求。</p>
+</blockquote>
+<h3 id="风险驱动和客户驱动"><a href="#风险驱动和客户驱动" class="headerlink" title="风险驱动和客户驱动"></a>风险驱动和客户驱动</h3><p>风险驱动迭代开发更为明确地包含了以<strong>架构为中心- architecture-centric迭代开发的实践。</strong></p>
+<h3 id="敏捷方法及其观点"><a href="#敏捷方法及其观点" class="headerlink" title="敏捷方法及其观点"></a>敏捷方法及其观点</h3><p>具备进化式精化的计划、需求和设计的短时间定量迭代</p>
+<h3 id="敏捷建模"><a href="#敏捷建模" class="headerlink" title="敏捷建模"></a>敏捷建模</h3><p>建模的目的主要是为理解，而非文档</p>
+<p>建模的真正行为应该是能够对理解问题或解决方案做出帮助。</p>
+<h3 id="UP阶段"><a href="#UP阶段" class="headerlink" title="UP阶段"></a>UP阶段</h3><ol>
+<li>初始-Inception：大体上的构想、业务案例、范围和模糊评估</li>
+<li>细化-Elaboration：已精化的构想、核心架构的迭代实现、高风险的解决、确定大多数需求和范围以及进行更为实际的评估</li>
+<li>构造-Construction：对遗留下来的风险较低和比较简单的元素进行了迭代实现，准备部署</li>
+<li>移交-Transition：进行beta测试和部署</li>
+</ol>
+<h3 id="案例研究"><a href="#案例研究" class="headerlink" title="案例研究"></a>案例研究</h3><h3 id="迭代开发-迭代学习"><a href="#迭代开发-迭代学习" class="headerlink" title="迭代开发+迭代学习"></a>迭代开发+迭代学习</h3><ol>
+<li>第一次迭代中介绍一组核心的分析设计主题和表示法</li>
+<li>第二次迭代展开介绍新理念、UML表示法和模式</li>
+<li>第三次……</li>
+</ol>
+<h3 id="初始不是需求阶段"><a href="#初始不是需求阶段" class="headerlink" title="初始不是需求阶段"></a>初始不是需求阶段</h3><blockquote>
+<p>初始阶段是建立项目共同设想和基本范围的比较简短的起始步骤。</p>
+<p>初始阶段的目标并不是定义所有需求</p>
+<p>初始阶段作为 UP的第一个阶段也不需要完成所有需求或建立可靠预算和计划。以上内容是在细化的过程中逐步完成的</p>
+</blockquote>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240419170436795.png" alt="image-20240419170436795"> </p>
+<h3 id="进化式需求"><a href="#进化式需求" class="headerlink" title="进化式需求"></a>进化式需求</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/UML/" data-id="cm7pnj29p003tucv2gdv06s18" data-title="UML期末复习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          操作系统期末复习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/%E7%94%B5%E5%B7%A5%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">电工学</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 18.33px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 18.33px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16.67px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 13.33px;">学习规划</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 13.33px;">开发工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.33px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 15px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/01/%E7%AE%97%E6%B3%95/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E7%AE%97%E6%B3%95/LeetCode/">Leetcode刷题题解</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

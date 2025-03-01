@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>数据库期末复习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数据库期末复习CH1 DBMS相关数据的集合访问数据的程序集方便高效的使用环境 文件系统来存储数据的缺点： 数据冗余和不一致性 多种文件格式：即同一个文件夹内存在多种存储数据的文件格式，其中存储的数据信息可能都相同只是因为文件格式不同导致了冗余 复制不同文件中的信息：不同文件之间进行数据查拷贝时，容易出现数据不一致的现象   访问数据困难 需要编写一个新的程序来执行每一个新的任务：文件系统对于用户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库期末复习">
+<meta property="og:url" content="http://example.com/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据库期末复习CH1 DBMS相关数据的集合访问数据的程序集方便高效的使用环境 文件系统来存储数据的缺点： 数据冗余和不一致性 多种文件格式：即同一个文件夹内存在多种存储数据的文件格式，其中存储的数据信息可能都相同只是因为文件格式不同导致了冗余 复制不同文件中的信息：不同文件之间进行数据查拷贝时，容易出现数据不一致的现象   访问数据困难 需要编写一个新的程序来执行每一个新的任务：文件系统对于用户">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:\Blog\source\_posts\%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE\%E6%95%B0%E6%8D%AE%E5%BA%93.assets\image-20241102115006858.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/20231030170724-D4_wQZ91.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-1-DD2Bx8eb.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-2-CDSeoVp2.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-3-Cm4Rl_4q.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-4-ukjKFlo7.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-5-C7r_AgFK.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-6-DP_749mA.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-7-D0DF95eS.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-8-DC2MfT15.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-2Ybx0Cic.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-1-DsbwfizE.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-2-CvB5Y1ew.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-3-BliAv-u1.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-4-C0HOPcqy.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-6-CtFAa_AM.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-7-Cqe6RW2g.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-8-UWUitpr_.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-9-_sutC0xo.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-1-CIMkfIhN.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-2-CSEAPVWg.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-3-CnMYpJKs.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-4-CSXuXJc3.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-5-GZhZidTi.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-6-BkgRSeNn.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-14-CAvppGpr.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-16-C_jrNPoi.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-8-B7EFTDas.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-9-Dbhss_U0.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-10-BTDbYSIm.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-11-D8XTAE7M.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-13-BuoQZq5b.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-2-DIfBlPe0.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-Bp1Kkm8r.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-1-wIOyu-C4.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-4-CH5gmXtS.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-9-BD14r9EV.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-DlrztMBS.png">
+<meta property="og:image" content="d:\Blog\source_posts\%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE\%E6%95%B0%E6%8D%AE%E5%BA%93.assets\image-1-Co9_fsVz.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-2-CyvBTO7J.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-3-DOPpOuNL.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-4-CBozuB4y.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-5-_5H_oOZN.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-6-ZLXExafy.png">
+<meta property="og:image" content="https://chiichen.github.io/assets/image-7-bBX0JNym.png">
+<meta property="article:published_time" content="2025-03-01T03:35:47.261Z">
+<meta property="article:modified_time" content="2025-02-19T14:55:25.710Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="期末复习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\Blog\source\_posts\%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE\%E6%95%B0%E6%8D%AE%E5%BA%93.assets\image-20241102115006858.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-校内课程学习笔记/计算机专业课/数据库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2025-03-01T03:35:47.261Z" itemprop="datePublished">2025-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      数据库期末复习
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库期末复习"><a href="#数据库期末复习" class="headerlink" title="数据库期末复习"></a>数据库期末复习</h1><h2 id="CH1-DBMS"><a href="#CH1-DBMS" class="headerlink" title="CH1 DBMS"></a>CH1 DBMS</h2><p>相关数据的集合<br>访问数据的程序集<br>方便高效的使用环境</p>
+<h3 id="文件系统来存储数据的缺点："><a href="#文件系统来存储数据的缺点：" class="headerlink" title="文件系统来存储数据的缺点："></a>文件系统来存储数据的缺点：</h3><ol>
+<li>数据冗余和不一致性<ul>
+<li>多种文件格式：即同一个文件夹内存在多种存储数据的文件格式，其中存储的数据信息可能都相同只是因为文件格式不同导致了冗余</li>
+<li>复制不同文件中的信息：不同文件之间进行数据查拷贝时，容易出现数据不一致的现象</li>
+</ul>
+</li>
+<li>访问数据困难<ul>
+<li>需要编写一个新的程序来执行每一个新的任务：文件系统对于用户来说缺乏一个统一的接口来进行数据的访问和操作。</li>
+</ul>
+</li>
+<li>数据隔离————多种文件和格式</li>
+<li>完整性问题<ul>
+<li>完整性约束（例如，帐户余额&gt; 0）被“隐藏”在程序代码中，而不是被显式地声明</li>
+<li>很难添加新的约束条件或更改现有的约束条件</li>
+</ul>
+</li>
+<li>更新的原子性<ul>
+<li>失败可能会使数据库处于不一致的状态，并执行了部分更新</li>
+</ul>
+</li>
+<li>由多个用户的并发访问<ul>
+<li>执行性能所需的并发访问权限</li>
+<li>不受控制的并发访问可能会导致不一致</li>
+</ul>
+</li>
+<li>安全问题<ul>
+<li>难以限制用户对数据的访问范围</li>
+</ul>
+</li>
+</ol>
+<h3 id="抽象层级-Abstraction-Levels"><a href="#抽象层级-Abstraction-Levels" class="headerlink" title="抽象层级 Abstraction Levels"></a>抽象层级 Abstraction Levels</h3><ul>
+<li><strong>Physical Level</strong>物理层：描述在物理硬件层次上，一条数据记录是如何存储，涉及实际的存储介质和数据结构，比如硬盘、SSD、数据块等。</li>
+<li><strong>Logical Level</strong>逻辑层：概念性地描述数据存储在数据库中，且阐明数据间的关系，关注的是数据的结构和组织方式</li>
+<li><strong>View Level</strong>视图层：对逻辑层进行封装，仅仅暴露出用户可理解的视觉层面的应用程序，隐藏了数据类型的细节、也隐藏了数据信息（为了安全性）</li>
+<li>图例：</li>
+</ul>
+<img src="D:\Blog\source\_posts\校内课程学习笔记\计算机专业课\数据库.assets\image-20241102115006858.png" alt="image-20241102115006858" style="zoom: 50%;" />
+
+
+
+<h3 id="Schemas-and-Instances-实例和模式"><a href="#Schemas-and-Instances-实例和模式" class="headerlink" title="Schemas and Instances 实例和模式"></a>Schemas and Instances 实例和模式</h3><blockquote>
+<p>类似于编程语言中的类型和变量</p>
+</blockquote>
+<p><strong>Schemas 模式</strong>：对数据库的逻辑结构的定义，描述数据的组织方式，如table，filed，data type，constraint。相当于抽象类</p>
+<p><strong>Instance 实例</strong>：数据库在某一特定时间的实例</p>
+<p><strong>Physical Data Independence 物理数据独立性</strong>：指在数据库系统中，用户和应用程序不需要关注数据的物理存储方式或存储介质的变化，即使底层存储的实现发生变化，应用程序和用户依然可以按照原有的方式访问和操作数据。通俗来讲即是，只要有数据库的文件 xxx.db 即使换了一台电脑，在那台电脑上数据的存储在完全不同的物理硬件上，但是依旧可以像在原来的电脑上去操作数据库，而不需要担心物理硬件的改变会对数据库产生影响</p>
+<h3 id="Data-Model-数据模型"><a href="#Data-Model-数据模型" class="headerlink" title="Data Model 数据模型"></a>Data Model 数据模型</h3><ul>
+<li><strong>Data（数据）</strong>：指的是需要存储和管理的信息。数据模型提供了描述这些数据的结构和类型的方法，例如数字、文本、日期等。</li>
+<li><strong>Data relationships（数据关系）</strong>：指的是数据之间的关联或联系。数据模型定义了不同数据实体之间的关系，例如一对一、一对多或多对多的关系。这些关系帮助理解和组织数据的结构，使得数据能够相互关联。</li>
+<li><strong>Data semantics（数据语义）</strong>：指的是数据的含义或解释。数据模型不仅描述数据的结构和关系，还定义了数据的业务含义，确保数据的使用者能够正确理解和使用这些数据。例如，一个“客户”实体的语义可以包括客户的姓名、地址和联系方式等信息。</li>
+<li><strong>Data constraints（数据约束）</strong>：指的是对数据的限制或规则，以确保数据的有效性和一致性。数据模型定义了可以存储的数据类型、数据值的范围、唯一性约束等。这些约束确保了数据的完整性，防止无效或错误的数据被存储。</li>
+</ul>
+<h3 id="Relational-Model（关系模型）"><a href="#Relational-Model（关系模型）" class="headerlink" title="Relational Model（关系模型）"></a>Relational Model（关系模型）</h3><p>关系模型的几个关键特征：</p>
+<ol>
+<li><strong>表（关系）</strong>：数据以表的形式存储，每个表由行和列组成。每一行代表一个数据记录（或元组），每一列代表一个属性（或字段）。表的结构是固定的，即每个表都有预定义的列及其数据类型。</li>
+<li><strong>主键</strong>：每个表都有一个主键，用于唯一标识表中的每一行数据。主键确保每条记录的唯一性，通常由一个或多个字段组合而成。</li>
+<li><strong>外键</strong>：外键是一个表中的一个字段，它引用另一个表的主键，从而建立两个表之间的关系。外键使得不同表之间的数据能够相互关联。</li>
+<li><strong>数据完整性</strong>：关系模型通过定义约束（如主键约束、外键约束、唯一性约束等）来确保数据的完整性和一致性。这些约束防止了无效数据的插入和更新。</li>
+<li><strong>关系操作</strong>：关系模型支持多种操作，包括选择（SELECT）、插入（INSERT）、更新（UPDATE）和删除（DELETE）。这些操作通常通过结构化查询语言（SQL）来实现。</li>
+<li><strong>抽象性</strong>：关系模型提供了物理数据独立性，用户可以通过逻辑结构访问数据，而无需关心数据的物理存储细节。</li>
+</ol>
+<h3 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML 数据操作语言"></a>DML 数据操作语言</h3><p>什么是<strong>Data Manipulation Language (DML)</strong>：被定义来用于访问和操作数据的一种语言</p>
+<p><strong>DML的两类语言</strong></p>
+<ul>
+<li><strong>Procedural 过程式</strong>：用户指定需要哪些数据以及如何获取这些数据</li>
+<li><strong>Declarative 声明式</strong>：用户指定需要哪些数据，而不指定如何获取这些数据，SQL即是声明式<strong>Declarative</strong></li>
+</ul>
+<h4 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h4><p>例：查询语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name</span><br><span class="line"><span class="keyword">from</span> instructor</span><br><span class="line"><span class="keyword">where</span> instructor.ID <span class="operator">=</span> <span class="string">&#x27;22222</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>应用程序通常通过以下方式之一访问数据库：</p>
+<ol>
+<li>允许嵌入 SQL 的语言扩展 应用程序接口（例如 ODBC&#x2F;JDBC）</li>
+<li>允许将 SQL 查询发送到数据库</li>
+</ol>
+<h3 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL 数据定义语言"></a>DDL 数据定义语言</h3><p>什么是<strong>Data Definition Language (DDL)</strong>：用于定义数据库模式的规范表示法</p>
+<p><strong>DDL Compiler（DDL编译器）</strong>：DDL编译器是负责处理数据定义语言语句的组件。当用户使用DDL命令（如创建表、修改表结构等）时，DDL编译器会解析这些命令并生成相应的<strong>表模板</strong>。</p>
+<p><strong>Table Templates（表模板）</strong>：表模板是对数据库表结构的定义，包括表名、列名、数据类型、约束等信息。DDL编译器会根据用户输入的DDL语句创建这些模板，表明数据将以何种结构存储。</p>
+<p><strong>Data Dictionary（数据字典）</strong>：数据字典是数据库中的一个特殊存储区域，用于保存数据库的元数据（metadata）。</p>
+<ul>
+<li>元数据是关于数据的数据，它描述了数据库中数据的<ul>
+<li>数据库模式 database schema</li>
+<li>完整性约束 integrity constraints，如：Primary key，Referential integrity</li>
+<li>权限信息</li>
+</ul>
+</li>
+</ul>
+<p><strong>Metadata（元数据）</strong>：元数据包含有关数据的数据。例如，元数据可以包括表的名称、列的名称和数据类型、索引、约束、视图、存储过程等信息。这些信息帮助数据库管理系统和用户理解数据的组织方式和结构。</p>
+<h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><ul>
+<li><strong>归一化理论</strong><ul>
+<li>正式确定哪些设计不好，并对其进行测试</li>
+</ul>
+</li>
+<li><strong>实体关系模型</strong></li>
+</ul>
+<h3 id="存储管理-storage-management"><a href="#存储管理-storage-management" class="headerlink" title="存储管理 storage management"></a>存储管理 storage management</h3><ul>
+<li>存储管理器是一个程序模块，它提供存储在数据库中的</li>
+<li>低级数据与提交给系统的应用程序和查询之间的接口。</li>
+<li>存储管理器负责以下任务：<ul>
+<li>与文件管理器交互</li>
+<li>高效存储、检索和更新数据</li>
+</ul>
+</li>
+<li>需要解决的问题：<ul>
+<li>存储访问</li>
+<li>文件组织</li>
+<li>索引和散列</li>
+</ul>
+</li>
+</ul>
+<h3 id="查询处理-query-processing"><a href="#查询处理-query-processing" class="headerlink" title="查询处理 query processing"></a>查询处理 query processing</h3><ol>
+<li>sql翻译</li>
+<li>优化</li>
+<li>执行</li>
+</ol>
+<p><img src="https://chiichen.github.io/assets/20231030170724-D4_wQZ91.png" alt="Query Processing"></p>
+<ul>
+<li>评估给定查询的替代方法<ul>
+<li>等价表达式</li>
+<li>每个操作都有不同的算法</li>
+</ul>
+</li>
+<li>评估查询的好方法和坏方法之间的成本差异可能是巨大的</li>
+<li>需要估算运营成本<ul>
+<li>很大程度上取决于数据库必须维护的关系的统计信息</li>
+<li>需要估计中间结果的统计数据以计算复杂表达式的成本</li>
+</ul>
+</li>
+</ul>
+<h3 id="事务管理-transaction-management"><a href="#事务管理-transaction-management" class="headerlink" title="事务管理 transaction management"></a>事务管理 transaction management</h3><ul>
+<li>如果系统出现故障怎么办？</li>
+<li>如果多个用户同时更新相同的数据怎么办？</li>
+<li>事务是在数据库应用程序中执行单个逻辑功能的操作的集合</li>
+<li>事务管理组件确保即使出现系统故障（例如电源故障和操作系统崩溃）和事务失败，数据库仍保持一致（正确）状态。</li>
+<li>并发控制管理器控制并发事务之间的交互，以保证数据库的一致性。</li>
+</ul>
+<h3 id="数据库架构"><a href="#数据库架构" class="headerlink" title="数据库架构"></a>数据库架构</h3><p>数据库系统的架构很大程度上取决于运行数据库的操作系统的架构</p>
+<ul>
+<li>集中</li>
+<li>CS 架构(Client-Server)</li>
+<li>并行（多处理器）</li>
+<li>分布式</li>
+</ul>
+<h2 id="CH2-关系模型"><a href="#CH2-关系模型" class="headerlink" title="CH2 关系模型"></a>CH2 关系模型</h2><h3 id="关系-Relation"><a href="#关系-Relation" class="headerlink" title="关系 Relation"></a>关系 Relation</h3><h4 id="属性值-Attribute-types"><a href="#属性值-Attribute-types" class="headerlink" title="属性值 Attribute types"></a>属性值 Attribute types</h4><ul>
+<li>每个属性允许的值集合称为属性的域(domain)。</li>
+<li>属性值（通常）要求是原子(atomic)的，即不可分割的。</li>
+<li>特殊值 null 是每个域的成员。</li>
+<li>null 值在许多操作的定义中引起了复杂性。</li>
+</ul>
+<h4 id="关系模式和实例-relation-and-instance"><a href="#关系模式和实例-relation-and-instance" class="headerlink" title="关系模式和实例 relation and instance"></a>关系模式和实例 relation and instance</h4><ul>
+<li>关系模式是关系数据库中表的结构定义，它规定了表的列名、数据类型和约束条件。描述了表的属性和属性间的关系</li>
+<li>关系实例是关系模式的具体实例化，即表中的具体数据。是由行和列组成的二维表格，每行代表一条记录，每列代表一种属性</li>
+<li>总之，关系模式定义了表的结构；关系实例则是实际存储在表中的数据</li>
+</ul>
+<blockquote>
+<ul>
+<li><p>例如：A1是属性名，D1是A1的取值范围，a1是A1中的一个元素</p>
+</li>
+<li><p>A1,A2,A3,…,An就是属性(attribute)</p>
+</li>
+<li><p>R&#x3D;(A1,A2,…,An)</p>
+<p>是一个关系模式(relation schema)</p>
+<ul>
+<li>例如 instrutor&#x3D;(ID,name,dept_name,salary)</li>
+</ul>
+</li>
+<li><p>对于给定的若干个集合D1,D2,…,Dn，一个关系r是D1×D2×…×Dn的子集</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ul>
+<li>一个数据库由多个关系组成</li>
+</ul>
+<p>例：关于一个大学的信息被分解成不同部分，学生、教师、教室、课程安排…</p>
+<h3 id="键-Key"><a href="#键-Key" class="headerlink" title="键 Key"></a>键 Key</h3><ul>
+<li>设 K⊆R，(其中 R 是一个关系模式，由多个属性组成)。</li>
+<li>如果 K 的值足以唯一标识每个可能的关系 r(R) 中的元组，则 K 是 R 的<code>超键(superkey)</code>。<ul>
+<li>例如，{ID} 和 {ID,name}都是 instructor 关系的超键。</li>
+</ul>
+</li>
+<li>如果 K 是最小的超键，则 K 是<code>候选键(candidate key)</code>。<ul>
+<li>例如，{ID} 是 Instructor 的候选键。</li>
+</ul>
+</li>
+<li>其中一个候选键被选为<code>主键(primary key)</code>。<ul>
+<li>哪一个是主键？</li>
+</ul>
+</li>
+<li>外键约束(Foreign key)：一个关系中的值必须出现在另一个关系中。<ul>
+<li>引用关系(Referencing relation)：包含外键的关系。</li>
+<li>被引用关系(Referenced relation)：被外键引用的关系。</li>
+</ul>
+</li>
+</ul>
+<h3 id="关系查询语言-relational-query-languages"><a href="#关系查询语言-relational-query-languages" class="headerlink" title="关系查询语言 relational query languages"></a>关系查询语言 relational query languages</h3><ul>
+<li>过程式 procedural &amp;非过程式&#x2F;声明式 non-procedural&#x2F;declarative</li>
+<li>“纯”语言：<ul>
+<li><code>关系代数 relational algebra</code></li>
+<li>元组关系演算 tuple relational calculus</li>
+<li>域关系演算 domain relational calculus</li>
+</ul>
+</li>
+<li>关系操作符 relational operators</li>
+</ul>
+<ol>
+<li>σ 选择操作符</li>
+</ol>
+<p><img src="https://chiichen.github.io/assets/image-1-DD2Bx8eb.png" alt="Selection of tuples"></p>
+<ol start="2">
+<li>⊓ 投影操作符</li>
+</ol>
+<p><img src="https://chiichen.github.io/assets/image-2-CDSeoVp2.png" alt=" Selection of Columns (Attributes)"></p>
+<ol start="3">
+<li>X 笛卡尔积</li>
+</ol>
+<p><img src="https://chiichen.github.io/assets/image-3-Cm4Rl_4q.png" alt="Joining two relations – Cartesian Product"></p>
+<ol start="4">
+<li>∪ 并运算</li>
+</ol>
+<p><img src="https://chiichen.github.io/assets/image-4-ukjKFlo7.png" alt=" Union of two relations"></p>
+<ol start="5">
+<li><ul>
+<li>差运算</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://chiichen.github.io/assets/image-5-C7r_AgFK.png" alt="Set difference of two relations"></p>
+<ol start="6">
+<li>∩ 交运算</li>
+</ol>
+<p><img src="https://chiichen.github.io/assets/image-6-DP_749mA.png" alt=" Set Intersection of two relations"></p>
+<blockquote>
+<p>合并两个关系 - 自然连接</p>
+<ul>
+<li>假设 <em>r</em> 和 <em>s</em> 是分别基于模式 <em>R</em> 和 <em>S</em> 的关系。那么，关系 R 和 S 的“自然连接”是基于模式 $R ∪ S$ 的关系，过程如下：<ul>
+<li>对于 <em>r</em> 中的每个元组 $t_r$ 和 <em>s</em> 中的每个元组 $t_s$，考虑每对元组。</li>
+<li>如果 $t_r$ 和 $t_s$ 在 $R∩S$ 中的每个属性上有相同的值，则将一个元组 t 添加到结果中。其中：<ul>
+<li>t 和 $t_r$​在 <em>r</em> 上有相同的值</li>
+<li>t 和 $t_s$在 <em>s</em> 上有相同的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>简而言之，自然连接操作是基于两个关系中共同属性的值相等的元组进行并。结果是一个新的关系，包含了具有相同共同属性值的元组。</p>
+</blockquote>
+<p><img src="https://chiichen.github.io/assets/image-7-D0DF95eS.png" alt="Natural Join Example"></p>
+<h4 id="关系代数总览"><a href="#关系代数总览" class="headerlink" title="关系代数总览"></a>关系代数总览</h4><p><img src="https://chiichen.github.io/assets/image-8-DC2MfT15.png" alt="Relational algebra"></p>
+<h2 id="CH3-SQL"><a href="#CH3-SQL" class="headerlink" title="CH3 SQL"></a>CH3 SQL</h2><h3 id="SQL-DDL"><a href="#SQL-DDL" class="headerlink" title="SQL DDL"></a>SQL DDL</h3><ul>
+<li>SQL 数据定义语言 data-definition language ,DDL 允许指定关于关系的信息，包括：<ul>
+<li>每个关系的模式。</li>
+<li>每个属性关联的值域。</li>
+<li>完整性约束。</li>
+<li>此外，我们稍后将看到，还可以包括其他信息，例如：<ul>
+<li>每个关系要维护的索引集合。</li>
+<li>每个关系的安全性和授权信息。</li>
+<li>每个关系在磁盘上的物理存储结构。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>简而言之，SQL 的数据定义语言（DDL）提供了一种定义关系的信息的方式，包括关系模式、属性的值域以及与关系相关的完整性约束等。它还允许指定索引、安全性和授权信息以及关系在磁盘上的物理存储结构。</li>
+</ul>
+<h2 id="CH6-形式关系查询语言"><a href="#CH6-形式关系查询语言" class="headerlink" title="CH6 形式关系查询语言"></a>CH6 形式关系查询语言</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>关系代数（Relational Algebra）、元组关系演算（Tuple Relational Calculus）和域关系演算（Domain Relational Calculus）是用于关系数据库的不同查询语言和形式。它们的主要区别如下：</p>
+<ol>
+<li>关系代数（Relational Algebra）：<br>关系代数是一种基于集合论的查询语言，用于操作关系数据库中的关系。它使用一组操作符，如选择（selection）、投影（projection）、连接（join）、并（union）、差（difference）等来执行关系操作。关系代数提供了一种形式化的方法来描述和操作关系数据库中的关系。</li>
+<li>元组关系演算（Tuple Relational Calculus）：<br>元组关系演算是一种基于逻辑的查询语言，用于描述关系数据库中的查询。它使用逻辑谓词（predicate）来描述所需的元组集合。元组关系演算的查询结果是满足指定谓词的关系中的元组集合。元组关系演算描述了所需的结果，而不是如何计算结果。</li>
+<li>域关系演算（Domain Relational Calculus）：<br>域关系演算也是一种基于逻辑的查询语言，用于描述关系数据库中的查询。它使用逻辑谓词来描述所需的属性集合。域关系演算的查询结果是满足指定谓词的关系中的属性集合。域关系演算描述了所需的属性，而不是如何计算结果。</li>
+</ol>
+<h3 id="关系代数-relational-algebra"><a href="#关系代数-relational-algebra" class="headerlink" title="关系代数 relational algebra"></a>关系代数 relational algebra</h3><ul>
+<li>过程语言(Procedural language)</li>
+<li>六个基本运算子：<ul>
+<li>查询(Selection)：σ</li>
+<li>投影(Projection)：Π</li>
+<li>集合并(Union)：∪</li>
+<li>差集(Set difference)：−</li>
+<li>笛卡尔积(Cartesian product)：×</li>
+<li>重命名(Reanme)：ρ</li>
+</ul>
+</li>
+</ul>
+<h3 id="六大基本运算符"><a href="#六大基本运算符" class="headerlink" title="六大基本运算符"></a>六大基本运算符</h3><h4 id="查询-select"><a href="#查询-select" class="headerlink" title="查询 select"></a>查询 select</h4><p><img src="https://chiichen.github.io/assets/image-2Ybx0Cic.png" alt="Selction操作"></p>
+<ul>
+<li>基本形式：$σ_p(R)$</li>
+<li>p称为选择谓词，可以由多个独立的命题通过∧,∨等符号连接</li>
+<li>被定义为：$σ_p(r)&#x3D; {t∣t∈r<del>and</del>p(t)}$</li>
+<li>例如：$σ_{dept \underline{} name}&#x3D;^”Physics^”(instructor)$</li>
+</ul>
+<h4 id="投影-project"><a href="#投影-project" class="headerlink" title="投影 project"></a>投影 project</h4><p><img src="https://chiichen.github.io/assets/image-1-DsbwfizE.png" alt="Project操作"></p>
+<ul>
+<li>基本形式：$Π_{\alpha_1,\alpha_2,…\alpha_n}(r)$</li>
+<li>其中$a_1,…,a_n$是属性名称，$r$是关系名称</li>
+<li>由于关系是集合，因此从结果中删除了重复行</li>
+<li>例如： $Π_{ID,name,salary}(instructor)$</li>
+</ul>
+<h4 id="集合并-union"><a href="#集合并-union" class="headerlink" title="集合并 union"></a>集合并 union</h4><p><img src="https://chiichen.github.io/assets/image-2-CvB5Y1ew.png" alt="Union操作"></p>
+<ul>
+<li>基本形式 $r∪s$</li>
+<li>定义为：$r∪s &#x3D; { t|t \in r<del>or</del>t\in s  }$</li>
+<li>$r∪s$需要满足两个条件：<ul>
+<li>$r,s$必须具有相同的属性数量 arity</li>
+<li>属性域必须兼容（例如：r的第k列和s的第k列处理相同类型的值）</li>
+</ul>
+</li>
+<li>例如，查找 2009 年秋季学期或 2010 年春季学期或两者都教授的所有课程：<ul>
+<li>$Π_{course_id}(σ_{semester&#x3D;”Fall” \and year&#x3D;2009(section)} ∪  Π_{course_id}(σ_{semester&#x3D;”Spring”\and year&#x3D;2010(section)}))$</li>
+</ul>
+</li>
+</ul>
+<h4 id="差集-Set-difference"><a href="#差集-Set-difference" class="headerlink" title="差集 Set difference"></a>差集 Set difference</h4><p><img src="https://chiichen.github.io/assets/image-3-BliAv-u1.png" alt="Set difference"></p>
+<ul>
+<li>基本形式：$r-s$</li>
+<li>定义为：$r-s &#x3D; { t|t\in r<del>and</del>t\notin s }$</li>
+<li>和集合并一样，必须有一样的属性数量和兼容的属性域</li>
+</ul>
+<h4 id="笛卡尔积-Cartesian-Product"><a href="#笛卡尔积-Cartesian-Product" class="headerlink" title="笛卡尔积 Cartesian-Product"></a>笛卡尔积 Cartesian-Product</h4><p><img src="https://chiichen.github.io/assets/image-4-C0HOPcqy.png" alt="Cartesian-Product"></p>
+<ul>
+<li>基本形式：$r \times s$</li>
+<li>定义为：$r \times s&#x3D;{ t,q|t\in r<del>and</del>q\in s}$</li>
+<li>假设$r(R)$和$s(S)$的属性是不相交的（即，$R∩S&#x3D;\varnothing$）。如果$r(R)$和$s(S)$的属性相交，则必须使用重命名</li>
+</ul>
+<h4 id="重命名-Rename"><a href="#重命名-Rename" class="headerlink" title="重命名 Rename"></a>重命名 Rename</h4><h4 id="自然连接-Natural-join"><a href="#自然连接-Natural-join" class="headerlink" title="自然连接 Natural-join"></a>自然连接 Natural-join</h4><p><img src="https://chiichen.github.io/assets/image-6-CtFAa_AM.png" alt="Natural-Join"></p>
+<ul>
+<li><p>基本形式：$r\bowtie s$</p>
+</li>
+<li><p>设$r$和$s$分别是基于模式$R$和$S$的关系。那么，$r\bowtie S$是基于模式$R∪S$的关系，获取方式如下：</p>
+<p>考虑每对元组 t：</p>
+<ul>
+<li>如果来自$r$的元组$t_r$和来自$s$的元组$t_s$在$R∩S$的每个属性上具有相同的值，则将一个元组 t 添加到结果中，<ul>
+<li>其中t在r上具有与$t_r$相同的值;</li>
+<li>t在s上具有与$t_s$相同的值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在没有公共属性的情况下会退化成笛卡尔积</p>
+</li>
+<li><p>如：</p>
+</li>
+</ul>
+<p>$$<br>R&#x3D;(A,B,C,D) \ S&#x3D;(E,B,D) \ \mit Result~schema \mit &#x3D; (A,B,C,D,E) \<br>r \bowtie s &#x3D; \begin{matrix} \prod_{r.A,r.B,r.C,r.D,r.E(\sigma_{r.B&#x3D;s.B\and r.D&#x3D;s.D}(r\times s))} \end{matrix}<br>$$</p>
+<h4 id="连接-Theta-join"><a href="#连接-Theta-join" class="headerlink" title="连接 Theta join"></a>连接 Theta join</h4><ul>
+<li>定义为：$r \bowtie_{\theta} s &#x3D; \sigma_{\theta}(r \times s)$</li>
+<li>例：假设一个顾客顾客要购买一个车模和一个船模，但不想为船花费比车更多的钱。那么可以有$ car \bowtie_{car_pirce&lt;Boat_price}boat$</li>
+<li>当$\theta$为等号时，又称为相等连接 equi join(基于两个表中列的值相等)</li>
+</ul>
+<h4 id="外连接-outer-join"><a href="#外连接-outer-join" class="headerlink" title="外连接 outer join"></a>外连接 outer join</h4><blockquote>
+<p>有left outer join 左外连接，左连接和 right outer join 右外连接，右连接</p>
+</blockquote>
+<ul>
+<li>一种扩展的连接操作，避免了信息的丢失。</li>
+<li>首先计算连接操作，然后将一方关系中与另一方关系中的元组不匹配的元组添加到连接结果中。</li>
+<li>使用空值（null）：<ul>
+<li>空值表示值是未知的或不存在的。</li>
+<li>所有涉及空值的比较（粗略地说）根据定义都是 false。</li>
+<li>我们将在后面详细研究与空值的比较的确切含义。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://chiichen.github.io/assets/image-7-Cqe6RW2g.png" alt="Outer Join –Example"> </p>
+<p><img src="https://chiichen.github.io/assets/image-8-UWUitpr_.png" alt="Outer Join –Example2"> </p>
+<p><img src="https://chiichen.github.io/assets/image-9-_sutC0xo.png" alt="Outer Join –Example3"> </p>
+<blockquote>
+<p>空值(Null Values)</p>
+<ul>
+<li>某些属性的元组可能具有空值（null）。</li>
+<li>空值表示一个未知的值或值不存在。<ul>
+<li>任何涉及空值的算术表达式的结果都是空值。</li>
+<li>聚合函数简单地忽略空值（与 SQL 中类似）。</li>
+<li>在去重和分组中，空值被视为任何其他值，并且假设两个空值是相同的（与 SQL 中类似）。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Join 之解析</p>
+<ul>
+<li>连接主要由连接方向、连接类型组成</li>
+<li>连接方向包括：左右内外</li>
+<li>连接类型包括：自然连接、ON 子句和 HAVING 子句</li>
+</ul>
+</blockquote>
+<h2 id="CH7-实体关系模型-Entity-Relationship-Model"><a href="#CH7-实体关系模型-Entity-Relationship-Model" class="headerlink" title="CH7 实体关系模型 Entity-Relationship Model"></a>CH7 实体关系模型 Entity-Relationship Model</h2><h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><ul>
+<li><p>一个数据库可以被抽象建模为：</p>
+<ul>
+<li>实体集合</li>
+<li>实体间的关系</li>
+</ul>
+<blockquote>
+<p>即若干个实体与这些实体间的关系组成的一个抽象概念</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="实体集"><a href="#实体集" class="headerlink" title="实体集"></a>实体集</h3><ul>
+<li><strong>实体 entity</strong> 是存在的对象，并且可与其他对象区分开</li>
+<li>实体具有属性 attribute</li>
+<li><strong>实体集 entity set</strong> 是一组具有相同属性的同类实体的集合</li>
+</ul>
+<h3 id="关系集"><a href="#关系集" class="headerlink" title="关系集"></a>关系集</h3><ul>
+<li><strong>关系 relationship</strong>：$t&#x3D;(e_1,…,e_n),~e_1 \in E_1,…,e_n \in E_n$，是一种多个实体间的联系</li>
+<li><strong>关系集 relationship set</strong>：$L \subseteq E_1 \times E_2 \times … \times E_n$​，是一种多个实体之间的数学关系，关系集本身也具有属性。</li>
+</ul>
+<p>关系用方框，关系集拥椭圆</p>
+<p><img src="https://chiichen.github.io/assets/image-1-CIMkfIhN.png" alt="Attribute of  Relationship Sets"></p>
+<h4 id="关系集的度-degree"><a href="#关系集的度-degree" class="headerlink" title="关系集的度 degree"></a>关系集的度 degree</h4><ul>
+<li>二元关系涉及两个实体集，度为2</li>
+<li>在数据库系统中，大多数关系集是二元的，可以通过间接产生关系</li>
+<li>两个以上实体集之间的关系较为少见</li>
+</ul>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
+<li>实体由一组属性表示，属性是实体集的所有成员（记录）所具有的描述性特征。</li>
+<li>域 domain —— 每个属性允许的取值范围（值域）</li>
+<li>属性类型：<ul>
+<li>简单simple 属性和复合composite 属性</li>
+<li>单值single-valued 属性和多值multi-valued 属性</li>
+<li>派生derived 属性：可以从其他属性计算得出的，如age可以根据prod_date和now_date计算得出。</li>
+</ul>
+</li>
+</ul>
+<h4 id="映射基数约束-Mapping-Cardinality-Constrants"><a href="#映射基数约束-Mapping-Cardinality-Constrants" class="headerlink" title="映射基数约束 Mapping Cardinality Constrants"></a>映射基数约束 Mapping Cardinality Constrants</h4><ul>
+<li><p>表达通过关系集可以将另一个实体关联到的实体数量。</p>
+</li>
+<li><p>在描述二元关系集时最有用。</p>
+</li>
+<li><p>对于二元关系集，映射基数必须是以下类型之一：</p>
+<ul>
+<li>一对一</li>
+<li>一对多</li>
+</ul>
+<p><img src="https://chiichen.github.io/assets/image-2-CSEAPVWg.png" alt="Mapping Cardinalities"></p>
+<ul>
+<li>多对一</li>
+<li>多对多</li>
+</ul>
+<p><img src="https://chiichen.github.io/assets/image-3-CnMYpJKs.png" alt="Mapping Cardinalities"></p>
+</li>
+</ul>
+<h4 id="键-Keys"><a href="#键-Keys" class="headerlink" title="键 Keys"></a>键 Keys</h4><ul>
+<li><p>实体集和<strong>超键super-key</strong>是一组一个或多个属性，其值可以唯一确定关系中的一个实体（记录）</p>
+</li>
+<li><p>实体集的<strong>候选词candidate-key</strong>是最小的超键</p>
+<p>如：</p>
+<ul>
+<li>teacher_id是指导教师的候选词</li>
+<li>course_id是课程的候选词</li>
+</ul>
+</li>
+<li><p>虽然可能存在多个候选词，但是选择其他一个候选词作为<strong>主键primary-key</strong></p>
+</li>
+</ul>
+<p><strong>基数映射关系中的主键选择</strong></p>
+<p><strong>一对一关系</strong>：选择主表（或主数据表）中的候选键作为主键，附表可以通过外键引用主表的主键。</p>
+<p><strong>一对多关系</strong>：选择”一”方的候选键作为主键，”多”方的表通过外键引用”一”方的主键。</p>
+<p><strong>多对多关系</strong>：通过创建关联表，通常使用关联表中两个外键的组合作为联合主键，或者使用单独的主键。</p>
+<h4 id="冗余属性-redundant-attributes"><a href="#冗余属性-redundant-attributes" class="headerlink" title="冗余属性 redundant attributes"></a>冗余属性 redundant attributes</h4><p>假设我们有以下实体集和关系：</p>
+<ul>
+<li>instructor，包括属性 ID、姓名、部门名和薪水。</li>
+<li>department，包括属性部门名、建筑和预算。</li>
+<li>关系 inst_dept，关联 instructor 和 department。</li>
+<li>实体 instructor 中的属性部门名是冗余的，因为已经存在一个明确的关系 inst_dept，将教师与部门关联起来。<ul>
+<li>该属性复制了关系中存在的信息，应从 instructor 中删除。</li>
+<li>但是：在某些情况下，在转换回表格时，该属性可能会重新引入，我们将在后面看到</li>
+</ul>
+</li>
+</ul>
+<h3 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h3><p><img src="https://chiichen.github.io/assets/image-4-CSXuXJc3.png" alt="E-R图"></p>
+<ul>
+<li><strong>矩形</strong>表示实体集。</li>
+<li><strong>菱形</strong>表示关系集。</li>
+<li><strong>实体矩形</strong>内列出属性。</li>
+<li><strong>下划线表示主键</strong>属性。</li>
+</ul>
+<p><strong>带有复合、多值和派生属性的实体集E-R图</strong></p>
+<p><img src="https://chiichen.github.io/assets/image-5-GZhZidTi.png" alt="Entity With Composite, Multivalued, and Derived Attributes"></p>
+<p><strong>带有属性的关系实体集</strong></p>
+<p><img src="https://chiichen.github.io/assets/image-6-BkgRSeNn.png" alt="Relationship Sets with Attributes"></p>
+<p><strong>带有三元关系 ternary-relationship的E-R图</strong></p>
+<p><img src="https://chiichen.github.io/assets/image-14-CAvppGpr.png" alt="E-R Diagram with a Ternary Relationship"></p>
+<p><strong>一个数据库的E-R图示例</strong>：</p>
+<p><img src="https://chiichen.github.io/assets/image-16-C_jrNPoi.png" alt="E-R图示例"></p>
+<h4 id="角色-Role"><a href="#角色-Role" class="headerlink" title="角色 Role"></a>角色 Role</h4><ul>
+<li>关系的实体集不一定是不同的</li>
+<li>每个实体集的出现在关系中扮演一个“角色”。“course_id”和“prereq_id”这些标签被称为角色</li>
+</ul>
+<h4 id="基数约束-Cardinality-Constrants"><a href="#基数约束-Cardinality-Constrants" class="headerlink" title="基数约束 Cardinality Constrants"></a>基数约束 Cardinality Constrants</h4><ul>
+<li><p>我们通过在关系集和实体集之间绘制有向线（→）表示“一”或无向线（——）表示“多”。来表达基数约束。</p>
+</li>
+<li><p>一对一关系：</p>
+<p><img src="https://chiichen.github.io/assets/image-8-B7EFTDas.png" alt="One-to-One Relationship"></p>
+</li>
+<li><p>一对多关系：</p>
+<p><img src="https://chiichen.github.io/assets/image-9-Dbhss_U0.png" alt="One-to-Many Relationship"></p>
+</li>
+<li><p>多对一关系：</p>
+<p><img src="https://chiichen.github.io/assets/image-10-BTDbYSIm.png" alt="Many-to-One Relationships"></p>
+</li>
+<li><p>多对多关系：</p>
+<p><img src="https://chiichen.github.io/assets/image-11-D8XTAE7M.png" alt="Many-to-Many Relationship"></p>
+</li>
+</ul>
+<p>下图表示学生有且只有一名指导老师，而老师可以指导$0…n$名学生</p>
+<p><img src="https://chiichen.github.io/assets/image-13-BuoQZq5b.png" alt="Alternative Notation for Cardinality Limits"></p>
+<h3 id="强实体集"><a href="#强实体集" class="headerlink" title="强实体集"></a>强实体集</h3><ul>
+<li>其实例的存在<strong>不依赖</strong>于任何其他实体类型的实例；有自己<strong>独立的主键</strong>，唯一性地标识它的每个实例。</li>
+</ul>
+<h3 id="弱实体集-weak-entity-sets"><a href="#弱实体集-weak-entity-sets" class="headerlink" title="弱实体集 weak entity sets"></a>弱实体集 weak entity sets</h3><blockquote>
+<p>弱实体集每一条记录的产生必然依赖于已有的强实体集</p>
+<p>弱实体集的主键都是组合主键（由其他实体集的主键组层）</p>
+</blockquote>
+<ul>
+<li>其实例的存在<strong>依赖</strong>于其它实体类型的实例；其主键包括它所依赖的实体类型的主键。</li>
+<li>没有主键的实体集</li>
+<li><strong>弱实体集</strong>的存在依赖于**强实体集（也称为标识实体集）**的存在。弱实体集需要和强实体一起组合使用，才能唯一标识每个实例。</li>
+<li><strong>通过部分键标识</strong>：弱实体集通常会有一个部分键（partial key），该键只能在与强实体关联时才能唯一标识实体实例。</li>
+<li>标识联系 identifying relationship：<ul>
+<li>弱实体集 —&gt; 标识实体集</li>
+<li>多对一关系</li>
+<li>弱实体集完全参与关系</li>
+</ul>
+</li>
+<li><strong>ER图中的表示</strong>：<ul>
+<li>弱实体集通常用<strong>双矩形框</strong>表示。</li>
+<li>弱实体集与强实体之间的关系用<strong>双菱形框</strong>表示，表示依赖关系。</li>
+<li>弱实体集的部分键用<strong>虚线矩形</strong>表示。</li>
+</ul>
+</li>
+<li>弱实体集的鉴别器（或部分键）是区分弱实体集中所有实体的属性集。</li>
+<li>弱实体集的主键由以下形式组成：（标识实体集的主键，弱实体集的鉴别器）</li>
+<li>我们用<strong>虚线下划线标记弱实体集的鉴别器</strong>。</li>
+<li>我们将弱实体的标识关系放在一个双菱形中。</li>
+</ul>
+<p><strong>以示例了解何为弱实体类</strong>：</p>
+<p><strong>1、教务系统数据库设计</strong></p>
+<p>业务需求是这样的：</p>
+<p>一周有七天，每一天有11节。</p>
+<p>则设计时，首先有三个实体（不管强或弱实体）：<code>Day、Week、Section</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 教务系统实体关系图</span><br><span class="line">---</span><br><span class="line">erDiagram</span><br><span class="line"></span><br><span class="line">	Week&#123;</span><br><span class="line">		int weekNum</span><br><span class="line">		Long id PK</span><br><span class="line">	&#125;</span><br><span class="line">	Day&#123;</span><br><span class="line">		int dayOfweek</span><br><span class="line">		Lond id PK</span><br><span class="line">	&#125;</span><br><span class="line">	Section&#123;</span><br><span class="line">		int sectionNum</span><br><span class="line">		Long id PK</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	Week ||--o&#123; Day : &quot;has&quot;</span><br><span class="line">  Day ||--o&#123; Section :&quot;has&quot;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+<h4 id="关系的种类"><a href="#关系的种类" class="headerlink" title="关系的种类"></a><strong>关系的种类</strong></h4><p>E-R 图中最常见的关系类型是 <strong>一对一</strong>（1:1）、<strong>一对多</strong>（1:N） 和 <strong>多对多</strong>（M:N）。这些类型通过连线的标注来表示：</p>
+<h5 id="一对一（1-1）"><a href="#一对一（1-1）" class="headerlink" title="一对一（1:1）"></a>一对一（1:1）</h5><ul>
+<li><p>每个实体 A 只能与另一个实体 B 的一个实例相关联，反之亦然。</p>
+</li>
+<li><p>图示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENTITY_A ──────|── ENTITY_B</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>示例：</p>
+<p>一个人有一个身份证</p>
+<p>。</p>
+<h5 id="一对多（1-N）"><a href="#一对多（1-N）" class="headerlink" title="一对多（1:N）"></a>一对多（1:N）</h5><ul>
+<li><p>一个实体 A 可以与多个实体 B 的实例相关联，而实体 B 的每个实例只能与一个实体 A 相关联。</p>
+</li>
+<li><p>图示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENTITY_A ──────&lt;── ENTITY_B</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>示例：</p>
+<p>一个部门有多个员工</p>
+<h5 id="多对多（M-N）"><a href="#多对多（M-N）" class="headerlink" title="多对多（M:N）"></a>多对多（M:N）</h5><ul>
+<li><p>实体 A 的多个实例可以与实体 B 的多个实例相关联。</p>
+</li>
+<li><p>图示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENTITY_A ──────&lt;──&gt;── ENTITY_B</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>示例：</p>
+<p>学生和课程的关系</p>
+<p>（一个学生可以选修多门课程，而一门课程可以被多个学生选修）。</p>
+<hr>
+<h4 id="约束条件"><a href="#约束条件" class="headerlink" title="约束条件"></a>约束条件</h4><p>连线上可能标注一些约束条件，例如：</p>
+<ul>
+<li><p><strong>参与度</strong>：</p>
+<ul>
+<li>全部参与（Total Participation）：连线上用双线表示。<ul>
+<li>示例：所有员工都必须属于一个部门。</li>
+</ul>
+</li>
+<li>部分参与（Partial Participation）：连线上用单线表示。<ul>
+<li>示例：某些员工可以没有项目参与。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>基数（Cardinality）</strong>：</p>
+<ul>
+<li><p>用数字或符号表示一个实体参与关系的数量，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1..N 表示一对多</span><br><span class="line">1 表示一对一</span><br><span class="line">M..N 表示多对多</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="弱实体的连线"><a href="#弱实体的连线" class="headerlink" title="弱实体的连线"></a>弱实体的连线</h4><ul>
+<li><strong>弱实体</strong>：如果一个实体不能独立存在（依赖于另一个实体），它的连线通常连接到其“拥有”实体的主键，表示其依赖性。</li>
+<li>通常，弱实体的连线会带有一个菱形（表示标识关系）。</li>
+</ul>
+<hr>
+<h4 id="关系的属性"><a href="#关系的属性" class="headerlink" title="关系的属性"></a>关系的属性</h4><ul>
+<li><p>连线上的菱形代表关系，如果关系有属性，这些属性会与菱形相连。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STUDENT ────── ENROLLS ────── COURSE</span><br><span class="line">                   |</span><br><span class="line">                  DATE</span><br></pre></td></tr></table></figure>
+
+<p>示例中，<code>DATE</code>是<code>ENROLLS</code>关系的属性。</p>
+</li>
+</ul>
+<h2 id="CH8-关系数据库设计-relational-database-design"><a href="#CH8-关系数据库设计-relational-database-design" class="headerlink" title="CH8 关系数据库设计 relational database design"></a>CH8 关系数据库设计 relational database design</h2><h3 id="分解-decompose"><a href="#分解-decompose" class="headerlink" title="分解 decompose"></a>分解 decompose</h3><p><img src="https://chiichen.github.io/assets/image-2-DIfBlPe0.png" alt="Example"></p>
+<ul>
+<li><p>如果分解后无法重建原始信息，那么就是有损分解lossy decomposition，反之则无损分解Lossless-join decompose</p>
+<p><img src="https://chiichen.github.io/assets/image-Bp1Kkm8r.png" alt="有损分解"></p>
+<p><img src="https://chiichen.github.io/assets/image-1-wIOyu-C4.png" alt="无损分解"></p>
+</li>
+<li><p>所以我们需要一个理论来告诉我们怎么合理的分解关系。好的分解要做到：</p>
+<ul>
+<li>无损分解</li>
+<li>依赖保存</li>
+</ul>
+</li>
+<li><p>BCNF分解可以保证无损，3NF可以保证依赖保存，但是3NF无法保证没有冗余，因此需要在BCNF和3NF间权衡</p>
+</li>
+</ul>
+<h3 id="第一范式-first-normal-form"><a href="#第一范式-first-normal-form" class="headerlink" title="第一范式 first normal form"></a>第一范式 first normal form</h3><ul>
+<li>如果一个域的元素被认为是不可分割的单元，则该域是原子的</li>
+<li>非原子域的示例：<ul>
+<li>名称集合，复合属性</li>
+<li>可以分解为部分的标识号，例如CS101</li>
+</ul>
+</li>
+<li>如果关系模式 R 的所有属性的域都是原子的，则关系模式 R 符合第一范式</li>
+<li>非原子值会使存储变得复杂，并导致数据的冗余（重复存储）<ul>
+<li>如：每个客户存储一组账户，每个账户都存储一组所有者</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>原子性</p>
+<ul>
+<li>原子性实际上是与域的元素如何使用相关的属性。</li>
+<li>例如，字符串通常被认为是不可分割的。</li>
+<li>假设学生被赋予类似 SE0012 或 EE1127 的字符串形式的学号。</li>
+<li>如果提取前两个字符来确定学院，那么学号的域就不是原子的。</li>
+<li>这样做是一个坏主意：会导致信息被编码在应用程序而不是数据库中。</li>
+</ul>
+</blockquote>
+<h3 id="第二范式-second-normal-form"><a href="#第二范式-second-normal-form" class="headerlink" title="第二范式 second normal form"></a>第二范式 second normal form</h3><blockquote>
+<p><strong>主键</strong>：能够唯一标识表中一行的字段或字段组合。</p>
+<p><strong>非主属性</strong>：除了主键之外的其他字段。</p>
+<p><strong>部分依赖</strong>：非主属性依赖于主键的一部分，而不是整个主键。</p>
+</blockquote>
+<ol>
+<li><p>首先需要满足第一范式 1NF：表中所有字段值都是原子值，每个字段的值是不可再分的最小单位。</p>
+</li>
+<li><p>消除部分依赖：</p>
+<ul>
+<li>表中的所有非主属性必须完全依赖于主键PK，不能依赖于主键的一部分</li>
+</ul>
+<blockquote>
+<p>部分依赖：在复合主键中，某些非主属性仅依赖于主键的一部分，而不是整个主键</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>数据库表中不存在非关键字段对任一候选键的部分函数依赖，也即所有非关键字都完全依赖于任意一组候选关键字。</li>
+<li>2NF 的违例只会出现在候选键由超过一个字段构成的表中，因为对单关键字字段不存在部分依赖问题。</li>
+</ul>
+<blockquote>
+<p>例子</p>
+<p>给定关系模式的函数依赖集合如下：</p>
+<ol>
+<li>学号课程名称姓名年龄成绩学分{(学号,课程名称)→(姓名,年龄,成绩,学分)}</li>
+<li>课程名称学分{(课程名称)→(学分)}</li>
+<li>学号姓名年龄{(学号)→(姓名,年龄)}</li>
+</ol>
+<p>在这个例子中，候选键只有一个，即学号课程名称(学号,课程名称)，因此主键也是学号课程名称(学号,课程名称)。</p>
+<p>我们可以观察到，属性姓名、年龄和学分是部分依赖于主键的，而属性成绩成绩是完全依赖于主键的。由于存在部分依赖关系，这个关系模式不满足第二范式。</p>
+<p>为了使关系模式满足第二范式，我们需要进行分解，将属性姓名姓名、年龄年龄和学分学分从主关系模式中分离出来，形成新的关系模式。最终的关系模式可能如下：</p>
+<p>关系模式 1: 学号课程名称成绩(学号,课程名称,成绩)</p>
+<p>关系模式 2: 课程名称学分(课程名称,学分)</p>
+<p>关系模式 3: 学号姓名年龄(学号,姓名,年龄)</p>
+<p>这样，每个关系模式都满足第二范式，并且保留了原始关系模式的函数依赖。</p>
+</blockquote>
+<h3 id="函数依赖-functional-dependencies"><a href="#函数依赖-functional-dependencies" class="headerlink" title="函数依赖 functional dependencies"></a>函数依赖 functional dependencies</h3><blockquote>
+<p>函数依赖用于表明某些属性的值可以通过其他属性的值唯一确定。即可以通过决定因素确定被决定因素的值</p>
+</blockquote>
+<ul>
+<li><p>在一个关系模式 $R(A,B,C,…)$中，假设 $X$ 和 $Y$ 是属性的子集：</p>
+<ul>
+<li><p>如果对于关系 $R$ 的任意两个元组 $t_1$ 和 $t_2$，当$t_1[X]&#x3D;t_2[X]$时，一定有$t_1[Y]&#x3D;t_2[Y]$，则称 $X$ 函数确定 $Y$，记作：</p>
+<p>$X \rightarrow Y$</p>
+</li>
+<li><p>$X$：称为决定因素 determinant</p>
+</li>
+<li><p>$Y$：称为被决定因素 dependent</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>换而言之，给定$X$值即可唯一确定$Y$的值</p>
+</blockquote>
+<ul>
+<li>函数依赖是对合法关系集合的约束条件。</li>
+<li>函数依赖是对键的概念的一种推广</li>
+<li>定义：$\alpha \rightarrow \beta $ 等价于<ol>
+<li>$\alpha$是模式$(\alpha,\beta)$ 的超码super-key</li>
+<li>属性 $\alpha$ 的取值决定 $\beta$ 的取值</li>
+</ol>
+</li>
+<li>在函数依赖 $\alpha \rightarrow \beta$ 中，如果 $\beta \subseteq \alpha$，我们就称它是<code>平凡trivial</code>的。因为对于任意的关系<em>R</em>它总是成立的。<ul>
+<li>例：$ID,name \rightarrow ID$ 是平凡的 $name \rightarrow name $ 也是平凡的</li>
+</ul>
+</li>
+<li>在函数依赖 $\alpha \rightarrow \beta$中，如果对于 $\alpha$ 的任何一个真子集 $\alpha^{‘}$，都有 $\alpha^{‘} \nrightarrow$ 那么就称$\beta$对$\alpha$有完全函数依赖</li>
+<li>在函数依赖 $\alpha \rightarrow \beta$中，如果$\beta$不完全函数依赖于$\alpha$就称$\beta$对$\alpha$部分函数依赖</li>
+</ul>
+<h4 id="函数依赖与超键"><a href="#函数依赖与超键" class="headerlink" title="函数依赖与超键"></a>函数依赖与超键</h4><ul>
+<li><p>当且仅当 $K \rightarrow R$，$K$是关系模式$R$的超键</p>
+</li>
+<li><p>当且仅当满足以下条件时，$K$是$R$的候选键：</p>
+<ul>
+<li>$K \rightarrow R$，并且对于任何$\alpha \subset K$，都不满足$\alpha \rightarrow R$。</li>
+</ul>
+</li>
+<li><p>函数依赖允许我们表达无法使用超键来表示的约束。考虑以下模式：</p>
+<ul>
+<li><p>$$<br>inst_dept(ID,name,salary,dept_name,building,budget)<br>$$</p>
+</li>
+<li><p>期望以下函数依赖成立：</p>
+<p>$$<br>dept_name \rightarrow building \<br>ID \rightarrow building<br>$$</p>
+</li>
+<li><p>但是不期望以下函数依赖成立<br>$$<br>dept_name \rightarrow salary<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="函数依赖的作用"><a href="#函数依赖的作用" class="headerlink" title="函数依赖的作用"></a>函数依赖的作用</h4><p>我们使用函数依赖来进行以下操作：</p>
+<ul>
+<li><p>检验关系是否在给定的函数依赖集合下合法</p>
+<ul>
+<li>如果关系 $r$ 在函数依赖集合 $F$ 下是合法的，则 $r$ 满足satisfy $F$。</li>
+</ul>
+</li>
+<li><p>指定对合法关系集的约束</p>
+<ul>
+<li>如果在关系模式 $R$ 上的所有合法关系都满足函数依赖集合 $F$，我们说 $F$ 在模式 $R$ 上成立holds-on。</li>
+</ul>
+</li>
+</ul>
+<p>注：一个关系模式的特定实例可能满足一个函数依赖，即使该函数依赖不在所有合法实例上成立，例：$instructor$关系模式的一个特定实例可能恰好满足$name \rightarrow ID$。</p>
+<p>无损连接于分解 lossess-join decomposition</p>
+<ul>
+<li>对于关系 $R&#x3D;(R_1,R_2)$的情况，我们要求对于满足$r&#x3D;\begin{matrix} \prod_{R_1}(r) \end{matrix} \bowtie \begin{matrix} \prod_{R_2}(r) \end{matrix}$式子的所有可能的关系$r$</li>
+<li>如果一个从$R$分解成$R_1$和$R_2$的分解是无损的，那么式子$R_1 ∩ R_2 \rightarrow R_1$或$R_1 ∩ R_2 \rightarrow R_2$至少有一个在$F^+$中。</li>
+<li>上述是保证无损分解的充分条件。</li>
+</ul>
+<h4 id="函数依赖闭包"><a href="#函数依赖闭包" class="headerlink" title="函数依赖闭包"></a>函数依赖闭包</h4><ul>
+<li>$F^+$表示所有能从函数依赖$F$中推出的函数依赖闭包</li>
+<li>如果两个函数依赖集的闭包相等，则两个函数依赖集是等价的</li>
+<li>可以通过反复应用 Armstrong 公理来找到 $F^+$<ul>
+<li><strong>自反性</strong>：如果$\beta$是$\alpha$的子集，那么$\alpha \rightarrow \beta$。</li>
+<li><strong>扩充性</strong>：如果$\alpha \rightarrow \beta$，那么对于任意$\gamma$，都有$\gamma \alpha \rightarrow \gamma \beta$。</li>
+<li><strong>传递性</strong>：如果$\alpha \rightarrow \beta$，且$\beta \rightarrow \gamma$，那么$\alpha \rightarrow \gamma$。</li>
+</ul>
+</li>
+<li>以上三点规则是完备且合理的</li>
+<li>附加规则：<ul>
+<li><strong>并集规则</strong>：如果$\alpha \rightarrow \beta$成立且$\alpha \rightarrow \gamma$成立，则$\alpha \rightarrow \beta \gamma$也成立。</li>
+<li><strong>分解规则</strong>：如果$\alpha \rightarrow \beta \gamma$成立，则$\alpha \rightarrow \beta$和$\alpha \rightarrow \gamma$成立。</li>
+<li><strong>伪传递性规则</strong>：如果$\alpha \rightarrow \beta$成立且$\gamma \beta \rightarrow \delta$成立，则$\alpha \gamma \rightarrow \delta$</li>
+</ul>
+</li>
+<li>附加规则是可以通过 armstrong 公理推导的。</li>
+</ul>
+<h4 id="属性集闭包-closure-of-attribute-sets"><a href="#属性集闭包-closure-of-attribute-sets" class="headerlink" title="属性集闭包 closure of attribute sets"></a>属性集闭包 closure of attribute sets</h4><ul>
+<li>定义为：$\alpha^+ &#x3D; { A|(\alpha \rightarrow A \subseteq F^+}$，即通过函数依赖确定$\alpha$可以决定的所有属性</li>
+</ul>
+<p><img src="https://chiichen.github.io/assets/image-4-CH5gmXtS.png" alt="属性集闭包计算示例"></p>
+<h4 id="属性闭包与函数依赖"><a href="#属性闭包与函数依赖" class="headerlink" title="属性闭包与函数依赖"></a>属性闭包与函数依赖</h4><p>在基于：$\alpha \rightarrow \beta \leftrightarrow \beta \subseteq \alpha^+$关系，可以通过计算属性集闭包来计算函数依赖</p>
+<h4 id="属性集闭包和超键"><a href="#属性集闭包和超键" class="headerlink" title="属性集闭包和超键"></a>属性集闭包和超键</h4><p>在基于：$\alpha is superkey \leftrightarrow R \subseteq \alpha^+$，可以通过属性集闭包来判定$\alpha$是不是超键</p>
+<h4 id="属性集闭包和函数依赖闭包"><a href="#属性集闭包和函数依赖闭包" class="headerlink" title="属性集闭包和函数依赖闭包"></a>属性集闭包和函数依赖闭包</h4><p>通过属性集闭包计算函数依赖闭包：</p>
+<ol>
+<li>$F^+ \leftarrow F$</li>
+<li>对于每个 $\gamma \subseteq R$，计算$\gamma^+$</li>
+<li>对于每个$S \subseteq \gamma^+$，计算$F^+ \leftarrow {\gamma \rightarrow S } ∪ F^+$</li>
+<li>输出$F^+$</li>
+</ol>
+<h3 id="规范化的目标"><a href="#规范化的目标" class="headerlink" title="规范化的目标"></a>规范化的目标</h3><ul>
+<li>给定一个关系模式 $R$ 和函数依赖集 $F$，判断关系模式 $R$ 是否处于“良好”的形式</li>
+<li>如果关系模式 $R$ 不处于“良好”的形式，则将其分解为一组关系模式$(R_1,R_2,…,R_n)$，其中每个关系模式都处于良好形式。</li>
+<li>分解应该是无损连接lossless-join的——通过连接分解后的关系模式可以恢复到原始关系模式</li>
+<li>最好的情况是分解应该是依赖保持的——在分解后的每个关系模式上仍然能够保持原始的函数依赖关系。</li>
+</ul>
+<h3 id="规范覆盖-Canonical-Cover"><a href="#规范覆盖-Canonical-Cover" class="headerlink" title="规范覆盖 Canonical Cover"></a>规范覆盖 Canonical Cover</h3><ul>
+<li><p>规范覆盖canonical-cover是指函数依赖集中的一组“最小”等价函数依赖，它不包含冗余的依赖关系或冗余的依赖关系部分。函数依赖集$F$的规范覆盖记作$F_c$，它满足以下条件：</p>
+<ul>
+<li>$F \Leftrightarrow F_c$</li>
+<li>$F_c$ 中的每个函数依赖都不包含冗余属性</li>
+<li>$F_c$ 中的每个函数依赖的左侧是唯一的，不会存在相同的左侧，即没有：$\alpha \rightarrow \beta$ 和 $\alpha \rightarrow \gamma$，只能是$\alpha \rightarrow \beta \gamma$​</li>
+</ul>
+</li>
+<li><p>函数依赖集中的依赖关系可能存在冗余的依赖关系，可以从其他依赖关系中推导出来。例如，在集合{A-&gt;B,B-&gt;C,A-&gt;C}中，A-&gt;C就是冗余的</p>
+</li>
+<li><p>函数依赖的部分可能也是冗余的。例如，在右侧的依赖集合{A-&gt;B,B-&gt;C,A-&gt;CD}可以简化为{A-&gt;B,B-&gt;C,A-&gt;D}；在左侧的依赖集合{A-&gt;B,B-&gt;C,AC-&gt;D}可以简化为{A-&gt;B,B-&gt;C,A-&gt;D}。</p>
+</li>
+<li><p>直观地说，规范覆盖是等价于函数依赖集合F的一组“最小”函数依赖，它不包含冗余的依赖关系或冗余的依赖关系部分。规范覆盖的目的是简化函数依赖集合，使其更加简洁和有效。</p>
+</li>
+</ul>
+<h4 id="计算规范覆盖"><a href="#计算规范覆盖" class="headerlink" title="计算规范覆盖"></a>计算规范覆盖</h4><ul>
+<li>计算函数依赖集合$F$的规范覆盖步骤：<ul>
+<li>重复以下步骤：<ol>
+<li>使用并集规则（union rule）替换F中的任何函数依赖，例如将函数依赖α1-&gt;β1和α1-&gt;β2替换为α1-&gt;β1 β2。</li>
+<li>查找具有冗余属性的函数依赖α-&gt;β，冗余属性可能存在于α或β中。注意：对冗余属性的测试是使用F_c而不是F进行的</li>
+<li>如果找到冗余属性，则从α-&gt;β中删除它。</li>
+</ol>
+</li>
+<li>直到F不再发生变化为止。</li>
+</ul>
+</li>
+<li>需要注意的是，删除一些冗余属性后，可能会使并集规则再次适用，因此需要重新应用并集规则。</li>
+<li>通过执行上述步骤，最终得到的函数依赖集合F_c就是原函数依赖集合F的规范覆盖。</li>
+</ul>
+<p><img src="https://chiichen.github.io/assets/image-9-BD14r9EV.png" alt="计算规范覆盖"></p>
+<h3 id="冗余属性-extraneous-attributes"><a href="#冗余属性-extraneous-attributes" class="headerlink" title="冗余属性 extraneous attributes"></a>冗余属性 extraneous attributes</h3><ul>
+<li>冗余属性 extraneous-attribute 是指在给定的函数依赖集合中，某个属性在依赖关系中是冗余的，可以被删除而不影响函数依赖的表达。</li>
+<li>例如，给定函数依赖集合F&#x3D;{A-&gt;C,AB-&gt;C}，我们要判断属性B是否是冗余的。通过删除属性B，得到新的依赖集合H&#x3D;{A-&gt;C}。如果满足F&lt;&#x3D;&gt;H，那么属性B就是冗余的。</li>
+<li>对于函数依赖集$F$ 中的函数依赖 $\alpha x \rightarrow \beta$，如果删除属性$x$后得到的新的函数依赖集$H$满足F&lt;&#x3D;&gt;(F-{$\alpha x$-&gt;$\beta$})∪{$\alpha$-&gt;$\beta$}，那么属性$x$就是冗余的。</li>
+<li>需要注意的是，上述情况中，逆向的蕴含关系在每种情况下都是显而易见的，因为“更强”的函数依赖总是蕴含着“更弱”的函数依赖</li>
+</ul>
+<blockquote>
+<p><strong>函数依赖强弱的定义</strong></p>
+<ul>
+<li><p>更强的函数依赖</p>
+<p>：如果一个函数依赖的左侧属性集更大或者更具体，那么它的约束更强。例如：</p>
+<ul>
+<li>$AB \to C$ 比 $A \to C$ 更强，因为 $AB$ 包含了 $A$，需要更多的条件（$A$ 和 $B$ 同时成立）来确定$C$。</li>
+</ul>
+</li>
+<li><p>更弱的函数依赖</p>
+<p>：如果一个函数依赖的左侧属性集更小或者更宽松，那么它的约束更弱。例如：</p>
+<ul>
+<li>$A \to C$ 比 $AB \to C$ 更弱，因为只需要 $A$ 成立就能确定 $C$，而不需要考虑 $B$。</li>
+</ul>
+</li>
+</ul>
+<p><strong>蕴含关系</strong></p>
+<p>函数依赖 $X \to Y$表示：如果属性集$X$的值确定，那么$Y$的值也是确定的。</p>
+<ul>
+<li>如果我们有一个更强的依赖（例如 $AB \to C$），它的前提条件更严格，因此它一定能够保证更弱的依赖（例如 $A \to C$）的成立。</li>
+<li>这是因为，如果 $AB \to C$ 成立，那么满足 $AB$ 的任何情况，也必然满足 $A \to C$ 中更宽松的条件。</li>
+</ul>
+</blockquote>
+<h3 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式 3NF"></a>第三范式 3NF</h3><blockquote>
+<p>满足第二范式，且不存在依赖传递，即非主属性不能与非主属性之间有依赖关系，非主属性必须直接依赖于主属性，不能间接依赖主属性。</p>
+</blockquote>
+<ul>
+<li>在第二范式的基础上，数据库中如果不存在非关键字段对任一候选关键字段的传递函数依赖则符合第三范式</li>
+<li>一个关系模式 R 在第三范式中，如果对 F 中的所有$\alpha \to \beta$，至少满足以下条件：<ul>
+<li>$\alpha$是R的super-key</li>
+<li>$\alpha \subseteq \beta$，则$\beta$也是超键</li>
+<li>$\beta \to \alpha$中的每个属性 A 都包含在 R 的候选键中（注：每个属性可能在不同的候选键中）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>平凡函数依赖</p>
+<p>非平凡函数依赖：$X→Y$ 是非平凡的，指的是 $Y$ 不是 $X$​ 的子集。</p>
+</blockquote>
+<p>- </p>
+<h3 id="BCNF范式-boyce-codd-normal-form"><a href="#BCNF范式-boyce-codd-normal-form" class="headerlink" title="BCNF范式 boyce-codd normal form"></a>BCNF范式 boyce-codd normal form</h3><ul>
+<li>关系模式 R 在 BCNF 中，如果对于 R 中的存在的所有函数依赖关系 F，形式为 $\alpha \to \beta$，其中$\alpha \subseteq R$且$\beta \subseteq R$，至少满足以下条件之一：<ul>
+<li>$\alpha \subseteq \beta$</li>
+<li>$\alpha $是R的super-key</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<blockquote>
+<p>范式之间的关系</p>
+<p>第一范式(1NF)<br>非码的非平凡 | ↓ 消除非主属性对码的部分函数依赖<br>第二范式(2NF)<br>↓ 消除非主属性对码的传递函数依赖<br>第三范式(3NF)<br>↓ 消除主属性对码的部分和传递函数依赖<br>BC 范式(BCNF)<br>↓ 消除非平凡且非函数依赖的多值依赖<br>第四范式(4NF)<br>↓ 消除不是由候选码所蕴含的连接依赖<br>第五范式(5NF)</p>
+</blockquote>
+<h2 id="CH10-存储和文件结构"><a href="#CH10-存储和文件结构" class="headerlink" title="CH10 存储和文件结构"></a>CH10 存储和文件结构</h2><h3 id="物理存储媒介-physical-storage-media"><a href="#物理存储媒介-physical-storage-media" class="headerlink" title="物理存储媒介 physical storage media"></a>物理存储媒介 physical storage media</h3><ul>
+<li><p>磁盘</p>
+<ul>
+<li>1 block &#x3D; 多个连续的 sector</li>
+<li>1 个文件(哈希文件除外)&#x3D; 多个连续的 block</li>
+</ul>
+</li>
+<li><p>磁头与磁盘</p>
+<ul>
+<li>磁头往磁盘读写数据的最小单位是 sector</li>
+</ul>
+</li>
+<li><p>内存与磁盘</p>
+<ul>
+<li>内存与磁盘交换信息的最小单位是 block</li>
+</ul>
+</li>
+<li><p>开销&#x3D;寻道时间 + 旋转时间 + 传输时间</p>
+</li>
+<li><p>数据库只关注:</p>
+<ul>
+<li>寻道次数</li>
+<li>传输磁盘块个数</li>
+</ul>
+</li>
+<li><p>设访问的磁盘块依次分别是: B1, B2</p>
+<ul>
+<li><p>寻道次数 : 如果 B1, B2 相邻, 则寻道 1 次</p>
+</li>
+<li><p>传输磁盘块的个数: 无论相邻与否, 都是 2.</p>
+<p><img src="https://chiichen.github.io/assets/image-DlrztMBS.png" alt="磁盘结构示意图"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="缓冲管理-buffer-management"><a href="#缓冲管理-buffer-management" class="headerlink" title="缓冲管理 buffer-management"></a>缓冲管理 buffer-management</h3><ul>
+<li>当程序需要从磁盘中获取一个块时，它会调用缓冲管理器。<ul>
+<li>如果该块已经在缓冲区中，则缓冲管理器会返回该块在主内存中的地址。</li>
+<li>如果该块不在缓冲区中，缓冲管理器会执行以下操作：<ul>
+<li>在缓冲区中为该块分配空间。<ul>
+<li>如果需要，替换（抛弃）其他块，以为新块腾出空间。</li>
+<li>仅当被替换的块在最近一次写入&#x2F;从磁盘获取时被修改后，才将其写回磁盘。</li>
+</ul>
+</li>
+<li>从磁盘中读取该块到缓冲区，并将该块在主内存中的地址返回给请求者。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="缓冲替换策略-buffer-replacement-policies"><a href="#缓冲替换策略-buffer-replacement-policies" class="headerlink" title="缓冲替换策略 buffer-replacement-policies"></a>缓冲替换策略 buffer-replacement-policies</h4><ul>
+<li>大多数操作系统使用<code>最近最少使用（LRU）</code>策略替换块。</li>
+<li>LRU 的思想是利用过去的块引用模式作为对未来引用的预测器。</li>
+<li>查询具有明确定义的访问模式（例如顺序扫描），数据库系统可以利用用户查询中的信息来预测未来的引用。</li>
+<li>对于涉及<strong>重复数据</strong>扫描的某些访问模式，LRU 可能是一个不好的策略。<ul>
+<li>例如：计算两个关系$r$和$s$的连接操作时，通过嵌套循环进行：<ul>
+<li>对于$r$的每个元组$t_r$，</li>
+<li>对于$s$的每个元组$t_s$，</li>
+<li>如果元组 $t_r$ 和 $t_s$ 匹配…</li>
+</ul>
+</li>
+<li>在这种情况下，使用立即丢弃（Toss-immediate）策略更可取。</li>
+</ul>
+</li>
+<li>固定的块(Pinned block) - 不能写回磁盘的内存块。</li>
+<li>立即丢弃（Toss-immediate）策略 - 在处理完块的最后一个元组后，立即释放该块占用的空间。</li>
+<li>最近使用（Most recently used (MRU) strategy）策略 - 系统必须固定当前正在处理的块。在处理完该块的最后一个元组后，取消固定该块，并使其成为最近使用的块。</li>
+<li>缓冲管理器可以使用关于请求将引用特定关系的概率的统计信息。<ul>
+<li>例如，数据字典经常被访问。启发式方法：将数据字典块保留在主内存缓冲区中。</li>
+</ul>
+</li>
+<li>缓冲管理器还支持强制输出块(forced output)以进行恢复的目的（有关更多信息，请参阅第 16 章）</li>
+</ul>
+<h3 id="文件组织-file-organization"><a href="#文件组织-file-organization" class="headerlink" title="文件组织 file-organization"></a>文件组织 file-organization</h3><blockquote>
+<p>数据库以文件集合的形式存储。每个文件是一系列记录，而记录则是一系列字段的序列。</p>
+</blockquote>
+<p>一个数据库被映射为多个不同的文件file，文件由OS来维护，永久存储在磁盘中</p>
+<p>一个文件在逻辑上组织成记录的序列。每个文件分成定长的存储单元—— 块 block</p>
+<p>block是存储分配和数据传输的基本单元，多数数据库默认使用4-8KB大小的块。当创建数据库时，可以指定块大小。</p>
+<p>一个块可以包含多条记录。要求每条记录存储在单个块中，即：没有一条记录是部分包含在一个块中的，以加速数据访问。</p>
+<p>关系数据库中，不同关系的元组通常具有不同的大小，记录可分为<strong>定长记录和变长记录</strong>。</p>
+<h4 id="定长记录-fixed-length-records"><a href="#定长记录-fixed-length-records" class="headerlink" title="定长记录 fixed-length records"></a>定长记录 fixed-length records</h4><ul>
+<li><p>一种方法是：</p>
+<ul>
+<li>假设记录大小是固定的。</li>
+<li>每个文件只包含一种特定类型的记录。</li>
+<li>不同的文件用于不同的关系。</li>
+</ul>
+</li>
+<li><p>这种情况最容易实现；稍后我们将考虑可变长度的记录</p>
+<p><img src="D:\Blog\source_posts\校内课程学习笔记\计算机专业课\数据库.assets\image-1-Co9_fsVz.png" alt="Fixed-Length Records"> </p>
+</li>
+<li><p>用空闲链表来存储空余空间</p>
+<p><img src="https://chiichen.github.io/assets/image-2-CyvBTO7J.png" alt="Free Lists">  </p>
+</li>
+<li><p>从这个结构中删除一条记录很困难。删除的记录所占用的空间必须由文件的其它记录填充或者标记该空间为忽略。</p>
+<ul>
+<li>方法一：删除一条记录后，依次将后面的记录往前挪。<br>缺点：需要额外的块访问操作。</li>
+<li>方法二：将被删除的记录的存储空间用来存储新插入的记录。这就需要标记该空间。引入如下结构：<ul>
+<li>在文件的开始处，分配一定数量的字节作为文件头（file header）。</li>
+<li>令文件头中除了文件的相关信息外，还包括被删除的第一条记录的地址。</li>
+<li>在第一条被删除的记录处，来存储第二条被删除的记录的地址。以此类推。</li>
+<li>&#x3D;&#x3D;&gt;形成了有一个空闲列表（free list）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="变长记录-variable-length-records：slotted-page-structure"><a href="#变长记录-variable-length-records：slotted-page-structure" class="headerlink" title="变长记录 variable-length-records：slotted-page-structure"></a>变长记录 variable-length-records：slotted-page-structure</h4><p><img src="https://chiichen.github.io/assets/image-3-DOPpOuNL.png" alt="Slotted Page Structure"> </p>
+<ul>
+<li>插槽页头(Slotted page header)包含以下内容：<ul>
+<li>记录条目的数量</li>
+<li>块中空闲空间的结束位置</li>
+<li>每个记录的位置和大小</li>
+</ul>
+</li>
+<li>可以在页面内部移动记录，以保持它们的连续性，中间没有空白空间；页头中的条目必须更新。</li>
+<li>指针不应直接指向记录，而应指向页头中记录对应的条目。</li>
+</ul>
+<h4 id="文件内的记录组织"><a href="#文件内的记录组织" class="headerlink" title="文件内的记录组织"></a>文件内的记录组织</h4><ul>
+<li><p><code>堆（Heap）</code>- 记录可以放置在文件中的任何有空间的位置。</p>
+</li>
+<li><p><code>顺序（Sequential）</code>- 根据每个记录的搜索键值，按顺序存储记录。</p>
+<p><img src="https://chiichen.github.io/assets/image-4-CBozuB4y.png" alt="顺序组织"> </p>
+<p><img src="https://chiichen.github.io/assets/image-5-_5H_oOZN.png" alt="顺序组织"> </p>
+</li>
+<li><p><code>哈希（Hashing）</code>- 对每个记录的某个属性计算哈希函数；结果指定了记录应该放置在文件的哪个块中。</p>
+</li>
+<li><p>每个关系的记录可以存储在单独的文件中。在<code>多表聚集文件组织(multitable clustering file organization)</code>中，多个不同关系的记录可以存储在同一个文件中。</p>
+</li>
+<li><p>动机：将相关的记录存储在同一个块中，以最小化 I&#x2F;O 操作</p>
+<p><img src="https://chiichen.github.io/assets/image-6-ZLXExafy.png" alt="多表聚集文件组织(multitable clustering file organization)"></p>
+<p><img src="https://chiichen.github.io/assets/image-7-bBX0JNym.png" alt="多表聚集文件组织(multitable clustering file organization)"></p>
+</li>
+</ul>
+<h3 id="数据字典存储-data-dictionary-storage"><a href="#数据字典存储-data-dictionary-storage" class="headerlink" title="数据字典存储 data-dictionary-storage"></a>数据字典存储 data-dictionary-storage</h3><p>数据字典（也称为系统目录）存储元数据，即关于数据的数据，例如：</p>
+<ul>
+<li>关于关系的信息<ul>
+<li>关系的名称</li>
+<li>每个关系的属性的名称和类型</li>
+<li>视图的名称和定义</li>
+<li>完整性约束</li>
+</ul>
+</li>
+<li>用户和账户信息，包括密码</li>
+<li>统计和描述性数据<ul>
+<li>每个关系中的元组数量</li>
+</ul>
+</li>
+<li>物理文件组织信息<ul>
+<li>关系的存储方式（顺序&#x2F;哈希&#x2F;…）</li>
+<li>关系的物理位置</li>
+</ul>
+</li>
+<li>关于索引的信息（第 11 章中介绍）</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%95%B0%E6%8D%AE%E5%BA%93/" data-id="cm7pnj29p003pucv261b5hf4k" data-title="数据库期末复习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          离散数学学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">操作系统期末复习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 18.33px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 18.33px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16.67px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 13.33px;">学习规划</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 13.33px;">开发工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.33px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 15px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/01/%E7%AE%97%E6%B3%95/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E7%AE%97%E6%B3%95/LeetCode/">Leetcode刷题题解</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
