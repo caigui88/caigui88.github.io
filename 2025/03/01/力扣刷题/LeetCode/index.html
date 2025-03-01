@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Leetcode刷题题解 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="LeetCode刷题记录[2549] 统计桌面上的不同数字题目给你一个正整数 n ，开始时，它放在桌面上。在 109 天内，每天都要执行下述步骤：  对于出现在桌面上的每个数字 x ，找出符合 1 &lt;&#x3D; i &lt;&#x3D; n 且满足 x % i &#x3D;&#x3D; 1 的所有数字 i 。 然后，将这些数字放在桌面上。  返回在 109 天之后，出现在桌面上的 不同 整数的数目。 注意：  一旦数字放在桌面上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode刷题题解">
+<meta property="og:url" content="http://example.com/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="LeetCode刷题记录[2549] 统计桌面上的不同数字题目给你一个正整数 n ，开始时，它放在桌面上。在 109 天内，每天都要执行下述步骤：  对于出现在桌面上的每个数字 x ，找出符合 1 &lt;&#x3D; i &lt;&#x3D; n 且满足 x % i &#x3D;&#x3D; 1 的所有数字 i 。 然后，将这些数字放在桌面上。  返回在 109 天之后，出现在桌面上的 不同 整数的数目。 注意：  一旦数字放在桌面上">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/01/02/addtwonumber1.jpg">
+<meta property="article:published_time" content="2025-03-01T03:35:47.301Z">
+<meta property="article:modified_time" content="2025-02-26T02:01:12.295Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="刷题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/01/02/addtwonumber1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-力扣刷题/LeetCode" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/" class="article-date">
+  <time class="dt-published" datetime="2025-03-01T03:35:47.301Z" itemprop="datePublished">2025-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Leetcode刷题题解
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="LeetCode刷题记录"><a href="#LeetCode刷题记录" class="headerlink" title="LeetCode刷题记录"></a>LeetCode刷题记录</h1><h2 id="2549-统计桌面上的不同数字"><a href="#2549-统计桌面上的不同数字" class="headerlink" title="[2549] 统计桌面上的不同数字"></a>[2549] 统计桌面上的不同数字</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个正整数 <code>n</code> ，开始时，它放在桌面上。在 <code>109</code> 天内，每天都要执行下述步骤：</p>
+<ul>
+<li>对于出现在桌面上的每个数字 <code>x</code> ，找出符合 <code>1 &lt;= i &lt;= n</code> 且满足 <code>x % i == 1</code> 的所有数字 <code>i</code> 。</li>
+<li>然后，将这些数字放在桌面上。</li>
+</ul>
+<p>返回在 <code>109</code> 天之后，出现在桌面上的 <strong>不同</strong> 整数的数目。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>一旦数字放在桌面上，则会一直保留直到结束。</li>
+<li><code>%</code> 表示取余运算。例如，<code>14 % 3</code> 等于 <code>2</code> 。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 5</span><br><span class="line">输出：4</span><br><span class="line">解释：最开始，5 在桌面上。 </span><br><span class="line">第二天，2 和 4 也出现在桌面上，因为 5 % 2 == 1 且 5 % 4 == 1 。 </span><br><span class="line">再过一天 3 也出现在桌面上，因为 4 % 3 == 1 。 </span><br><span class="line">在十亿天结束时，桌面上的不同数字有 2 、3 、4 、5 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3 </span><br><span class="line">输出：2</span><br><span class="line">解释： </span><br><span class="line">因为 3 % 2 == 1 ，2 也出现在桌面上。 </span><br><span class="line">在十亿天结束时，桌面上的不同数字只有两个：2 和 3 。 </span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="解法思路一："><a href="#解法思路一：" class="headerlink" title="解法思路一："></a>解法思路一：</h4><p>本题目本质其实相当于找质数;</p>
+<p>对于变量$x \in [0,n]$,需要查找在$y \in [0,x]$当中可以满足式子$x<del>mod</del>y&#x3D;&#x3D;1$的y并使用一个HashSet(为了方便去重)进行记录,最后返回HashSet的个数即可;其实最终会发现撤了除了1的所有数字都出现过一次.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">//leetcode submit region begin(Prohibit modification and deletion)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">distinctIntegers</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		Set&lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">		set.add(n);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=n;i&gt;<span class="number">1</span>;i--)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">2</span>;j&lt;n;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(i%j==<span class="number">1</span>)&#123;</span><br><span class="line">					set.add(j);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> set.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//leetcode submit region end(Prohibit modification and deletion)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="解题思路二"><a href="#解题思路二" class="headerlink" title="解题思路二?"></a>解题思路二?</h4><h2 id="322-零钱兑换"><a href="#322-零钱兑换" class="headerlink" title="[322]零钱兑换"></a>[322]零钱兑换</h2><blockquote>
+<p>动态规划</p>
+</blockquote>
+<h3 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h3><p>给你一个整数数组 <code>coins</code> ，表示不同面额的硬币；以及一个整数 <code>amount</code> ，表示总金额。</p>
+<p>计算并返回可以凑成总金额所需的 <strong>最少的硬币个数</strong> 。如果没有任何一种硬币组合能组成总金额，返回 <code>-1</code> 。</p>
+<p>你可以认为每种硬币的数量是无限的。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：coins = [1, 2, 5], amount = 11</span><br><span class="line">输出：3 </span><br><span class="line">解释：11 = 5 + 5 + 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：coins = [2], amount = 3</span><br><span class="line">输出：-1</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：coins = [1], amount = 0</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= coins.length &lt;= 12</code></li>
+<li><code>1 &lt;= coins[i] &lt;= 231 - 1</code></li>
+<li><code>0 &lt;= amount &lt;= 104</code></li>
+</ul>
+<h3 id="题目思路"><a href="#题目思路" class="headerlink" title="题目思路"></a>题目思路</h3><ol>
+<li><p>首先，找零问题无法使用<strong>贪心</strong>解决，因为贪心算法永远需要从最大或最小的硬币面额开始，且无法进行回退，解集的不完整，得到的局部最优解最终并不一定可以组成全局最优解，而在找零问题中，很明显，存在并不从coins最大面额进行凑零的解集，因而不能使用<strong>贪心算法</strong>。</p>
+</li>
+<li><p>采取<strong>动态规划</strong>进行解决：动态规划算法可以得出在不断加入新面额的硬币的情况下得到的新的最优解，因而可以得到最优解集，进而在最优解集当中得到最优解。</p>
+</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] coins = &#123;<span class="number">186</span>,<span class="number">419</span>,<span class="number">83</span>,<span class="number">408</span>&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">amount</span> <span class="operator">=</span> <span class="number">6249</span>;      </span><br><span class="line">        System.out.println(coinChange(coins,amount));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">coinChange</span><span class="params">(<span class="type">int</span>[] coins, <span class="type">int</span> amount)</span> &#123;</span><br><span class="line">        </span><br><span class="line">      	<span class="comment">// 排序得出数组内最小的零钱面额；</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">minCoin</span> <span class="operator">=</span> Arrays.stream(coins).min().orElse(Integer.MIN_VALUE);</span><br><span class="line">			  <span class="comment">// 得出伪最差解（因为存在amount/minCoin为小数的情况，因而是伪最差解）</span></span><br><span class="line">      	<span class="type">int</span> <span class="variable">maxResult</span> <span class="operator">=</span> amount/minCoin;</span><br><span class="line">        <span class="comment">//建立dp数组进行动态规划；</span></span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[amount+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">//先对第一行初始情况进行初始化，全部定为最差情况，进而在动态递推的过程中使用较优解			 //进行替换</span></span><br><span class="line">        Arrays.fill(dp, maxResult+<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//当零钱为0时，解为0，确定一个确定的优解，进而递推出剩余的优解</span></span><br><span class="line">        dp[<span class="number">0</span>] =<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// dp过程：</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> coin:coins)&#123;</span><br><span class="line">          	<span class="comment">//此处从得到的硬币面额开始递推，因为小于硬币面额的显然不会出现比原来更优的解</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=coin;j&lt;=amount;j++)&#123;</span><br><span class="line">              	<span class="comment">//在当前零钱面额下，每当引入一种新的硬币面额，减去这种硬币面额，并在前面已经存在的解当中查找是否已存在优解，如果存在即说明可以在优解的前提下加一得到当前零钱面额的优解；如果不存在则为最差解。（建议状态转移过程需要画个图进行理解）</span></span><br><span class="line">                dp[j] =Math.min(dp[j],dp[j-coin]+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[amount]&gt;maxResult ? -<span class="number">1</span> : dp[amount];</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="[26]删除有序数组中的重复项"></a>[26]删除有序数组中的重复项</h2><h3 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a><code>题目</code></h3><p>给你一个 <strong>非严格递增排列</strong> 的数组 <code>nums</code> ，请你**<a target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95"> 原地</a>** 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code>nums</code> 中唯一元素的个数。</p>
+<p>考虑 <code>nums</code> 的唯一元素的数量为 <code>k</code> ，你需要做以下事情确保你的题解可以被通过：</p>
+<ul>
+<li>更改数组 <code>nums</code> ，使 <code>nums</code> 的前 <code>k</code> 个元素包含唯一元素，并按照它们最初在 <code>nums</code> 中出现的顺序排列。<code>nums</code> 的其余元素与 <code>nums</code> 的大小不重要。</li>
+<li>返回 <code>k</code> 。</li>
+</ul>
+<p><strong>判题标准:</strong></p>
+<p>系统会用下面的代码来测试你的题解:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = [...]; // 输入数组</span><br><span class="line">int[] expectedNums = [...]; // 长度正确的期望答案</span><br><span class="line"></span><br><span class="line">int k = removeDuplicates(nums); // 调用</span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line">for (int i = 0; i &lt; k; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果所有断言都通过，那么您的题解将被 <strong>通过</strong>。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,1,2]</span><br><span class="line">输出：2, nums = [1,2,_]</span><br><span class="line">解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,0,1,1,1,2,2,3,3,4]</span><br><span class="line">输出：5, nums = [0,1,2,3,4]</span><br><span class="line">解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 3 * 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非严格递增</strong> 排列</li>
+</ul>
+<h3 id="题目思路-1"><a href="#题目思路-1" class="headerlink" title="题目思路"></a>题目思路</h3><p>本题需要采用原地算法</p>
+<h4 id="原地算法-in-place-algorithm-："><a href="#原地算法-in-place-algorithm-：" class="headerlink" title="原地算法(in-place algorithm)："></a>原地算法(in-place algorithm)：</h4><ol>
+<li>常见的案例就是如本题，在不使用超过O(1)的额外空间的基础上，完成对数组重复元素的删除。</li>
+</ol>
+<p>本题原地删除采用快慢指针的方式，其中一个指针pre一直沿着数组往下走，另一个指针last负责将pre所经过的元素中的第一次出现的元素提取出来并形同栈一样压入数组前面pre已经遍历过的空间。</p>
+<h3 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">p</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[p] != nums[i])&#123;</span><br><span class="line">                nums[++p] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ++p;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="[27]移除元素"></a>[27]移除元素</h2><h3 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h3><p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 移除所有数值等于 <code>val</code> 的元素，并返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须仅使用 <code>O(1)</code> 额外空间并 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地 </a>修改输入数组</strong>。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<p><strong>说明:</strong></p>
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以**「引用」**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len = removeElement(nums, val);</span><br><span class="line"></span><br><span class="line">// 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。</span><br><span class="line">for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,2,2,3], val = 3</span><br><span class="line">输出：2, nums = [2,2]</span><br><span class="line">解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,2,2,3,0,4,2], val = 2</span><br><span class="line">输出：5, nums = [0,1,3,0,4]</span><br><span class="line">解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
+<li><code>0 &lt;= val &lt;= 100</code></li>
+</ul>
+<h3 id="题目思路-2"><a href="#题目思路-2" class="headerlink" title="题目思路"></a>题目思路</h3><blockquote>
+<p>本体与[26]题相似，同样用到了原地删除的方法，但是略有细节上的不同，本体要求的是指定删除的所有元素，而[26]题则是删除重复元素，因此在[26]我们使用的是++p，因为当前元素不需要删除，但是在本体则是使用p++，因为当前元素如果是符合val的话，则需要进行删除。</p>
+</blockquote>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElement</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> val)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">cur</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">p</span> <span class="operator">=</span> <span class="number">0</span>; p &lt; nums.length; p++)</span><br><span class="line">            <span class="keyword">if</span>(nums[p] != val) &#123;</span><br><span class="line">                nums[cur++] = nums[p];</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="[704] 二分查找"></a>[704] 二分查找</h2><blockquote>
+<p>本题目的目的是为了初步了解、熟悉和掌握二分查找，并未进行高级的应用</p>
+</blockquote>
+<h3 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h3><p>给定一个 <code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code> ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [-1,0,3,5,9,12], target = 9</span><br><span class="line">输出: 4</span><br><span class="line">解释: 9 出现在 nums 中并且下标为 4</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [-1,0,3,5,9,12], target = 2</span><br><span class="line">输出: -1</span><br><span class="line">解释: 2 不存在 nums 中因此返回 -1</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<ol>
+<li>你可以假设 <code>nums</code> 中的所有元素是不重复的。</li>
+<li><code>n</code> 将在 <code>[1, 10000]</code>之间。</li>
+<li><code>nums</code> 的每个元素都将在 <code>[-9999, 9999]</code>之间。</li>
+</ol>
+<h3 id="题目思路-3"><a href="#题目思路-3" class="headerlink" title="题目思路"></a>题目思路</h3><p>二分查找核心即为通过不断比较有序数组的中间下标对应的值与target的大小关系，不断缩小target在数组中的可能存在的区间范围，因而可以达到$O(logn)$的复杂度</p>
+<h3 id="解题代码"><a href="#解题代码" class="headerlink" title="解题代码"></a>解题代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="keyword">if</span>(target &lt; nums[<span class="number">0</span>] || target &gt; nums[len-<span class="number">1</span>]) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> len-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (left + right)/<span class="number">2</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(nums[mid] &gt; target) right = mid -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid] &lt; target) left = mid +<span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(nums[mid] == target) <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="35-搜索插入位置"><a href="#35-搜索插入位置" class="headerlink" title="[35]搜索插入位置"></a>[35]搜索插入位置</h2><blockquote>
+<p>本题应用到了[704]所学的二分查找算法，通过二分寻找到待插入元素的可以被插入的位置，假如当最后的nums[mid]小于val，则说明val需要插入到mid+1的位置，假如nums[mid]的值大于val，则需要将val插入到mdi这个位置，并将mid之后的元素右移一个单元。</p>
+</blockquote>
+<h3 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h3><p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。</p>
+<p>请必须使用时间复杂度为 <code>O(log n)</code> 的算法。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,3,5,6], target = 5</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,3,5,6], target = 2</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,3,5,6], target = 7</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 为 <strong>无重复元素</strong> 的 <strong>升序</strong> 排列数组</li>
+<li><code>-104 &lt;= target &lt;= 104</code></li>
+</ul>
+<h3 id="解题代码-1"><a href="#解题代码-1" class="headerlink" title="解题代码"></a>解题代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">searchInsert</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> nums.length-<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (left + right)/<span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">            mid = (left + right)/<span class="number">2</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(nums[mid] &lt; target) left = mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid] &gt; target) right = mid-<span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(nums[mid] == target) <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(nums[mid] &gt; target) <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> mid+<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-两数相加"><a href="#1-两数相加" class="headerlink" title="[1]两数相加"></a>[1]两数相加</h2><h3 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h3><p>给你两个 <strong>非空</strong> 的链表，表示两个非负的整数。它们每位数字都是按照 <strong>逆序</strong> 的方式存储的，并且每个节点只能存储 <strong>一位</strong> 数字。</p>
+<p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
+<p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/01/02/addtwonumber1.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：l1 = [2,4,3], l2 = [5,6,4]</span><br><span class="line">输出：[7,0,8]</span><br><span class="line">解释：342 + 465 = 807.</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：l1 = [0], l2 = [0]</span><br><span class="line">输出：[0]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]</span><br><span class="line">输出：[8,9,9,9,0,0,0,1]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>每个链表中的节点数在范围 <code>[1, 100]</code> 内</li>
+<li><code>0 &lt;= Node.val &lt;= 9</code></li>
+<li>题目数据保证列表表示的数字不含前导零</li>
+</ul>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>本题为模拟题，但并不意味着没有什么可学习的地方，为了使得代码简洁且清晰明了，我们需要结合计算机组成原理当中的行波进位加法器的原理来进行加法的模拟，一个进位(即前一位进过来的位)，与输入1和输入2，共同构成本位的值，同时根据本位的值再重新为进位赋值，将其作为下一个位的进位传递下去。</p>
+<h3 id="解题代码如下"><a href="#解题代码如下" class="headerlink" title="解题代码如下"></a>解题代码如下</h3><h4 id="屎山版本"><a href="#屎山版本" class="headerlink" title="屎山版本"></a>屎山版本</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">l3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">answer</span> <span class="operator">=</span> l3;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">0</span>,num2 = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">tmp1</span> <span class="operator">=</span> l1;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">tmp2</span> <span class="operator">=</span> l2;</span><br><span class="line">    <span class="keyword">while</span>(tmp1!=<span class="literal">null</span>)&#123;</span><br><span class="line">        num1++;</span><br><span class="line">        tmp1 = tmp1.next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(tmp2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        num2++;</span><br><span class="line">        tmp2 = tmp2.next;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> <span class="variable">minNum</span> <span class="operator">=</span> Integer.min(num1,num2);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; minNum-<span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> l1.val+l2.val;</span><br><span class="line">        </span><br><span class="line">        l3.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(sum &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            l3.val += sum;</span><br><span class="line">            l3.val = l3.val % <span class="number">10</span>;</span><br><span class="line">            l3.next.val++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            l3.val += sum;</span><br><span class="line">            <span class="keyword">if</span>(l3.val&gt;=<span class="number">10</span>)&#123;</span><br><span class="line">                l3.val = l3.val%<span class="number">10</span>;</span><br><span class="line">                l3.next.val++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        l3 = l3.next;</span><br><span class="line">        l1 = l1.next;</span><br><span class="line">        l2 = l2.next;</span><br><span class="line">    &#125;</span><br><span class="line">    l3.val += l1.val+l2.val;</span><br><span class="line">    <span class="keyword">if</span>(l3.val&gt;=<span class="number">10</span>)&#123;</span><br><span class="line">        l3.val = l3.val%<span class="number">10</span>;</span><br><span class="line">        l3.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(num1 != num2)&#123;</span><br><span class="line">        <span class="keyword">if</span>(num1&lt;num2)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> num1; i &lt; num2; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(l3.next == <span class="literal">null</span>)</span><br><span class="line">                    l3.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">                l3 = l3.next;</span><br><span class="line">                l3.val+= l2.next.val;</span><br><span class="line">                <span class="keyword">if</span>(l3.val &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">                    l3.val = l3.val%<span class="number">10</span>;</span><br><span class="line">                    l3.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> num2; i &lt; num1; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(l3.next == <span class="literal">null</span>)</span><br><span class="line">                   l3.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">                l3 = l3.next;</span><br><span class="line">                l3.val+= l1.next.val;</span><br><span class="line">                <span class="keyword">if</span>(l3.val &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">                    l3.val = l3.val%<span class="number">10</span>;</span><br><span class="line">                    l3.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">tmp3</span> <span class="operator">=</span> answer;</span><br><span class="line">    <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="行波进位加法器思想修改版本"><a href="#行波进位加法器思想修改版本" class="headerlink" title="行波进位加法器思想修改版本"></a>行波进位加法器思想修改版本</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">dummyHead</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">current</span> <span class="operator">=</span> dummyHead;</span><br><span class="line">    <span class="type">int</span> <span class="variable">carry</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(l1!=<span class="literal">null</span> || l2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> carry;</span><br><span class="line">        <span class="keyword">if</span>(l1!=<span class="literal">null</span>)&#123;</span><br><span class="line">            sum+=l1.val;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l2!=<span class="literal">null</span>)&#123;</span><br><span class="line">            sum+=l2.val;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        current.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum%<span class="number">10</span>);</span><br><span class="line">        carry = sum/<span class="number">10</span>;</span><br><span class="line">        current = current.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(carry&gt;<span class="number">0</span>) current.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(carry);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dummyHead.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>明显可以看出，带有正确的思想和原理去进行模拟，可以得到一个更为优良的解法和代码。</p>
+<h2 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="[7]整数反转"></a>[7]整数反转</h2><h3 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h3><p>给你一个 32 位的有符号整数 <code>x</code> ，返回将 <code>x</code> 中的数字部分反转后的结果。</p>
+<p>如果反转后整数超过 32 位的有符号整数的范围 <code>[−231,  231 − 1]</code> ，就返回 0。</p>
+<p><strong>假设环境不允许存储 64 位整数（有符号或无符号）。</strong></p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = -123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：x = 0</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>&#96;&#96;-2^31 &lt;&#x3D; x &lt;&#x3D; 2^31 - 1&#96;</li>
+</ul>
+<h3 id="题目思路-4"><a href="#题目思路-4" class="headerlink" title="题目思路"></a>题目思路</h3><p>本题为纯数学问题，而后将一个个截取出来的每一位都加载到一个新的数字当中。</p>
+<h3 id="代码解答"><a href="#代码解答" class="headerlink" title="代码解答"></a>代码解答</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">reverse</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="type">long</span> <span class="variable">reversed</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> Math.abs(x);</span><br><span class="line">        <span class="keyword">while</span> (num != <span class="number">0</span>) &#123;</span><br><span class="line">            reversed = reversed * <span class="number">10</span> + num % <span class="number">10</span>;</span><br><span class="line">            num /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (reversed &gt; Integer.MAX_VALUE || reversed &lt; Integer.MIN_VALUE) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 如果超出范围，返回 -1</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) <span class="keyword">return</span> (<span class="type">int</span>) (-<span class="number">1</span> * reversed);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> (<span class="type">int</span>) reversed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="8-字符串转换整数-atoi"><a href="#8-字符串转换整数-atoi" class="headerlink" title="[8]字符串转换整数(atoi)"></a>[8]字符串转换整数(atoi)</h2><p>请你来实现一个 <code>myAtoi(string s)</code> 函数，使其能将字符串转换成一个 32 位有符号整数（类似 C&#x2F;C++ 中的 <code>atoi</code> 函数）。</p>
+<p>函数 <code>myAtoi(string s)</code> 的算法如下：</p>
+<ol>
+<li>读入字符串并丢弃无用的前导空格</li>
+<li>检查下一个字符（假设还未到字符末尾）为正还是负号，读取该字符（如果有）。 确定最终结果是负数还是正数。 如果两者都不存在，则假定结果为正。</li>
+<li>读入下一个字符，直到到达下一个非数字字符或到达输入的结尾。字符串的其余部分将被忽略。</li>
+<li>将前面步骤读入的这些数字转换为整数（即，”123” -&gt; 123， “0032” -&gt; 32）。如果没有读入数字，则整数为 <code>0</code> 。必要时更改符号（从步骤 2 开始）。</li>
+<li>如果整数数超过 32 位有符号整数范围 <code>[−231,  231 − 1]</code> ，需要截断这个整数，使其保持在这个范围内。具体来说，小于 <code>−231</code> 的整数应该被固定为 <code>−231</code> ，大于 <code>231 − 1</code> 的整数应该被固定为 <code>231 − 1</code> 。</li>
+<li>返回整数作为最终结果。</li>
+</ol>
+<p><strong>注意：</strong></p>
+<ul>
+<li>本题中的空白字符只包括空格字符 <code>&#39; &#39;</code> 。</li>
+<li>除前导空格或数字后的其余字符串外，<strong>请勿忽略</strong> 任何其他字符。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;42&quot;</span><br><span class="line">输出：42</span><br><span class="line">解释：加粗的字符串为已经读入的字符，插入符号是当前读取的字符。</span><br><span class="line">第 1 步：&quot;42&quot;（当前没有读入字符，因为没有前导空格）</span><br><span class="line">         ^</span><br><span class="line">第 2 步：&quot;42&quot;（当前没有读入字符，因为这里不存在 &#x27;-&#x27; 或者 &#x27;+&#x27;）</span><br><span class="line">         ^</span><br><span class="line">第 3 步：&quot;42&quot;（读入 &quot;42&quot;）</span><br><span class="line">           ^</span><br><span class="line">解析得到整数 42 。</span><br><span class="line">由于 &quot;42&quot; 在范围 [-231, 231 - 1] 内，最终结果为 42 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;   -42&quot;</span><br><span class="line">输出：-42</span><br><span class="line">解释：</span><br><span class="line">第 1 步：&quot;   -42&quot;（读入前导空格，但忽视掉）</span><br><span class="line">            ^</span><br><span class="line">第 2 步：&quot;   -42&quot;（读入 &#x27;-&#x27; 字符，所以结果应该是负数）</span><br><span class="line">             ^</span><br><span class="line">第 3 步：&quot;   -42&quot;（读入 &quot;42&quot;）</span><br><span class="line">               ^</span><br><span class="line">解析得到整数 -42 。</span><br><span class="line">由于 &quot;-42&quot; 在范围 [-231, 231 - 1] 内，最终结果为 -42 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;4193 with words&quot;</span><br><span class="line">输出：4193</span><br><span class="line">解释：</span><br><span class="line">第 1 步：&quot;4193 with words&quot;（当前没有读入字符，因为没有前导空格）</span><br><span class="line">         ^</span><br><span class="line">第 2 步：&quot;4193 with words&quot;（当前没有读入字符，因为这里不存在 &#x27;-&#x27; 或者 &#x27;+&#x27;）</span><br><span class="line">         ^</span><br><span class="line">第 3 步：&quot;4193 with words&quot;（读入 &quot;4193&quot;；由于下一个字符不是一个数字，所以读入停止）</span><br><span class="line">             ^</span><br><span class="line">解析得到整数 4193 。</span><br><span class="line">由于 &quot;4193&quot; 在范围 [-231, 231 - 1] 内，最终结果为 4193 。</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= s.length &lt;= 200</code></li>
+<li><code>s</code> 由英文字母（大写和小写）、数字（<code>0-9</code>）、<code>&#39; &#39;</code>、<code>&#39;+&#39;</code>、<code>&#39;-&#39;</code> 和 <code>&#39;.&#39;</code> 组成</li>
+</ul>
+<h2 id="239-滑动窗口最大值"><a href="#239-滑动窗口最大值" class="headerlink" title="[239] 滑动窗口最大值"></a>[239] <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sliding-window-maximum/">滑动窗口最大值</a></h2><p>答案：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public int[] maxSlidingWindow(int[] nums, int k) &#123;</span><br><span class="line">    if (nums == null || k &lt;= 0) &#123;</span><br><span class="line">        return new int[0];</span><br><span class="line">    &#125;</span><br><span class="line">    int n = nums.length;</span><br><span class="line">    int[] ans = new int[n - k + 1];</span><br><span class="line">    int count = 0;</span><br><span class="line">    Deque&lt;Integer&gt; deque = new LinkedList&lt;&gt;();</span><br><span class="line">    for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">        while (!deque.isEmpty() &amp;&amp; deque.peekFirst() &lt; i - k + 1) &#123;</span><br><span class="line">            deque.pollFirst();</span><br><span class="line">        &#125;</span><br><span class="line">        while (!deque.isEmpty() &amp;&amp; nums[deque.peekLast()] &lt; nums[i]) &#123;</span><br><span class="line">            deque.pollLast();</span><br><span class="line">        &#125;</span><br><span class="line">        deque.offerLast(i);</span><br><span class="line">    </span><br><span class="line">        if (i &gt;= k - 1) &#123;</span><br><span class="line">            ans[count++] = nums[deque.peekFirst()];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56. 合并区间"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-intervals/">56. 合并区间</a></h2><h3 id="题目思路-5"><a href="#题目思路-5" class="headerlink" title="题目思路"></a>题目思路</h3><p>本题核心是，通过 sort 方法先将每一个区间的左边界进行排序，这样就将问题简化成只需要对比<strong>上一个区间的右边界与下一个区间的左边界</strong>的大小即可知道需要合并与否了</p>
+<h3 id="代码解答-1"><a href="#代码解答-1" class="headerlink" title="代码解答"></a>代码解答</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] merge(<span class="type">int</span>[][] intervals) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> intervals.length;</span><br><span class="line">        <span class="comment">// 如果数组大小为 0，直接返回</span></span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>][<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 根据区间的左边界继续排序</span></span><br><span class="line">        Arrays.sort(intervals,<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;<span class="type">int</span>[]&gt;()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span> [] interval1,<span class="type">int</span> [] interval2)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> interval1[<span class="number">0</span>] - interval2[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        List&lt;<span class="type">int</span>[]&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;<span class="type">int</span>[]&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">L</span> <span class="operator">=</span> intervals[i][<span class="number">0</span>], R = intervals[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(ans.size() == <span class="number">0</span> || ans.get(ans.size() - <span class="number">1</span>)[<span class="number">1</span>] &lt; L)&#123;</span><br><span class="line">                ans.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;L,R&#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ans.get(ans.size() - <span class="number">1</span>)[<span class="number">1</span>] = Math.max(ans.get(ans.size() - <span class="number">1</span>)[<span class="number">1</span>],R);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans.toArray(<span class="keyword">new</span> <span class="title class_">int</span>[ans.size()][]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/" data-id="cm7pquzhw0006r8v2899x4k6i" data-title="Leetcode刷题题解" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          经典算法学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机网络学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.67px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 15px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 11.67px;">学习规划</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 18.33px;">工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.67px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 13.33px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/">markdown语法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/">Leetcode刷题题解</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

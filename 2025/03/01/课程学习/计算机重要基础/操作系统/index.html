@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>操作系统 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="操作系统CH1—基本概念概述操作系统：  是一台将复杂的执行细节隐藏， 向用户提供虚拟的易于使用的功能的一种机器。 一种资源管理机器  进程： 正在执行的一个程序就是一个进程 为了描述和控制进程的运行   一个称为command interpret或shell的进程从终端读取命令。  一个进程可以创建一个或多个子进程，从而构成进程树。  UNIX有一个共同的父进程：root   进程块 PCB为了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="操作系统CH1—基本概念概述操作系统：  是一台将复杂的执行细节隐藏， 向用户提供虚拟的易于使用的功能的一种机器。 一种资源管理机器  进程： 正在执行的一个程序就是一个进程 为了描述和控制进程的运行   一个称为command interpret或shell的进程从终端读取命令。  一个进程可以创建一个或多个子进程，从而构成进程树。  UNIX有一个共同的父进程：root   进程块 PCB为了">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241434.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241488.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241084.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241444.png">
+<meta property="article:published_time" content="2025-03-01T03:35:47.291Z">
+<meta property="article:modified_time" content="2025-03-01T04:41:22.227Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="计算机四大件">
+<meta property="article:tag" content="大学专业课">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241434.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-课程学习/计算机重要基础/操作系统" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time class="dt-published" datetime="2025-03-01T03:35:47.291Z" itemprop="datePublished">2025-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      操作系统
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="CH1—基本概念概述"><a href="#CH1—基本概念概述" class="headerlink" title="CH1—基本概念概述"></a>CH1—基本概念概述</h2><p>操作系统：</p>
+<ol>
+<li>是一台将复杂的执行细节隐藏， 向用户提供虚拟的易于使用的功能的一种机器。</li>
+<li>一种资源管理机器</li>
+</ol>
+<h3 id="进程："><a href="#进程：" class="headerlink" title="进程："></a>进程：</h3><blockquote>
+<p>正在执行的一个程序就是一个进程</p>
+<p>为了描述和控制进程的运行</p>
+</blockquote>
+<ol>
+<li><p>一个称为command interpret或shell的进程从终端读取命令。</p>
+</li>
+<li><p>一个进程可以创建一个或多个子进程，从而构成进程树。</p>
+</li>
+<li><p>UNIX有一个共同的父进程：<strong>root</strong></p>
+</li>
+</ol>
+<h3 id="进程块-PCB"><a href="#进程块-PCB" class="headerlink" title="进程块 PCB"></a>进程块 PCB</h3><p>为了便于描述和控制进程的运行，OS为进程定义了一种数据结构“进程块 PCB（Process Control Block）”，每创建一个进程，即是为某个程序设置了一个PCB，用于对该进程进行控制和管理。进程任务完成则收回PCB，代表进程消亡。</p>
+<p>至此，PCB是进程存在的唯一标志。</p>
+<h3 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h3><ul>
+<li><p><strong>running</strong></p>
+</li>
+<li><p><strong>blocked</strong>(阻塞，不可抢占CPU资源)</p>
+</li>
+<li><p><strong>ready</strong>(可抢占CPU资源状态)</p>
+</li>
+</ul>
+<h3 id="不同种类的ID"><a href="#不同种类的ID" class="headerlink" title="不同种类的ID"></a>不同种类的ID</h3><ul>
+<li><p><strong>UID</strong>：Each person authorized to use a system is assigned a User IDentification</p>
+</li>
+<li><p><strong>PID</strong>：A process is assigned a Process IDentification</p>
+</li>
+<li><p><strong>GID</strong>：在一个Group内的用户具有在该组内的Group identification</p>
+</li>
+</ul>
+<p>**进程间通信：**协作和同步进程的通信称为进程间通信</p>
+<p>**信道：**一种伪文件，用于连接两个进程</p>
+<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><p>系统调用提供了运行程序和操作系统之间的接口</p>
+<p>系统调用的目的：</p>
+<ul>
+<li><p>应用程序用来向操作系统请求服务的机制。</p>
+</li>
+<li><p>主要由程序通过高级应用程序编程接口(API)访问，而不是直接使用系统调用</p>
+<p>应用通过申请 预先设定好的用来调用系统的程序 来完成调用系统某项操作的目的</p>
+</li>
+</ul>
+<p>有以下两种考虑：</p>
+<ol>
+<li><p>使用接口，可以不用事先考虑以后添加新的应用和程序时需要对操作系统进行修改，而只需要提供一套统一的接口调用标准，厂商开发时按照这一套标准进行，而后将开发好的应用安装到操作系统即可</p>
+</li>
+<li><p><strong>独立</strong>了系统和用户应用程序之间，降低了耦合度。</p>
+</li>
+</ol>
+<h4 id="系统调用和库函数的区别"><a href="#系统调用和库函数的区别" class="headerlink" title="系统调用和库函数的区别"></a>系统调用和库函数的区别</h4><ol>
+<li>操作系统是比库函数更加底层的一种接口。因为应用程序在调用部分库函数以后，部分库函数也需要去调用系统调用。</li>
+<li>部分库函数各种功能的实现是通过调用了系统调用，进而请求操作系统的内核服务从而完成一系列功能。</li>
+<li>部分库函数对系统调用进行了封装。</li>
+</ol>
+<p><strong>按功能分类，常见的系统调用</strong>·</p>
+<blockquote>
+<p>凡是与共享资源有关的操作（存储分配、I&#x2F;O操作、文件管理等）都必须通过系统调用的方式向操作系统内核提出服务请求，由操作系统内核来完成。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">功能名称</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">设备管理</td>
+<td align="left">完成设备的 请求、释放、启动 等功能</td>
+</tr>
+<tr>
+<td align="center">文件管理</td>
+<td align="left">完成文件的 读、写、创建、删除 等功能</td>
+</tr>
+<tr>
+<td align="center">进程控制</td>
+<td align="left">完成进程的 创建、撤销、阻塞、唤醒 等功能</td>
+</tr>
+<tr>
+<td align="center">进程通信</td>
+<td align="left">完成进程之间的 信息传递、信号传递 等功能</td>
+</tr>
+<tr>
+<td align="center">内存管理</td>
+<td align="left">完成内存的 分配、回收 等功能</td>
+</tr>
+</tbody></table>
+<h4 id="POSIX："><a href="#POSIX：" class="headerlink" title="POSIX："></a>POSIX：</h4><p>调用操作系统接口：用于调用系统调用的一种<strong>procedure</strong>，通常是一个<strong>procedure</strong>对应一个系统调用<strong>system call</strong>，但并不是绝对的。</p>
+<p>完成一个系统调用的步骤</p>
+<blockquote>
+<p>以read系统调用为例，进行简单的学习</p>
+<p>read调用有三个参数： <code>read(fd,buffer,nbytes)</code></p>
+</blockquote>
+<ul>
+<li><p>1、2、3：调用程序首先将三个参数压入堆栈;</p>
+</li>
+<li><p>4：接着对库过程的实际调用，该指令是用来调用所有过程的正常过程调用指令;</p>
+</li>
+<li><p>5：将<code>read</code>函数代码放入寄存器当中;</p>
+</li>
+<li><p>6：陷入内核：而后执行一个<code>TRAP</code>指令，将用户态切换到内核态，并在内核一个固定地址开始执行；(<code>TRAP</code>不能跳转到任意地址上);</p>
+</li>
+<li><p>7：分派：内核代码检查系统调用编号，分派给正确的系统调用处理器。通常是通过一张由系统调用编号所引用的、指向系统调用处理器的指针表完成;</p>
+</li>
+<li><p>8：系统调用处理器运行;</p>
+</li>
+<li><p>9：系统调用处理器完成工作，控制可能会在跟随<code>TRAP</code>指令后面的指令中返回给用户空间库过程;</p>
+</li>
+<li><p>10：这个过程接着以通常的过程调用返回的方式，返回到用户程序;</p>
+</li>
+<li><p>11：完成整个工作后，用户程序清除堆栈，还原回进行任何过程调用之前一样，SP自增。</p>
+</li>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241434.png" alt="image-20240610133629462" style="zoom:80%;" /></li>
+</ul>
+<h3 id="操作系统体系结构"><a href="#操作系统体系结构" class="headerlink" title="操作系统体系结构"></a>操作系统体系结构</h3><blockquote>
+<p>大内核、微内核、分层结构、模块化、外核</p>
+</blockquote>
+<h4 id="单体架构（Monolithic-Architecture）"><a href="#单体架构（Monolithic-Architecture）" class="headerlink" title="单体架构（Monolithic Architecture）"></a>单体架构（Monolithic Architecture）</h4><ul>
+<li><strong>宏内核</strong>：将操作系统的主要功能模块都作为系统内核，运行在和心态<ul>
+<li>优点：高性能</li>
+<li>缺点：内核代码庞大，结构混乱，难以维护</li>
+<li>例如：早期的Linux，UNIX</li>
+</ul>
+</li>
+</ul>
+<h4 id="微内核（Microkernel-Architecture）"><a href="#微内核（Microkernel-Architecture）" class="headerlink" title="微内核（Microkernel Architecture）"></a>微内核（Microkernel Architecture）</h4><ul>
+<li><strong>微内核</strong>：只把核心功能（如进程间通信、基本的内存管理、CPU调度等）保留在内核中，而其他服务（如文件系统、设备驱动等）移到用户空间运行。<ul>
+<li>优点：缩小内核，只保留核心功能，结构清晰，方便维护</li>
+<li>缺点：需要频繁在核心态和用户态之间切换、性能低</li>
+<li>例如：Windows NT</li>
+</ul>
+</li>
+</ul>
+<h4 id="层次结构（Layered-Architecture）"><a href="#层次结构（Layered-Architecture）" class="headerlink" title="层次结构（Layered Architecture）"></a>层次结构（Layered Architecture）</h4><ul>
+<li><strong>分层次结构</strong>：内核分多层，每一层都只使用其下层提供的功能，并为其上层提供服务。<ul>
+<li><p>优点：模块化设计，易于理解和调试</p>
+</li>
+<li><p>缺点：严格的层次划分可能导致效率低下，跨层通信复杂。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="模块化结构（Modular-Architecture）"><a href="#模块化结构（Modular-Architecture）" class="headerlink" title="模块化结构（Modular Architecture）"></a>模块化结构（Modular Architecture）</h4><ul>
+<li><p><strong>模块化</strong>：将操作系统按功能划分为若干具有一定独立性的模块，可以独立编译和加载。</p>
+<ul>
+<li>灵活性高，易于扩展和维护</li>
+<li>模块间接口设计复杂，安全性和稳定性需要严格管理。</li>
+</ul>
+</li>
+<li><p><strong>外核(exokernel)</strong>：内核负责进程调度、进程通信等功能；外核负责用户进程分配未经抽象的硬件资源，且由外核负责保证资源使用安全。</p>
+</li>
+<li><p><strong>虚拟机(Hypervisor)</strong>：使用虚拟化技术，将一台物理机器虚拟化为多台虚拟机器(Virtual Machine,VM)，每个虚拟机都可以独立运行一个操作系统。</p>
+</li>
+</ul>
+<h2 id="CH2—进程-Process-————"><a href="#CH2—进程-Process-————" class="headerlink" title="CH2—进程&amp;Process ————"></a>CH2—进程&amp;Process ————</h2><blockquote>
+<p>25~30分</p>
+<p>两个大题；</p>
+<p>两个选择题；</p>
+<p>可能一个简答题</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>Process  进程</li>
+<li>Threads 线程</li>
+</ol>
+<hr>
+<ol start="3">
+<li><p><strong>Interprocess communication</strong>进程间通信</p>
+</li>
+<li><p><strong>Classical IPC problems</strong>进程间通信的经典问题</p>
+</li>
+</ol>
+<hr>
+<ol start="5">
+<li>Scheduling  进程调度问题</li>
+</ol>
+<p>在任何多道程序设计系统中，CPU由一个进程快速切换到另一个进程，使每一个进程个运行几十或几百毫秒。严格来说，在CPU运行的某一个瞬间，CPU只能运行一个进程，但在1秒内可能运行多个进程，则对人来说就会产生类似于看电影一样的效果，感觉同一时间运行了多个进程，也就是<strong>伪并行</strong>。</p>
+</blockquote>
+<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><h4 id="PCB存储的信息"><a href="#PCB存储的信息" class="headerlink" title="PCB存储的信息"></a>PCB存储的信息</h4><table>
+<thead>
+<tr>
+<th align="left">信息种类</th>
+<th align="left">具体描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">进程描述信息</td>
+<td align="left">进程标识符<strong>PID</strong>&amp;用户标识符<strong>UID</strong></td>
+</tr>
+<tr>
+<td align="left">进程控制和管理信息</td>
+<td align="left"><strong>CPU</strong>、磁盘、网络流量使用情况统计…&amp;进程当前状态：就绪态、阻塞态、运行态</td>
+</tr>
+<tr>
+<td align="left">资源分配清单</td>
+<td align="left">正在使用哪些文件&amp;正在使用哪些内存区域&amp;正在使用哪些<strong>I&#x2F;O</strong>设备</td>
+</tr>
+<tr>
+<td align="left">处理机相关信息</td>
+<td align="left">如<strong>PSW</strong>、<strong>PC</strong>等各种寄存器的值（用于实现进程切换）</td>
+</tr>
+</tbody></table>
+<p>当一个程序开始运行前，创建了相对应的<strong>PCB</strong>，同时将程序中一系列的指令存放到内存当中——构成程序段，包括程序指令——而一个程序执行的过程即是<strong>CPU</strong>从内存中读取一条条指令并依次执行的过程</p>
+<p>一个进程实例（进程映像）是由PCB、程序段、数据段组成。</p>
+<p>进程是<strong>动态</strong>的，进程实例是<strong>静态</strong>的。</p>
+<p>操作系统<strong>以进程为单位进行资源的分配和调度</strong>。</p>
+<h4 id="进程模型"><a href="#进程模型" class="headerlink" title="进程模型"></a>进程模型</h4><p>软件可以视为一组进程的集合</p>
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241488.png" alt="image-20240610140621701" style="zoom:50%;" /> 
+
+ 
+
+<p>Multiprogramming of four programs 四个程序的多路编程<br>Conceptual model of 4 independent, sequential processes 4个独立的顺序过程的概念模型<br>Only one program active at any instant 任何时刻只有一个程序处于活动状态</p>
+<h4 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h4><p><strong>进程的定义：进程是一个具有一定独立功能的程序关于某个数据集合的一次活动</strong></p>
+<p>当进程被创建时，会给予进程一个不重复的独一无二的PID。</p>
+<p>与进程相关的信息使用一种数据结构<strong>PCB(Process Control Block)<strong>当中，即进程控制块。当一个进程被创建时，操作系统会为其创建相应的</strong>PCB</strong>，当进程结束时再回收其<strong>PCB</strong>。</p>
+<h4 id="Process-Vs-Program"><a href="#Process-Vs-Program" class="headerlink" title="Process Vs Program"></a>Process Vs Program</h4><p>程序：</p>
+<ul>
+<li>集合指令，静态概念；</li>
+<li>永久</li>
+<li>一个程序可以是多个进程的执行程序;</li>
+</ul>
+<p>进程：</p>
+<ul>
+<li>描述并发、动态的概念；</li>
+<li>进程包括程序、数据和PCB</li>
+<li>暂时的</li>
+<li>进程可以在其中创建其他进程。</li>
+<li>另外，一个进程可以调用多个程序。</li>
+</ul>
+<h4 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h4><ol>
+<li>系统初始化时</li>
+<li>执行进程创建系统调用时（fork()函数）：请求创建进程的是父进程<ol>
+<li>从当前进程创建新的进程，新进程是当前进程的子进程，也是父进程的副本</li>
+</ol>
+</li>
+<li>创建新进程的用户请求：请求创建进程的是用户<ol>
+<li>请求是用户或应用程序向操作系统提出的请求，目的是启动一个新的进程。</li>
+</ol>
+</li>
+<li>启动批处理作业</li>
+</ol>
+<h4 id="进程终止"><a href="#进程终止" class="headerlink" title="进程终止"></a>进程终止</h4><ol>
+<li>Normal exit 正常退出（自愿）<ol>
+<li>程序正常执行完毕</li>
+</ol>
+</li>
+<li>Error exit 错误退出（自愿）<ol>
+<li>编译出错</li>
+</ol>
+</li>
+<li>Fatal error 致命错误（非自愿）<ol>
+<li>除以0，执行非法指令，引用不存在的内存</li>
+</ol>
+</li>
+<li>Killed by another process 被其他进程杀死（非自愿）</li>
+</ol>
+<h4 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h4><ul>
+<li>基本状态：<ul>
+<li>运行 running state</li>
+<li>就绪 ready state</li>
+<li>阻塞 blocked state</li>
+</ul>
+</li>
+<li>其他状态<ul>
+<li>New state</li>
+<li>Exit state</li>
+</ul>
+</li>
+<li>挂起<ul>
+<li>阻塞挂起状态</li>
+<li>就绪挂起状态</li>
+</ul>
+</li>
+</ul>
+ <img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241084.png" alt="image-20240610172240806" style="zoom:50%;" /> 
+
+<h3 id="线程-Thread"><a href="#线程-Thread" class="headerlink" title="线程 Thread"></a>线程 Thread</h3><h4 id="线程的概念"><a href="#线程的概念" class="headerlink" title="线程的概念"></a>线程的概念</h4><p>在进程当中划分出线程，是对一个进程中已得到CPU资源的一种利用的方式</p>
+<ul>
+<li><p>**什么是进程：**进程内的顺序执行流。</p>
+<ul>
+<li>线程将执行的概念与流程抽象分离开来。</li>
+<li>每个线程<strong>共享进程的资源</strong>（如地址空间、全局变量、文件描述符等），<strong>但有自己的栈、程序计数器和寄存器</strong>。线程是CPU调度和执行的基本单位。</li>
+</ul>
+</li>
+<li><p><strong>线程控制块ThreadControlBlock TCB：</strong></p>
+</li>
+</ul>
+<h4 id="线程优点："><a href="#线程优点：" class="headerlink" title="线程优点："></a>线程优点：</h4><ol>
+<li>创建、销毁、切换用时短</li>
+</ol>
+<h4 id="进程的作用："><a href="#进程的作用：" class="headerlink" title="进程的作用："></a>进程的作用：</h4><ul>
+<li>响应性:多个活动可以同时完成。他们可以加快申请速度。</li>
+<li>资源共享:线程共享它们所属进程的内存和资源。</li>
+<li>经济:它们很容易被创造和摧毁。</li>
+<li>MP(多处理器)体系结构的利用:它们在多CPU系统上很有用。</li>
+</ul>
+<h4 id="线程的实现"><a href="#线程的实现" class="headerlink" title="线程的实现"></a>线程的实现</h4><ul>
+<li><strong>三种实现方式：</strong><ul>
+<li>用户级：<ul>
+<li>线程完全处于用户空间中，内核不知道有该线程存在</li>
+<li>线程管理由用户级线程库完成</li>
+<li>线程切换不需要内核权限，用户级线程创建和管理速度快。</li>
+<li>问题:如果内核是单线程的，那么任何执行阻塞系统调用的用户级线程都将导致整个进程阻塞。</li>
+</ul>
+</li>
+<li>内核级<ul>
+<li>内核支持:内核在内核空间中执行线程创建、调度和管理。</li>
+<li>没有线程库，内核提供API</li>
+<li>内核维护进程和线程的上下文</li>
+<li>线程切换需要内核</li>
+<li>线程是Scheduler的基本单位。</li>
+<li>缺点是：资源花销太大</li>
+</ul>
+</li>
+<li>混合实现</li>
+</ul>
+</li>
+</ul>
+<h4 id="线程和进程的对比："><a href="#线程和进程的对比：" class="headerlink" title="线程和进程的对比："></a>线程和进程的对比：</h4><ol>
+<li><p><strong>资源分配</strong>：进程是资源分配的基本单位，拥有独立的资源记录，而线程与资源分配无关，属于进程的一部分。</p>
+</li>
+<li><p><strong>地址空间</strong>：不同进程拥有独立的虚拟地址空间，同一进程中的多个线程共享同一地址空间。</p>
+</li>
+<li><p><strong>切换开销</strong>：进程切换涉及资源指针保存和地址空间转换，开销较大，而线程切换不涉及这些问题，开销较小。</p>
+</li>
+<li><p><strong>调度机制</strong>：进程调度由操作系统内核完成，线程调度可以由操作系统内核或用户程序完成。</p>
+</li>
+<li><p><strong>创建能力</strong>：进程可以动态创建进程，线程也可以由进程创建其他线程。</p>
+</li>
+<li><p><strong>生命周期</strong>：进程和线程都有创建、执行和消亡的生命周期。</p>
+</li>
+</ol>
+<h3 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h3><blockquote>
+<p>三个问题作为引言：</p>
+<ol>
+<li>一个进程如何传递消息给另一个进程</li>
+<li>资源共享<ol>
+<li>如何确保两个或多个进程在进行关键活动时不会相互妨碍。(互斥)</li>
+</ol>
+</li>
+<li>进程间协作<ol>
+<li>当存在依赖关系时，进行适当的排序(同步)。</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h4 id="进程间同步"><a href="#进程间同步" class="headerlink" title="进程间同步"></a>进程间同步</h4><p>对多个相关进程在执行次序上的协调,用于保证这种关系的相应机制称为进程同步。</p>
+<p>相互合作的一组并发进程在一些关键点上可能需要互相等待与互通消息,相互制约的等待与互通消息称为进程同步。</p>
+<ul>
+<li><p>进程间竞争 race：</p>
+<ul>
+<li>防止竞争的出现关键在于禁止多个进程同时读写共享数据。</li>
+</ul>
+</li>
+<li><p>互斥 Mutual exclusion</p>
+</li>
+</ul>
+<p>确保一个进程使用某共享资源时，其他进程无法访问这个变量</p>
+<ul>
+<li>临界区<ul>
+<li>临界资源：一次仅允许一个进程访问的资源称之为临界资源</li>
+<li>程序中访问临界资源的部分称为临界区域或临界段</li>
+</ul>
+</li>
+</ul>
+<h4 id="临界区四个性质要求："><a href="#临界区四个性质要求：" class="headerlink" title="临界区四个性质要求："></a>临界区四个性质要求：</h4><ul>
+<li>没有两个进程同时处于临界区域</li>
+<li>没有对cpu的速度或数量做任何假设</li>
+<li>任何在临界区域外运行的进程都不能阻塞另一个进程</li>
+<li>没有进程必须永远等待才能进入其临界区域</li>
+</ul>
+<h4 id="实现互斥"><a href="#实现互斥" class="headerlink" title="实现互斥"></a>实现互斥</h4><ol>
+<li><p><strong>禁用中断</strong></p>
+<ul>
+<li>在进入临界区后禁用所有中断，并在离开临界区之前重新启用它们。</li>
+<li>禁用中断后，不会发生时钟中断，因为CPU只有在时钟中断时才可以进行进程的切换，禁用后就不会发生切换了。</li>
+</ul>
+</li>
+<li><p><strong>锁变量</strong>：使用一个简单的锁变量来表示临界区是否被占用。</p>
+<ul>
+<li>进程在进入临界区之前检查该变量：</li>
+<li>如果它没有被锁定，则设置它为锁定状态并进入临界区；</li>
+<li>如果被锁定，则等待。该方法存在忙等待问题，并且容易出现竞争条件。</li>
+</ul>
+</li>
+<li><p><strong>严格的轮换法</strong>：用于两个进程之间的互斥。进程交替进入临界区。一个进程完成后设置一个标志，允许另一个进程进入临界区。</p>
+<ul>
+<li>缺点是会导致不必要的等待，即使一个进程不需要进入临界区，另一个进程也必须等待。</li>
+<li>这个方法可能违反性质3——任何在<strong>临界区域外的进程不能</strong>阻塞另一个进程<ul>
+<li>由于进程必须严格交替进入它们的临界区，因此想要连续两次进入其临界区的进程将被阻塞，直到另一个进程决定进入(和离开)其临界区。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Peterson算法</strong>：使用两个标志和一个“turn”变量来确保互斥。</p>
+<ul>
+<li><pre><code class="language-c">// 伪代码
+boolean flag[2] = &#123;false, false&#125;;
+int turn = 0;
+
+process 0:
+while (true) &#123;
+    flag[0] = true;
+    turn = 1;
+    while (flag[1] &amp;&amp; turn == 1);
+    critical_section();
+    flag[0] = false;
+&#125;
+
+process 1:
+while (true) &#123;
+    flag[1] = true;
+    turn = 0;
+    while (flag[0] &amp;&amp; turn == 0);
+    critical_section();
+    flag[1] = false;
+&#125;
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">5. **Test-and-Set Lock (TSL)**：</span><br><span class="line"></span><br><span class="line">   - 硬件必须支持一个特殊的指令，tsl，它在一个原子动作中做两件事:</span><br><span class="line">     TSL register，flag</span><br><span class="line">     - copy a value in memory (flag) to a CPU register</span><br><span class="line">     - set flag to 1.</span><br><span class="line"></span><br><span class="line">   - ```c</span><br><span class="line">     // 伪代码</span><br><span class="line">     boolean lock = false;</span><br><span class="line">     </span><br><span class="line">     boolean TestAndSet(boolean *target) &#123;</span><br><span class="line">         boolean rv = *target;</span><br><span class="line">         *target = true;</span><br><span class="line">         return rv;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     while (true) &#123;</span><br><span class="line">         while (TestAndSet(&amp;lock));</span><br><span class="line">         critical_section();</span><br><span class="line">         lock = false;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Sleep and Wakeup</strong>：当一个进程不能进入临界区时，它会进入sleep状态（其实就是blocked），直到另一个进程唤醒wake up它。该方法避免了忙等待问题。</p>
+</li>
+<li><p><strong>互斥导致的忙等待</strong></p>
+<ol>
+<li>Peterson算法 和 TSL方法 会造成忙等待，即执行入口代码的进程会一直处于一个紧循环的状态，消耗CPU周期，一般般测试某些条件是否成立，直到为真</li>
+<li>如果使用简单的优先级调度来调度进程，着忙等待会导致优先级反转的问题</li>
+</ol>
+</li>
+</ol>
+<h2 id="CH3—"><a href="#CH3—" class="headerlink" title="CH3—"></a>CH3—</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>操作系统的文件资源管理MainMemmroy</p>
+<p>主存空间的分配问题</p>
+<p>操作系统管理虚存：Address Space：地址空间</p>
+<h2 id="CH4—"><a href="#CH4—" class="headerlink" title="CH4—"></a>CH4—</h2><p>文件系统 File System</p>
+<p>directory 目录</p>
+<p>目录树</p>
+<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011241444.png" alt="image-20240313110501430" style="zoom:50%;" /> 
+
+<p>UNIX中目录树唯一</p>
+<p>两种查找方式：</p>
+<p>绝对路径：从根目录开始</p>
+<p>相对路径：从当前目录开始</p>
+<h2 id="CH5—Input-Output"><a href="#CH5—Input-Output" class="headerlink" title="CH5—Input&#x2F;Output"></a>CH5—Input&#x2F;Output</h2><p>I&#x2F;O sub-system 子系统去管理I&#x2F;O设备</p>
+<p>设备驱动程序 device driver</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" data-id="cm7pquzia0020r8v28wic7cjk" data-title="操作系统" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">软件项目管理期末复习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.67px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 15px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 11.67px;">学习规划</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 18.33px;">工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.67px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 13.33px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/">markdown语法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/">Leetcode刷题题解</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

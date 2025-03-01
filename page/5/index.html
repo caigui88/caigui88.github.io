@@ -71,9 +71,67 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-后端开发/Java基础➕高阶/JAVA学习1_0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-后端/Java基础/JAVA学习2_0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/Java%E5%9F%BA%E7%A1%80%E2%9E%95%E9%AB%98%E9%98%B6/JAVA%E5%AD%A6%E4%B9%A01_0/" class="article-date">
+    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/JAVA%E5%AD%A6%E4%B9%A02_0/" class="article-date">
+  <time class="dt-published" datetime="2025-03-01T03:35:47.101Z" itemprop="datePublished">2025-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/JAVA%E5%AD%A6%E4%B9%A02_0/">Java基础学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="JAVA的基本程序设计结构"><a href="#JAVA的基本程序设计结构" class="headerlink" title="JAVA的基本程序设计结构"></a>JAVA的基本程序设计结构</h2><h3 id="数值运算"><a href="#数值运算" class="headerlink" title="数值运算"></a>数值运算</h3><ol>
+<li><strong>strictfp</strong>关键字：使用该关键字定义类或方法，则（类中所有的）方法都会使用严格的浮点计算</li>
+<li>常量使用关键字<strong>final</strong>（JAVA仍然有保留关键字“<strong>const</strong>”，但并没有使用</li>
+</ol>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><blockquote>
+<p>JAVA的字符串是Unicode字符序列</p>
+</blockquote>
+<p>String是不可变字符串</p>
+<h4 id="码点和代码单元"><a href="#码点和代码单元" class="headerlink" title="码点和代码单元"></a>码点和代码单元</h4><p>JAVA的字符串底层是一个char值序列组成的，而每个char类型是一个采用了UTF-16编码表示的Unicode码点的代码单元。大多数情况下，单个char就可以表示我们日常所使用的单个字符；但当特殊情况下，某个字符需要一对代码单元时，就会出现问题。</p>
+<ol>
+<li><p>如果需要遍历一个字符串，并且依次查看每一个码点</p>
+<p>代码实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">cp</span> <span class="operator">=</span> sentence.codePointAt(i);</span><br><span class="line"><span class="keyword">if</span>(Character.isSupplementaryCodePoint(cp)) i+=<span class="number">2</span></span><br><span class="line"><span class="keyword">else</span> i++;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/JAVA%E5%AD%A6%E4%B9%A02_0/" data-id="cm7pquzij003br8v28703ft9c" data-title="Java基础学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-后端/Java基础/JAVA学习1_0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/JAVA%E5%AD%A6%E4%B9%A01_0/" class="article-date">
   <time class="dt-published" datetime="2025-03-01T03:35:47.100Z" itemprop="datePublished">2025-03-01</time>
 </a>
     
@@ -89,7 +147,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/Java%E5%9F%BA%E7%A1%80%E2%9E%95%E9%AB%98%E9%98%B6/JAVA%E5%AD%A6%E4%B9%A01_0/">Java基础学习</a>
+      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/JAVA%E5%AD%A6%E4%B9%A01_0/">Java基础学习</a>
     </h1>
   
 
@@ -2616,7 +2674,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/Java%E5%9F%BA%E7%A1%80%E2%9E%95%E9%AB%98%E9%98%B6/JAVA%E5%AD%A6%E4%B9%A01_0/" data-id="cm7pqe083002pbov28ca06dc8" data-title="Java基础学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/JAVA%E5%AD%A6%E4%B9%A01_0/" data-id="cm7pquzj0007kr8v2dththec7" data-title="Java基础学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -2630,9 +2688,9 @@ try&#123;
 
 
   
-    <article id="post-后端开发/Java基础➕高阶/Java学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-后端/Java基础/Java学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/Java%E5%9F%BA%E7%A1%80%E2%9E%95%E9%AB%98%E9%98%B6/Java%E5%AD%A6%E4%B9%A0/" class="article-date">
+    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/Java%E5%AD%A6%E4%B9%A0/" class="article-date">
   <time class="dt-published" datetime="2025-03-01T03:35:47.099Z" itemprop="datePublished">2025-03-01</time>
 </a>
     
@@ -2644,7 +2702,7 @@ try&#123;
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/Java%E5%9F%BA%E7%A1%80%E2%9E%95%E9%AB%98%E9%98%B6/Java%E5%AD%A6%E4%B9%A0/">Java学习</a>
+      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/Java%E5%AD%A6%E4%B9%A0/">Java学习</a>
     </h1>
   
 
@@ -2690,7 +2748,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/Java%E5%9F%BA%E7%A1%80%E2%9E%95%E9%AB%98%E9%98%B6/Java%E5%AD%A6%E4%B9%A0/" data-id="cm7pqe082002jbov275eo53li" data-title="Java学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%9F%BA%E7%A1%80/Java%E5%AD%A6%E4%B9%A0/" data-id="cm7pquzik003mr8v2962we319" data-title="Java学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -2704,9 +2762,9 @@ try&#123;
 
 
   
-    <article id="post-后端开发/面试鸭" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-后端/项目总结/面试鸭" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/%E9%9D%A2%E8%AF%95%E9%B8%AD/" class="article-date">
+    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E9%B8%AD/" class="article-date">
   <time class="dt-published" datetime="2025-03-01T03:35:47.084Z" itemprop="datePublished">2025-03-01</time>
 </a>
     
@@ -2720,7 +2778,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/%E9%9D%A2%E8%AF%95%E9%B8%AD/" data-id="cm7pqe07y001tbov2at5ecvjd" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/%E9%9D%A2%E8%AF%95%E9%B8%AD/" data-id="cm7pquzj1007mr8v22nna3xv0" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -2732,9 +2790,9 @@ try&#123;
 
 
   
-    <article id="post-后端开发/跨域及其解决方案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-后端/跨域及其解决方案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
   <time class="dt-published" datetime="2025-03-01T03:35:47.082Z" itemprop="datePublished">2025-03-01</time>
 </a>
     
@@ -2750,7 +2808,7 @@ try&#123;
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">跨域相关内容</a>
+      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">跨域相关内容</a>
     </h1>
   
 
@@ -2764,7 +2822,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-id="cm7pqe07y001wbov22s9k2sx1" data-title="跨域相关内容" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-id="cm7pquzhz000jr8v2gji24g1v" data-title="跨域相关内容" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -2778,9 +2836,9 @@ try&#123;
 
 
   
-    <article id="post-后端开发/JVM" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-后端/Java底层/JVM" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/JVM/" class="article-date">
+    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%BA%95%E5%B1%82/JVM/" class="article-date">
   <time class="dt-published" datetime="2025-03-01T03:35:47.081Z" itemprop="datePublished">2025-03-01</time>
 </a>
     
@@ -2796,7 +2854,7 @@ try&#123;
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/JVM/">JVM相关内容</a>
+      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%BA%95%E5%B1%82/JVM/">JVM相关内容</a>
     </h1>
   
 
@@ -2823,7 +2881,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/JVM/" data-id="cm7pqe07x001rbov2dl9y7ez1" data-title="JVM相关内容" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/Java%E5%BA%95%E5%B1%82/JVM/" data-id="cm7pquzil003or8v2a6xue7gc" data-title="JVM相关内容" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -2837,9 +2895,9 @@ try&#123;
 
 
   
-    <article id="post-后端开发/elasticsearch学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-后端/中间件学习/elasticsearch学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/elasticsearch%E5%AD%A6%E4%B9%A0/" class="article-date">
+    <a href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%AD%A6%E4%B9%A0/elasticsearch%E5%AD%A6%E4%B9%A0/" class="article-date">
   <time class="dt-published" datetime="2025-03-01T03:35:47.079Z" itemprop="datePublished">2025-03-01</time>
 </a>
     
@@ -2851,7 +2909,7 @@ try&#123;
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/elasticsearch%E5%AD%A6%E4%B9%A0/">elasticsearch学习</a>
+      <a class="p-name article-title" href="/2025/03/01/%E5%90%8E%E7%AB%AF/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%AD%A6%E4%B9%A0/elasticsearch%E5%AD%A6%E4%B9%A0/">elasticsearch学习</a>
     </h1>
   
 
@@ -3160,7 +3218,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/elasticsearch%E5%AD%A6%E4%B9%A0/" data-id="cm7pqe07w001nbov2e8epezu2" data-title="elasticsearch学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%90%8E%E7%AB%AF/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%AD%A6%E4%B9%A0/elasticsearch%E5%AD%A6%E4%B9%A0/" data-id="cm7pquzik003ir8v2a85lds5a" data-title="elasticsearch学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -3219,7 +3277,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" data-id="cm7pqe07l0007bov2gs624nma" data-title="微信小程序开发初步了解" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/" data-id="cm7pquzhy000dr8v29wjaaw4q" data-title="微信小程序开发初步了解" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -3338,7 +3396,7 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%89%8D%E7%AB%AF/Vue/" data-id="cm7pqe07l0006bov2egqxdutf" data-title="Vue基础学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%89%8D%E7%AB%AF/Vue/" data-id="cm7pquzhy000hr8v25qa17oj3" data-title="Vue基础学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -3385,86 +3443,11 @@ try&#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%89%8D%E7%AB%AF/latex%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E7%BB%8F%E9%AA%8C/" data-id="cm7pqe07u001abov2dokk7x6j" data-title="typora主题自定义经验" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/01/%E5%89%8D%E7%AB%AF/latex%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E7%BB%8F%E9%AA%8C/" data-id="cm7pquzhx000br8v243k0aypr" data-title="typora主题自定义经验" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-前端/JS学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/01/%E5%89%8D%E7%AB%AF/JS%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time class="dt-published" datetime="2025-03-01T03:35:47.069Z" itemprop="datePublished">2025-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/01/%E5%89%8D%E7%AB%AF/JS%E5%AD%A6%E4%B9%A0/">js基础学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h1><blockquote>
-<p>js三大组成部分：<strong>BOM、ECMA核心、DOM</strong></p>
-</blockquote>
-<h2 id="JS常用对象"><a href="#JS常用对象" class="headerlink" title="JS常用对象"></a>JS常用对象</h2><p><a target="_blank" rel="noopener" href="https://www.apiref.com/javascript-zh/index.htm">JavaScript_API参考文档(中文版)</a></p>
-<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h3><h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><blockquote>
-<p>事件既可以浏览器的行为，也开始用户的行为。</p>
-<p>大当行为发生时，自动触发对应的JS函数运行——事件的发生</p>
-<p>JS事件驱动指的是行为触发代码运行的这种特性</p>
-</blockquote>
-<h3 id="常见事件"><a href="#常见事件" class="headerlink" title="常见事件"></a>常见事件</h3><h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011237366.png" alt="image-20240512231705770"> </p>
-<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011237752.png" alt="image-20240512231740544"> </p>
-<h4 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h4><p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011237568.png" alt="image-20240512231820221"> </p>
-<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><h2 id="BOM编程"><a href="#BOM编程" class="headerlink" title="BOM编程"></a>BOM编程</h2><h3 id="BOM定义："><a href="#BOM定义：" class="headerlink" title="BOM定义："></a>BOM定义：</h3><ul>
-<li>BOM <strong>Browser Object Model</strong>，浏览器对象模型</li>
-<li>由一系列对象组成，是访问、控制、修改浏览器的属性和方法</li>
-<li>将浏览器窗口各个组成部分抽象成给个对象，通过各个对象的API操作组件行为</li>
-<li>对象结构：<ul>
-<li>window 顶级对象，代表整个窗口<ul>
-<li>location：地址栏</li>
-<li>history：访问历史</li>
-<li>screen：屏幕</li>
-<li>navigator：浏览器软件本身</li>
-<li>document：当前解析的html文档</li>
-<li>console：开发者工具的控制台</li>
-<li>localStorage：本地数据持久化存储</li>
-<li>sessionStorage：本地数据会话级存储</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/01/%E5%89%8D%E7%AB%AF/JS%E5%AD%A6%E4%B9%A0/" data-id="cm7pqe07k0005bov2fr276ji0" data-title="js基础学习" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li></ul>
 
     </footer>
   </div>
@@ -3489,7 +3472,7 @@ try&#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
     </div>
   </div>
 
@@ -3499,7 +3482,7 @@ try&#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
     </div>
   </div>
 
@@ -3509,7 +3492,7 @@ try&#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 18.33px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 18.33px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16.67px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 13.33px;">学习规划</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 13.33px;">开发工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.33px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 15px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
+      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.67px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 15px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 11.67px;">学习规划</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 18.33px;">工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.67px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 13.33px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
     </div>
   </div>
 
@@ -3531,23 +3514,23 @@ try&#123;
       <ul>
         
           <li>
-            <a href="/2025/03/01/%E7%AE%97%E6%B3%95/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
+            <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/">markdown语法</a>
           </li>
         
           <li>
-            <a href="/2025/03/01/%E7%AE%97%E6%B3%95/LeetCode/">Leetcode刷题题解</a>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
           </li>
         
           <li>
-            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/">Leetcode刷题题解</a>
           </li>
         
           <li>
-            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
           </li>
         
           <li>
-            <a href="/2025/03/01/%E6%A0%A1%E5%86%85%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
           </li>
         
       </ul>

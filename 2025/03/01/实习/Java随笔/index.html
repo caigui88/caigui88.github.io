@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Java随笔 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JAVA面试基础题目 java 的特点：  平台无关性：java编译器将java源代码编译成与平台无关的字节码文件，在执行时再交由 jvm 进行解释翻译，转换成对应平台的机器码执行程序。（所以jvm是有不同平台的版本区别的） 强面向对象性：一门严格的面向对象语言，几乎一切多事对象。OOP 特性使代码易于维护和重用，class 类，object 对象，abstraction 抽象，inheritan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java随笔">
+<meta property="og:url" content="http://example.com/2025/03/01/%E5%AE%9E%E4%B9%A0/Java%E9%9A%8F%E7%AC%94/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JAVA面试基础题目 java 的特点：  平台无关性：java编译器将java源代码编译成与平台无关的字节码文件，在执行时再交由 jvm 进行解释翻译，转换成对应平台的机器码执行程序。（所以jvm是有不同平台的版本区别的） 强面向对象性：一门严格的面向对象语言，几乎一切多事对象。OOP 特性使代码易于维护和重用，class 类，object 对象，abstraction 抽象，inheritan">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011229283.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011229789.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011229579.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230151.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230152.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230632.png">
+<meta property="og:image" content="d:\Blog\source_posts\%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91\%E5%AE%9E%E4%B9%A0\Java%E9%9A%8F%E7%AC%94.assets\image-20250226234406661.png">
+<meta property="og:image" content="http://example.com/.%5CJava%E9%9A%8F%E7%AC%94.assets%5Cimage-20250225161221459.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230747.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230774.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230768.png">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230234.png">
+<meta property="article:published_time" content="2025-03-01T03:35:47.132Z">
+<meta property="article:modified_time" content="2025-03-01T04:30:57.552Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011229283.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-实习/Java随笔" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/01/%E5%AE%9E%E4%B9%A0/Java%E9%9A%8F%E7%AC%94/" class="article-date">
+  <time class="dt-published" datetime="2025-03-01T03:35:47.132Z" itemprop="datePublished">2025-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Java随笔
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="JAVA面试"><a href="#JAVA面试" class="headerlink" title="JAVA面试"></a>JAVA面试</h1><h1 id="基础题目"><a href="#基础题目" class="headerlink" title="基础题目"></a>基础题目</h1><ul>
+<li><p>java 的特点：</p>
+<ul>
+<li>平台无关性：java编译器将java源代码编译成与平台无关的字节码文件，在执行时再交由 jvm 进行解释翻译，转换成对应平台的机器码执行程序。（所以jvm是有不同平台的版本区别的）</li>
+<li>强面向对象性：一门严格的面向对象语言，几乎一切多事对象。OOP 特性使代码易于维护和重用，class 类，object 对象，abstraction 抽象，inheritance 继承，encapsulation 封装，polymorphism 多态</li>
+<li>内存管理：有垃圾回收机制，无需程序员手动管理内存，尽量避免了内存泄露或其他内存问题。</li>
+</ul>
+</li>
+<li><p>java 为什么可以跨平台：</p>
+<ul>
+<li>主要依赖于 jvm</li>
+<li>编译生成的字节码文件与平台无关，无法直接执行，而是必须通过 jvm 再次翻译成相当于的机器码才能执行，不同平台下编译成的字节码都是相同的，但翻译出的机器码是不一样的。</li>
+</ul>
+</li>
+<li><p>jvm、jre、jdk 三者的关系</p>
+<ul>
+<li><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011229283.png" alt="image-20240725230247664"></li>
+<li>jvm 是 java 虚拟机，java程序运行的环境。负责将java字节码解释或编译成机器码，并执行程序。jvm 提供了内存管理，垃圾回收，安全性等功能，使得java程序具有跨平台性</li>
+<li>jre 是 java 运行时环境，是java程序运行所需的最小环境。包括了 jvm 和一组 java 类库，用于支持 java 程序的执行，jre 不包括开发工具，只提供 java 程序运行所需的运行环境</li>
+<li>jdk 是 java 开发工具包，是开发 java 程序所需的工具集合，包含了 jvm、编译器、调试器（jdb）等开发工具，以及一系列类库。jdk 提供了开发、编译、调试和运行java程序所需的所有工具和环境。</li>
+</ul>
+</li>
+<li><p>JDK8 的新特性：</p>
+<ol>
+<li>元空间代替永久代</li>
+<li>引入 Lambda 表达式</li>
+<li>引入日期类，引入接口 default 方法和静态方法</li>
+<li>新增 Stream 流式接口</li>
+<li>引入 Optional 类</li>
+<li>新增 CompletableFuture 、StampedLock 等并发实现类。</li>
+</ol>
+</li>
+<li><p>元空间替代永久代</p>
+<p>JDK8 要把 JRockit 虚拟机和 Hotspot 虚拟机融合，而 JRockit 没有永久代，所以把 Hotspot 永久代给去了（本质也是永久代回收效率太低）。元空间是分配在直接内存中，解决永久代存在的内存不足、GC效率低的问题</p>
+<p><a target="_blank" rel="noopener" href="https://www.mianshiya.com/question/1780933295228350466">为什么 Java8 移除了永久代，加了元空间？</a></p>
+</li>
+<li><p>引入 Lambda 表达式</p>
+<p>一种匿名函数，可以把 Lambda 表达式理解为是一段可以传递的代码（将代码像数据一样进行传递）</p>
+</li>
+<li><p>引入日期类</p>
+<p>引入了新的日期和时间 API（位于 java.time 包中）</p>
+<p>原本的 <code>Date</code>、<code>Calendar</code> 都是可变类且线程不安全；且<code>Date</code> 本身不包含时区信息，必须使用 <code>Calendar</code> 类来处理时区，但使用起来非常复杂且容易出错。</p>
+<p>而新的日期类都是不可变的，一旦创建就不能修改，这样可以避免意外的修改，提升代码的安全性和可维护性；新的APi提供了专门的时区类如( <code>ZonedDateTime</code>, <code>OffsetDateTime</code>, <code>ZoneId</code> 等），简化了时区处理，并且这些类的方法更加直观和易用。</p>
+</li>
+<li><p>引入接口 default 方法和静态方法</p>
+</li>
+<li><p>新增 Stream 流式接口</p>
+<p>Stream API 更方便处理集合操作，<code>过滤</code>、<code>排序</code>、<code>分组</code>、<code>映射</code>操作等。它支持链式操作、惰性求值和并行处理。</p>
+</li>
+<li><p>引入 Optional 类</p>
+<p><code>Optional</code> 类用来解决可能出现的 <code>NullPointerException</code> 问题，提供了一种优雅的方式来处理可能为空的值。</p>
+<p><a target="_blank" rel="noopener" href="https://www.mianshiya.com/bank/1787463103423897602/question/1800345746421391361">《什么是 Optional 类？》 这题</a></p>
+</li>
+<li><p>新增 CompletableFuture 、StampedLock 等并发实现类。</p>
+<p>CompletableFuture 提供了一个新的异步编程模型，简化了异步任务的编写和管理。</p>
+<p><a target="_blank" rel="noopener" href="https://www.mianshiya.com/question/1780933294947332098">《StampedLock 用过吗？》</a> </p>
+</li>
+<li><p>序列化与反序列化</p>
+<ul>
+<li><p><strong>序列化</strong>：将对象转换成字节流的过程，因为字节流对象可以进行网络传输、持久化存储或缓存，java提供了接口 <code>java.io.Serializable</code> 来支持序列化，类实现该接口即可将该类的对象序列化。</p>
+</li>
+<li><p><strong>反序列化</strong>：将字节流重新转换成对象的过程，即从存储中读取数据并重新创建对象。</p>
+</li>
+<li><p>主要应用场景：</p>
+<ul>
+<li>网络传输</li>
+<li>远程调用</li>
+<li>持久化存储</li>
+<li>分布式系统中数据交换</li>
+</ul>
+</li>
+<li><p>Java序列化关键类和接口：</p>
+<ul>
+<li><code>ObjectOutputStream</code> 用于序列化</li>
+<li><code>ObjectInputStream</code> 用于反序列化</li>
+<li>类必须实现接口 <code>Serializable</code> 才能序列化</li>
+</ul>
+</li>
+<li><p><code>transient</code> 关键字：序列化过程中有些字段不需要被序列化，通过 <code>transient</code> 关键字标记的字段不会被序列化</p>
+</li>
+<li><p><code>serialVersionUID</code> ：每个实现了 <code>Serializable</code> 接口的类都应该定义一个 <code>serialVersionUID</code> ，用于在反序列化时校验版本一致性，如果没有明确指定，会根据类的定义自动生成（当类发现改变时，可能会因为版本不匹配导致反序列化失败）。</p>
+</li>
+<li><p>序列化性能问题： Java 的默认序列化机制可能比较慢，尤其对于大规模分布式系统，可能会选择更加高效的序列化框架（Protobuf，Kryo）</p>
+</li>
+<li><p>安全性：反序列化是一个潜在的安全风险，恶意构造的字节流可以会加载不安全的类或执行不期望的代码。</p>
+</li>
+<li><p>序列化与反序列化的理解</p>
+<p>序列化可以理解成一个扁平化的过程，对象在 JVM 中可以认为是一个“立体”的存在，由于在传输过程中只关心具体的数值而不关心数值在发送端的具体存储地址等信息。反序列化即是按照预先规定好的规则将字节序列重新转换成对象存储在内存中<img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011229789.png" alt="image-20250221163325854"></p>
+</li>
+<li><p>Serializable 接口的意义</p>
+<ul>
+<li><p>Serializable 这个接口本身没有什么实际功能，起到<strong>标记作用</strong></p>
+</li>
+<li><p>serialVersionUID的作用：</p>
+<ul>
+<li><p><code>private static final long serivalVersionUID = 1L;</code></p>
+<p>这行代码就是用来验证序列化的对象和反序列化对应的对象的 ID 是否一致，这个字段的值并不重要，重要的是序列化时用的 UID 和反序列化时的 UID 需要一致。</p>
+</li>
+<li><p>显式声明的原因是人为确定，否则编译器根据类信息自动生成的 UID ，会因为类的内容的变化导致反序列化失败，因为类的结构发生了改变，serialVersionUID 也会发生改变</p>
+</li>
+<li><p>验证作用</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Java 序列化不包括静态变量</p>
+<ul>
+<li>即序列化之后存储的内容不包括静态变量的值</li>
+<li>原因：<ul>
+<li>静态变量的本质上属于类而非任何一个实例，所有对象实例共享一个静态变量，生命周期与类加载&#x2F;卸载相关</li>
+<li>序列化的目的是保存对象的状态，而静态变量不属于对象，因此不需要纳入序列化当中</li>
+<li>逻辑上，静态变量不单独属于某一个对象实例，如果将静态变量作为对象实例的属性进行序列号，在反序列化时可能会引起对静态变量的擅自修改</li>
+<li>更具体的说序列化是通过调用对象的 writeObject 方法和 readObject 来实将对象写入输出流和读取输入流的，而静态变量由于不属于对象的一部分，因此调用这两个方法时候静态变量都不参与其中，也就是所谓的序列化无法存储静态变量的值。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>什么不可变类</p>
+<ul>
+<li><p>创建后其状态（对象的属性）无法被修改的类。一旦对象被创建，它的所有属性都不能被更改。这种类的实例在整个生命周期中保持不变。</p>
+</li>
+<li><p>关键特征：</p>
+<ul>
+<li><p>声明类为 final ，防止子类继承</p>
+</li>
+<li><p>类的所有字段都是 private 和 final ，确保在初始化后不会被更改</p>
+</li>
+<li><p>通过构造函数初始化所有字段</p>
+</li>
+<li><p>不提供如何修改对象状态的方法（如 setter 方法）</p>
+</li>
+<li><p>如果类包含可变对象的引用，确保这些引用在对象外部无法被修改。例如 getter 方法中返回对象的副本(new 一个新的对象)来保护可变对象字段。</p>
+</li>
+<li><p>Java中经典的不可变类：包装类、BigDecimal、LocalDate 等</p>
+</li>
+<li><p><strong>优点</strong>：</p>
+</li>
+</ul>
+</li>
+<li><p><strong>线程安全</strong>：由于不可变对象的状态不能被修改，它们先天就是线程安全的，在并发环境下无需同步</p>
+</li>
+<li><p><strong>缓存友好</strong>：不可变对象可以安全地被缓存和共享，如 String 的字符串常量池。</p>
+</li>
+<li><p><strong>防止状态不一致</strong>：不可变类可以有效避免因意外修改对象状态而导致的不一致问题。</p>
+<ul>
+<li><p><strong>缺点</strong>：</p>
+<ul>
+<li><strong>性能问题</strong>：不可变对象需要在每次状态变化时创建新的对象，可能造成性能开销，尤其对大规模对象或频繁修改的场景（ String 的频繁拼接）</li>
+</ul>
+</li>
+<li><p>String 举例</p>
+<p>String就是常见的不可变类，当创建一个 String 对象后该对象无法修改</p>
+<p>因此当执行 <code>str += &quot;a&quot;</code> 的操作时，其实返回的是一个新的 String 对象，而原本的对象不会发生改变，只是 str 的引用指向了新的对象。</p>
+<p>综上不要在有频繁拼接字符串的场景使用 String ，会造成大量无效对象的创建。</p>
+</li>
+<li><p>实现一个不可变类</p>
+<ul>
+<li><p>使用 final 修饰类</p>
+</li>
+<li><p>使用 private 和 final 修饰字段（使用 final 限制，但）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">ImmutableClassExample</span></span><br><span class="line">		<span class="keyword">implements</span> <span class="title class_">java</span>.io.Serializable, Comparable&lt;String&gt;, CHarSequence &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">final</span> <span class="type">char</span> value[];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>八种数据类型：</p>
+<ul>
+<li>整型 默认为 int 需要加上 l 或 L 声明为 long<ul>
+<li>byte 1字节</li>
+<li>short 2字节</li>
+<li>int 4字节</li>
+<li>long 8字节</li>
+</ul>
+</li>
+<li>浮点数 默认为 double 需要加上 f 或 F 声明为 float<ul>
+<li>float 4字节</li>
+<li>double 8字节</li>
+</ul>
+</li>
+<li>字符<ul>
+<li>char 2字节：无符号的，取值从 0 开始</li>
+</ul>
+</li>
+<li>布尔类型<ul>
+<li>boolean 2字节</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据类型转换</p>
+<ul>
+<li><strong>隐式转换</strong>：自动类型转换，适用于从小范围类型到大范围类型，安全</li>
+<li><strong>显式转换</strong>：强制类型转换，适用于从大范围类型到小范围类型，会发生丢失或溢出，不安全</li>
+<li><strong>字符串与其他类型的转换</strong>：<ul>
+<li>字符串 -&gt; 其他类型：使用包装类的 <code>parseXxx()</code> 方法 或 <code>valueOf()</code> 方法</li>
+<li>其他类型 -&gt; 字符串：使用 <code>String.valueOf()</code> 方法 或 <code>toString()</code> 方法 或 字符串拼接；</li>
+</ul>
+</li>
+<li><strong>包装类与其对应的基本类型的转换</strong>：通过自动装箱和拆箱实现。</li>
+<li><strong>字符与整数的转换</strong>：通过强制类型转换实现。</li>
+<li><strong>数组与集合的转换</strong>：<ul>
+<li>数组 -&gt; 集合：使用 <code>Arrays.asList()</code> </li>
+<li>集合 -&gt; 数组：使用<code>toArray()</code> 。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>类型间互转会出现的问题</p>
+<ul>
+<li>数据丢失：整型中范围大的转小的</li>
+<li>精度损失：浮点数中 float 转 double 精度可能会丢失</li>
+<li>类型不匹配导致的错误</li>
+</ul>
+</li>
+<li><p>使用 BigDecimal </p>
+<ul>
+<li>浮点数的二进制表示问题：在计算机以二进制的形式存储、只能表示 1&#x2F;(2^n) 的和的组合，0.1 这种无法精确表示。</li>
+<li>Decimal 是精确计算，一般用于与金钱相关的计算</li>
+<li>创建 Decimal 对象时使用字符串初始化</li>
+</ul>
+</li>
+<li><p>自动装箱&#x2F;拆箱：（java1.5 之前需要手动进行装箱和拆箱，1.5之后由编译器自动完成装箱和拆箱）</p>
+<ul>
+<li>赋值</li>
+<li>方法调用</li>
+<li>弊端：<ul>
+<li>在一个循环中如果某个操作 包装类 不适用则会重复进行 装箱和拆箱操作，中途会产生大量无用的 包装类对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>java 为什么要有包装类</p>
+<ul>
+<li>基本数据类型无法用于泛型</li>
+<li>类型转换，如：在java中不能直接将一个 int 转换成 String，需要先 int 转换成 Integer 再转换成 String</li>
+<li>把数据和处理数据的方法结合起来</li>
+<li>支持 null 值</li>
+<li>集合框架只能存储对象，无法存储基本数据类型。</li>
+</ul>
+</li>
+<li><p>包装类与基本数据类型相比的优点（以int为例）</p>
+<ul>
+<li>基本类型和引用类型：<ul>
+<li>基本类型是 java 中最基本的数据类型，预定义的，无需实例化即可使用。</li>
+<li>引用类型需要通过实例化对象才能使用。</li>
+<li>即，基本类型无需额外的内存分配，而引用类型需要为对象分配内存</li>
+</ul>
+</li>
+<li>自动装箱和拆箱<ul>
+<li>包装类实现了自动装箱和拆箱</li>
+</ul>
+</li>
+<li>空指针异常：int变量可以直接赋值为0，但引用类型变量必须通过实例化对象来赋值，如果对一个未初始化的引用类型变量操作，会出现空指针异常，因为此时的变量值为null，而null值无法自动装箱和拆箱。</li>
+</ul>
+</li>
+<li><p>Java 中的参数传递时按值还是按引用</p>
+<p>在 Java 中，参数传递只有按值传递，不管是基本类型还是引用类型</p>
+<ul>
+<li>基本数据类型传递的是值的副本，即数值本身，因此对方法参数的任何修改都不会影响原值</li>
+<li>引用数据类型，传递的是引用的副本，即对象引用的内存地址，因此，方法内可以通过修改引用对象的属性，但不会影响对象引用本身的地址。</li>
+</ul>
+<p>基本类型存储在 <strong>栈内存</strong> 中；引用类型的变量存储的是对象在 <strong>堆内存</strong> 中的地址。</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011229579.png" alt="image-20250225231804306"></p>
+</li>
+<li><p>Java 中 String、StringBuffer 和 StringBuilder 的区别是什么:</p>
+<p>三者都是 Java 中处理字符串的类，区别在于<strong>可变性、线程安全和性能</strong>上：</p>
+<p>String：</p>
+<ul>
+<li>不可变</li>
+<li>线程安全，因为不可变</li>
+<li>性能较低，也因为不可变</li>
+</ul>
+<p>StringBuffer：</p>
+<ul>
+<li>可变，可以较快进行字符串的追加、删除、插入等操作。</li>
+<li>线程安全：内部使用了 synchronized 关键字修饰方法，保证了多线程环境下的安全性</li>
+<li>适用于多线程环境中频繁修改字符串的场景</li>
+</ul>
+<p>StringBuilder：</p>
+<ul>
+<li>可变，可以较快进行字符串的追加、删除、插入等操作。</li>
+<li>非线程安全</li>
+<li>适用于单线程环境中频繁修改字符串的场景</li>
+</ul>
+<p><code>StringBuffer</code> 和 <code>StringBuilder</code> 二者都继承了 <code>AbstractStringBuilder</code> ，底层都是利用可修改的 <code>char</code> 数组(JDK 9 以后是 <code>byte</code> 数组)。</p>
+<p>如果我们有大量的字符串拼接，如果能预知大小的话最好在 <code>new StringBuffer</code> 或者 <code>StringBuilder</code> 的时候设置好 <code>capacity</code>，避免多次扩容的开销（扩容要抛弃原有数组，还要进行数组拷贝创建新的数组）</p>
+</li>
+<li><p>剖析 StringBuilder 的实现</p>
+<ul>
+<li>内部使用字符数组 (char[] value) 来存储字符序列</li>
+<li>通过方法如 append()、insert() 等操作，直接修改内部的字符数组，而不会像 String 那样创建新的对象。</li>
+<li>每次进行字符串操作时，如果当前容量不足，它会通过扩展数组容量来容纳新的字符，按 2 倍的容量扩展，以减少扩展次数，提高性能。</li>
+</ul>
+<p>String 底层不也是用的 char 数组存放吗？两者有啥区别：String 被 final 修饰，且内部的 char 也被 private 和 final 修饰了</p>
+<p>StringBuilder 底层是用 char 数组存放字符，而数组是连续内存结构，为了防止频繁地复制和申请内存</p>
+<p>append 操作：先看看 append 的 int值转成 char 需要占数组的几位，然后计算一下现在的数组够不够放，如果不够就扩容一下，然后再把 int 转成 char 放进去，再更新现有的字符数。</p>
+<ul>
+<li><p>扩容由 <code>ensureCapacityInternal</code> 这个方法的实现</p>
+</li>
+<li><p><code>Integer.stringSize</code> 方法</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230151.png" alt="image-20250226002256198"> </p>
+</li>
+<li><p>int 是如何转换成 char 然后插入到数组中的，<code>Integer.getChars</code>方法</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230152.png" alt="image-20250226002417214">  </p>
+<p><code>DigitOnes、DigitTens</code>这两个数组了，还是查表法</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230632.png" alt="image-20250226002424244"></p>
+</li>
+<li><p>insert 操作：</p>
+<p><img src="D:\Blog\source_posts\后端开发\实习\Java随笔.assets\image-20250226234406661.png" alt="image-20250226234406661"> </p>
+</li>
+<li><p>delete 操作：</p>
+</li>
+<li><p>StringBuilder 的内部实现就是对数组的操作，而数组的特性就是内存连续，下标访问快。</p>
+</li>
+<li><p>没有实现缩容操作。</p>
+</li>
+<li><p>char 数组是可以优化的，底层可以用 byte 数组+一个 coder 标志位来实现，这样更节省内存，因为 char 占用两个字节，这样对于 latin 系的字符来说，太大了，就很浪费，所以用 byte 数组，然后配备一个 coder 来标识所用的编码。</p>
+</li>
+</ul>
+</li>
+<li><p>面向对象</p>
+<ul>
+<li>封装继承多态</li>
+<li>一种编程范式，主要思想是将现实世界中的事物抽象为对象，以对象为中心，通过对象间的交互来完成功能的实现，具有灵活性和可扩展性</li>
+<li>java 面向对象的三大特点：<ul>
+<li>封装：将对象的属性、行为结合在一起，对外隐藏内部细节，仅仅开放操作接口与外界交互，增加了安全性和独立性</li>
+<li>继承：子类自动共享父类数据结构和方法的机制，代码复用的重要手段，通过抽象出实体间的关系来构建继承关系，结构清晰明了</li>
+<li>多态：允许不同类的对象对同一信息做出响应，即同一个接口在接受不同实例时会执行不同的操作<ul>
+<li>编译时多态：方法重载</li>
+<li>运行时多态：方法重写</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>方法重载和方法重写的区别</p>
+<ul>
+<li>方法重载是发生在同一个类内的，同名方法具有不同形参列表，不受访问符影响，可以是静态或非静态，可以各自具有不同的异常处理</li>
+<li>方法重写是发生在继承或实现关系中的，由子类重新定义将继承自父类的或实现接口的方法，方法名和形参列表必须相同，子类对修饰符不能比父类更严格（但可以更宽松），只能是非静态的，子类的重写方法不能抛出比父类更多的异常。注意需要使用 @Override 注解，编译器可以帮助检查是否正确实现了重写，以防误操作。</li>
+</ul>
+<p>重载与返回值没关系，仅仅是方法名和参数列表</p>
+</li>
+<li><p>多态的实现方式：</p>
+<ul>
+<li><p>方法重载 编译时多态 静态多态：在编译时确定方法的调用</p>
+<ul>
+<li>同名方法，但又不同的形参列表，根据传入参数的不同，编译器在编译器在编译时会确定使用哪个方法</li>
+</ul>
+</li>
+<li><p>方法重写 运行时多态 动态多态：在运行时确定方法的调用</p>
+<ul>
+<li>子类对父类同名方法的具体实现，在运行时，jvm 会根据对象的实际类型确定调用哪个版本的方法</li>
+</ul>
+</li>
+<li><p>接口与实现</p>
+<ul>
+<li>多个类实现同一个接口，并且用接口类型的引用来调用这些类的方法，同样是在运行时根据实际对象的类型来决定使用哪一个方法，多态绑定（dynamic binding）</li>
+</ul>
+</li>
+<li><p>向上转型和向下转型</p>
+<ul>
+<li><p>向上转型 <strong>Upcasting</strong>：子类对象转换成父类类型，隐式转换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Animal is eating&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Dog is eating&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bark</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Dog is barking&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向上转型</span></span><br><span class="line"><span class="type">Animal</span> <span class="variable">animal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(); <span class="comment">// 隐式转换为父类 Animal 类型</span></span><br><span class="line">animal.eat();   <span class="comment">// 输出 &quot;Dog is eating&quot;（动态绑定，调用子类方法）</span></span><br><span class="line"><span class="comment">// animal.bark(); // 编译错误！父类引用无法访问子类特有方法</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安全的，因为子类对象一定是父类实例</li>
+<li>代码灵活简单</li>
+<li>只能访问父类中定义的属性和方法，无法调用子类特有的方法，但子类可以重写分类方法。</li>
+</ul>
+</li>
+<li><p>向下转型 <strong>Downcasting</strong>：父类引用创建的子类对象重新强制转换成子类类型，显式转换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">display</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Animal&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">display</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;dog&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;吃骨头&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//向上转型</span></span><br><span class="line">        <span class="type">Animal</span> <span class="variable">animal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">        animal.display();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//向下转型</span></span><br><span class="line">        <span class="comment">//Animal类中原本没有 eat方法，在向下转型之前如果调用eat方法会报错</span></span><br><span class="line">        <span class="comment">//向下转型为子类Dog类后，就可以调用子类中特有的方法，而不会报错</span></span><br><span class="line">      	animal.eat(); <span class="comment">// 编译报错，因为本质还是父类的实例，并不具备子类的特有方法</span></span><br><span class="line">        animal = (Dog)animal;</span><br><span class="line">        ((Dog) animal).eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>有转换风险，必须确保父类引用实际指向的目标是子类对象，否则会抛出异常</p>
+</li>
+<li><p><strong>安全做法</strong>：</p>
+<p>使用 <code>instanceof</code> 检查类型后再转换：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (animal <span class="keyword">instanceof</span> Dog) &#123;</span><br><span class="line">    <span class="type">Dog</span> <span class="variable">dog</span> <span class="operator">=</span> (Dog) animal;</span><br><span class="line">    dog.bark();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>编程中面向对象思维和面向过程思维的区别：</p>
+<p>OOP：是一种以对象为中心的编程范式&#x2F;风格，将类作为最基本的单元来组织代码，在前人的代码实践中总结出：封装、继承、多态三大特性；</p>
+<p>面向过程：是一种以过程或函数为中心的编程范式&#x2F;风格，以逻辑的执行过程作为基本的单元来组织代码，函数与数据是分开的</p>
+<ul>
+<li><strong>面向对象的优缺点</strong>：<ul>
+<li><strong>优点</strong>：高复用性、扩展性、维护性强，适合复杂系统的开发。</li>
+<li><strong>缺点</strong>：开发和理解成本较高，对于简单项目可能显得繁琐。</li>
+</ul>
+</li>
+<li><strong>面向过程的优缺点</strong>：<ul>
+<li><strong>优点</strong>：开发简单，代码执行速度快，适合小型项目。</li>
+<li><strong>缺点</strong>：可维护性差，代码复用性低，扩展性差。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>面向对象设计的六大原则：</p>
+<ul>
+<li><p>单一职责原则 SRP Single Responsibility Principle </p>
+<p>一个类应该只有一个引起它变化的原因，即一个类只负责一个职责</p>
+<p>目的是：功能聚焦，减少耦合</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误：一个类同时处理订单和日志</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Order</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">processOrder</span><span class="params">()</span> &#123; <span class="comment">/* 处理订单逻辑 */</span> &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">logOrder</span><span class="params">()</span> &#123; <span class="comment">/* 记录日志逻辑 */</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确：拆分职责</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Order</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">processOrder</span><span class="params">()</span> &#123; <span class="comment">/* 处理订单逻辑 */</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Logger</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">log</span><span class="params">(String message)</span> &#123; <span class="comment">/* 记录日志逻辑 */</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开发封闭原则 OCP Open Closed Principle </p>
+<p>软件实体应该对扩展开放，对修改封闭</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">    <span class="type">double</span> <span class="title function_">calculateArea</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 扩展新功能时无需修改已有类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Circle</span> <span class="keyword">implements</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="type">double</span> <span class="title function_">calculateArea</span><span class="params">()</span> &#123; <span class="comment">/* 计算圆面积 */</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Square</span> <span class="keyword">implements</span> <span class="title class_">Shape</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="type">double</span> <span class="title function_">calculateArea</span><span class="params">()</span> &#123; <span class="comment">/* 计算正方形面积 */</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>里氏替换原则 LSP Liskov Substitution Principle</p>
+<p>子类对象应该能够替换所有父类对象</p>
+<p>确保继承合理性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父类：鸟类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bird</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">fly</span><span class="params">()</span> &#123; <span class="comment">/* 飞行逻辑 */</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 错误：企鹅是鸟但不能飞，违反LSP</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Bird</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">fly</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">UnsupportedOperationException</span>(<span class="string">&quot;企鹅不能飞！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确：拆分接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Flyable</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">fly</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Sparrow</span> <span class="keyword">extends</span> <span class="title class_">Bird</span> <span class="keyword">implements</span> <span class="title class_">Flyable</span> &#123; <span class="comment">/* 实现飞行 */</span> &#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Penguin</span> <span class="keyword">extends</span> <span class="title class_">Bird</span> &#123; <span class="comment">/* 不实现Flyable */</span> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接口隔离原则 ISP Interface Segregation Principle</p>
+<p>客户端不应该依赖那些不需要的接口，即接口应该小而专</p>
+<p>避免接口臃肿 </p>
+</li>
+<li><p>依赖倒置原则 DIP Dependency Inversion  Principle</p>
+<p>高层模块不应该依赖于低层模块，二者应该依赖于抽象；</p>
+<p>抽象不应该依赖于细节，细节应该依赖于抽象 </p>
+<p>解耦高层和低层模块</p>
+</li>
+<li><p>最少知识原则 LOD Law of Demeter</p>
+<p>减少对象间依赖</p>
+<p>一个对象当前对其他对象有最少的了解，只与其直接的朋友交互</p>
+</li>
+</ul>
+</li>
+<li><p>为什么 Java 不支持多重继承</p>
+<p>主要是因为多继承会产生<strong>菱形继承</strong>问题，会导致继承了两个不同类的子类在调用方法时参数歧义</p>
+</li>
+<li><p>为什么接口可以多实现</p>
+<p>Java8 之前接口无法定义具体方法实现，所以即使继承了多个接口，子类也必须先实现接口中的方法，不会造成歧义</p>
+<p>Java8 之后接口可以定义默认方法，Java 规定多个接口有相同默认方法的情况下，子类必须重写方法，否则会在编译期间报错</p>
+</li>
+<li><p>抽象类和普通类的区别</p>
+<ul>
+<li>实例化：普通类可以实例化对象，抽象类不能实例化，只能被继承</li>
+<li>方法实现：普通类中的方法可以有具体实现；抽象类中的方法可以有实现也可以没有；</li>
+</ul>
+</li>
+<li><p>抽象类和接口的区别</p>
+<ul>
+<li>抽象类用于描述类的共同特征和行为，可以有<strong>成员变量、构造方法和具体方法</strong>，适用于有明显继承关系的场景</li>
+<li>接口用于定义行为规范，可以多实现，只有常量和抽象方法（Java8 之后可以有默认方法和静态方法）。适用于定义类的能力或功能</li>
+<li>区别：<ul>
+<li>一个类可以实现多个接口，使用关键字 implements；一个类只能继承一个抽象类，使用关键字 extends</li>
+<li>接口只有定义，不能有方法的实现（java8 之后可以定义 default方法体）；抽象类可以有方法的定义和方法的实现</li>
+<li>接口成员变量默认修饰符为 <code>public static final</code> 必须赋初值且不能被修改，成员方法都是 <code>public</code>、<code>abstract</code>；抽象类中成员变量默认 <code>default</code> 可在子类中被重新定义且重新赋值，抽象方法是被 <code>abstract</code> 修饰，不能被 <code>private</code>、<code>static</code>、<code>synchronized</code> 和 <code>native</code> 等修饰，必须以分号结尾，不带花括号</li>
+<li>接口只能包含常量（静态常量）；抽象类可以包含实例变量和静态变量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>抽象类不能加 final 修饰，因为抽象类就是用来作为基类被继承的，而 final 修饰符禁止类被继承或方法被重写，因此，抽象类和 final 修饰符互斥，不可同时使用</p>
+</li>
+<li><p>接口可以定义的方法：</p>
+<ul>
+<li><p>抽象方法</p>
+<p>接口的核心部分，所有实现接口的类都必须实现这些方法，默认修饰符为： <code>public abstract</code></p>
+</li>
+<li><p>默认方法</p>
+<p>java 8 引入，<code>default</code> 修饰符，允许接口提供默认实现，实现类可以选择重写</p>
+</li>
+<li><p>静态方法</p>
+<p>java 8 引入，属于接口本身，可以通过接口名调用</p>
+</li>
+<li><p>私有方法</p>
+<p>Java 9 中引入，用于在接口中为默认方法或其他私有方法提供辅助功能。这些方法不能被实现类访问，只能在接口内部使用</p>
+</li>
+</ul>
+</li>
+<li><p>抽象类本身不能被实例化，但是可以有构造器，抽象类构造器在子类实例化时被调用，以便进行必要的初始化。</p>
+<p>但是也不会直接实例化抽象类，而是创建了子类实例后，间接使用抽象类的构造器。</p>
+</li>
+<li><p>接口不可以包含构造方法，编译器会提示报错，因为接口无法实例化，也就不需要构造方法，构造方法在初始化 class 的属性或方法时使用，即通过 new 关键字调用，而接口无法使用 new 关键字，无法实例化，也就没必要有构造方法。</p>
+</li>
+<li><p>解释静态变量和静态方法</p>
+<ul>
+<li>Java中，静态变量和静态方法是与类本身相关联的，而不与类的实例关联，在内存中只存有一份，可以被所有类实例共享访问</li>
+</ul>
+<p><strong>静态变量&#x2F;类变量</strong>：是类中使用 <code>static</code> 声明的变量，属于类而不是任何一个实例</p>
+<ul>
+<li>共享性：所有类实例共享同一个静态变量，其他一个实例修改了静态变量，其他实例对其具有可见性</li>
+<li>初始化：静态变量在类被加载时即初始化，只会对其分配一次内存</li>
+<li>访问方式：可以通过<strong>类名访问</strong>，也可以通过<strong>实例访问</strong></li>
+<li>作用域：在整个类内可见，类的任何方法内部或外部都可访问静态变量</li>
+</ul>
+<p><strong>静态方法</strong>：在类中使用 static 声明的方法，类似于静态变量，同样属于类，</p>
+<ul>
+<li>无实例依赖：可以直接通过类名调用，静态方法不能直接访问非静态的成员变量或方法，因为静态方法没有上下文的实例</li>
+<li>访问静态成员：静态方法可以直接调用其他静态变量和静态方法，但不能直接访问非静态成员</li>
+<li>多态性：静态方法不支持重写，但可以被隐藏(<code>Hide</code>)</li>
+<li>不能使用 this 关键字，因为没有当前对象的引用</li>
+<li>在类加载时初始化</li>
+</ul>
+<p>通常建议使用类名来访问静态变量和方法，因为它们与类相关联，而不是与特定对象实例相关。</p>
+<p>扩展：</p>
+<p><strong>静态块</strong>：用于在类加载时执行静态初始化操作。通常用于执行一些与静态成员变量相关的初始化任务，或类加载时执行一些必要设置</p>
+<p>如 bookdone 项目中使用静态代码块对两个线程池进行初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 核心业务 线程池</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@Getter</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> ThreadPoolExecutor corePool;</span><br><span class="line">  </span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 普通线程池</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@Getter</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> ThreadPoolExecutor normalPool;</span><br><span class="line">  </span><br><span class="line"> <span class="keyword">static</span> &#123;</span><br><span class="line">     <span class="comment">/**等待执行的线程队列*/</span></span><br><span class="line">     BlockingQueue&lt;Runnable&gt; workQueue = <span class="keyword">new</span> <span class="title class_">LinkedBlockingDeque</span>&lt;&gt;(WAIT_QUEUE_SIZE);</span><br><span class="line">     corePool = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>(DEFAULT_CORE_POOL_SIZE</span><br><span class="line">             , DEFAULT_CORE_POOL_SIZE</span><br><span class="line">             , <span class="number">0</span></span><br><span class="line">             , TimeUnit.SECONDS</span><br><span class="line">             , workQueue</span><br><span class="line">             , <span class="keyword">new</span> <span class="title class_">ThreadFactoryBuilder</span>().setNameFormat(<span class="string">&quot;coreBusinessPool-t-%d&quot;</span>).build()</span><br><span class="line">             , <span class="keyword">new</span> <span class="title class_">BlockingQueueRejectedHandler</span>());</span><br><span class="line">  </span><br><span class="line">     BlockingQueue&lt;Runnable&gt; workQueueNormal = <span class="keyword">new</span> <span class="title class_">LinkedBlockingDeque</span>&lt;&gt;(WAIT_QUEUE_SIZE);</span><br><span class="line">     normalPool = <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>(NORMAL_CORE_POOL_SIZE</span><br><span class="line">             , DEFAULT_MAXIMUM_POOL_SIZE</span><br><span class="line">             , NORMAL_KEEP_ALIVE_SECONDS</span><br><span class="line">             , TimeUnit.SECONDS</span><br><span class="line">             , workQueueNormal</span><br><span class="line">             , <span class="keyword">new</span> <span class="title class_">ThreadFactoryBuilder</span>().setNameFormat(<span class="string">&quot;normalBusinessPool-t-%d&quot;</span>).build()</span><br><span class="line">             , <span class="keyword">new</span> <span class="title class_">BlockingQueueRejectedHandler</span>());</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果有多个静态块，按照在类内的顺序依次执行。</p>
+<p>使用静态变量实现单例模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line">    <span class="comment">// 使用静态变量来存储单例实例</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 私有构造方法，防止外部实例化</span></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Singleton</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 公共静态方法，用于获取单例实例</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title function_">getInstance</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="literal">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> <span class="title class_">Singleton</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Java 的内部类是什么，有什么作用：是类内定义的类，有多种形式：成员内部类，局部内部类，匿名内部类和静态内部类</p>
+<p>主要作用：</p>
+<ul>
+<li>封装性</li>
+<li>访问外部类成员</li>
+<li>简化代码</li>
+<li>事件处理</li>
+</ul>
+</li>
+<li><p>内部类的类型</p>
+<ul>
+<li><strong>成员内部类</strong>：非静态类，作为外部类的一个成员。它可以直接访问外部类的所有成员，包括私有成员。</li>
+<li><strong>静态内部类</strong>：定义为 <code>static</code>，无法访问外部类的非静态成员，只能访问外部类的静态成员，其实它就等于一个顶级类，可以独立于外部类使用，所以更多的只是表明类结构和命名空间。</li>
+<li><strong>局部内部类</strong>：定义在方法或代码块中的类，仅在该方法或代码块内可见，通常用于临时的对象构建，可以访问外部类的成员以及方法中的局部变量（需要声明为 final 或 effectively final）。</li>
+<li><strong>匿名内部类</strong>：没有类名的内部类，通常用于创建短期使用的类实例，尤其是在接口回调或事件处理时被广泛使用。</li>
+</ul>
+<p>常用成员内部类、静态内部类和匿名内部类。</p>
+<p>实际上内部类是一个编译层面的概念，像一个语法糖一样，经过编译器之后其实内部类会提升为外部顶级类，和外部类没有任何区别，所以<strong>在 JVM 中是没有内部类的概念的</strong>。</p>
+</li>
+<li><p>普通内部类和静态内部类</p>
+<ul>
+<li><p>普通内部类依赖于外部类的实例，静态内部类不依赖于外部类的实例</p>
+</li>
+<li><p>普通内部类可以访问外部类的实例变量和方法；静态内部类只能访问外部类的静态成员</p>
+</li>
+<li><p>普通内部类不能定义静态成员；静态内部类可以定义静态成员</p>
+</li>
+<li><p>普通内部类在外部类实例化后才实例化；静态内部类可以独立实例化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">OuterClass</span> <span class="variable">outer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">OuterClass</span>();</span><br><span class="line">OuterClass.<span class="type">InnerClass</span> <span class="variable">inner</span> <span class="operator">=</span> outer.<span class="keyword">new</span> <span class="title class_">InnerClass</span>();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OuterClass.<span class="type">StaticInnerClass</span> <span class="variable">staticInner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">OuterClass</span>.StaticInnerClass();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>普通内部类可以访问外部类的私有成员；静态内部类不能直接访问外部类的私有成员，必须通过实例化外部类来访问。</p>
+</li>
+</ul>
+</li>
+<li><p>非静态内部类可以直接访问外部方法，编译器怎么做到的？</p>
+<ul>
+<li>因为编译器在生成字节码时会为非静态内部类维护一个指向外部类实例的引用</li>
+<li>这个引用使非静态内部类可以访问外部类的实例变量和方法。</li>
+<li>编译器在生成非静态内部类的构造方法时，将外部实例作为参数传入，并在内部类的实例化过程中建立外部类实例与内部类实例之间的联系，从而实现直接访问外部方法的功能。</li>
+</ul>
+</li>
+<li><p>父类和子类都有静态成员变量、构造方法和静态方法，new 了一个子类对象，加载顺序是怎么样的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;Animal&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; static block&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Animal</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Animal constructor&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;Cat&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(name + <span class="string">&quot; static block&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Cat</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Cat constructor&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="type">Animal</span> <span class="variable">animal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>执行顺序为：</p>
+<p><img src="/.%5CJava%E9%9A%8F%E7%AC%94.assets%5Cimage-20250225161221459.png" alt="image-20250225161221459"> </p>
+<ol>
+<li>父类静态成员变量，静态代码块</li>
+<li>子类静态成员变量，静态代码块</li>
+<li>父类构造函数</li>
+<li>子类构造函数</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>深拷贝和浅拷贝</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230747.png" alt="image-20250225161255882"></p>
+<p>浅拷贝：只复制了对象和其内部的值类型字段，但不会复制对象内部的引用类型字段，即只是创建一个新的指向源对象引用对象的对象。</p>
+<p>深拷贝：在复制对象的同时，将对象内部的所有引用类型字段的内容也复制一份，而不会共享引用，生成的是一个全新的对象。</p>
+</li>
+<li><p>深拷贝的三种方式：</p>
+<ul>
+<li>实现 <strong>Cloneable</strong> 接口重写 clone 方法</li>
+<li>使用序列化和反序列化</li>
+<li>手动递归复制</li>
+</ul>
+</li>
+<li><p>泛型</p>
+<p>它允许类、接口和方法在定义时使用一个或多个类型参数，这些类型参数在使用时可以被指定为具体的类型。</p>
+<p><strong>泛型中的类型在使用时指定，不需要强制类型转换</strong>（<strong>类型安全</strong>，编译器会<strong>检查类型</strong>）</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230774.png" alt="image-20250225163623522"> </p>
+</li>
+<li><p>java创建对象的方法：</p>
+<ul>
+<li><p>new 关键字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">MyClass</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 Class 类的 newInstance() 方法 java9 已经弃用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">MyClass</span> <span class="variable">obj</span> <span class="operator">=</span> (MyClass) Class.forName(<span class="string">&quot;com.example.MyClass&quot;</span>).newInstance();</span><br><span class="line">    System.out.println(obj); <span class="comment">// Output: MyClass&#123;value=0&#125;</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException | InstantiationException | IllegalAccessException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 Constructor 类的 newInstance() 方法 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Constructor&lt;MyClass&gt; constructor = MyClass.class.getConstructor();</span><br><span class="line">    <span class="type">MyClass</span> <span class="variable">obj</span> <span class="operator">=</span> constructor.newInstance();</span><br><span class="line">    System.out.println(obj); <span class="comment">// Output: MyClass&#123;value=10&#125;</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 clone() 方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">MyClass</span> <span class="variable">obj1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyClass</span>();</span><br><span class="line"><span class="type">MyClass</span> <span class="variable">obj2</span> <span class="operator">=</span> (MyClass) obj1.clone();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用反序列化创建对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (<span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;object.dat&quot;</span>))) &#123;</span><br><span class="line">    <span class="type">MyClass</span> <span class="variable">obj</span> <span class="operator">=</span> (MyClass) ois.readObject();</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过反射创建对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Class&lt;?&gt; clazz = Class.forName(<span class="string">&quot;MyClass&quot;</span>);</span><br><span class="line">    <span class="type">MyClass</span> <span class="variable">obj</span> <span class="operator">=</span> (MyClass) clazz.getDeclaredConstructor().newInstance(); <span class="comment">// 推荐</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>new 出的对象何时回收</p>
+<p>通过过关键字 new 创建的对象，由Java的垃圾回收器(Garbage Collector)负麦回收。垃圾回收器的工作是在程序运行过程中自动进行的，它会周期性地检测不再被引用的对象，并将其回收释放内存。</p>
+<p>Java 对象的回收时机由垃圾回收器根据一些算法来决定，具体有：</p>
+<ul>
+<li>引用计数法</li>
+<li>可达性分析算法</li>
+<li>终结器 Finalizer</li>
+</ul>
+</li>
+<li><p>反射</p>
+<p>Java 反射机制是：在运行状态中，对任意一个类，都能够知道这个类中的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性，即动态获取某个类的信息以及动态调用对象的方法的功能</p>
+<ul>
+<li><p>运行时类信息访问：运行程序在运行时获取类的完整结构信息，包括类名、包名、父类、实现的接口、构造函数、方法和字段等</p>
+</li>
+<li><p>动态对象创建：可以使用反射 API 动态创建对象实例，即使编译时不知道具体类名——通过Class类的newInstance() 方法或 Constructor 对象的 newInstance() 方法实现的。</p>
+</li>
+<li><p>动态方法调用：可以在运行时动态地调用对象的方法，包括私有方法。这通过 Method 类的 invoke() 方法实现，允许程序员传入对象实例和参数值来执行方法。</p>
+</li>
+<li><p>访问和修改字段值：允许程序在运行时访问和修改对象的字段值，即使是私有变量，通过 Filed 类的 get() 和 set() 方法实现的。</p>
+</li>
+<li><p>因为涉及到动态解析，所以性能开销一般比较大，建议在调用对应的动态解析方法后，把解析的结果缓存起</p>
+<p>来，这样之后要使用的时候就无需再次动态解析，节省性能</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230768.png" alt="image-20250225170523863"></p>
+</li>
+</ul>
+</li>
+<li><p>反射在平时编码或框架中的应用场景</p>
+<ul>
+<li><p>加载数据库驱动</p>
+</li>
+<li><p>配置文件加载</p>
+<p>Spring 框架的 IOC （动态加载管理 Bean），Spring 通过文件配置各种各样的 Bean，需要用到哪些 bean 就装载哪些，spring 容器会根据开发者需求去动态加载</p>
+<p>Spring 通过 xml 配置模式装载 Bean 的过程：</p>
+<ul>
+<li>将程序中所有 xml 或 properties 配置文件加载入内存</li>
+<li>Java 类里面解析 xml 或 properties 里面的内容，得到对应实体类的字节码及相关的属性信息</li>
+<li>使用反射机制，根据 xml 中获取的字符串获取某个类的 Class 实例</li>
+<li>动态配置实例的属性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>能讲一讲 Java 注解的原理吗？</p>
+<p>注解本质是一个继承了 Annotation 的特殊接口，其具体实现类是 Java 运行时时生成的动态代理类</p>
+<p>通过反射获取注解时，返回的时Java运行时生成的动态代理对象。通过代理对象调用自定义注解的方法，会最终调用 AnnotationInvocationHandler 的 invoke 方法，该方法会从 memberValues 这个 Map 索引找出对应的值（memberValues 来源是 Java 的常量池）</p>
+</li>
+<li><p>注解的作用域</p>
+<p>注解的 Scope 是指注解可以应用在哪些程序元素上，如 类、方法、字段等，注解作用域分为：</p>
+<ul>
+<li>类级别：用于描述类的注解，通常放在类定义上面，用来指定类的一些属性，如访问级别、继承关系、注释等，框架中则是可以用来引入某种功能</li>
+<li>方法级别：用于描述方式的注解，通常放置在方法定义的上面，用来指定方法的某些属性</li>
+<li>字段级别：用于描述字段的注解，通常放置在字段定义的上面，用来指定字段的某些属性</li>
+</ul>
+</li>
+<li><p>异常</p>
+<p><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011230234.png" alt="image-20250225173045241"></p>
+<ul>
+<li><p>异常构成：</p>
+<ul>
+<li>Throwable类</li>
+<li>两个重要子类：Exception 异常 和 Error 错误</li>
+<li>Exception 的子类和 Error 的子类</li>
+</ul>
+</li>
+<li><p>Error：严重错误，通常是 JVM 层次内系统级的、无法预料的错误，程序无法通过代码进行处理或恢复。例如内存耗尽（<code>OutOfMemoryError</code>）、栈溢出（<code>StackOverflowError</code>）</p>
+<p><code>Error</code> 不应该被程序捕获或处理，因为一般出现这种错误时程序无法继续运行。</p>
+</li>
+<li><p>Exception 程序中可处理的异常，表示程序逻辑或外部环境中的问题，可以通过代码进行恢复或处理</p>
+<ul>
+<li>常见子类有：<code>IOException</code>、<code>SQLException</code>、<code>NullPointerException</code>、<code>IndexOutOfBoundsException</code> 等。</li>
+<li>运行时异常 Unchecked ：通常由程序逻辑错误导致,常见的如 <code>NullPointerException</code>、<code>IllegalArgumentException</code> 等，继承自 <code>RuntimeException</code>。</li>
+<li>非运行时异常 Checked ：通常是程序编译阶段就被捕获或抛出，通常是外部错误：文件不存在；类未找到等。非运行时异常必须被处理，如 <code>IOException</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Java 异常处理：</p>
+<ul>
+<li>try-catch 语句块：try 块中有可能会抛出异常的代码；catch用于捕获 try 块抛出的异常，可以设置多个catch块来处理不同类型的异常</li>
+<li>throw 语句：手动抛出异常</li>
+<li>throws 关键字：在方法声明中声明可能抛出的异常类型</li>
+<li>finally 块：用于定义无论是否发生异常都会执行的代码块，通常用于释放资源，确保资源的正常关闭。</li>
+</ul>
+<p>注意点：</p>
+<ol>
+<li>尽量不要捕获类似Exception这样通用的异常，而应该捕获特定的异常。</li>
+<li>不要 “吞” 异常</li>
+<li>不要延迟处理异常</li>
+<li>只在需要 try-catch 的地方 try-catch，try-catch 的范围能小则小</li>
+<li>不要通过异常来控制程序流程</li>
+<li>不要在 finally 代码块中处理返回值或直接 return</li>
+</ol>
+</li>
+<li><p>什么情况不需要在方法签名使用 throws 抛出异常？</p>
+<ul>
+<li>未检查异常 Unchecked Exceptions 继承自 RuntimeException 类或 Error 类的异常，编译器不强制要求进行异常处理，此类异常不需要在方法签名中使用 throws 来声明。</li>
+<li>捕获和处理异常：在方法内部捕获了可能抛出的异常，并在方法内处理了异常，这种情况不需要通过 throws 子句抛出异常传递给调用者，无需在</li>
+</ul>
+</li>
+<li><p>try{return a} finally{return b} 这条语句最终返回的是 b ，因为 finally 块中的return语句会覆盖 try 块中的 return 返回。</p>
+</li>
+<li><p>“&#x3D; &#x3D;” 和 equals 有什么区别：对于字符串常量来说，“&#x3D; &#x3D;” 和 “equals” 比较字符串时，其比较方法不同。“&#x3D; &#x3D;”比较两个变量本身的值，即两个对象在内存中的首地址；“equals“ 比较字符串包含的内容是否相同。</p>
+<p>对于非字符常量来说，如果没有对 equals 进行重写，则 “&#x3D; &#x3D;” 和 equals 方法的作用相同，都是比较对象在堆内存中的首地址，即用来比较两个引用变量是否指向同一个对象。</p>
+</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/01/%E5%AE%9E%E4%B9%A0/Java%E9%9A%8F%E7%AC%94/" data-id="cm7pquzi0000nr8v26siqam2e" data-title="Java随笔" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/01/%E5%AE%9E%E4%B9%A0/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/01/%E5%AE%9E%E4%B9%A0/bookdone/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring/">spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/typora/">typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E5%AD%A6%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E8%AF%BE/">大学公共基础课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%E8%B7%AF%E7%BA%BF/">学习规划路线</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">微信小程序开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/">计算机重要基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/">设计架构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E9%A9%AC-%E5%90%8E%E7%AB%AF/">黑马:后端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue%E5%9F%BA%E7%A1%80/" rel="tag">Vue基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html%E5%9F%BA%E7%A1%80/" rel="tag">html基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%BA%95%E5%B1%82/" rel="tag">java底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%A1%86%E6%9E%B6/" rel="tag">java框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E9%A2%98/" rel="tag">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" rel="tag">单体架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">大学专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" rel="tag">学习规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E6%B3%95/" rel="tag">想法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="tag">期末复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag">离散数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" rel="tag">计算机四大件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" rel="tag">设计架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">软件架构设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" rel="tag">软件设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">软件项目管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" rel="tag">闲杂经验</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" rel="tag">非关系型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%98%B6/" rel="tag">高阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E9%A9%AC/" rel="tag">黑马</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 11.67px;">JDBC</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/Vue%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Vue基础</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/html%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">html基础</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/java%E5%BA%95%E5%B1%82/" style="font-size: 10px;">java底层</a> <a href="/tags/java%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">java框架</a> <a href="/tags/js%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">js基础</a> <a href="/tags/juc/" style="font-size: 10px;">juc</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">关系型</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 10px;">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.67px;">前端</a> <a href="/tags/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84/" style="font-size: 11.67px;">单体架构</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.67px;">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 11.67px;">基础</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 15px;">大学专业课</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/" style="font-size: 11.67px;">学习规划</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 18.33px;">工具</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;">微信小程序</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 10px;">想法</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.67px;">数据库</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="font-size: 20px;">期末复习</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">离散数学</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 10px;">编译原理</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/" style="font-size: 13.33px;">计算机四大件</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">设计架构</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件架构设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">软件设计</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">软件项目管理</a> <a href="/tags/%E9%97%B2%E6%9D%82%E7%BB%8F%E9%AA%8C/" style="font-size: 10px;">闲杂经验</a> <a href="/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B/" style="font-size: 10px;">非关系型</a> <a href="/tags/%E9%AB%98%E9%98%B6/" style="font-size: 10px;">高阶</a> <a href="/tags/%E9%BB%91%E9%A9%AC/" style="font-size: 11.67px;">黑马</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/01/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/markdown%E8%AF%AD%E6%B3%95/">markdown语法</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/">经典算法学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/LeetCode/">Leetcode刷题题解</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络学习</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/01/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0/">计算机组成原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
