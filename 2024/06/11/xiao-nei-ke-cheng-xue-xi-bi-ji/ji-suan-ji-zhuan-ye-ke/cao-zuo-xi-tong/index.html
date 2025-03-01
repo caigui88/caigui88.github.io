@@ -1,0 +1,2183 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="操作系统期末复习, 三好市民蔡桂的个人博客">
+    <meta name="description" content="操作系统期末复习笔记">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>操作系统期末复习 | 三好市民蔡桂的个人博客</title>
+    <link rel="icon" type="image/png" href="/medias/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://cdn.jsdelivr.net/gh/Mokelting/PhotoHub/background.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<script src="/live2d-widget/autoload.js"></script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">三好市民蔡桂的个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">三好市民蔡桂的个人博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Mokelting" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Mokelting" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">操作系统期末复习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                <span class="chip bg-color">期末复习</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-06-11
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-02-19
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    12.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    46 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="操作系统突击复习"><a href="#操作系统突击复习" class="headerlink" title="操作系统突击复习"></a>操作系统突击复习</h1><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>早期引入批处理系统通过减少人工操作的时间，以提高处理效率</p>
+<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p><strong>进程的定义：进程是一个具有一定独立功能的程序关于某个数据集合的一次活动</strong></p>
+<p>当进程被创建时，会给予进程一个不重复的独一无二的PID。</p>
+<p>与进程相关的信息使用一种数据结构<strong>PCB(Process Control Block)<strong>当中，即进程控制块。当一个进程被创建时，操作系统会为其创建相应的</strong>PCB</strong>，当进程结束时再回收其<strong>PCB</strong>。</p>
+<h3 id="Process-和-Program-的不同"><a href="#Process-和-Program-的不同" class="headerlink" title="Process 和 Program 的不同"></a>Process 和 Program 的不同</h3><p><strong>程序 (Program):</strong></p>
+<ul>
+<li>是一系列集合指令，是一个静态概念；</li>
+<li>永久存在，直到被删除；</li>
+<li>一个程序可以被多个进程执行。</li>
+</ul>
+<p><strong>进程 (Process):</strong></p>
+<ul>
+<li><p>描述并发、动态的概念；</p>
+</li>
+<li><p>进程包括程序、数据和进程控制块 (PCB)；</p>
+</li>
+<li><p>是暂时的，会随进程的终止而消失；</p>
+</li>
+<li><p>进程可以创建其他进程；</p>
+</li>
+<li><p>进程可以调用多个程序。</p>
+</li>
+<li><p>进程是CPU调度的基本单位</p>
+</li>
+</ul>
+<h2 id="Process-States"><a href="#Process-States" class="headerlink" title="Process States"></a>Process States</h2><ul>
+<li>三种基本状态：<ul>
+<li>运行 running state</li>
+<li>就绪 ready state</li>
+<li>阻塞 blocked state  </li>
+<li>三种基本状态的转换</li>
+</ul>
+</li>
+</ul>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240611092655834.png" alt="image-20240611092655834"> </p>
+<ul>
+<li>其他状态<ul>
+<li>New state</li>
+<li>Exit state</li>
+</ul>
+</li>
+<li>挂起<ul>
+<li>阻塞挂起状态</li>
+<li>就绪挂起状态</li>
+</ul>
+</li>
+</ul>
+ <img src="E:\DeskTable\博客学习截图传输\image-20240610172240806.png" alt="image-20240610172240806" style="zoom:50%;" /> 
+
+<h2 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h2><p>与进程相关的信息使用一种数据结构<strong>PCB(Process Control Block)<strong>当中，即进程控制块。当一个进程被创建时，操作系统会为其创建相应的</strong>PCB</strong>，当进程结束时再回收其<strong>PCB</strong>。</p>
+<h2 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h2><p>一个进程内的执行顺序流</p>
+<h3 id="Thread-和-process-的异同"><a href="#Thread-和-process-的异同" class="headerlink" title="Thread 和 process 的异同"></a>Thread 和 process 的异同</h3><h4 id="不同："><a href="#不同：" class="headerlink" title="不同："></a>不同：</h4><ul>
+<li><strong>资源分配角度</strong>： <ul>
+<li>进程是资源分配的基本单位,所有与该进程有关的资源分配情况均记录在进程控制块PCB中,进程也是分配主存的基本单位,它拥有一个完整的虚拟地址空间。</li>
+<li>而线程与<strong>资源分配无关</strong>,它属于某一个进程,并与该进程内的<strong>其它线程一起共享</strong>进程的资源。</li>
+</ul>
+</li>
+<li><strong>地址空间</strong>：<ul>
+<li>不同的进程拥有不同的虚拟地址空间,</li>
+<li>而同一进程中的多个线程共享同一地址空间。</li>
+</ul>
+</li>
+<li><strong>进程间切换和线程间切换开销不同</strong>：<ul>
+<li>进程调度的切换将涉及到有关资源指针的保存及进程地址空间的转换等问题。</li>
+<li>而线程的切换将不涉及资源指针的保存和地址空间的变化。</li>
+<li>线程切换的开销要比进程切换的开销小得多。</li>
+</ul>
+</li>
+<li><strong>调度者的不同</strong>：<ul>
+<li>进程的调度与切换都是由操作系统内核完成</li>
+<li>而线程则既可由操作系统内核完成,也可由用户程序进行。</li>
+</ul>
+</li>
+</ul>
+<h4 id="相同"><a href="#相同" class="headerlink" title="相同"></a>相同</h4><ul>
+<li><strong>都具有创建的功能：</strong>进程可以动态创建进程。被进程创建的线程也可以创建其它线程。</li>
+<li><strong>有相似的生命周期：</strong>进程有创建、执行、消亡的生命周期。线程也有类似的生命周期。</li>
+</ul>
+<h3 id="线程的实现-implementation"><a href="#线程的实现-implementation" class="headerlink" title="线程的实现 implementation"></a>线程的实现 implementation</h3><p><strong>三种实现方式：</strong></p>
+<ul>
+<li><strong>用户级：</strong><ul>
+<li>线程完全处于用户空间中，内核不知道有该线程存在</li>
+<li>用户级线程管理由用户级线程库完成</li>
+<li>高效：线程切换<strong>不需要内核权限</strong>，用户级线程<strong>创建和管理速度快</strong>。</li>
+<li>问题：如果内核是单线程的，那么任何执行阻塞系统调用的用户级线程都将导致整个进程阻塞。</li>
+</ul>
+</li>
+<li>内核级<ul>
+<li>内核支持:内核在内核空间中执行线程创建、调度和管理。</li>
+<li>没有线程库，内核提供API</li>
+<li>内核维护进程和线程的上下文</li>
+<li>线程切换需要内核</li>
+<li>线程是Scheduler的基本单位。</li>
+<li>缺点是：资源花销太大</li>
+</ul>
+</li>
+<li>混合实现</li>
+</ul>
+<h2 id="进程间通信-IPC"><a href="#进程间通信-IPC" class="headerlink" title="进程间通信 IPC"></a>进程间通信 IPC</h2><h3 id="进程同步和互斥"><a href="#进程同步和互斥" class="headerlink" title="进程同步和互斥"></a>进程同步和互斥</h3><p>对多个相关进程在执行次序上的协调,用于保证这种关系的相应机制称为进程同步。</p>
+<p>相互合作的一组并发进程在一些关键点上可能需要互相等待与互通消息,相互制约的等待与互通消息称为进程同步。</p>
+<ul>
+<li><p>进程间竞争 race：</p>
+<ul>
+<li>防止竞争的出现关键在于禁止多个进程同时读写共享数据。</li>
+</ul>
+</li>
+<li><p>互斥 Mutual exclusion：确保一个进程使用某共享资源时，其他进程无法访问这个变量</p>
+</li>
+</ul>
+<h3 id="临界资源和临界区"><a href="#临界资源和临界区" class="headerlink" title="临界资源和临界区"></a>临界资源和临界区</h3><ul>
+<li><strong>临界资源：</strong>一次仅允许一个进程访问的资源称之为临界资源</li>
+</ul>
+<h3 id="临界区"><a href="#临界区" class="headerlink" title="临界区"></a>临界区</h3><p><strong>临界区：</strong>程序中访问临界资源的部分称为临界区域或临界段</p>
+<p><strong>临界区四个性质要求：</strong></p>
+<ol>
+<li><strong>没有两个进程同时</strong>处于临界区域</li>
+<li>没有对cpu的速度或数量做任何假设</li>
+<li>任何在<strong>临界区域外运行的进程</strong>都<strong>不能阻塞</strong>另一个进程</li>
+<li>没有进程必须<strong>永远等待</strong>才能进入其临界区域</li>
+</ol>
+<h3 id="实现互斥"><a href="#实现互斥" class="headerlink" title="实现互斥"></a>实现互斥</h3><h4 id="禁用中断"><a href="#禁用中断" class="headerlink" title="禁用中断"></a>禁用中断</h4><ul>
+<li>在进入临界区后禁用所有中断，并在离开临界区之前重新启用它们。</li>
+<li>禁用中断后，不会发生时钟中断，因为CPU只有在时钟中断时才可以进行进程的切换，禁用后就不会发生切换了。</li>
+</ul>
+<h4 id="锁变量：使用一个简单的锁变量来表示临界区是否被占用。"><a href="#锁变量：使用一个简单的锁变量来表示临界区是否被占用。" class="headerlink" title="锁变量：使用一个简单的锁变量来表示临界区是否被占用。"></a>锁变量：使用一个简单的锁变量来表示临界区是否被占用。</h4><ol>
+<li><p>两个(或更多)进程可以同时进入它们的临界区。这可能违反性质1。</p>
+</li>
+<li><p><img src="E:\DeskTable\博客学习截图传输\image-20240619221903004.png" alt="image-20240619221903004"> </p>
+<p>这些执行序列需要是原子的。原子性意味着代码在执行期间不能被中断。</p>
+</li>
+</ol>
+<ul>
+<li>进程在进入临界区之前检查该变量：</li>
+<li>如果它没有被锁定，则设置它为锁定状态并进入临界区；</li>
+<li>如果被锁定，则等待。该方法存在忙等待问题，并且容易出现竞争条件。</li>
+</ul>
+<h4 id="严格的轮换法："><a href="#严格的轮换法：" class="headerlink" title="严格的轮换法："></a>严格的轮换法：</h4><p>用于两个进程之间的互斥。进程交替进入临界区。一个进程完成后设置一个标志，允许另一个进程进入临界区。</p>
+<ul>
+<li><p>缺点是会导致不必要的等待，即使一个进程不需要进入临界区，另一个进程也必须等待。</p>
+</li>
+<li><p>这个方法可能违反性质3——任何在<strong>临界区域外的进程不能</strong>阻塞另一个进程</p>
+<p>由于进程必须严格交替进入它们的临界区，因此想要连续两次进入其临界区的进程将被阻塞，直到另一个进程决定进入(和离开)其临界区。</p>
+</li>
+</ul>
+<h4 id="Peterson算法："><a href="#Peterson算法：" class="headerlink" title="Peterson算法："></a>Peterson算法：</h4><p><img src="E:\DeskTable\博客学习截图传输\image-20240619222146871.png" alt="image-20240619222146871"> </p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240619222634630.png" alt="image-20240619222634630"> </p>
+<p>互斥：</p>
+<p>当且仅当其他进程不希望进入临界区；</p>
+<p>当且仅当其他进程想要进入，但轮到你；</p>
+<p>一个进程可以两次进入它的临界区。</p>
+<p>在临界区域外运行的进程不能阻塞另一个进程。</p>
+<h4 id="Test-and-Set-Lock-TSL-："><a href="#Test-and-Set-Lock-TSL-：" class="headerlink" title="Test-and-Set Lock (TSL)："></a>Test-and-Set Lock (TSL)：</h4><ul>
+<li><p>硬件必须支持一个特殊的指令，tsl，它在一个原子动作中做两件事:<br>TSL register，flag</p>
+<ul>
+<li>copy a value in memory (flag) to a CPU register</li>
+<li>set flag to 1.</li>
+</ul>
+</li>
+<li><pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// 伪代码</span>
+boolean lock <span class="token operator">=</span> false<span class="token punctuation">;</span>
+
+boolean <span class="token function">TestAndSet</span><span class="token punctuation">(</span>boolean <span class="token operator">*</span>target<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    boolean rv <span class="token operator">=</span> <span class="token operator">*</span>target<span class="token punctuation">;</span>
+    <span class="token operator">*</span>target <span class="token operator">=</span> true<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> rv<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>true<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">TestAndSet</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>lock<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">critical_section</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    lock <span class="token operator">=</span> false<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="Sleep-and-Wakeup："><a href="#Sleep-and-Wakeup：" class="headerlink" title="Sleep and Wakeup："></a>Sleep and Wakeup：</h4><p>当一个进程不能进入临界区时，它会进入sleep状态（其实就是blocked），直到另一个进程唤醒wake up它。该方法避免了忙等待问题。</p>
+<h4 id="互斥导致的忙等待："><a href="#互斥导致的忙等待：" class="headerlink" title="互斥导致的忙等待："></a>互斥导致的忙等待：</h4><ol>
+<li>Peterson算法 和 TSL方法 会造成忙等待，即执行入口代码的进程会一直处于一个紧循环的状态，消耗CPU周期，一般般测试某些条件是否成立，直到为真</li>
+<li>如果使用简单的优先级调度来调度进程，着忙等待会导致优先级反转的问题</li>
+</ol>
+<h2 id="信号量和PV操作"><a href="#信号量和PV操作" class="headerlink" title="信号量和PV操作"></a>信号量和PV操作</h2><p>信号量的作用：</p>
+<ol>
+<li>互斥访问临界资源</li>
+<li>处理同步问题</li>
+</ol>
+<p>信号量的值包括：</p>
+<ul>
+<li>0 表示没有保存唤醒</li>
+<li>正值:一个或多个唤醒正在等待中</li>
+</ul>
+<p>信号量是一个结构体变量，变量属性包括：</p>
+<ul>
+<li>COUNT：整型变量<ul>
+<li>初始值表示资源的数量</li>
+<li>当S.count&lt;0后，count的绝对值等于等待资源的进程数；</li>
+<li>计数信号量：0…N（初始化为N）</li>
+<li>二元信号量：0,1（初始化为1）</li>
+</ul>
+</li>
+<li>Q：存放被阻塞进程PID的queue</li>
+</ul>
+<p>对于信号量的两种操作 P 和 V</p>
+<p>信号量的操作具有原子性</p>
+<ul>
+<li><p>P &#x2F;wait &#x2F;down ：用来获取资源且count自减</p>
+<ul>
+<li><pre class=" language-c"><code class="language-c"><span class="token function">P</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    S<span class="token punctuation">.</span>count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>S<span class="token punctuation">.</span>count<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">block</span><span class="token punctuation">(</span>P<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>V &#x2F;signal &#x2F;up ：用来释放资源且count自增</p>
+<ul>
+<li><pre><code>v(s):
+    S.count++
+    if(S.count&lt;=0)&#123;
+        wakeup(P) for some process P in S.Q;
+    &#125;
+</code></pre>
+</li>
+<li><p>等于0的目的是，在count&#x3D;&#x3D;-1时，我们是先自增，在进行释放，所以需要让count等于0时仍释放资源；</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="二元信号量"><a href="#二元信号量" class="headerlink" title="二元信号量"></a>二元信号量</h3><p>一种最简单的信号量</p>
+<p>Mutex被用于互斥，一个变量具有两种状态：Lock 和Unlock</p>
+<ul>
+<li>二元信号量初始值为1</li>
+<li>在访问临界区之前进行 P 操作</li>
+<li>在访问临界区之后进行 V 操作</li>
+</ul>
+<p>对于N个并行进程来说：互斥信号量的取值范围是：1 ~ 1-N</p>
+<h3 id="生产者消费者问题"><a href="#生产者消费者问题" class="headerlink" title="生产者消费者问题"></a>生产者消费者问题</h3><p><img src="E:\DeskTable\博客学习截图传输\image-20240611105623704.png" alt="image-20240611105623704"> </p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240611105632543.png" alt="image-20240611105632543" style="zoom: 80%;" />  
+
+<p>当缓冲区大小大于1时，必须专门设置一个互斥信号量来保证互斥访问缓冲区</p>
+<p>当缓冲区大小为1时，有可能不需要设置互斥信号量就可以互斥访问缓冲区</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240611105032126.png" alt="image-20240611105032126" style="zoom: 50%;" /> 
+
+<pre><code>设置汽车启动与否信号量 start=0
+
+设置售票员开关门信号量 open=0
+
+P(start)
+ 启动车辆
+ 正常行驶
+ 到站停车
+V(open)
+
+关门
+V(start)
+售票
+P(open)
+开门
+</code></pre>
+<h3 id="哲学家问题"><a href="#哲学家问题" class="headerlink" title="哲学家问题"></a>哲学家问题</h3><p><img src="E:\DeskTable\博客学习截图传输\image-20240611105756523.png" alt="image-20240611105756523"> </p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240611105809072.png" alt="image-20240611105809072"> </p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240619224401269.png" alt="image-20240619224401269"> </p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240619224341265.png" alt="image-20240619224341265"> </p>
+<h2 id="Reader-and-Writers-Problem"><a href="#Reader-and-Writers-Problem" class="headerlink" title="Reader and Writers Problem"></a>Reader and Writers Problem</h2><p><img src="E:\DeskTable\博客学习截图传输\image-20240611141105820.png" alt="image-20240611141105820"> </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">int</span> semaphore<span class="token punctuation">;</span>
+semaphore mutex <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+semaphore db <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> rs <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">reader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">down</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        rs<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>rs <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token function">down</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>db<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">up</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+        <span class="token function">reading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+        <span class="token function">down</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        rs<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>rs <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token function">up</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>db<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">up</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">writer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">down</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>db<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">wirting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">up</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>db<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="进程调度算法-Process-Scheduling-Algorithm"><a href="#进程调度算法-Process-Scheduling-Algorithm" class="headerlink" title="进程调度算法 Process Scheduling Algorithm"></a>进程调度算法 Process Scheduling Algorithm</h2><h3 id="批处理系统（Batch-Systems）"><a href="#批处理系统（Batch-Systems）" class="headerlink" title="批处理系统（Batch Systems）"></a>批处理系统（Batch Systems）</h3><h4 id="先来先服务（First-Come-First-Served-FCFS）FIFO："><a href="#先来先服务（First-Come-First-Served-FCFS）FIFO：" class="headerlink" title="先来先服务（First Come First Served, FCFS）FIFO："></a>先来先服务（First Come First Served, FCFS）FIFO：</h4><ul>
+<li><strong>特点</strong>：按到达顺序调度进程，第一个到达的进程先执行，直到完成。</li>
+<li><strong>优点</strong>：简单易实现，调度公平。</li>
+<li><strong>缺点</strong>：可能导致长时间等待，容易产生“<strong>Convoy Effect</strong>”护航效应：处理时间短的进程在长的进程后面（一组短进程被一个长进程阻塞）。</li>
+<li>平均等待时间：所有进程的等待时间相加再除以进程数量</li>
+</ul>
+<h4 id="最短作业优先（Shortest-Job-First-SJF）："><a href="#最短作业优先（Shortest-Job-First-SJF）：" class="headerlink" title="最短作业优先（Shortest Job First, SJF）："></a>最短作业优先（Shortest Job First, SJF）：</h4><ul>
+<li>需要提前知道运行时间</li>
+<li>No-Preemptive非抢占式：如果所有进程同时到达，则为最优；但是当所有进程并非同时到达时，则不一定是最优的</li>
+<li>Preemptive抢占式：则可以更优，因为不会有CPU的浪费。</li>
+<li><strong>特点</strong>：优先调度预计运行时间最短的进程，非抢占式。</li>
+<li><strong>优点</strong>：平均等待时间最短，有效提高系统吞吐量。</li>
+<li><strong>缺点</strong>：需要准确预测作业时间，可能导致“<strong>饥饿</strong>”问题（长作业得不到调度）。</li>
+</ul>
+<h3 id="交互式系统（Interactive-Systems）"><a href="#交互式系统（Interactive-Systems）" class="headerlink" title="交互式系统（Interactive Systems）"></a>交互式系统（Interactive Systems）</h3><h4 id="轮转调度（Round-Robin-RR）："><a href="#轮转调度（Round-Robin-RR）：" class="headerlink" title="轮转调度（Round Robin, RR）："></a>轮转调度（Round Robin, RR）：</h4><ul>
+<li><strong>特点</strong>：所有进程按时间片轮流执行，每个进程在每轮中最多执行一个时间片。</li>
+<li><strong>优点</strong>：简单，公平，适合时间片较短的交互式系统，响应时间较好。</li>
+<li><strong>缺点</strong>：时间片选择不当会影响性能，过短增加上下文切换开销，过长则响应变慢。</li>
+</ul>
+<h4 id="优先级调度（Priority-Scheduling）："><a href="#优先级调度（Priority-Scheduling）：" class="headerlink" title="优先级调度（Priority Scheduling）："></a>优先级调度（Priority Scheduling）：</h4><ul>
+<li><strong>特点</strong>：根据进程的优先级调度，优先级高的进程先执行，可以是抢占式或非抢占式。</li>
+<li><strong>优点</strong>：能保证高优先级的关键任务及时处理。</li>
+<li><strong>缺点</strong>：可能导致低优先级进程“<strong>饥饿</strong>”，需要引入老化机制防止饥饿。</li>
+<li><strong>优先级设置依据</strong>:<ul>
+<li>进程的开销 Cost to user</li>
+<li>进程的重要性 Importance of user</li>
+<li>进程的类型 Process type</li>
+<li>对资源的要求 Requirement to resource</li>
+<li>Aging</li>
+<li>最近的CPU使用时间比例 Percentage of CPU time used in last X hours.</li>
+</ul>
+</li>
+</ul>
+<h4 id="多队列调度"><a href="#多队列调度" class="headerlink" title="多队列调度"></a>多队列调度</h4><p>通过设置优先级和时间片不同的队列，并事先将进程进行优先级分类，进程进入相应的优先级队列中进行调度。</p>
+<h4 id="多级反馈队列调度（Multi-Queue-Multi-level-Feedback-Queue）："><a href="#多级反馈队列调度（Multi-Queue-Multi-level-Feedback-Queue）：" class="headerlink" title="多级反馈队列调度（Multi Queue &amp; Multi-level Feedback Queue）："></a>多级反馈队列调度（Multi Queue &amp; Multi-level Feedback Queue）：</h4><ul>
+<li>优先级和轮循的混合</li>
+<li><strong>特点</strong>：将进程按优先级或特性分配到不同队列，每个队列使用不同的调度策略。多级反馈队列允许进程在不同队列间移动，以动态调整优先级。</li>
+<li>优先级从高到低为：第一级、第二级、第三级、…</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20240611160619733.png" alt="image-20240611160619733" style="zoom:80%;" /> </li>
+<li>当低级的队列正在执行时，如果此时高级的队列来了进程，高级队列内的进程进行抢占，先执行完高优先级队列中的进程再重新执行低优先级的队列中的进程，同时被抢占的处于低优先级的队列的进程重新放回队列的队首。在最低级队列仍然没有消耗完所需运行时间，则重新回到最低级的队列重新再分配时间片</li>
+<li>第一级队列：FIFO原则<ul>
+<li>分配第一级队列的时间片，用完后</li>
+<li>如果完成着完成</li>
+<li>如果没有完成着进入下一级队列的队尾</li>
+</ul>
+</li>
+<li>第二级队列：<ul>
+<li>执行队列内的进程</li>
+</ul>
+</li>
+<li>第三级队列：</li>
+<li><strong>优点</strong>：灵活，适应性强，能平衡短进程响应和长进程的公平性。</li>
+<li><strong>缺点</strong>：复杂度高，实现困难，需要精心调整参数。</li>
+</ul>
+<h4 id="保证调度（Guaranteed-Scheduling）："><a href="#保证调度（Guaranteed-Scheduling）：" class="headerlink" title="保证调度（Guaranteed Scheduling）："></a>保证调度（Guaranteed Scheduling）：</h4><ul>
+<li><strong>特点</strong>：确保所有进程在一段时间内得到一定比例的CPU时间，通常使用比例分配算法。</li>
+<li><strong>优点</strong>：公平，避免饥饿现象。</li>
+<li><strong>缺点</strong>：实现复杂，需精确控制资源分配。</li>
+</ul>
+<h4 id="彩票调度（Lottery-Scheduling）："><a href="#彩票调度（Lottery-Scheduling）：" class="headerlink" title="彩票调度（Lottery Scheduling）："></a>彩票调度（Lottery Scheduling）：</h4><ul>
+<li><strong>特点</strong>：给每个进程分配一定数量的“彩票”，调度时随机抽取一张彩票，拥有该彩票的进程获得CPU时间。</li>
+<li><strong>优点</strong>：灵活性高，容易实现公平性和资源分配的动态调整。</li>
+<li><strong>缺点</strong>：不确定性，可能导致短期内调度不均衡。</li>
+</ul>
+<h4 id="公平共享调度（Fair-Sharing-Scheduling）："><a href="#公平共享调度（Fair-Sharing-Scheduling）：" class="headerlink" title="公平共享调度（Fair Sharing Scheduling）："></a>公平共享调度（Fair Sharing Scheduling）：</h4><ul>
+<li><strong>特点</strong>：将CPU时间按用户或用户组公平分配，确保每个用户获得相同的资源份额。</li>
+<li><strong>优点</strong>：适合多用户系统，确保每个用户公平使用资源。</li>
+<li><strong>缺点</strong>：可能导致进程级别的调度不公平，复杂度较高。</li>
+</ul>
+<p>每种调度算法都有其适用的场景和局限性。选择合适的调度算法可以有效提高系统的性能和用户体验。批处理系统主要关注作业吞吐量和等待时间，而交互式系统更注重响应时间和用户体验。</p>
+<h1 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h1><h2 id="存储管理："><a href="#存储管理：" class="headerlink" title="存储管理："></a>存储管理：</h2><h3 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h3><p>The smaller the allocation unit, the larger the bitmap.</p>
+<p>使用0标识空闲的内存块，每当有新进程到达，寻找符合进程需求大小的连续0空间</p>
+<p>位图是一种简单的数组，每个元素对应内存中的一个固定大小的块（称为一个单位或块）。数组中的每个元素是一个位（bit），表示对应的内存块是否已分配。</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表中的每个节点表示一个hole(free segment)或者process(allocated segment)，包含该块的起始地址、大小以及指向下一个节点的指针。</p>
+<h2 id="存储放置策略"><a href="#存储放置策略" class="headerlink" title="存储放置策略"></a>存储放置策略</h2><h3 id="First-Fit"><a href="#First-Fit" class="headerlink" title="First Fit"></a>First Fit</h3><p>原理：找到的第一个满足请求要求的空闲块就进行分配</p>
+<p>问题：留下许多小的空闲块，导致碎片化问题</p>
+<h3 id="Next-Fit"><a href="#Next-Fit" class="headerlink" title="Next Fit"></a>Next Fit</h3><p>原理：每次从上一次分配结束的位置继续搜索空闲块，找到的第一个满足的即分配，而不是从头开始。</p>
+<p>问题：整体性能比First Fit略差，可能造成中间部分碎片化问题</p>
+<h3 id="Best-Fit"><a href="#Best-Fit" class="headerlink" title="Best Fit"></a>Best Fit</h3><p><strong>原理：</strong>遍历所有空闲块，找到满足要求大小的最小的空闲块进行分配</p>
+<p><strong>缺点：</strong>遍历空闲块耗费时间太多，开销太大；还是会可能出现碎片化问题，且可能产生许多小的不可用的碎片。</p>
+<h3 id="Worst-Fit"><a href="#Worst-Fit" class="headerlink" title="Worst Fit"></a>Worst Fit</h3><p><strong>原理：</strong>遍历所有空闲块，找到最大的空闲块进行分配</p>
+<p><strong>缺点：</strong>可能浪费了大的空闲块，降低了利用率</p>
+<h3 id="Quick-Fit"><a href="#Quick-Fit" class="headerlink" title="Quick Fit"></a>Quick Fit</h3><p><strong>原理</strong>：维护一些常见大小请求的单独空闲块列表，当有内存请求时，直接从相应的列表中分配内存块。</p>
+<p><strong>优点</strong>：分配速度非常快，因为直接从列表中获取空闲块。</p>
+<p><strong>缺点</strong>：当需要合并空闲块时，操作可能会比较复杂和耗时。</p>
+<h2 id="虚拟内存的实现"><a href="#虚拟内存的实现" class="headerlink" title="虚拟内存的实现"></a>虚拟内存的实现</h2><p>MMU负责将虚拟地址转化为物理地址</p>
+<h3 id="页式"><a href="#页式" class="headerlink" title="页式"></a>页式</h3><p>查页表将虚拟地址转换成物理地址</p>
+<p>最常见</p>
+<p>**MMU memory management unit:**将虚拟地址转换成物理地址</p>
+<p>操作系统维护一张由虚拟地址映射到物理地址的map表</p>
+<p>引用未映射的页面会导致CPU向操作系统发送trap——page fault</p>
+<p>页表 page table：虚拟地址和物理地址间的映射关系表</p>
+<p>virtual address分成：page number 和 page offset</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240612102741723.png" alt="image-20240612102741723"> </p>
+<p>page offset就是页内偏移量，即页的大小</p>
+<h4 id="页表一个项的组成"><a href="#页表一个项的组成" class="headerlink" title="页表一个项的组成"></a>页表一个项的组成</h4><p><img src="E:\DeskTable\博客学习截图传输\image-20240612103022865.png" alt="image-20240612103022865"> </p>
+<h4 id="TLB-Translation-Look-aside-Buffers"><a href="#TLB-Translation-Look-aside-Buffers" class="headerlink" title="TLB Translation Look-aside Buffers"></a>TLB Translation Look-aside Buffers</h4><p>存储在cache中的虚存表，用来查找</p>
+<p>TLB表结构</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240612115006473.png" alt="image-20240612115006473"> </p>
+<h4 id="多级页表"><a href="#多级页表" class="headerlink" title="多级页表"></a>多级页表</h4><p>稀疏的地址空间和更容易分页</p>
+<p>将一个32位逻辑地址分为：20bits的页号和12bits的页内offset</p>
+<p>其中再把20bits的页号进一步分为10bits的页号和10bits的页偏移量</p>
+<p>由于每个级别都存储在内存中的单独表中，因此在四级分页中将逻辑地址转换为物理地址可能需要进行五次内存访问。</p>
+<p>优点：</p>
+<ul>
+<li>缩减页表大小</li>
+<li>可以不把不需要的页表放在内存中</li>
+</ul>
+<h4 id="倒页表-Inverted-Page-Tables"><a href="#倒页表-Inverted-Page-Tables" class="headerlink" title="倒页表 Inverted Page Tables"></a>倒页表 Inverted Page Tables</h4><p><strong>原理：</strong> </p>
+<ul>
+<li><p>一个PTE对应一个物理页；</p>
+</li>
+<li><p>物理页码用作表的索引；</p>
+</li>
+<li><p>哈希(Vpage, pid)到page#</p>
+</li>
+</ul>
+<p><strong>优点：</strong> </p>
+<ul>
+<li>小页表的大地址空间</li>
+</ul>
+<p><strong>缺点:</strong> </p>
+<ul>
+<li><p>查找很困难</p>
+</li>
+<li><p>管理哈希链的开销等</p>
+</li>
+</ul>
+<h3 id="段式"><a href="#段式" class="headerlink" title="段式"></a>段式</h3><h3 id="段页式"><a href="#段页式" class="headerlink" title="段页式"></a>段页式</h3><h3 id="获取策略"><a href="#获取策略" class="headerlink" title="获取策略"></a>获取策略</h3><h2 id="页表存在的问题"><a href="#页表存在的问题" class="headerlink" title="页表存在的问题"></a>页表存在的问题</h2><h3 id="使用单个页表使用一组寄存器来组成："><a href="#使用单个页表使用一组寄存器来组成：" class="headerlink" title="使用单个页表使用一组寄存器来组成："></a>使用单个页表使用一组寄存器来组成：</h3><ol>
+<li>优点：简单易实现</li>
+<li>缺点：<ol>
+<li>如果页表很大，则十分昂贵</li>
+<li>并且要每次切换页表都需要载入整个页表，性能差</li>
+</ol>
+</li>
+</ol>
+<h3 id="将页表放在内存——只用一个寄存器指针指向这个页表"><a href="#将页表放在内存——只用一个寄存器指针指向这个页表" class="headerlink" title="将页表放在内存——只用一个寄存器指针指向这个页表"></a>将页表放在内存——只用一个寄存器指针指向这个页表</h3><ol>
+<li>优点：易于切换，开销小</li>
+<li>读取表项时会有一个或多个内存引用</li>
+</ol>
+<h2 id="TLB-Translation-Look-aside-Buffers-Associative-Memory"><a href="#TLB-Translation-Look-aside-Buffers-Associative-Memory" class="headerlink" title="TLB Translation Look-aside Buffers&#x2F;Associative Memory"></a>TLB Translation Look-aside Buffers&#x2F;Associative Memory</h2><p><img src="E:\DeskTable\博客学习截图传输\image-20240619233109821.png" alt="image-20240619233109821"> </p>
+<p>有效位，虚拟页号，修改位（脏位），保护位，物理页框</p>
+<p>TLB中每一个项是PTE page table entry</p>
+<p>TLB失效：在TLB中找不到需要的PTE或有效位为0</p>
+<p>则：载入页项进入TLB，软件执行页错误处理方法，重启CPU等待重新取页</p>
+<h2 id="多级页表-1"><a href="#多级页表-1" class="headerlink" title="多级页表"></a>多级页表</h2><p>好处：</p>
+<ol>
+<li>减小表的大小。</li>
+<li>不在内存中保留不需要的页表</li>
+</ol>
+<h2 id="页置换算法"><a href="#页置换算法" class="headerlink" title="页置换算法"></a>页置换算法</h2><p>目标：降低页错误率；减少页错误的延迟</p>
+<p>流程：</p>
+<ol>
+<li><p>Find location of page on disk<br>查找页在磁盘上的位置</p>
+</li>
+<li><p>Find a free page frame<br>在内存寻找一个空闲页</p>
+<ol>
+<li>If there is a free page frame then use it<br>如果找到了直接将新的页加载进去即可</li>
+<li>Otherwise, select a victim frame using the page replacement algorithm<br>如果没有，使用页置换算法去选择一个页框进行替换</li>
+</ol>
+</li>
+<li><p>Write the selected page to the disk if necessary and update any necessary tables<br>如果有需要，还要将被替换的页写入disk，更新一些必要的表项</p>
+</li>
+<li><p>Read the requested page from the disk.<br>从disk读取请求的页</p>
+</li>
+<li><p>Restart the user process.</p>
+<p>重新启动用户进程。</p>
+</li>
+</ol>
+<h3 id="算法："><a href="#算法：" class="headerlink" title="算法："></a>算法：</h3><h4 id="最优算法-不可能实现-The-Optimal-Algorithm-OPT-or-MIN"><a href="#最优算法-不可能实现-The-Optimal-Algorithm-OPT-or-MIN" class="headerlink" title="最优算法-不可能实现 The Optimal Algorithm (OPT or MIN)"></a>最优算法-不可能实现 The Optimal Algorithm (OPT or MIN)</h4><p>Replace the page that will not be used again the farthest time in the future.<br>替换将来最远时间内不会再次使用的页面。</p>
+<p>该算法不可能实现，因为无法知道未来的页的引用情况；</p>
+<h4 id="FIFO-First-in-First-Out-Algorithm"><a href="#FIFO-First-in-First-Out-Algorithm" class="headerlink" title="FIFO (First-in First-Out) Algorithm"></a>FIFO (First-in First-Out) Algorithm</h4><p>Replace the page that has been in primary memory the longest<br>替换在主内存中存在时间最长的页</p>
+<p>被引用的页进入一个队列当中，当队列满了以后，每当来一个新的页，则队头出列，新的页进入队尾</p>
+<p><strong>优点</strong>：易于实现</p>
+<p><strong>缺点</strong>：在内存中存在时间最长（但是可能最常被使用）的页可能被替换</p>
+<p><strong>Belady现象</strong> ：只出现在 FIFO 当中</p>
+<p>随着页框的增多，page fault 反而会增加，算法的性能会下降</p>
+<h4 id="Second-Chance-Algorithm：对FIFO进行修正"><a href="#Second-Chance-Algorithm：对FIFO进行修正" class="headerlink" title="Second Chance Algorithm：对FIFO进行修正"></a>Second Chance Algorithm：对FIFO进行修正</h4><p>Variant of FIFO<br>FIFO的变体</p>
+<p><strong>引入 R bit</strong>：如果 R &#x3D; 0，将页置换；如果 R &#x3D; 1，将 R 置零，而后将页放在队尾，相当于这个页是重新被载入到页queue当中</p>
+<p><strong>优点</strong>：改善了FIFO的性能，减少了不必要的页面替换。</p>
+<p><strong>缺点</strong>：实现较复杂，需要额外的硬件支持。</p>
+<h4 id="Clock-Algorithm"><a href="#Clock-Algorithm" class="headerlink" title="Clock Algorithm"></a>Clock Algorithm</h4><p>Better implementation of second chance<br>更好地实施 第二次机会算法</p>
+<p><strong>原理</strong>：</p>
+<p>时钟算法的核心思想是通过一个循环队列和指针来模拟时钟指针的移动，从而管理页面的替换。每个页面都有一个使用位（Use Bit）：</p>
+<ol>
+<li><strong>使用位为1</strong>：表示该页面最近被访问过，给予它第二次机会。</li>
+<li><strong>使用位为0</strong>：表示该页面没有被访问过，优先考虑替换该页面。</li>
+</ol>
+<p><strong>操作步骤</strong>：</p>
+<ol>
+<li>页面被访问时，其使用位置1。</li>
+<li>当需要替换页面时，操作系统检查指针所指向的页面：<ul>
+<li>如果使用位为0，替换该页面。</li>
+<li>如果使用位为1，清零使用位并将指针移动到下一个页面，然后继续检查。</li>
+</ul>
+</li>
+<li>重复上述过程，直到找到一个使用位为0的页面并进行替换。</li>
+</ol>
+<h4 id="NRU-Not-Recently-Used-Algorithm"><a href="#NRU-Not-Recently-Used-Algorithm" class="headerlink" title="NRU (Not Recently Used) Algorithm"></a>NRU (Not Recently Used) Algorithm</h4><p>Enhanced second chance<br>增加第二次机会</p>
+<p>周期性地(在每个时钟间隔(20msec))清除R位。(即R &#x3D; 0)。</p>
+<ol>
+<li><strong>Class 0</strong>：使用位为0，修改位为0。</li>
+<li><strong>Class 1</strong>：使用位为0，修改位为1。</li>
+<li><strong>Class 2</strong>：使用位为1，修改位为0。</li>
+<li><strong>Class 3</strong>：使用位为1，修改位为1。</li>
+</ol>
+<p>在进行页面替换时，NRU算法优先淘汰属于 Class 0的页面，然后是 Class 1、Class 2和最后是 Class 3。目的是尽量保留长时间没有被使用且没有被修改过的页面，减少对经常使用或被修改的页面的替换频率。</p>
+<p><strong>操作步骤</strong>：</p>
+<ol>
+<li><p><strong>初始化</strong>：将所有页面的使用位和修改位清零。</p>
+</li>
+<li><p><strong>页面访问</strong>：当页面被访问时，设置其使用位为1。</p>
+</li>
+<li><p><strong>页面修改</strong>：当页面被修改时，设置其修改位为1。</p>
+</li>
+<li><p><strong>页面替换</strong>：当需要替换页面时，按照Class的优先级进行替换：</p>
+<ul>
+<li>首先替换Class 0中的页面。</li>
+<li>如果Class 0没有页面，则替换Class 1中的页面。</li>
+<li>如果Class 1没有页面，则替换Class 2中的页面。</li>
+<li>如果Class 2没有页面，则替换Class 3中的页面。</li>
+</ul>
+</li>
+</ol>
+<h4 id="LRU-Least-Recently-Used-Algorithm"><a href="#LRU-Least-Recently-Used-Algorithm" class="headerlink" title="LRU (Least Recently Used) Algorithm"></a>LRU (Least Recently Used) Algorithm</h4><p>Replace the page that has not been used for the longest time<br>替换最长时间没有被使用的页</p>
+<p>优先淘汰最长时间没有被访问过的页面，以此来减少页面错误率。</p>
+<p>LRU算法维护一个页面访问顺序的队列，每当页面被访问时，将该页面移动到队列的末尾。当需要替换页面时，选择队列头部的页面进行替换，即替换最久未被访问的页面。</p>
+<p><strong>操作步骤</strong>：</p>
+<ol>
+<li><strong>页面访问</strong>：当页面被访问时，将该页面移动到队列的末尾。</li>
+<li><strong>页面替换</strong>：当需要替换页面时，选择队列头部的页面进行替换，即替换最久未被访问的页面。</li>
+</ol>
+<p>LRU算法的实现可以通过以下几种方式来完成：</p>
+<ul>
+<li><strong>使用链表</strong>：维护一个双向链表，链表中的节点表示页框，每当页面被访问，将其移动到链表的末尾。当需要替换页面时，选择链表头部的节点进行替换。</li>
+<li><strong>使用散列表和堆</strong>：利用散列表存储页框和其在队列中的位置信息，利用最小堆（Min-Heap）来维护页面的访问顺序。每次页面被访问时，更新其在堆中的位置，需要替换页面时，选择堆顶的页面进行替换。</li>
+</ul>
+<p>硬件方案二:</p>
+<p>对于有 n 个页面帧的机器，保持 n x n 位的矩阵。</p>
+<p>当页面帧K被引用时：</p>
+<ol>
+<li>将第K行设置为全1。</li>
+<li>设K列全为0。</li>
+<li>二进制值最小的行就是LRU页面。</li>
+</ol>
+<h4 id="NFU-Not-Frequently-Used-Algorithm"><a href="#NFU-Not-Frequently-Used-Algorithm" class="headerlink" title="NFU (Not Frequently Used) Algorithm"></a>NFU (Not Frequently Used) Algorithm</h4><p>Replace the page that is used least often, simulated LRU<br>替换使用频率最少的页，模拟LRU</p>
+<p>在每个时钟中断时，R位被添加到与每个页面相关的计数器中。</p>
+<ul>
+<li>当发生页错误时，将替换具有最低计数器的页。</li>
+<li>问题:NFU永远不会忘记，所以很久以前引用的页面频率可能有最高的计数器。</li>
+</ul>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240615110322734.png" alt="image-20240615110322734"> </p>
+<h4 id="Aging-Algorithm"><a href="#Aging-Algorithm" class="headerlink" title="Aging Algorithm"></a>Aging Algorithm</h4><p>Modified NFU</p>
+<p>老化算法，模拟NFU</p>
+<h4 id="Working-Set-Algorithm"><a href="#Working-Set-Algorithm" class="headerlink" title="Working Set Algorithm"></a>Working Set Algorithm</h4><p>Keep in memory those pages that the process is actively using</p>
+<p>当出现 page fault 时，查找不在工作集中的页并将其排除。</p>
+<p>为每一个页都维护一个上一次调用时间 LTU 和一个 R 位，R位 Reference bit 用来表示页面的访问状态，即页面是否被访问过。</p>
+<p><strong>访问页面时</strong>：</p>
+<ul>
+<li>如果页面被访问，更新页面的 LTU（设置为当前时间）和 R 位（设置为1）。</li>
+<li>如果页面没有被访问，只更新 R 位为1。</li>
+</ul>
+<p><strong>周期性更新</strong>：</p>
+<ul>
+<li>定期检查所有页面的 R 位。</li>
+<li>如果页面的 R 位为1，表示页面在最近的一段时间内被访问过，可以保留在当前工作集中，重置 R 位为0。</li>
+<li>如果页面的 R 位为0，表示页面较长时间未被访问，可能不属于当前工作集，可以考虑置换出去。</li>
+</ul>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615112652039.png" alt="image-20240615112652039" style="zoom:80%;" />  
+
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240615132707682.png" alt="image-20240615132707682"> </p>
+<h4 id="WS-Clock-Algorithm"><a href="#WS-Clock-Algorithm" class="headerlink" title="WS Clock Algorithm"></a>WS Clock Algorithm</h4><p>The modified working set algorithm based on clock algorithm</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240615133923108.png" alt="image-20240615133923108"> </p>
+<h2 id="页大小"><a href="#页大小" class="headerlink" title="页大小"></a>页大小</h2><h3 id="Small-page-size"><a href="#Small-page-size" class="headerlink" title="Small page size"></a>Small page size</h3><h4 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages"></a>Advantages</h4><ul>
+<li><p>less internal fragmentation<br>更少的内部碎片</p>
+</li>
+<li><p>less unused program in memory<br>减少内存中未使用的程序</p>
+</li>
+</ul>
+<h4 id="Disadvantages"><a href="#Disadvantages" class="headerlink" title="Disadvantages"></a>Disadvantages</h4><ul>
+<li>programs need many pages, larger page tables<br>一个程序需要很多个页，页表太大</li>
+</ul>
+<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><h2 id="文件访问"><a href="#文件访问" class="headerlink" title="文件访问"></a>文件访问</h2><h3 id="顺序访问"><a href="#顺序访问" class="headerlink" title="顺序访问"></a>顺序访问</h3><ul>
+<li>从头开始读取</li>
+<li>不能跳转，可以倒带或后退</li>
+<li>当介质是磁带时很方便</li>
+</ul>
+<p>顺序访问是一种按照顺序逐个访问文件内容的方式。从文件的开头开始，依次读取或写入数据，直到文件末尾。这种访问方式通常适用于文本文件或者需要按照顺序处理数据的场景。</p>
+<h3 id="随机访问"><a href="#随机访问" class="headerlink" title="随机访问"></a>随机访问</h3><ul>
+<li>可以从任意位置开始读取</li>
+<li>Two methods are used for specifying where to start reading.<ul>
+<li>read and then move file marker</li>
+<li>move file marker (seek), then read (UNIX, Windows)</li>
+</ul>
+</li>
+</ul>
+<p>随机访问允许程序员以任意顺序访问文件中的数据。这意味着可以跳转到文件中的任何位置读取或写入数据，而不必按照顺序逐步读取。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>用于组织和管理文件的一种结构。目录中可以包含文件和其他目录。</p>
+<ol>
+<li>文件系统有目录或文件夹来跟踪文件。</li>
+<li>目录是包含文件名和文件位置之间对应关系的文件</li>
+<li>目录项包含有关文件的信息，即它的属性</li>
+<li>目录项在创建它们所描述的文件时创建，在删除文件时删除</li>
+</ol>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>一级目录：root拥有所有的文件</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615141108351.png" alt="image-20240615141108351" style="zoom:50%;" /> 
+
+<p>二级目录：有一个root目录和一个user目录</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615141139500.png" alt="image-20240615141139500" style="zoom:67%;" /> 
+
+<p>多级目录：有一个root目录和任意数量的子目录</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615141333276.png" alt="image-20240615141333276" style="zoom:50%;" /> 
+
+<p>在文件目录树中，叶子节点是文件</p>
+<p>文件系统定义块大小</p>
+<ol>
+<li><p>块大小&#x3D; 2 *扇区大小</p>
+</li>
+<li><p>连续的扇区被分配到一个块中</p>
+</li>
+</ol>
+<p>文件系统将磁盘视为一个块阵列</p>
+<ol>
+<li><p>必须为文件分配块吗</p>
+</li>
+<li><p>必须管理磁盘上的可用空间</p>
+</li>
+</ol>
+<h2 id="文件系统的实现"><a href="#文件系统的实现" class="headerlink" title="文件系统的实现"></a>文件系统的实现</h2><h3 id="连续分配"><a href="#连续分配" class="headerlink" title="连续分配"></a>连续分配</h3><p>将每个文件存储为连续的数据块</p>
+<p>目录中记录的是 文件的 start 和 length</p>
+<h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ul>
+<li>易于实现</li>
+<li>读能力的表现很好</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li>外部碎片问题：</li>
+</ul>
+<h4 id="外部碎片"><a href="#外部碎片" class="headerlink" title="外部碎片"></a>外部碎片</h4><p>是指内存或存储设备上零散的、不可利用的空闲空间。</p>
+<h4 id="内部碎片"><a href="#内部碎片" class="headerlink" title="内部碎片"></a>内部碎片</h4><p>已分配的内存或存储空间内部未被使用的空间。</p>
+<h3 id="链表分配"><a href="#链表分配" class="headerlink" title="链表分配"></a>链表分配</h3><p>将文件存储为磁盘块的链表，块可能分散在磁盘上的任何地方。</p>
+<p>每个块的第一个字被用作指向下一个的指针。</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615154514388.png" alt="image-20240615154514388" style="zoom: 80%;" /> 
+
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>没有外部碎片</li>
+<li>目录项简单（仅需要开始地址）</li>
+<li>文件可以增加，只要有足够的空闲的块</li>
+<li>有利于顺序访问</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>随机访问速度慢</li>
+<li>块中的数据量不是2的幂</li>
+</ul>
+<h4 id="FAT表"><a href="#FAT表" class="headerlink" title="FAT表"></a>FAT表</h4><p>从每个块中取出表指针word，并将它们放入索引表FAT(文件分配表)中。</p>
+<p>尽量将FAT表存放在内存中以缩短查询硬盘</p>
+<p>FAT表内存储的是下一个block的start地址：如文件某一项的start为217，则FAT表中217中存放的是下一个block的start地址：618，以此类推</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615163530220.png" alt="image-20240615163530220" style="zoom:67%;" /> 
+
+<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>对于数据来说整个快都是可利用的</li>
+<li>支持随机访问</li>
+<li>目录项仅需要一个数组</li>
+</ul>
+<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><p>整个FAR必须同时在内存中</p>
+<h3 id="Indexed-Allocation-I-Node"><a href="#Indexed-Allocation-I-Node" class="headerlink" title="Indexed Allocation I-Node"></a>Indexed Allocation I-Node</h3><p>将一个文件的所有块的指针集中到一个索引块当中，这个索引块相当于一个目录，存放文件的每一个块的首地址。</p>
+<p>目录像普通文件一样存储</p>
+<ul>
+<li><p>目录项包含在数据块中</p>
+</li>
+<li><p>目录文件是目录条目的列表</p>
+</li>
+</ul>
+<p>当文件被打开时，文件系统使用路径名来定位目录条目。</p>
+<p>目录项提供查找磁盘块所需的信息。</p>
+<ul>
+<li><p>连续分配：整个文件的磁盘地址(连续块)</p>
+</li>
+<li><p>链表分配：第一个区块的编号(链表)</p>
+</li>
+<li><p>i节点分配：i-node数量(i-node)</p>
+</li>
+</ul>
+<h2 id="目录的实现"><a href="#目录的实现" class="headerlink" title="目录的实现"></a>目录的实现</h2><p>在MS-DOS&#x2F;Windows中，使用连续分配的方式</p>
+<p>在Unix中，使用 i-node 的方式</p>
+<h3 id="长文件名的处理方式"><a href="#长文件名的处理方式" class="headerlink" title="长文件名的处理方式"></a>长文件名的处理方式</h3><ol>
+<li><p>固定长度</p>
+<ol>
+<li>通常为255chars</li>
+<li>简单</li>
+<li>浪费空间</li>
+</ol>
+</li>
+<li><p>目录项包括固定和可变部分</p>
+<ul>
+<li>固定部分以项长度 entry len 开始，然后是属性 attribute</li>
+<li>变量部分有文件名</li>
+<li>优缺：<ul>
+<li>节省空间</li>
+<li>当一个文件被删除时，一个可变大小的间隙被引入，下一个新进来的目录项可能没办法放入这个间隙里</li>
+<li>单个目录项可能跨越多个页面，因此在读取文件名时可能发生页面错误</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>目录项长度固定，有一个指针指向堆中的文件名，维护一个文件名堆</p>
+</li>
+</ol>
+<h3 id="How-to-search-files-in-each-directory"><a href="#How-to-search-files-in-each-directory" class="headerlink" title="How to search files in each directory?"></a>How to search files in each directory?</h3><ol>
+<li><p>Linearly：遍历目录项，直到找到目标文件或扫描完所有目录项后未找到</p>
+</li>
+<li><p>Hash table：</p>
+<ol>
+<li>使用哈希函数将文件名映射到目录中的位置</li>
+</ol>
+</li>
+<li><p>Cache the results of searches：用cache存储最近的搜索结果</p>
+</li>
+</ol>
+<h2 id="共享文件"><a href="#共享文件" class="headerlink" title="共享文件"></a>共享文件</h2><p>共享文件技术可以允许文件出现在多个目录中，目录和共享文件之间的连接称为链接</p>
+<p>这种文件系统是一个有向无环图</p>
+<h3 id="出现的问题："><a href="#出现的问题：" class="headerlink" title="出现的问题："></a>出现的问题：</h3><ol>
+<li>如果目录中包含磁盘地址，则当链接文件时，<strong>必须把 C 目录中的磁盘地址复制到 B 目录中</strong>。</li>
+<li>如果 B 或者 C 随后又向文件中添加内容，则<strong>仅在执行追加的用户的目录中显示新写入的数据块</strong>。这种变更将会对其他用户不可见，从而破坏了共享的目的。</li>
+</ol>
+<h3 id="解决措施："><a href="#解决措施：" class="headerlink" title="解决措施："></a>解决措施：</h3><h4 id="硬链接-hard-link"><a href="#硬链接-hard-link" class="headerlink" title="硬链接 hard link"></a>硬链接 hard link</h4><p>磁盘块地址不列入目录，而是把磁盘块放入一个小型数据结构（即inode）中。目录的目录项指向这个小型的数据结构</p>
+<p><strong>指向相同的 inode</strong>：硬链接是指向相同 inode 的多个目录条目。这意味着它们共享同一个文件数据块和属性（如权限、大小、修改时间等）。</p>
+<p><strong>文件内容共享</strong>：硬链接共享同一个文件内容。修改其中一个硬链接的内容，其他硬链接的内容也会相应改变。</p>
+<p><strong>存储在同一文件系统</strong>：硬链接只能在同一文件系统内创建，不能跨文件系统。</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615202621306.png" alt="image-20240615202621306" style="zoom:67%;" /> 
+
+<h4 id="软链接-soft-symbolic-link"><a href="#软链接-soft-symbolic-link" class="headerlink" title="软链接 soft&#x2F;symbolic link"></a>软链接 soft&#x2F;symbolic link</h4><p>一个目录的目录项指向文件的 i节点，</p>
+<p><strong>其他目录指向文件路径</strong>：软链接是一个独立的文件，包含指向另一个文件或目录的路径。它类似于快捷方式。</p>
+<p><strong>链接数不变</strong>：创建软链接不会改变源文件的链接计数，因为软链接是一个独立的文件。</p>
+<p><strong>可以跨文件系统</strong>：软链接可以跨越不同的文件系统创建。</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240615202608231.png" alt="image-20240615202608231" style="zoom:67%;" /> 
+
+
+
+<h3 id="对比总结"><a href="#对比总结" class="headerlink" title="对比总结"></a>对比总结</h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>硬链接 (Hard Link)</th>
+<th>软链接 (Soft Link)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>指向目标</td>
+<td>相同的 inode</td>
+<td>目标文件或目录的路径</td>
+</tr>
+<tr>
+<td>可链接对象</td>
+<td>文件</td>
+<td>文件和目录</td>
+</tr>
+<tr>
+<td>链接计数</td>
+<td>创建或删除硬链接会改变链接计数</td>
+<td>创建或删除软链接不会改变链接计数</td>
+</tr>
+<tr>
+<td>跨文件系统</td>
+<td>否，只能在同一文件系统内</td>
+<td>是，可以跨越不同的文件系统</td>
+</tr>
+<tr>
+<td>悬空链接</td>
+<td>无，文件内容总是可访问</td>
+<td>有，如果目标文件被删除，软链接会变成悬空链接</td>
+</tr>
+<tr>
+<td>文件内容共享</td>
+<td>是，所有硬链接共享相同的文件内容</td>
+<td>否，软链接只是一个指向目标文件的路径，修改软链接不影响目标文件</td>
+</tr>
+</tbody></table>
+<h2 id="磁盘空间管理"><a href="#磁盘空间管理" class="headerlink" title="磁盘空间管理"></a>磁盘空间管理</h2><h3 id="位图法和链表法"><a href="#位图法和链表法" class="headerlink" title="位图法和链表法"></a>位图法和链表法</h3><ol>
+<li>位图需要的空间较少</li>
+<li>只有当磁盘接近满时(即，只有很少的空闲块)，链表方案才会比位图方案需要更少的块</li>
+</ol>
+<p>我们可以保留第一个空闲块的地址和第一个块后面的空闲连续块的数目，而不是保留n个空闲磁盘地址的列表。</p>
+<h2 id="文件系统的可靠性"><a href="#文件系统的可靠性" class="headerlink" title="文件系统的可靠性"></a>文件系统的可靠性</h2><h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>为了防止误删，需要进行文件的恢复</p>
+<p><strong>备份整个文件还是仅备份一部分呢</strong>？一般来说，只是备份特定目录及其下的全部文件，而不是备份整个文件系统。</p>
+<p>一种<code>增量转储(incremental dumps)</code> </p>
+<p>最常见的增量转储：</p>
+<ol>
+<li><code>周期性</code>的做全面的备份，每天只对增量转储完成后发生变化的文件做单个备份。</li>
+<li>只备份最近一次转储以来更改过的文件。极大的缩减了转储时间</li>
+</ol>
+<h3 id="两种转储方案"><a href="#两种转储方案" class="headerlink" title="两种转储方案"></a>两种转储方案</h3><p>磁盘转储到备份磁盘上有两种方案：<strong>物理转储和逻辑转储</strong>。</p>
+<ul>
+<li><code>物理转储(physical dump)</code> 是从磁盘的 0 块开始，依次将所有磁盘块按照顺序写入到输出磁盘，并在复制最后一个磁盘时停止。这种程序的万无一失性是其他程序所不具备的。</li>
+<li><code>逻辑转储(logical dump)</code>从一个或几个指定的目录开始，递归转储自指定日期开始后更改的文件和目录。因此，在逻辑转储中，转储磁盘上有一系列经过仔细识别的目录和文件，这使得根据请求轻松还原特定文件或目录可以实现。</li>
+</ul>
+<p>需要维持一个 inode 为索引的<code>位图(bitmap)</code>，每个 inode 包含了几位。随着算法的进行，位图中的这些位会被设置或清除。</p>
+<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h3><p>如果系统在所有块写入之前崩溃，文件系统就会处于一种<code>不一致(inconsistent)</code>的状态。如果某些尚未写回的块是索引节点块，目录块或包含空闲列表的块，则此问题是很严重的。</p>
+<p>可以进行两种一致性检查：<strong>块的一致性检查和文件的一致性检查</strong>。</p>
+<h4 id="块的一致性"><a href="#块的一致性" class="headerlink" title="块的一致性"></a>块的一致性</h4><p>为了检查块的一致性，应用程序会建立两张表，每个包含一个计数器的块，最初设置为 0 。</p>
+<p>第一个表中的计数器跟踪该块在文件中出现的次数，第二张表中的计数器记录每个块在空闲列表、空闲位图中出现的频率。</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240620003755666.png" alt="image-20240620003755666"> </p>
+<p>missing block时：在freelist加上1即可</p>
+<p>duplicate freelist block 冗余空闲块，在freelist数字为2时，将数字重置为1即可</p>
+<p>duplicate data block 冗余的数据块，重新分配一个块，将冗余的块复制进新的块当中，并放进文件当中，将冗余的块释放</p>
+<p>既在free list又在 file data 当中：则将freelist设置为0即可。</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240615225950918.png" alt="image-20240615225950918"> </p>
+<h4 id="文件的一致性"><a href="#文件的一致性" class="headerlink" title="文件的一致性"></a>文件的一致性</h4><h3 id="Unix中文件系统的介绍"><a href="#Unix中文件系统的介绍" class="headerlink" title="Unix中文件系统的介绍"></a>Unix中文件系统的介绍</h3><p>组织形式为从根开始的树</p>
+<p>文件名最多14个字符，可以包含除&#x2F;和NUL以外的任何ASCII字符</p>
+<p>每个目录条目有两个字段</p>
+<p>文件名，以及该文件的i-node的#(2字节)</p>
+<p>文件系统中的文件数量限制为64K</p>
+<p>多级inode：</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240620004838451.png" alt="image-20240620004838451"> </p>
+<h1 id="I-O"><a href="#I-O" class="headerlink" title="I&#x2F;O"></a>I&#x2F;O</h1><h2 id="I-O软件的目的"><a href="#I-O软件的目的" class="headerlink" title="I&#x2F;O软件的目的"></a>I&#x2F;O软件的目的</h2><h3 id="设备独立性"><a href="#设备独立性" class="headerlink" title="设备独立性"></a>设备独立性</h3><p>意味着<strong>我们能够编写访问任何设备的应用程序，而不用事先指定特定的设备</strong>。无需为每一个特定的设备制定应用程序，而可以实现一套应用程序给每一种接入的I&#x2F;O设备使用</p>
+<h3 id="统一命名-uniform-naming"><a href="#统一命名-uniform-naming" class="headerlink" title="统一命名(uniform naming)"></a>统一命名(uniform naming)</h3><p>设备的代号应该是一个整数或者是字符串，它们不应该依赖于具体的设备。</p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>通常情况下来说，错误应该交给<code>硬件</code>层面去处理。</p>
+<h3 id="同步和异步传输"><a href="#同步和异步传输" class="headerlink" title="同步和异步传输"></a>同步和异步传输</h3><p><strong>同步传输</strong>：数据通常以块或帧的形式发送。发送方和接收方在数据传输之前应该具有<code>同步时钟</code>。</p>
+<p><strong>异步传输</strong>：数据通常以字节或者字符的形式发送，异步传输则不需要同步时钟，但是会在传输之前向数据添加<code>奇偶校验位</code>。</p>
+<p>同步和异步特点对比：</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240615233213566.png" alt="image-20240615233213566">  </p>
+<h3 id="缓冲-buffering"><a href="#缓冲-buffering" class="headerlink" title="缓冲 buffering"></a>缓冲 buffering</h3><p>从一个设备发出的数据不会直接到达最后的设备。</p>
+<h3 id="共享和独占"><a href="#共享和独占" class="headerlink" title="共享和独占"></a>共享和独占</h3><p>有些 I&#x2F;O 设备能够被许多用户共同使用。一些设备比如磁盘，让多个用户使用一般不会产生什么问题，但是某些设备必须具有独占性，即只允许单个用户使用完成后才能让其他用户使用。</p>
+<h2 id="三种控制I-O设备的方法"><a href="#三种控制I-O设备的方法" class="headerlink" title="三种控制I&#x2F;O设备的方法"></a>三种控制I&#x2F;O设备的方法</h2><h3 id="程序控制I-O-可编程I-O"><a href="#程序控制I-O-可编程I-O" class="headerlink" title="程序控制I&#x2F;O &amp; 可编程I&#x2F;O"></a>程序控制I&#x2F;O &amp; 可编程I&#x2F;O</h3><p>CPU 在等待时会采用</p>
+<ol>
+<li><code>轮询(polling)</code>去查看设备的状态寄存器去确定其状态：ready，busy，error；</li>
+<li><code>忙等(busy waiting)</code> 的方式去等待 I&#x2F;O ，浪费了CPU资源</li>
+</ol>
+<p>操作：</p>
+<ul>
+<li>CPU 请求 I&#x2F;O 操作</li>
+<li>I&#x2F;O 模块执行响应</li>
+<li>I&#x2F;O 模块设置状态位</li>
+<li>CPU 会定期检查状态位</li>
+<li>I&#x2F;O 不会直接通知 CPU 操作完成</li>
+<li>I&#x2F;O 也不会中断 CPU</li>
+<li>CPU 可能会等待或在随后的过程中返回</li>
+</ul>
+<h3 id="中断驱动I-O"><a href="#中断驱动I-O" class="headerlink" title="中断驱动I&#x2F;O"></a>中断驱动I&#x2F;O</h3><p>鉴于上面可编程 I&#x2F;O 的缺陷，我们提出一种改良方案，我们想要在 CPU 等待 I&#x2F;O 设备的同时，能够做其他事情，等到 I&#x2F;O 设备完成后，它就会产生一个中断，这个中断会停止当前进程并保存当前的状态。</p>
+<p>由CPU主动询问I&#x2F;O设备是否使用改为由I&#x2F;O设备主动通知CPU自己准备就绪</p>
+<h3 id="使用-DMA-的-I-O"><a href="#使用-DMA-的-I-O" class="headerlink" title="使用 DMA 的 I&#x2F;O"></a>使用 DMA 的 I&#x2F;O</h3><p>Directed Memory Access</p>
+<p>CPU 授予 I&#x2F;O 模块权限在不涉及 CPU 的情况下读取或写入内存。</p>
+<p>也就是 DMA 可以不需要 CPU 的参与。这个过程由称为 DMA 控制器（DMAC）的芯片管理。</p>
+<h2 id="I-O的层次结构"><a href="#I-O的层次结构" class="headerlink" title="I&#x2F;O的层次结构"></a>I&#x2F;O的层次结构</h2><ol>
+<li>用户级的I&#x2F;O软件 用户空间 做I&#x2F;O调用；匹配I&#x2F;O；假脱机</li>
+<li>与设备无关的I&#x2F;O软件 内核空间 命名、保护、阻塞、缓冲、分配</li>
+<li>设备驱动 内核空间 设置设备寄存器、检查状态</li>
+<li>中断处理程序Interrupt Handlers 内核空间 I&#x2F;O完成时唤醒驱动程序</li>
+<li>硬件 执行I&#x2F;O操作</li>
+</ol>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240620011403292.png" alt="image-20240620011403292"> </p>
+<h3 id="中断处理程序"><a href="#中断处理程序" class="headerlink" title="中断处理程序"></a>中断处理程序</h3><p>当中断发生时，CPU保存少量状态并跳转到内存中固定地址的中断处理程序例程。</p>
+<p>中断完成后，必须在软件中执行步骤</p>
+<ol>
+<li>保存未被中断硬件保存的regs</li>
+<li>为中断服务过程设置上下文:TLB、MMU和页表等。</li>
+<li>为中断服务程序建立堆栈</li>
+<li>Ack中断控制器，重新启用中断</li>
+<li>从保存到进程表的地方复制寄存器</li>
+<li><strong>运行服务流程</strong></li>
+<li>选择接下来要运行的进程。</li>
+<li>为接下来要运行的进程设置MMU上下文</li>
+<li>加载新的进程寄存器</li>
+<li>开始运行新进程</li>
+</ol>
+<h3 id="设备驱动"><a href="#设备驱动" class="headerlink" title="设备驱动"></a>设备驱动</h3><h4 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h4><ol>
+<li>接受来自OS其他部分（与设备无关的部分）的抽象读写请求<ol>
+<li>把抽象的术语转换成具体的术语</li>
+</ol>
+</li>
+<li>根据需要初始化设备</li>
+<li>检查设备当前是否正用于其他请求<ol>
+<li>如果是，将请求加入队列中,等待后续的处理。</li>
+<li>如果此时设备是空闲的，驱动程序会检查硬件以了解请求是否能够被处理</li>
+</ol>
+</li>
+<li>发出命令序列去控制设备</li>
+<li>检查错误</li>
+</ol>
+<p>操作系统通常会将驱动程序归为 <code>字符设备 character device</code> 和 <code>块设备 block device</code></p>
+<h3 id="与设备无关的I-O软件"><a href="#与设备无关的I-O软件" class="headerlink" title="与设备无关的I&#x2F;O软件"></a>与设备无关的I&#x2F;O软件</h3><p>设备驱动程序和与设备无关的软件之间的界限因系统和设备而异</p>
+<h4 id="功能：-1"><a href="#功能：-1" class="headerlink" title="功能："></a>功能：</h4><ol>
+<li><p>设备驱动程序的统一接口</p>
+<ol>
+<li>好处：<ol>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>缓冲</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240616002652933.png" alt="image-20240616002652933" style="zoom: 67%;" /> 
+
+<ol>
+<li>未缓冲的输入</li>
+<li>用户空间缓冲</li>
+<li>在内核中进行缓冲，然后复制到用户空间</li>
+<li>内核中的双缓冲</li>
+</ol>
+</li>
+<li><p>错误报告</p>
+</li>
+<li><p>分配和释放专用设备</p>
+</li>
+<li><p>提供与设备无关的块大小<br>不同的磁盘会具有不同的扇区大小，但是软件不会关心扇区大小，只管存储就是了。一些字符设备可以一次一个字节的交付数据，而其他的设备则以较大的单位交付数据，这些差异也可以隐藏起来。<br>该层可以隐藏不同磁盘的物理扇区大小，并可以为更高层(如文件系统)提供固定和统一的磁盘块大小</p>
+</li>
+</ol>
+<h2 id="磁光盘"><a href="#磁光盘" class="headerlink" title="磁光盘"></a>磁光盘</h2><p>磁盘是一种<code>非易失性</code>的设备，即使断电也能永久保留。</p>
+<p>在磁盘中，数据是<strong>随机访问</strong>的，这也就说明可以通过任意的顺序来<code>存储</code>和<code>检索</code>单个数据块，</p>
+<p>为了组织和检索数据，会将磁盘组织成特定的结构，这些特定的结构就是<strong>磁道、扇区和柱面</strong></p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240616003252754.png" alt="image-20240616003252754" style="zoom: 67%;" />
+
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>磁盘在使用前必须经过<code>低级格式化(low-levvel format)</code>，</p>
+<p>一个扇区的格式： <img src="E:\DeskTable\博客学习截图传输\image-20240616003606843.png" alt="image-20240616003606843"> </p>
+<p>前导码相当于是标示扇区的开始位置，还包括<code>柱面号</code>、<code>扇区号</code>等一些其他信息。</p>
+<p>数据区</p>
+<p>ECC，ECC 的全称是 <strong>error correction code</strong> ，<code>数据纠错码</code>，可以被用于恢复读错误</p>
+<h3 id="柱面斜进-cylinder-skew："><a href="#柱面斜进-cylinder-skew：" class="headerlink" title="柱面斜进 cylinder skew："></a>柱面斜进 cylinder skew：</h3><p>低级格式化后的每个 0 扇区的位置都和前一个磁道存在<code>偏移</code>：</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240616003753435.png" alt="image-20240616003753435"></p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240616003939044.png" alt="image-20240616003939044"></p>
+<p>如果不采用这种方式，可能刚好磁头寻址到外侧，0 号扇区已经转过了磁头，所以需要旋转一圈才能等到它继续读取，通过柱面斜进的方式可以消除这一问题。</p>
+<p>磁头也会存在<code>斜进(head skew)</code>，但是磁头斜进比较小。</p>
+<p>计算柱面斜进：</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20240616004859656.png" alt="image-20240616004859656" style="zoom:67%;" /> 
+
+<p>硬盘每分钟7200转，则有一转需要的时间为：60*1000&#x2F;7200 &#x3D; 100&#x2F;12 ms&#x2F;转</p>
+<p>每一转会扫过200片扇区，1&#x2F;200 转&#x2F;片 则每一片扇区所用时间为：100&#x2F;12 * 1&#x2F;200 &#x3D; 1&#x2F;24 ms&#x2F;片</p>
+<p>则说明每毫秒转过片数：24片&#x2F;ms</p>
+<h3 id="交叉"><a href="#交叉" class="headerlink" title="交叉"></a>交叉</h3><ol>
+<li>No interleaving</li>
+<li>Single interleaving</li>
+<li>Double interleaving</li>
+</ol>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240620011716979.png" alt="image-20240620011716979"> </p>
+<h3 id="磁盘臂调度算法"><a href="#磁盘臂调度算法" class="headerlink" title="磁盘臂调度算法"></a>磁盘臂调度算法</h3><h4 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h4><h4 id="SSF-short-seek-first"><a href="#SSF-short-seek-first" class="headerlink" title="SSF short seek first"></a>SSF short seek first</h4><p>每次找离自己最近的那个节点，一个贪心</p>
+<h4 id="电梯调度"><a href="#电梯调度" class="headerlink" title="电梯调度"></a>电梯调度</h4><h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>大部分的死锁都和资源有关，在进程对设备、文件具有独占性（排他性）时会产生死锁。我们把这类需要排他性使用的对象称为<code>资源(resource)</code>。资源主要分为 <strong>可抢占资源和不可抢占资源</strong></p>
+<h3 id="可抢占资源和不可抢占资源"><a href="#可抢占资源和不可抢占资源" class="headerlink" title="可抢占资源和不可抢占资源"></a>可抢占资源和不可抢占资源</h3><p><code>可抢占资源(preemptable resource)</code> 可以从拥有它的进程中抢占而不会造成其他影响，内存就是一种可抢占性资源，任何进程都能够抢先获得内存的使用权。</p>
+<p><code>不可抢占资源(nonpreemtable resource)</code> 指的是除非引起错误或者异常，否则进程无法抢占指定资源，这种不可抢占的资源比如有光盘，在进程执行调度的过程中，其他进程是不能得到该资源的。</p>
+<p>死锁与不可抢占资源有关，虽然抢占式资源也会造成死锁，不过这种情况的解决办法通常是在进程之间重新分配资源来化解。所以，我们的重点自然就会放在了不可抢占资源上。</p>
+<h2 id="死锁-1"><a href="#死锁-1" class="headerlink" title="死锁"></a>死锁</h2><p><strong>如果一组进程中的每个进程都在等待一个事件，而这个事件只能由该组中的另一个进程触发，这种情况会导致死锁</strong>。</p>
+<h3 id="资源死锁："><a href="#资源死锁：" class="headerlink" title="资源死锁："></a>资源死锁：</h3><p>死锁进程结合中的每个进程都在等待另一个死锁进程已经占有的资源。但是由于所有进程都不能运行，它们之中任何一个资源都无法释放资源，所以没有一个进程可以被唤醒。</p>
+<h3 id="资源死锁的条件"><a href="#资源死锁的条件" class="headerlink" title="资源死锁的条件"></a>资源死锁的条件</h3><p>针对我们上面的描述，资源死锁可能出现的情况主要有</p>
+<ul>
+<li>Mutual Exclusion 互斥条件：每个资源都被分配给了一个进程或者资源是可用的</li>
+<li>Hold and Wait 保持和等待条件：已经获取资源的进程被认为能够获取新的资源</li>
+<li>No Preemption 不可抢占条件：分配给一个进程的资源不能强制的从其他进程抢占资源，它只能由占有它的进程显示释放</li>
+<li>Circular Wait 循环等待：死锁发生时，系统中一定有两个或者两个以上的进程组成一个循环，循环中的每个进程都在等待下一个进程释放的资源。</li>
+</ul>
+<p>四个条件同时成立，才可以发生死锁，缺一不可</p>
+<p>如果一个资源分配图没有环，一定没有死锁</p>
+<p>如果有环：</p>
+<ol>
+<li>如果每种资源仅有一个实例，则死锁</li>
+<li>如果每种资源有多个实例，则不一定会死锁</li>
+</ol>
+<h2 id="四种解决方法"><a href="#四种解决方法" class="headerlink" title="四种解决方法"></a>四种解决方法</h2><h3 id="Ostrich-Algorithm-鸵鸟算法"><a href="#Ostrich-Algorithm-鸵鸟算法" class="headerlink" title="Ostrich Algorithm 鸵鸟算法"></a>Ostrich Algorithm 鸵鸟算法</h3><p>忽视死锁的问题。</p>
+<h3 id="死锁检测-Detection-与恢复"><a href="#死锁检测-Detection-与恢复" class="headerlink" title="死锁检测 Detection 与恢复"></a>死锁检测 Detection 与恢复</h3><p>不会尝试去阻止死锁的出现。相反，这种解决方案会希望死锁尽可能的出现，在监测到死锁出现后，对其进行恢复。</p>
+<p>构造两个数组：</p>
+<ol>
+<li>C 表示的是<code>当前分配矩阵(current allocation matrix)</code>，<ol>
+<li>Ci 表示的是 Pi 持有每一种类型资源的资源数。所以，Cij 表示 Pi 持有资源 j 的数量</li>
+</ol>
+</li>
+<li>R 表示的是 <code>请求矩阵(request matrix)</code><ol>
+<li>Rij 表示 Pi 所需要获得的资源 j 的数量</li>
+</ol>
+</li>
+</ol>
+<h4 id="通过抢占进行恢复"><a href="#通过抢占进行恢复" class="headerlink" title="通过抢占进行恢复"></a>通过抢占进行恢复</h4><p>可能会临时将某个资源从它的持有者转移到另一个进程。比如在不通知原进程的情况下，将某个资源从进程中强制取走给其他进程使用，使用完后又送回。这种恢复方式一般比较困难而且有些简单粗暴，并不可取。</p>
+<h4 id="通过回滚进行恢复"><a href="#通过回滚进行恢复" class="headerlink" title="通过回滚进行恢复"></a>通过回滚进行恢复</h4><ol>
+<li>可以定期检查流程。进程的检测点意味着进程的状态可以被写入到文件以便后面进行恢复。检测点不仅包含<code>存储映像(memory image)</code>，还包含<code>资源状态(resource state)</code>。</li>
+<li>一种更有效的解决方式是不要覆盖原有的检测点，而是每出现一个检测点都要把它写入到文件中，这样当进程执行时，就会有一系列的检查点文件被累积起来。</li>
+</ol>
+<h4 id="杀死进程恢复"><a href="#杀死进程恢复" class="headerlink" title="杀死进程恢复"></a>杀死进程恢复</h4><ol>
+<li><p>最简单有效的解决方案是直接杀死一个死锁进程。但是杀死一个进程可能照样行不通，这时候就需要杀死别的资源进行恢复。</p>
+</li>
+<li><p>另外一种方式是选择一个环外的进程作为牺牲品来释放进程资源。</p>
+</li>
+</ol>
+<h3 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h3><h4 id="单个资源的银行家算法"><a href="#单个资源的银行家算法" class="headerlink" title="单个资源的银行家算法"></a>单个资源的银行家算法</h4><p>Safe and Unsafe States</p>
+<p>关键是使得每次分配完资源后，至少有一个人的need资源数量小于或等于空闲的资源数量</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20240616014126355.png" alt="image-20240616014126355"></p>
+<p>如图，（a）是安全状态，因为B的need为4-2&#x3D;2小于3，意味着我可以填满他的Max，并让B顺利结束进程</p>
+<p>从而找到一条进程依次结束退出的序列</p>
+<p>！！！需要注意，进入不安全状态不意味着就一定会死锁，因为进程不一定会使用到MAX的资源，但是银行家算法按照最坏情况去考虑，确保不出现死锁</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="死锁预防"><a href="#死锁预防" class="headerlink" title="死锁预防"></a>死锁预防</h3><p>破坏死锁条件即可</p>
+<h4 id="破坏互斥条件"><a href="#破坏互斥条件" class="headerlink" title="破坏互斥条件"></a>破坏互斥条件</h4><p>如果资源不被一个进程独占，则不会发生死锁。</p>
+<ol>
+<li>某些设备可以假脱机，如打印机<ol>
+<li>只有打印机守护进程使用打印机资源</li>
+<li>打印机守护进程没有请求其他资源</li>
+<li>因此打印机死锁消除</li>
+</ol>
+</li>
+</ol>
+<p>但是脱机空间是有限的，所以死锁还是有可能会发生，例如两个进程各自占用了一半的脱机空间</p>
+<h4 id="破坏保持和等待的条件"><a href="#破坏保持和等待的条件" class="headerlink" title="破坏保持和等待的条件"></a>破坏保持和等待的条件</h4><p>如果我们能阻止持有资源的进程请求其他资源，我们就能够消除死锁。</p>
+<ol>
+<li>一种实现方式是让所有的进程开始执行前请求全部的资源。如果所需的资源可用，进程会完成资源的分配并运行到结束</li>
+<li>还有一种方式是进程在请求其他资源时，先释放所占用的资源，然后再尝试一次获取全部的资源。</li>
+</ol>
+<h4 id="破坏不可抢占条件"><a href="#破坏不可抢占条件" class="headerlink" title="破坏不可抢占条件"></a>破坏不可抢占条件</h4><p>这一条件可以通过强制抢占来打破</p>
+<p>通过虚拟化的方式：还是假脱机，如 将打印机输出假脱机到磁盘</p>
+<h4 id="破坏循环等待条件"><a href="#破坏循环等待条件" class="headerlink" title="破坏循环等待条件"></a>破坏循环等待条件</h4>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">三好市民柴桂</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Mokelting.github.io/2024/06/11/xiao-nei-ke-cheng-xue-xi-bi-ji/ji-suan-ji-zhuan-ye-ke/cao-zuo-xi-tong/">http://Mokelting.github.io/2024/06/11/xiao-nei-ke-cheng-xue-xi-bi-ji/ji-suan-ji-zhuan-ye-ke/cao-zuo-xi-tong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">三好市民柴桂</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                    <span class="chip bg-color">期末复习</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/06/11/xiao-nei-ke-cheng-xue-xi-bi-ji/ji-suan-ji-zhuan-ye-ke/ji-suan-ji-wang-luo/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/" class="responsive-img" alt="计算机网络期末复习">
+                        
+                        <span class="card-title">计算机网络期末复习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            计算机网络期末复习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            三好市民柴桂
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                        <span class="chip bg-color">期末复习</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/05/27/kai-fa-gong-ju/maven/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/" class="responsive-img" alt="maven">
+                        
+                        <span class="card-title">maven</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            maven工具学习
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">开发工具</span>
+                    </a>
+                    
+                    <a href="/tags/maven/">
+                        <span class="chip bg-color">maven</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2025</span>
+            
+            <a href="/about" target="_blank">Cai Gui</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">192.5k</span>
+            
+            
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "9";
+                        var startDate = "16";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/Mokelting" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1468664118@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1468664118" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1468664118" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+{% if (theme.mermaid.enable) %}
+ <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+ <script>
+    if (window.mermaid) {
+        mermaid.initialize({ theme: 'forest' });
+    }
+ </script>
+{% endif %}
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+        <!-- <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script> -->
+        <script src='/libs/mermaid/mermaid.min.js'></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
+    
+
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

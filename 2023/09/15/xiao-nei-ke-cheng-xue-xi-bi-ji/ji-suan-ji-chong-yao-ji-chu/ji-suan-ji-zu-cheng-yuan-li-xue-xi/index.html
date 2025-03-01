@@ -1,0 +1,2312 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机组成原理, 三好市民蔡桂的个人博客">
+    <meta name="description" content="计算机组成原理学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>计算机组成原理 | 三好市民蔡桂的个人博客</title>
+    <link rel="icon" type="image/png" href="/medias/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://cdn.jsdelivr.net/gh/Mokelting/PhotoHub/background.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<script src="/live2d-widget/autoload.js"></script>
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">三好市民蔡桂的个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">三好市民蔡桂的个人博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Mokelting" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Mokelting" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">计算机组成原理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/">
+                                <span class="chip bg-color">计算机四大件</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/">
+                                <span class="chip bg-color">大学专业课</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/" class="post-category">
+                                计算机重要基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-09-15
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-09-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    35 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 align =center > 计算机组成原理 </h1>
+
+<h2 id="CH1-计算机基本知识"><a href="#CH1-计算机基本知识" class="headerlink" title="CH1 计算机基本知识"></a>CH1 计算机基本知识</h2><h3 id="计算机类型："><a href="#计算机类型：" class="headerlink" title="计算机类型："></a>计算机类型：</h3><ol>
+<li>嵌入式计算机</li>
+<li>个人计算机</li>
+<li>服务器和企业系统</li>
+<li>超级计算机和网络计算机</li>
+</ol>
+<h3 id="计算机五大部件："><a href="#计算机五大部件：" class="headerlink" title="计算机五大部件："></a>计算机五大部件：</h3><ol>
+<li>输入单元——Input Unit</li>
+<li>输出单元——Output Unit</li>
+<li>存储设——Memory</li>
+<li>运算逻辑单元——ALU Arithmetic and Logic Unit</li>
+<li>控制单元——Control Unit</li>
+</ol>
+<h3 id="3、程序运行"><a href="#3、程序运行" class="headerlink" title="3、程序运行"></a>3、程序运行</h3><h3 id="4、计算机发展"><a href="#4、计算机发展" class="headerlink" title="4、计算机发展"></a>4、计算机发展</h3><h2 id="CH9-Arithmetic"><a href="#CH9-Arithmetic" class="headerlink" title="CH9 Arithmetic"></a>CH9 Arithmetic</h2><h3 id="数的表示"><a href="#数的表示" class="headerlink" title="数的表示"></a>数的表示</h3><h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ul>
+<li><p>数据本身毫无意义，但可以用来在统一观念下进行特定的解释，创造出抽象的概念，赋予其特定场景下的含义。</p>
+</li>
+<li><p>硬件实现的数据类型——数据表示</p>
+</li>
+<li><p>软件实现的数据类型——数据结构</p>
+</li>
+</ul>
+<h3 id="整数的表示"><a href="#整数的表示" class="headerlink" title="整数的表示"></a>整数的表示</h3><ol>
+<li>有符号整数，符号位为0表示为正；符号位为1表示为负</li>
+</ol>
+<p>出于各种原因，针对二进制数，设计出了以下几种二进制编码</p>
+<ul>
+<li><p>原码</p>
+</li>
+<li><p>反码</p>
+</li>
+<li><p>补码</p>
+</li>
+<li><p>移码</p>
+</li>
+</ul>
+<h4 id="原码："><a href="#原码：" class="headerlink" title="原码："></a>原码：</h4><ol>
+<li><p>一个数的绝对值的二进制表示</p>
+</li>
+<li><p>特点：</p>
+</li>
+</ol>
+<ul>
+<li>含有+0（0000 0000）和-0（1111 1111）</li>
+<li>计算乘除法比较方便，加减法较麻烦</li>
+</ul>
+<p>为了简便加减法运算，因而设计出了<strong>补码</strong> </p>
+<h4 id="反码："><a href="#反码：" class="headerlink" title="反码："></a>反码：</h4><p>也叫一位补数</p>
+<ol>
+<li>正数的反码是其本身，如： $0000<del>0001 \xrightarrow{\text{反码}} 0000</del>0001$</li>
+<li>负数的反码，则符号位不变，其余各位取反，如：$1000<del>0001 \xrightarrow{\text{反码}} 1111</del>1110$</li>
+</ol>
+<h4 id="补码："><a href="#补码：" class="headerlink" title="补码："></a>补码：</h4><p>也叫二位补数</p>
+<ol>
+<li><p>将一个数的反码末位 $+1$ 即可得到补码；也可以将原码从右向左，第一个1的下一位开始进行取反，符号位除外。</p>
+</li>
+<li><p>具体应用</p>
+</li>
+</ol>
+<ul>
+<li>无模运算：实数范围内进行运算</li>
+<li>有模运算：<ol>
+<li>概念：给定一个正整数p，任意一个整数n，一定存在等式 n &#x3D; k*p + r<br>其中k 、r 是整数，且 0 ≤ r &lt; p 称呼k 为n 除以p 的商，r 为n 除以p的余数。</li>
+<li>有模运算体系当中，减去一个数等于加上这个数对模的补数。如a+b&#x3D;M a和b互为补数</li>
+</ol>
+</li>
+<li>（二进制）正数的补码是其本身，负数（无论整数还是小数 ）的补码，将负数变成补码——每一位取反末位加一</li>
+</ul>
+<p>在计算机当中，加减法均采用补码进行</p>
+<ul>
+<li><p>在纯小数二进制编码当中 补码为1.0000000 —&gt;真值：-1.0000000 最高位表示为数值位也是符号位；原码：超出范围</p>
+</li>
+<li><p>补码符号位拓展：</p>
+<p>将n位定点整数补码拓展到2n位：</p>
+<ul>
+<li>当补码表示正数时，则直接在前面补上n个0即可</li>
+<li>当补码表示负数时，则在前面补上n个1即可</li>
+</ul>
+<p>即与符号位保持一致进行拓展</p>
+</li>
+<li><p>算术右移（除2运算）</p>
+</li>
+</ul>
+<p>一个数算术右移1位后，其最低有效位被移出。低位舍去，高位补符号位</p>
+<p>小数 正数情况：低位舍去，高位补0</p>
+<p>​		负数情况：低位舍去，高位补1</p>
+<ul>
+<li>算术左移（乘2运算）</li>
+</ul>
+<h4 id="移码："><a href="#移码：" class="headerlink" title="移码："></a>移码：</h4><ol>
+<li>移码的表示范围：此处只讨论纯整数</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">移码&#x3D;偏移量+真值</th>
+<th align="center">真值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1111 1111</td>
+<td align="center">$2^{n}-1$</td>
+</tr>
+<tr>
+<td align="center">1111 1110</td>
+<td align="center">$2{n}-2$</td>
+</tr>
+<tr>
+<td align="center">……</td>
+<td align="center">……</td>
+</tr>
+<tr>
+<td align="center">1000 0000 (偏移量)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">……</td>
+<td align="center">……</td>
+</tr>
+<tr>
+<td align="center">0000 0001</td>
+<td align="center">$-2^{n}+1$</td>
+</tr>
+<tr>
+<td align="center">0000 0000</td>
+<td align="center">$-2^{n}$</td>
+</tr>
+</tbody></table>
+<p>由上图可看出看，移码的设计初衷即是为了使得移码值和真值成线性正比关系</p>
+<ol start="2">
+<li>无论正负数：补码求移码——符号位取反即可</li>
+<li>移码主要应用于浮点数的阶码。</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1KP411X71M/?p=2&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=9fb105320442648b8c6fe466cf6f8b5c">2020.02.29 补码的性质2；反码、移码_哔哩哔哩 bilibili</a> </p>
+<ol>
+<li>正数的原码，补码，反码<strong>相同</strong>；</li>
+<li>负数的反码：原码的数值（符号位除外）取反；</li>
+<li>负数的补码：原码转换成反码，反码末位加1；除符号位，将原码从右到左第一个1之后的位取反即可。</li>
+<li>一个数的移码：与补码的符号位取反。</li>
+</ol>
+<p>除了以上四种常见的编码外，还有以下编码，可供了解：</p>
+<p>**BCD码（Binary-Coded Decimal） ** </p>
+<p><strong>8421码（有权码）最常见：</strong> </p>
+<p>采取 4个二进制位对应一个十进制位</p>
+<p>每一位的权重分别为：8、4、2、1</p>
+<p>计算方法：</p>
+<p>E.p ：5（0101）+ 8（1000） &#x3D; 13（1101）不在映射内（1010~1 0010）则加上6进行修正</p>
+<p>则13（1101）+ 6（0110） &#x3D; 19（1 0011）&#x3D;&#x3D; 1（00001）&amp;&amp; 3（0011）</p>
+<p>**2421码： ** </p>
+<p>重定义的权值</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230919163128770.png" alt="image-20230919163128770" style="zoom:50%;" />
+
+<p><strong>其他的4位有权BCD码：</strong> </p>
+<p>5421码、5211码、4311码 —— 这三种对9互补，逢十进一</p>
+<p>84-2-1（八四负二负一）码</p>
+<p><strong>余3码（无权码）：</strong> </p>
+<p>$8421码 + (0011)_2$</p>
+<p><strong>其他的4位无权BCD码：</strong> </p>
+<p>格雷码（1）、格雷码（2）、格雷码（3）</p>
+<h4 id="一位全加器的表达式："><a href="#一位全加器的表达式：" class="headerlink" title="一位全加器的表达式："></a>一位全加器的表达式：</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="E:\DeskTable\博客学习截图传输\image-20231218090128576.png" alt="image-20231218090128576" style="zoom:67%;" /></h4><h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1KP411X71M?p=3&vd_source=9fb105320442648b8c6fe466cf6f8b5c">2020.03.04 浮点数的一般格式1</a></p>
+<p>科学计数法：</p>
+<ul>
+<li>动态移动十进制小数点到约定位置，并使用10的指数来记录此小数点的位置</li>
+<li>可表示整数也可表示小数</li>
+<li>可表示范围很大</li>
+<li>规格化数字</li>
+</ul>
+<img src="E:\DeskTable\博客学习截图传输\image-20230919092538911.png" alt="image-20230919092538911" style="zoom:50%;" />
+
+<p>数符：表示浮点数的符号</p>
+<p>阶符：</p>
+<p>阶码：（数值部分）从高位开始进行比较 阶码位数表示表示范围</p>
+<p>尾数：（数值部分） 尾数位数越多，精度越高</p>
+<p>所谓的浮点数表示其实可以简单粗暴的理解成，把一个数按照以2为模的科学计数法，将符号（+ -）放在首位——数符，将2^n以二进制形式放在前面——阶码，把数的部分以二进制码形式放在后面——尾数</p>
+<p>但是二进制的尾数是纯小数形式，不需要小数点前有有效数字。</p>
+<p>规格化的浮点数：</p>
+<p>在计算机当中尾数的表示一般采取的是原码，但是补码也得了解了解</p>
+<ul>
+<li><p>如果阶码的底为2，则尾数应该满足 1&#x2F;2 &lt;&#x3D; |M| &lt; 1 —— 原码 小数点右侧第一位为1（0.1xxxxxxx……） </p>
+</li>
+<li><p>当尾数用补码表示：</p>
+<ul>
+<li><p>尾数M&gt;&#x3D;0时，尾数应当具有的格式：M &#x3D; 0.1xxxxx…x，$当M \geq 0 时，[\frac{1}{2}]_补 \leq [M]_补 &lt; [1]_补$</p>
+</li>
+<li><p>尾数M&lt;0时，不将$[-1&#x2F;2]_补$列入规格化的数，而把$[1]_补$列入规格化的数当中。</p>
+</li>
+<li><p>即: $[1&#x2F;2]_补 \geq [M]_补 \leq [1]_补 $</p>
+</li>
+</ul>
+</li>
+<li><p>左规：</p>
+<p>采用变形补码表示尾数，则当结果的尾数出现11.11xxxx或00.0xxxx时，将尾数左移1位，阶码-1，直到尾数变为<strong>规格化</strong>形式为止</p>
+</li>
+<li><p>右规：  </p>
+<p>当结果尾数出现01.xxxx……x或者10.xxx……x时，并不一定溢出，应当先把尾数右移一位，阶码+1，在判断阶码是否溢出</p>
+</li>
+</ul>
+<p>奇偶校验码：</p>
+<p>对于一个n位的信息，在最前面增加一个奇偶校验位，即通过这个增加的校验位来使得整个有效信息串当中的1的个数达到“奇数”——对应奇校验 或者“偶数”——对应偶校验</p>
+<p>方法局限性：</p>
+<p>当出现偶数个位数的错误时，则无法进行校验。</p>
+<p>奇校验：</p>
+<p>整个校验码（有效信息位和校验位）当中“1”的个数位奇数</p>
+<p>偶校验：</p>
+<p>整个校验码（有效信息位和校验位）当中“1”的个数位偶数</p>
+<p>校验：</p>
+<p>使用<strong>异或运算</strong>操作进行偶校验，结果为0则未出错，结果为1则出错</p>
+<p>算数逻辑单元</p>
+<p>（Arithmetic and Logic Unit，ALU）</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230919213319875.png" alt="image-20230919213319875" style="zoom: 67%;" />
+
+
+
+<p>IEEE745标准：</p>
+<p>尾数的格式：</p>
+<p>规格化的原码表示—— S.1xxxxxx</p>
+<p>规格化补码表示—— 正数：0.1xxxxxx	负数：1.0xxxxxx</p>
+<h3 id="二进制的运算"><a href="#二进制的运算" class="headerlink" title="二进制的运算"></a>二进制的运算</h3><h4 id="二进制的乘法："><a href="#二进制的乘法：" class="headerlink" title="二进制的乘法："></a>二进制的乘法：</h4><p>补码的乘法运算规则：</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230921184009102.png" alt="image-20230921184009102" style="zoom:50%;" />
+
+<p>补码的编码值按位展开得到真值，正数符号位权值为<strong>1</strong>，负数符号位权值为**-1**</p>
+<h4 id="原码一位乘法："><a href="#原码一位乘法：" class="headerlink" title="原码一位乘法："></a>原码一位乘法：</h4><p>和手算一样</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230923105803490.png" alt="image-20230923105803490" style="zoom:27%;" />
+
+<p>加法次数和相乘的两个原码的位数相同</p>
+<h4 id="Booth法"><a href="#Booth法" class="headerlink" title="Booth法"></a>Booth法</h4><p>时序逻辑电路图</p>
+<p>无符号：Booth法的电路是时序逻辑电路，具有时钟信号控制</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230922162220296.png" alt="image-20230922162220296" style="zoom:50%;" />
+
+<h4 id="阵列乘法器"><a href="#阵列乘法器" class="headerlink" title="阵列乘法器"></a>阵列乘法器</h4><p>1）手算及单元电路</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230923101554580.png" alt="image-20230923101554580" style="zoom: 30%;" />
+
+<p>2）、定点无符号数阵列乘法器</p>
+<p>组合逻辑电路因为不需要根据时钟周期进行移位累加，所使用的时间会少于移位累加的方法</p>
+<p><img src="E:\DeskTable\博客学习截图传输\image-20230922170428659.png" alt="image-20230922170428659"></p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230923101344400.png" alt="image-20230923101344400" style="zoom:30%;" />
+
+
+
+<p>3）、有符号数的阵列乘法</p>
+<p>下图中的电路可以完美实现一个二进制数的求补操作，即——从右往左找到第一个<strong>1</strong>，之后的所有位按位取反</p>
+<p>可通过图中电路图可以做到</p>
+<ol>
+<li>已知一个数的补码，求该数的绝对值</li>
+<li>已知一个数的绝对值，求该数的补码</li>
+</ol>
+<img src="E:\DeskTable\博客学习截图传输\image-20230923102304075.png" alt="image-20230923102304075" style="zoom:25%;" />
+
+<img src="E:\DeskTable\博客学习截图传输\image-20230923102750917.png" alt="image-20230923102750917" style="zoom:26.5%;" />
+
+<h4 id="二进制的除法"><a href="#二进制的除法" class="headerlink" title="二进制的除法"></a>二进制的除法</h4><h4 id="1）、原码除法"><a href="#1）、原码除法" class="headerlink" title="1）、原码除法"></a>1）、原码除法</h4><p>规则：</p>
+<ol>
+<li>前提条件<ol>
+<li>除数 !&#x3D; 0 </li>
+<li>定点纯小数时，被除数绝对值小于除数，商的结果位数与除数保持一致，则认为精度足够了 </li>
+<li>定点纯整数时，被除数绝对值大于或等于除数</li>
+</ol>
+</li>
+<li>商的符号&#x3D;&#x3D;被除数符号<strong>异或</strong>除数符号</li>
+<li>商的绝对值&#x3D;&#x3D;被除数绝对值&#x2F;除数绝对值</li>
+<li>将符号和绝对值拼接</li>
+</ol>
+<p>由手算引入逻辑实现</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20230923103943081.png" alt="image-20230923103943081" style="zoom:30%;" />
+
+
+
+<h4 id="2）、恢复余数法"><a href="#2）、恢复余数法" class="headerlink" title="2）、恢复余数法"></a>2）、恢复余数法</h4><img src="E:\DeskTable\博客学习截图传输\image-20230923105332402.png" alt="image-20230923105332402" style="zoom:29.5%;" />
+
+<h4 id="3）、不恢复余数法"><a href="#3）、不恢复余数法" class="headerlink" title="3）、不恢复余数法"></a>3）、不恢复余数法</h4><h1 align=center> 存储体系结构 </h1>
+
+<h2 id="CH8-计算机存储体系结构"><a href="#CH8-计算机存储体系结构" class="headerlink" title="CH8 计算机存储体系结构"></a>CH8 计算机存储体系结构</h2><h3 id="8-1基本概念"><a href="#8-1基本概念" class="headerlink" title="8.1基本概念"></a>8.1基本概念</h3><h4 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h4><img src="E:\DeskTable\博客学习截图传输\image-20231010221402861.png" alt="image-20231010221402861" style="zoom: 33%;" />
+
+<img src="E:\DeskTable\博客学习截图传输\image-20231010222309462.png" alt="image-20231010222309462" style="zoom: 50%;" />
+
+<img src="E:\DeskTable\博客学习截图传输\image-20231010222624421.png" alt="image-20231010222624421" style="zoom:50%;" />
+
+<p>存储器的不同特性</p>
+<ul>
+<li>存储信息的介质，物质类型<ul>
+<li>Semiconductor，半导体</li>
+<li>Magnetic Surface，磁盘，磁带</li>
+<li>Optical，光盘</li>
+</ul>
+</li>
+<li>用途</li>
+<li>信息的易失性&#x2F;非易失性</li>
+<li>转移单位</li>
+<li>存取方式<ul>
+<li>随机——存取时间和物理地址无光，任一单元的读写所需时间相同</li>
+<li>顺序</li>
+</ul>
+</li>
+<li>读写功能</li>
+</ul>
+<h4 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h4><ul>
+<li><p>内存(Primary Storage)：计算机中直接被处理器(Processor)访问的存储器，也称为主存（Main Memory）或内部存储器（Internal Memory）。</p>
+<ul>
+<li>内存可以存储当前运行的程序和数据，以供处理器使用。</li>
+</ul>
+</li>
+<li><p>内存比起外部存储器：读写速度更快，容量小，价格高</p>
+</li>
+<li><p>内存的类型有很多，常见的有随机存取存储器（RAM）、只读存储器（ROM）、高速缓冲存储器（Cache）。</p>
+<ul>
+<li><p>随机存取存储器（Random Access Memory,RAM）是一种可读写的内存，也叫做主存。它可以随机地访问任何一个地址的数据，而不需要按照顺序。RAM是易失性的，也就是说，当断电时，它会丢失所有的数据。</p>
+<ul>
+<li>RAM有两种主要的子类：<ul>
+<li>静态RAM（Staic Random Access Memory,SRAM）：不掉电，则内容不丢失</li>
+<li>动态RAM（Dynamic Ranodm Access Memory,DRAM）<ul>
+<li>同步DRAM（Synchronous DRAM,SDRAM）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>只读存储器（Read Only Memory,ROM）是一种只能读取的内存，也叫做固件。它通常用来保存一些不会改变的数据或程序，例如计算机启动时的基本输入输出系统（BIOS）。ROM是非易失性的，也就是说，当断电时，它不会丢失数据。</p>
+<ul>
+<li>ROM有三种主要的子类：<ul>
+<li>可编程只读存储器（PROM）</li>
+<li>可擦除可编程只读存储器（EPROM）</li>
+<li>电子可擦除可编程只读存储器（EEPROM）</li>
+<li>闪速（Flash） ：<ul>
+<li>NOR</li>
+<li>NAND</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ROM当中存储有一段代码指令<strong>BIOS</strong>，作用：<ul>
+<li>硬件自检</li>
+<li>输入输出接口初始化</li>
+<li>最后跳转到MM当中的引导扇区，以及操作系统的启动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>高速缓冲存储器（Cache）是一种位于处理器和主存之间的高速内存，它可以缓存一些经常使用的数据或指令，以减少处理器访问主存的时间。</p>
+<p>Cache是静态RAM（SRAM）制造的，它比动态RAM（DRAM）更快，但也更贵。</p>
+<ul>
+<li>Cache有多个级别，通常分为一级缓存（L1）、二级缓存（L2）和三级缓存（L3）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>主存的运作（作用）：</p>
+<ul>
+<li><p>Connection of the Memory to the Processor——连接存储器和处理器</p>
+</li>
+<li><p>Processor-Memory Interface</p>
+<ul>
+<li>[处理器-内存接口的主要目的是让处理器能够读取或写入内存中的数据，以执行指令或存储结果。](<a target="_blank" rel="noopener" href="http://www.ee.ic.ac.uk/pcheung/teaching/ee2_digital/Lecture">http://www.ee.ic.ac.uk/pcheung/teaching/ee2_digital/Lecture</a> 13 - memory interface.pdf)</li>
+<li>基本原理：当处理器需要访问内存时，它会将内存地址发送到地址总线上，然后通过一个解码电路来选择相应的内存芯片或设备。</li>
+</ul>
+</li>
+<li><p>Read(Load) Operation</p>
+<ul>
+<li>将一个特定内存位置的数据副本读到处理器（Processor）</li>
+<li>Processor： Load the address of the required memory location  into the MAR register and set the R&#x2F;W line to 1</li>
+<li>Memory：Place the data from the addressed location onto the  data lines and confirm this action by asserting the MFC signal</li>
+<li>Processor: Upon receipt of the MFC signal, the processor loads  the data on the data lines into the MDR register.</li>
+</ul>
+</li>
+<li><p>Write(Store) Operation</p>
+<ul>
+<li>将一项信息从处理器传输到特定位置，销毁该位置先前的内容。</li>
+<li>Processor： Load the address of the specific location into MAR and  load the data into MDR register. It also set the R&#x2F;W line to 0.</li>
+<li>Memory：When the data have been written, it responses processor  with MFC signal.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="外存"><a href="#外存" class="headerlink" title="外存"></a>外存</h4><ul>
+<li><p>外存(Secondary Storage)：计算机中不能直接被处理器访问的存储器，也称为辅助存储器（Auxiliary Storage）或外部存储器（External Memory）。</p>
+<ul>
+<li><p>外存可以长期保存大量的数据或程序，以供计算机使用。</p>
+</li>
+<li><p>外存的速度比内存：读写速度慢，容量更大，价格更低。</p>
+</li>
+</ul>
+</li>
+<li><p>外存的类型有很多，常见的有硬盘（Hard Disk）、固态硬盘（Solid State Drive）、U盘（Thumb Drive）、SD卡（SD Card）、光盘（Optical Disc）等。</p>
+<ul>
+<li><p>硬盘（<strong>Hard Disk</strong>）是一种利用磁性材料记录数据的外存，也叫做磁盘。它由一个或多个金属盘片组成，每个盘片都覆盖了磁性材料。硬盘通过一个机械臂上的磁头来读写数据，磁头可以在盘片上移动到不同的位置。硬盘的容量很大，但是速度较慢，而且易受物理损坏。</p>
+</li>
+<li><p>固态硬盘（<strong>Solid State Drive</strong>）是一种利用闪存芯片记录数据的外存，也叫做闪存盘。它没有任何机械部件，因此速度很快，而且抗震性强。固态硬盘的容量较小，但是价格较高，而且有写入次数的限制。</p>
+</li>
+<li><p>U盘（<strong>Thumb Drive</strong>）是一种利用闪存芯片记录数据的便携式外存，也叫做USB驱动器。它可以通过USB接口连接到计算机上，实现数据的传输和存储。U盘的容量和速度各有不同，但是都比硬盘和固态硬盘小得多。U盘的优点是方便携带和使用，缺点是易丢失和损坏。</p>
+</li>
+<li><p>SD卡（<strong>SD Card</strong>）是一种利用闪存芯片记录数据的便携式外存，也叫做安全数字卡。它可以通过SD卡插槽连接到计算机或其他设备上，实现数据的传输和存储。SD卡的容量和速度各有不同，但是都比U盘小得多。SD卡的优点是体积小巧和兼容性强，缺点是易损坏和丢失。</p>
+</li>
+<li><p>光盘（<strong>Optical Disc</strong>）是一种利用光学原理记录数据的外存，也叫做光学数字媒体。它由一个或多个塑料圆盘组成，每个圆盘都覆盖了一层反射材料。光盘通过一个激光头来读写数据，激光头可以在圆盘上移动到不同的位置。光盘的类型有很多，常见的有CD（Compact Disc）、DVD（Digital Versatile Disc）、BD（Blu-ray Disc）等。光盘的容量和速度各有不同，但是都比硬盘和固态硬盘小得多。光盘的优点是成本低廉和寿命长久，缺点是易刮花和损坏。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h4><ul>
+<li>MAR(Memory Address Register) 存储器地址寄存器</li>
+<li>MDR(Memory Data Register) 存储器数据寄存器</li>
+</ul>
+<h4 id="存储单元和地址"><a href="#存储单元和地址" class="headerlink" title="存储单元和地址"></a>存储单元和地址</h4><ul>
+<li><p>Word（字）：每一组固定大小的<strong>bit</strong>称为一个字。</p>
+</li>
+<li><p>Word Length（字长）：每个字的位数称为字长。它通常在16位到64位之间</p>
+</li>
+<li><p>Byte(字节)：$1 byte &#x3D; 8 bit$ byte是KB，MB，GB中的B。</p>
+<ul>
+<li>K: $2^{10},1024$  </li>
+<li>M：$2^{20},1046576$ </li>
+<li>G：$2^{30},1073741824$</li>
+</ul>
+</li>
+</ul>
+<p>计算机存储器图表表示：</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20231010165617847.png" alt="image-20231010165617847" style="zoom:50%;" /> 
+
+<h4 id="字节序"><a href="#字节序" class="headerlink" title="字节序"></a>字节序</h4><p>1、大端赋值</p>
+<p>字节排序</p>
+<p>多字节数据类型（如整数、浮点数等）在内存中的字节排列顺序。它决定了在内存中的哪个字节存储数据的最低有效位（低位）和最高有效位（高位）。字节排序有两种常见的方式：大端序（Big-endian）和小端序（Little-endian）。</p>
+<p>大端赋值（Big-Endian）</p>
+<ul>
+<li>在大端字节顺序中，最高有效字节（Most Significant Byte，MSB）位于内存地址的最低端（低地址端）</li>
+<li>最低有效字节（Least Significant Byte，LSB）位于内存地址的最高端（高地址端）。</li>
+<li>这意味着在大端字节顺序下，数据的各个字节按照从高位到低位的顺序存储，与日常习惯从左到右读数的顺序相同。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://betterexplained.com/articles/understanding-big-and-little-endian-byte-order/">大端赋值（从左到右）是一种在内存中存储数据的方式，其中最高有效字节（MSB）放在最低的内存地址，而最低有效字节（LSB）放在最高的内存地址。这意味着字节的存储顺序与我们从左到右读取它们的顺序相同。</a> </p>
+<p>例如，如果我们想要将十六进制数 0x12345678 存储在一个 4 字节的内存位置，我们将按照以下方式分配字节：</p>
+<table>
+<thead>
+<tr>
+<th align="left">内存地址</th>
+<th align="left">字节值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0x1000</td>
+<td align="left">0x12</td>
+</tr>
+<tr>
+<td align="left">0x1001</td>
+<td align="left">0x34</td>
+</tr>
+<tr>
+<td align="left">0x1002</td>
+<td align="left">0x56</td>
+</tr>
+<tr>
+<td align="left">0x1003</td>
+<td align="left">0x78</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/what-is-endianness-big-endian-vs-little-endian/">这也被称为大端字节序或网络字节序，因为它通常用于网络协议，如 TCP&#x2F;IP。</a> </p>
+<p>大端赋值的一些优点是：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://betterexplained.com/articles/understanding-big-and-little-endian-byte-order/">它更容易阅读和调试，因为数据的存储顺序与我们写它的顺序相同。</a></li>
+<li><a target="_blank" rel="noopener" href="https://teaching.idallen.com/cst8281/10w/notes/110_byte_order_endian.html">它与我们在数学中表示数字的方式一致，其中最高有效位在左边。</a></li>
+<li><a target="_blank" rel="noopener" href="https://electronics.stackexchange.com/questions/608853/does-declaring-verilog-arrays-with-indices-in-different-directions-makes-any-dif">它简化了算术运算，如加法和减法，因为进位或借位从右到左传播。</a></li>
+</ul>
+<p>大端赋值的一些缺点是：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26204333/little-endian-and-big-endian">它与一些使用小端赋值的处理器不兼容，其中 LSB 在最低的内存地址，而 MSB 在最高的内存地址。这在不同系统之间交换数据时可能会导致问题。</a></li>
+<li><a target="_blank" rel="noopener" href="https://electronics.stackexchange.com/questions/608853/does-declaring-verilog-arrays-with-indices-in-different-directions-makes-any-dif">它在处理数组或矩阵时可能会引起混淆，因为索引顺序可能与字节顺序不匹配。例如，在 Verilog 中，一个声明为 <code>reg [3:0] array1 [0:7]</code> 的数组具有大端位顺序，但小端索引顺序。</a></li>
+</ul>
+<p>2、小端赋值</p>
+<ul>
+<li>在小端序中，最低有效字节（低位字节）存储在内存的最低地址。</li>
+<li>最高有效字节（高位字节）存储在内存的最高地址。</li>
+<li>这种字节排序方式类似于我们书写数字的方式，从右到左。</li>
+<li>小端序在一些体系结构（如x86、ARM、网络通信协议中的小端序）中使用。</li>
+</ul>
+<h4 id="访问方式："><a href="#访问方式：" class="headerlink" title="访问方式："></a>访问方式：</h4><p>1、Sequential Access	顺序访问</p>
+<ol>
+<li>如果当前记录为1，那么为了读取记录N，需要读取记录1到N-1。</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20231207191223478.png" alt="image-20231207191223478" style="zoom: 50%;" /></li>
+</ol>
+<p>2、Direct Access			直接访问</p>
+<ol>
+<li>访问是通过直接访问到达大致附近加上顺序搜索、计数或等待到达最终位置来完成的。</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20231207192656562.png" alt="image-20231207192656562" style="zoom:50%;" /></li>
+</ol>
+<p>3、Random Access		随机访问</p>
+<ol>
+<li>任何存储位置都可以随机选择并直接寻址和访问。</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20231207192628560.png" alt="image-20231207192628560" style="zoom:50%;" /></li>
+</ol>
+<p>内存访问时间：</p>
+<ol>
+<li><p>Memory Access Time</p>
+<ul>
+<li>得到地址和获取有效数据（内存或其他存储）之间的时间</li>
+</ul>
+<ol>
+<li><p>Random-Access Memory</p>
+<ul>
+<li>执行读或写操作所需的时间</li>
+</ul>
+</li>
+<li><p>Non-Random-Access Memory</p>
+<ul>
+<li>将读写机制定位到所需位置所需的时间。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Memory Cycle Time</p>
+<ol>
+<li>仅用于随机存储</li>
+<li></li>
+</ol>
+</li>
+</ol>
+<h4 id="易失性与非易失性："><a href="#易失性与非易失性：" class="headerlink" title="易失性与非易失性："></a>易失性与非易失性：</h4><p>volatile和nonvolatile</p>
+<ol>
+<li>volatile<ul>
+<li>当电源关闭时，信息会自然衰减或丢失</li>
+</ul>
+</li>
+<li>nonvolatile<ul>
+<li>信息一旦记录，就不会变质，直到被故意更改为止。 无需电力即可保留信息</li>
+</ul>
+</li>
+</ol>
+<h4 id="可擦除和不可擦除性"><a href="#可擦除和不可擦除性" class="headerlink" title="可擦除和不可擦除性"></a>可擦除和不可擦除性</h4><p>erasable和nonerasable</p>
+<ol>
+<li><p>erasable</p>
+<ul>
+<li>保存在内存中的信息可以被替换修改</li>
+</ul>
+</li>
+<li><p>nonerasable</p>
+<ul>
+<li>保存在内存中的信息不可被替换修改，除非损毁对应的存储单元</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-2-存储器及其部分概念"><a href="#8-2-存储器及其部分概念" class="headerlink" title="8.2 存储器及其部分概念"></a>8.2 存储器及其部分概念</h3><h4 id="1、SRAM"><a href="#1、SRAM" class="headerlink" title="1、SRAM"></a>1、SRAM</h4><p><strong>Static Random Access Memory</strong> 	<strong>静态随机存储器</strong> </p>
+<img src="E:\DeskTable\博客学习截图传输\image-20231020151241416.png" alt="image-20231020151241416" style="zoom:50%;" /> 
+
+<p>只要不断电,信息一直保持——静态</p>
+<p>初始加电后状态随机</p>
+<p>n个存储器构成n位存储单元</p>
+<p>熟练掌握以下SRAM的画法</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20231207173618008.png" alt="image-20231207173618008" style="zoom: 67%;" /> 
+
+<p>对于一个SRAM需要的引脚数：</p>
+<p>以 $1K \times 1$ 为例：$1K \times 1 \rightarrow 2^{10} \times 1$ </p>
+<ol>
+<li>地址线Address Lines（input）：10根地址线——$A_0<del>-</del>A_{9}$ </li>
+<li>数据线Data Lines（Input&#x2F;Output）：1根数据线——$b_0$ </li>
+<li>控制线Control Lines（Input）：R&#x2F;W，CS</li>
+<li>以及其他两根常规的电源线Power Supply Line和地线Ground Line</li>
+</ol>
+<p>总计&#x3D;10+1+2+2 &#x3D; 15</p>
+<h4 id="2、DRAM"><a href="#2、DRAM" class="headerlink" title="2、DRAM"></a>2、DRAM</h4><p><strong>Dynamic Random Access Memory</strong>	<strong>动态随机存储器</strong> </p>
+<p>优点：</p>
+<ol>
+<li>高密度</li>
+<li>低成本</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>更长的访问时间</li>
+<li>易失的，需要不断刷新</li>
+<li>不易被CMOS集成</li>
+</ol>
+<img src="E:\DeskTable\博客学习截图传输\image-20231208095542511.png" alt="image-20231208095542511" style="zoom:50%;" /> 
+
+<p>需要掌握以下图中一个DRAM的画法</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20231207174152063.png" alt="image-20231207174152063" style="zoom:67%;" /> 
+
+<p>对于一个DRAM需要的引脚数量位：</p>
+<p>以$64K \times 1$为例：</p>
+<ol>
+<li>地址线：8   $64K &#x3D; 2^{16}$ 为了节省线路，因而将行地址线和列地址线进行复用，$\frac{16}{2} &#x3D; 8$ </li>
+<li>数据线：1根</li>
+<li>控制线：1   只有R&#x2F;W线</li>
+<li>还有常规的电源线、地线以及刷新线</li>
+</ol>
+<p><strong>Burst操作</strong> </p>
+<h4 id="3、Latency-and-Bandwidth"><a href="#3、Latency-and-Bandwidth" class="headerlink" title="3、Latency and Bandwidth"></a>3、Latency and Bandwidth</h4><p>延迟和带宽是指示内存系统性能的两个参数。</p>
+<ol>
+<li>Latency：指将一个字的数据传入或传出内存所花费的时间<ol>
+<li>注意：在块传输中，延迟用于表示传输第一个数据字之前所需的时间。</li>
+</ol>
+</li>
+<li>Bandwidth：<ol>
+<li>一秒内可以传输的位数或字节数称为带宽。</li>
+<li>单位：比特每秒或字节每秒。</li>
+<li>存储单元的带宽取决于存储数据的访问速度以及可并行访问的位数。</li>
+<li>有效带宽还取决于连接存储器和处理器的链路的传输能力。</li>
+<li>有效带宽 &#x3D; 总线速度 × 总线宽度</li>
+</ol>
+</li>
+</ol>
+<h3 id="8-3-Cache-Memories"><a href="#8-3-Cache-Memories" class="headerlink" title="8.3 Cache Memories"></a>8.3 Cache Memories</h3><p>Main Memory的一个块只能映射到Cache固定的一行当中，</p>
+<h4 id="主存和cache的三种地址映射方式"><a href="#主存和cache的三种地址映射方式" class="headerlink" title="主存和cache的三种地址映射方式"></a>主存和cache的三种地址映射方式</h4><h4 id="1、直接映射"><a href="#1、直接映射" class="headerlink" title="1、直接映射"></a>1、直接映射</h4><p><strong>Direct Mapping</strong> </p>
+<p>主存每个块可以放在cache同一个槽当中</p>
+<p>假设cache槽数为8，</p>
+<p>将Main Memory每八个块切割为一组进行分组，在同一组内的相同位置，放在cache的同一个槽位内。</p>
+<p>即：</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20231207213537311.png" alt="image-20231207213537311" style="zoom:67%;" /> 
+
+<p>如图中，在Main Memory当中块号为2——$2<del>mod</del>8 &#x3D;&#x3D; 2$ ,同样的，块号为10——$10<del>mod</del>8&#x3D;&#x3D;2$ 则第2块和第10块放在cache的2号槽当中。 </p>
+<h4 id="2、全相联映射"><a href="#2、全相联映射" class="headerlink" title="2、全相联映射"></a>2、全相联映射</h4><p><strong>Fully Associative Mapping</strong> </p>
+<p>主存任意块可以映射到cache任意槽内。</p>
+<h4 id="3、组相连映射"><a href="#3、组相连映射" class="headerlink" title="3、组相连映射"></a>3、组相连映射</h4><p><strong>Set Associative Mapping</strong> </p>
+<p>主存多个块放在Cache同一个组内的任一槽当中</p>
+<ol>
+<li>先将Cache进行分组，假设Cache内有8个槽，每2个槽为一组，可分为4组，如下图所示：</li>
+</ol>
+<img src="E:\DeskTable\博客学习截图传输\image-20231207214021904.png" alt="image-20231207214021904" style="zoom: 50%;" /> 
+
+<ol start="2">
+<li>将Main Memory 按照Cache的组数进行分组，即Cache分为4组，则Main Memory的每四块为一组。组内号对应着Cache的组号，假设Main Memory内有20个块，可分为5组，$块_0 $ 对应的组内号为0 ，则映射到Cache$组_0$ 的任意一个槽当中。</li>
+</ol>
+<p>分区——分组——分块</p>
+<p>目录表：</p>
+ <img src="E:\DeskTable\博客学习截图传输\image-20231023100630364.png" alt="image-20231023100630364" style="zoom:33%;" />
+
+<p>主存区号——主存组内块号——Cache组内块号——有效位</p>
+<p>主存地址：</p>
+<p>区号—组号—主存组内块号—块内地址</p>
+<p>Cache地址：</p>
+<p>  tag——set——word</p>
+<h3 id="8-4-虚存"><a href="#8-4-虚存" class="headerlink" title="8.4 虚存"></a>8.4 虚存</h3><p><strong>virtual Memory</strong> </p>
+<ol>
+<li>无物理设备但是有抽象概念</li>
+<li></li>
+</ol>
+<h4 id="1、页式虚存（Paging）"><a href="#1、页式虚存（Paging）" class="headerlink" title="1、页式虚存（Paging）"></a>1、页式虚存（Paging）</h4><ol>
+<li><p>以页为单位</p>
+</li>
+<li><p>虚拟空间和主存空间划分为相同大小的页，主存内的页——实页；虚存内的页——虚页</p>
+</li>
+<li><p>虚拟地址——虚页号+页内地址</p>
+<p>虚拟地址到物理地址的转换由页表是实现</p>
+<ol>
+<li>页表：存放在主存内的虚页号和实页号的对照表，用以记录虚页存入主存时安排再主存的哪个位置。</li>
+</ol>
+</li>
+<li><p>Write Policy</p>
+<ol>
+<li>Write Back</li>
+<li>write through is not suitable for virtual memory</li>
+</ol>
+</li>
+<li><p>TLB（快表）</p>
+</li>
+<li><p>页表内容：</p>
+<ul>
+<li>页号：</li>
+<li>有效位：标记该页是否被加载到主存当中</li>
+<li>修改位&#x2F;脏位：标记该页是否被修改</li>
+<li>引用位&#x2F;使用位：标记改页是否被使用</li>
+<li>访问控制位</li>
+</ul>
+</li>
+<li><p>选择较大页面尺寸的优点</p>
+<ul>
+<li>页表的大小与页面大小成反比：因此可以通过增大页面来节省内存。</li>
+<li>可能通过网络将较大的页面传输到辅助存储或从辅助存储传输较大的页面比传输较小的页面更有效。</li>
+</ul>
+</li>
+<li><p>选择较大页面尺寸的缺点</p>
+<ul>
+<li>当虚拟内存的连续区域的大小不等于页面大小的倍数时，较大的页面大小将导致更多的存储浪费（内部碎片）。</li>
+</ul>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Et411E7D6/?spm_id_from=333.337.search-card.all.click&vd_source=9fb105320442648b8c6fe466cf6f8b5c">Cache与虚拟存储器_哔哩哔哩_bilibili</a> </p>
+<h4 id="2、段式虚存"><a href="#2、段式虚存" class="headerlink" title="2、段式虚存"></a>2、段式虚存</h4><ol>
+<li>虚拟地址组成：Virtual Segment Number+Offset<img src="E:\DeskTable\博客学习截图传输\image-20231210135304188.png" alt="image-20231210135304188" style="zoom: 67%;" /> </li>
+<li>段表内容：<ul>
+<li>段的起始位置</li>
+<li>段的大小</li>
+<li>控制位</li>
+</ul>
+</li>
+<li></li>
+</ol>
+<h4 id="3、段页式虚存"><a href="#3、段页式虚存" class="headerlink" title="3、段页式虚存"></a>3、段页式虚存</h4><h2 id="CH2-机器指令"><a href="#CH2-机器指令" class="headerlink" title="CH2 机器指令"></a>CH2 机器指令</h2><h3 id="2-1指令和指令序列"><a href="#2-1指令和指令序列" class="headerlink" title="2.1指令和指令序列"></a>2.1指令和指令序列</h3><h4 id="1、四种指令："><a href="#1、四种指令：" class="headerlink" title="1、四种指令："></a>1、四种指令：</h4><ol>
+<li>存储器和处理器寄存器之间的数据传输、</li>
+<li>数据的算术和逻辑运算</li>
+<li>程序序列和控制</li>
+<li>I&#x2F;O传输</li>
+</ol>
+<h4 id="2、Register-transfer-notation（RTN"><a href="#2、Register-transfer-notation（RTN" class="headerlink" title="2、Register transfer notation（RTN)"></a>2、Register transfer notation（RTN)</h4><ol>
+<li><p>一种用于描述硬件级别的关于数据传输与操作的表示方法（就像是markdown一样的一种标记型语言，</p>
+<p>E.P:</p>
+<ul>
+<li>处理器寄存器：R0、R5</li>
+<li>I&#x2F;O 寄存器：DATAIN、OUTSTATUS</li>
+<li>内存位置：LOC、PLACE、A、VAR2</li>
+</ul>
+<p>$R2 \leftarrow [LOC]$ ——意指将LOC内的数据传输到R2寄存器当中</p>
+<p>右操作数通常提供数据，左操作数通常表示一种地址</p>
+</li>
+<li><p>两种RTN的符号</p>
+<ol>
+<li>“[  ]”表示地址内存储的内容，相当于c++语言当中的解引用*</li>
+<li>“$\leftarrow$” 表示数据的传输</li>
+</ol>
+</li>
+</ol>
+<h4 id="3、Assembly-Language-Notation（ALN）"><a href="#3、Assembly-Language-Notation（ALN）" class="headerlink" title="3、Assembly-Language Notation（ALN）"></a>3、Assembly-Language Notation（ALN）</h4><ol>
+<li>与RTN一样的一种语言，但是比RTN高级一些。</li>
+<li>在有了RTN表示数据的传输和计算之后，需要有语言来表示机器指令或程序并使用它们。</li>
+<li>可将$R2 \leftarrow [LOC] $ 转换为汇编语言：$Load<del>R2</del>LOC$ </li>
+<li>指令中包含有操作和操作数</li>
+</ol>
+<h4 id="4、RISC-Instruction-Sets"><a href="#4、RISC-Instruction-Sets" class="headerlink" title="4、RISC Instruction Sets"></a>4、RISC Instruction Sets</h4><ol>
+<li><p>缩减计算机指令集合</p>
+</li>
+<li><p>两个关键字：load和store</p>
+<ol>
+<li>只有这两个操作是用于访问主存的操作数的</li>
+<li>用于算数或逻辑指令的操作数必须在处理器的寄存器中或在指令字中显式给出</li>
+</ol>
+</li>
+<li><p>指令的执行需要先存储在内存当中</p>
+<p>在进行数据的计算之前，需要先进行数据的传输——RISC需要操作数</p>
+</li>
+<li><p>Load操作指令：Load procr_register, mem_location</p>
+</li>
+</ol>
+<h4 id="5、Branching"><a href="#5、Branching" class="headerlink" title="5、Branching"></a>5、Branching</h4><ol>
+<li>即分支语句，联想高级程序语言中的 if语句</li>
+</ol>
+<h3 id="2-2-指令格式"><a href="#2-2-指令格式" class="headerlink" title="2.2 指令格式"></a>2.2 指令格式</h3><ol>
+<li>指令集即是可被CPU执行的多种机器指令的集合</li>
+<li>微程序指令和机器指令的关系：<ul>
+<li>一条机器指令通常是由多条微程序控制指令组合而成的，因为机器指令控制的是CPU的一系列功能；而微程序指令控制的是一系列电路功能，而机器指令的完成需要这些电路功能的完成来实现</li>
+</ul>
+</li>
+</ol>
+<p>微命令、微指令、微程序、控制信号概念区分：</p>
+<p>总结：</p>
+<ul>
+<li><p>微命令-&gt;微指令-&gt;微程序	A-&gt;B 表示 A组成B</p>
+</li>
+<li><p>控制部件通过控制线向执行部件发出控制命令，这种控制命令称为&#x3D;&#x3D;微命令&#x3D;&#x3D;、也称为控制信号。微命令序列即控制信号序列，微命令是最小的单元；</p>
+</li>
+<li><p>在一个CPU的时钟周期内，会产生一系列的微命令，这些微命令的组合形成了&#x3D;&#x3D;微指令&#x3D;&#x3D;；</p>
+</li>
+<li><p>一条机器指令通常由一系列微指令组成，这些微指令序列称为&#x3D;&#x3D;微程序&#x3D;&#x3D;；</p>
+</li>
+</ul>
+<p>微操作和微指令的联系：</p>
+<ul>
+<li><p>一个&#x3D;&#x3D;微操作&#x3D;&#x3D;对应一条&#x3D;&#x3D;微指令&#x3D;&#x3D;，一条微指令可能有多个微命令。</p>
+</li>
+<li><p>微指令是一串&#x3D;&#x3D;编码&#x3D;&#x3D;，那么微操作就是这段编码所代表的操作。</p>
+</li>
+<li><p>&#x3D;&#x3D;微操作&#x3D;&#x3D;是&#x3D;&#x3D;微命令&#x3D;&#x3D;作用在硬件上的一个当作，</p>
+</li>
+</ul>
+<h4 id="1、指令的元素："><a href="#1、指令的元素：" class="headerlink" title="1、指令的元素："></a>1、指令的元素：</h4><ol>
+<li><p>操作码 opcode</p>
+</li>
+<li><p>源操作数地址</p>
+</li>
+<li><p>结果操作数地址</p>
+<p>结果操作数地址有三个去向：</p>
+<ol>
+<li>主存或虚存</li>
+<li>处理器寄存器</li>
+<li>I&#x2F;O设备</li>
+</ol>
+</li>
+</ol>
+<h4 id="2、指令的表示"><a href="#2、指令的表示" class="headerlink" title="2、指令的表示"></a>2、指令的表示</h4><p>指令的组成：<img src="E:\DeskTable\博客学习截图传输\image-20231214213936303.png" alt="image-20231214213936303" style="zoom: 67%;" /> 操作码字段和地址字段</p>
+<h4 id="3、指令地址字段的格式"><a href="#3、指令地址字段的格式" class="headerlink" title="3、指令地址字段的格式"></a>3、指令地址字段的格式</h4><ol>
+<li><p>零地址</p>
+</li>
+<li><p>一地址</p>
+<ol>
+<li>存在隐式调用<img src="E:\DeskTable\博客学习截图传输\image-20231214214238803.png" alt="image-20231214214238803" style="zoom:50%;" /></li>
+</ol>
+</li>
+<li><p>二地址</p>
+</li>
+<li><p>三地址</p>
+</li>
+</ol>
+<h4 id="4、指令的长度："><a href="#4、指令的长度：" class="headerlink" title="4、指令的长度："></a>4、指令的长度：</h4><ol>
+<li><p>固定长度：所有指令有相同的长度<img src="E:\DeskTable\博客学习截图传输\image-20231215083957842.png" alt="image-20231215083957842"> </p>
+</li>
+<li><p>可变长度：指令可能会有不同的长度</p>
+<img src="E:\DeskTable\博客学习截图传输\image-20231215084034340.png" alt="image-20231215084034340" style="zoom: 67%;" /> 
+</li>
+<li><p>缩减指令长度方法</p>
+<ol>
+<li>当操作数被<strong>多次使用</strong>时，可移入寄存器当中</li>
+<li>隐式指定一个或多个操作数</li>
+</ol>
+</li>
+</ol>
+<h4 id="5、操作码格式"><a href="#5、操作码格式" class="headerlink" title="5、操作码格式"></a>5、操作码格式</h4><ol>
+<li><p>固定长度操作码</p>
+<ol>
+<li>操作码长度固定，但指令长度可变</li>
+</ol>
+</li>
+<li><p>可变长度操作码（拓展操作码）</p>
+<p>通常指令长度固定，但操作码和操作数地址的长度此消彼长</p>
+<p>E.P..</p>
+<p>Suppose the designers need </p>
+<ul>
+<li><p>15 three-address instructions</p>
+</li>
+<li><p>14 two-address instructions </p>
+</li>
+<li><p>31 one-address instructions </p>
+</li>
+<li><p>16 zero-address instructions</p>
+</li>
+</ul>
+<p>How should we design the instruction format?</p>
+<img src="E:\DeskTable\博客学习截图传输\02c3d0bfa744674125de773e1d082e8.jpg" alt="02c3d0bfa744674125de773e1d082e8" style="zoom: 25%;" /></li>
+</ol>
+<h4 id="6、寻址模式"><a href="#6、寻址模式" class="headerlink" title="6、寻址模式"></a>6、寻址模式</h4><img src="E:\DeskTable\博客学习截图传输\image-20231215102613798.png" alt="image-20231215102613798" style="zoom: 67%;" />
+
+<ol>
+<li><p>立即寻址方式：操作数在指令中明确给出。</p>
+<ol>
+<li><p><strong>把我们实际要操作的数，直接存放在形式地址中</strong> </p>
+</li>
+<li><p><img src="https://pic4.zhimg.com/80/v2-5888816bbc50ab0983a356da892d010f_720w.webp" alt="img"></p>
+</li>
+<li><p>寻址特征为#，代表立即寻址的意思。</p>
+</li>
+<li><p>A为立即数，假设A操作数为3，则形式地址<strong>写的是操作数3的补码（011）。</strong> </p>
+</li>
+<li><p>立即寻址主要执行取指令访存1次，不需要执行指令访存，一共访存1次。</p>
+</li>
+</ol>
+</li>
+<li><p>直接寻址：</p>
+<ol>
+<li><p>直接寻址指令中的地址码字段给的是<strong>操作数的有效位置</strong>，我们可以根据这个有效位置直接去内存中寻找操作数。</p>
+</li>
+<li><p><img src="https://pic4.zhimg.com/80/v2-5888816bbc50ab0983a356da892d010f_720w.webp" alt="img"> </p>
+</li>
+<li><p>与立即寻址相比：直接寻址主要执行取指令访存1次，还有执行指令访存1次，一共访存2次。</p>
+</li>
+<li><p>原理流程图：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-aa9aa62ad61a4a3fb5a1679f220f4e10_720w.webp" alt="img"></p>
+</li>
+</ol>
+</li>
+<li><p>绝对寻址方式：<strong>操作数位于内存位置； 该位置的地址在指令中明确给出。</strong> </p>
+<ol>
+<li>直接寻址的一种，指令包含数据在内存中的确切地址，CPU通过这个地址获取或存储数据。</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20231215161204849.png" alt="image-20231215161204849"></li>
+</ol>
+</li>
+<li><p>寄存器寻址方式：操作数是处理器寄存器的内容； 寄存器的地址在指令中给出。</p>
+<p>和直接寻址原理一样，只是把访问主存改为访问寄存器。</p>
+<ol>
+<li><p><img src="https://pic3.zhimg.com/80/v2-7a52e37d708a9519badfe04efa58ce46_720w.webp" alt="img"></p>
+</li>
+<li><p>寄存器寻址主要执行取指令访存1次，由于访问的是寄存器因此<strong>不需要执行指令访存</strong>，一共访存1次。</p>
+</li>
+<li><p>原理流程图：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-4d0988f77082664805fd6f23d216b890_720w.webp" alt="img"></p>
+</li>
+<li><p><strong>访问寄存器会比访问主存快得多。</strong>但是寄存器数量也较少，可以看出地址码长度也是比访问主存的短的。</p>
+</li>
+</ol>
+</li>
+<li><p>寄存器间接寻址方式：操作数的有效地址是：出现在指令中的寄存器存储的内容。</p>
+<ol>
+<li><p><img src="https://pic4.zhimg.com/80/v2-15900f03362a4edea2063b156de593ff_720w.webp" alt="img"></p>
+</li>
+<li><p>寄存器间接寻址的指令中的地址码字段给的是<strong>操作数所在的寄存器位置</strong>，我们可以根据这个地址去寄存器中找到操作数的有效地址，再去内存中寻找操作数。</p>
+</li>
+<li><p>原理流程图：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-60b10bb53b31830cae565b3d63f675f3_720w.webp" alt="img"></p>
+</li>
+</ol>
+</li>
+<li><p>变址寻址方式：操作数的有效地址是通过将常数值与寄存器（变址寄存器）的内容相加而生成的。</p>
+<ol>
+<li><p><img src="E:\DeskTable\博客学习截图传输\image-20231215161451624.png" alt="image-20231215161451624"></p>
+</li>
+<li><p>$EA &#x3D; X + [Ri]$ </p>
+<p>**X (offset)**：指令中包含的常数值</p>
+</li>
+<li><p>变址寻址的两种方式：</p>
+<ol>
+<li>偏移量是一个常量</li>
+<li>偏移量是在变址寄存器当中，而变址寄存器当中的值是可以进行修改的</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>base with index</p>
+</li>
+</ol>
+<h2 id="CH5-基础处理器单元"><a href="#CH5-基础处理器单元" class="headerlink" title="CH5 基础处理器单元"></a>CH5 基础处理器单元</h2><p>CPU内存中的寄存器</p>
+<ol>
+<li>通用寄存器——存放操作数；某种寻址方式所需的专用寄存器</li>
+<li>数据寄存器——</li>
+<li>地址寄存器——存放地址数</li>
+<li>条件码寄存器——存放条件码</li>
+<li>控制寄存器：<ol>
+<li>$PC \rightarrow MAR \rightarrow M \rightarrow MDR \rightarrow IR$  </li>
+<li>只有PC可见</li>
+</ol>
+</li>
+<li>状态寄存器<ol>
+<li>在中断产生时，由于断点之前的程序使用的硬件状态会被修改，需要提前保存，在断点恢复之后可以恢复中断前的程序场景。</li>
+<li>CU：产生全部指令的微操作命令序列</li>
+</ol>
+</li>
+</ol>
+<h3 id="5-1-Some-Fundamental-Concepts"><a href="#5-1-Some-Fundamental-Concepts" class="headerlink" title="5.1 Some Fundamental Concepts"></a>5.1 Some Fundamental Concepts</h3><ol>
+<li><p>Processing Unit</p>
+<ul>
+<li>Instruction Set Processor or Central Processing Unit  (CPU)</li>
+<li>处理器负责从计算机内存中读取程序指令并执行它们。<ul>
+<li>它一次获取一条指令。</li>
+<li>它解码（解释）指令。</li>
+<li>然后，它执行指定的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>指令执行：</p>
+<p>（1）获取PC指向的内存位置的内容。 该位置的内容被加载到 IR 中。$IR ← [[PC]]$ </p>
+<p>（2）PC自增</p>
+<p>（3）执行IR中指令指定的操作。</p>
+<p>（1）（2）：取指阶段，（3）：执行阶段</p>
+</li>
+<li><p>执行指令的操作：</p>
+<p>1）加载数据到处理器当中：读取给定的内存位置的内容并将其加载到<strong>处理器寄存器</strong>中。<br>2）读取数据：从一个或多个<strong>处理器寄存器</strong>读取数据。<br>3）执行操作指令：执行算术或逻辑运算并将结果放入处理器寄存器中。<br>4）写回数据：将处理器寄存器中的数据存储到给定的内存位置。</p>
+</li>
+<li><p>指令执行的五大步骤：</p>
+<ul>
+<li>Fetch <strong>取指阶段</strong>: 从内存中读取下一条指令。</li>
+<li>Decode <strong>解码阶段</strong>: 解析指令，确定其类型和所需操作。</li>
+<li><strong>执行阶段</strong>: 执行指令规定的操作。</li>
+<li><strong>访存阶段</strong>: 如果需要访问内存，进行读取或写入。</li>
+<li><strong>写回阶段</strong>: 将执行结果写回寄存器或内存。</li>
+</ul>
+</li>
+<li><p>处理器主要硬件组成：</p>
+<ol>
+<li>PC</li>
+<li>IR</li>
+<li>Instruction address generator</li>
+<li>Control circuitry</li>
+</ol>
+<img src="E:\DeskTable\博客学习截图传输\image-20231215210130431.png" alt="image-20231215210130431" style="zoom:50%;" />
+</li>
+<li></li>
+</ol>
+<h3 id="5-2-Instruction-Execution-5-steps"><a href="#5-2-Instruction-Execution-5-steps" class="headerlink" title="5.2 Instruction Execution (5 steps)"></a>5.2 Instruction Execution (5 steps)</h3><ol>
+<li>Load指令：$Load<del>R5</del>X(R7)$ <ol>
+<li>从主存取指令，wait for MFC，并且PC自增</li>
+<li>译码decode得到操作，读取寄存器R7中的内容</li>
+<li>将X和R7的内容相加</li>
+<li>将相加结果作为源操作数的有效地址，并读取存储器中该地址内的内容</li>
+<li>将存储器读取数据存入R5</li>
+</ol>
+</li>
+<li>算数逻辑运算指令<ol>
+<li>两个源寄存器or一个直接操作数和一个源寄存器</li>
+<li>无需访问存储器操作数</li>
+<li></li>
+</ol>
+</li>
+</ol>
+<h3 id="5-3-Hardware-Components-5-stages"><a href="#5-3-Hardware-Components-5-stages" class="headerlink" title="5.3 Hardware Components (5 stages)"></a>5.3 Hardware Components (5 stages)</h3><h3 id="5-4-Instruction-Fetch-and-Execution-Steps"><a href="#5-4-Instruction-Fetch-and-Execution-Steps" class="headerlink" title="5.4 Instruction Fetch and Execution Steps"></a>5.4 Instruction Fetch and Execution Steps</h3><h3 id="5-5-Control-Signals"><a href="#5-5-Control-Signals" class="headerlink" title="5.5 Control Signals"></a>5.5 Control Signals</h3><h3 id="5-6-Hardwired-Control"><a href="#5-6-Hardwired-Control" class="headerlink" title="5.6 Hardwired Control"></a>5.6 Hardwired Control</h3><h3 id="5-7-CISC-Style-Processors"><a href="#5-7-CISC-Style-Processors" class="headerlink" title="5.7 CISC-Style Processors"></a>5.7 CISC-Style Processors</h3><h2 id="CH6-流水线"><a href="#CH6-流水线" class="headerlink" title="CH6 流水线"></a>CH6 流水线</h2><h3 id="6-1-基本概念"><a href="#6-1-基本概念" class="headerlink" title="6.1 基本概念"></a>6.1 基本概念</h3><h4 id="1、什么是流水线"><a href="#1、什么是流水线" class="headerlink" title="1、什么是流水线"></a>1、什么是流水线</h4><p>流水线是用于构建快速处理器的关键实现技术。 它允许多条指令的执行在时间上重叠。</p>
+<ol>
+<li>核心：将多条指令执行时间进行重叠</li>
+<li>本质：在完成前一条指令之前执行下一条指令</li>
+<li><img src="E:\DeskTable\博客学习截图传输\image-20231216111436816.png" alt="image-20231216111436816"></li>
+</ol>
+<h4 id="2、回顾指令执行的五大步骤"><a href="#2、回顾指令执行的五大步骤" class="headerlink" title="2、回顾指令执行的五大步骤"></a>2、回顾指令执行的五大步骤</h4><ol>
+<li><p>Instruction Fetch  </p>
+</li>
+<li><p>Instruction Decode and Register Read  </p>
+</li>
+<li><p>Execution operation or calculate address </p>
+</li>
+<li><p>Memory access  </p>
+</li>
+<li><p>Write result into register</p>
+</li>
+</ol>
+<img src="E:\DeskTable\博客学习截图传输\image-20231216111805502.png" alt="image-20231216111805502" style="zoom: 80%;" />
+
+<img src="E:\DeskTable\博客学习截图传输\image-20231216111829396.png" alt="image-20231216111829396" style="zoom:80%;" />
+
+<p>将原先的：上一条指令第五步结束后才进行下一指令的第一步的模式</p>
+<p>切换为：在上一条指令移码阶段的同时进行下一指令的取指令</p>
+<h4 id="3、术语"><a href="#3、术语" class="headerlink" title="3、术语"></a>3、术语</h4><ol>
+<li><p>吞吐量&#x2F;Throught：每秒完成指令的数量。The number of instructions completed per second</p>
+</li>
+<li><p>延迟&#x2F;Latency： 在管道中执行一条指令需要多长时间。How long does it take to execute a single instruction</p>
+</li>
+<li><p>流水线片段&#x2F;Pipe Stage或Pipe Segment：完成指令的流水线中的一个步骤</p>
+</li>
+<li><p>流水线深度&#x2F;Pipeline Depth：流水线中的步骤的个数。</p>
+</li>
+</ol>
+<h4 id="4、流水线的组成"><a href="#4、流水线的组成" class="headerlink" title="4、流水线的组成"></a>4、流水线的组成</h4><img src="E:\DeskTable\博客学习截图传输\image-20231216112503816.png" alt="image-20231216112503816" style="zoom: 67%;" />
+
+<ol>
+<li>流水线不改变原来的每个指令执行的时间延迟，完成每个指令所需的时间不变</li>
+<li>但是减少的是多个指令总的运行的平均时间</li>
+<li>提高了总体的吞吐量</li>
+</ol>
+<h3 id="6-2-数据依赖"><a href="#6-2-数据依赖" class="headerlink" title="6.2 数据依赖"></a>6.2 数据依赖</h3><ol>
+<li>程序或指令序列中，一个操作对另一个操作的数据需求或依赖关系。这种依赖关系决定了指令执行的顺序以及可能存在的并行性。</li>
+<li>三种主要依赖：<ol>
+<li>读后写（Read-after-Write，RAW）依赖：</li>
+<li>写后读（Write-after-Read，WAR）依赖：</li>
+<li>写后写（Write-after-Write，WAW）依赖：</li>
+</ol>
+</li>
+</ol>
+<h4 id="1、三种冲突："><a href="#1、三种冲突：" class="headerlink" title="1、三种冲突："></a>1、三种冲突：</h4><ol>
+<li>数据冲突——可进行规避<ol>
+<li>指令的源操作数或目标操作数在流水线中预期的时间不可用的任何情况。 </li>
+<li>因此某些操作必须延迟，流水线就会停顿。</li>
+<li>可能可以采用&#x3D;&#x3D;操作数转发&#x3D;&#x3D;的形式解决此种冲突，但并非都可以。</li>
+</ol>
+</li>
+<li>指令（控制）冲突——可进行规避<ol>
+<li>指令可用性的延迟会导致流水线停顿。</li>
+</ol>
+</li>
+<li>结构冲突——无法规避<ol>
+<li>两条指令同时需要使用给定硬件资源的情况</li>
+</ol>
+</li>
+</ol>
+<p>$E.P.~~~~~~~~ Add<del>R2</del>R3~~井100$</p>
+<p>$~~~~~~~~~~~~~~~~~Subtract<del>R9</del>R2~~~井30$ </p>
+<ol>
+<li><p>Add指令中的R2 和 Subtract 中的R2 存在数据依赖</p>
+</li>
+<li><p>在非流水线的数据路径上，当Add指令结束后R2的新值可应用于Subtract</p>
+</li>
+<li><p>但是在流水线上，Subtract必须等待Add指令中R2 被操作结束后才可以进行第一步骤取指操作。</p>
+</li>
+<li><p>因而<mark>流水线停顿</mark> </p>
+</li>
+<li><p>流水线停顿的详细信息</p>
+<ul>
+<li><p>在周期 3 中解码 Subtract 时，控制电路必须识别相关性</p>
+</li>
+<li><p>级间缓冲区携带指令源和目标的寄存器标识符</p>
+</li>
+<li><p>在周期 3 中，将计算阶段的目标标识符与解码阶段的源标识符进行比较</p>
+</li>
+<li><p>R2 匹配，因此 Subtract 保留在 Decode 中，而 Add 允许正常继续</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-5-存储器延迟"><a href="#6-5-存储器延迟" class="headerlink" title="6.5 存储器延迟"></a>6.5 存储器延迟</h3><p>由于访问存储器产生的延迟导致流水线的停顿。如Load指令，当发生cache miss时会导致流水线停顿。</p>
+<h2 id="CH3-基本输入输出"><a href="#CH3-基本输入输出" class="headerlink" title="CH3 基本输入输出"></a>CH3 基本输入输出</h2><h3 id="3-1-访问I-O设备"><a href="#3-1-访问I-O设备" class="headerlink" title="3.1 访问I&#x2F;O设备"></a>3.1 访问I&#x2F;O设备</h3><h4 id="1、内存映射I-O"><a href="#1、内存映射I-O" class="headerlink" title="1、内存映射I&#x2F;O"></a>1、内存映射I&#x2F;O</h4><ol>
+<li><p>特点：</p>
+<ul>
+<li><p>I&#x2F;O设备和内存共享相同的地址空间</p>
+</li>
+<li><p>没有针对I&#x2F;O的特殊指令</p>
+</li>
+<li><p>I&#x2F;O设备的访问和内存的读写很像</p>
+</li>
+</ul>
+</li>
+<li><p>优点：</p>
+<ul>
+<li>任何可以访问内存的机器指令都可以用于向 I&#x2F;O 设备传输数据或从 I&#x2F;O 设备传输数据</li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li>占用了宝贵的内存地址空间</li>
+</ul>
+</li>
+</ol>
+<h4 id="2、独立I-O"><a href="#2、独立I-O" class="headerlink" title="2、独立I&#x2F;O"></a>2、独立I&#x2F;O</h4><ol>
+<li><p>特点：</p>
+<ul>
+<li><p>独立的地址空间</p>
+</li>
+<li><p>具有用于执行I&#x2F;O传输的特殊指令</p>
+</li>
+</ul>
+</li>
+<li><p>优点：</p>
+<ul>
+<li>I&#x2F;O 设备处理的地址线很少。</li>
+</ul>
+</li>
+<li><p>注：独立的 I&#x2F;O 地址空间并不一定意味着 I&#x2F;O 地址线与内存地址线在物理上是分开的。</p>
+</li>
+</ol>
+<h3 id="3-2-I-O设备接口"><a href="#3-2-I-O设备接口" class="headerlink" title="3.2 I&#x2F;O设备接口"></a>3.2 I&#x2F;O设备接口</h3><h4 id="1、概念："><a href="#1、概念：" class="headerlink" title="1、概念："></a>1、概念：</h4><ul>
+<li>I&#x2F;O 设备接口是设备和互连网络之间的电路。</li>
+<li>提供数据传输以及状态和控制信息交换的方式。</li>
+<li>包括可通过加载和存储指令访问的数据、状态和控制寄存器。</li>
+<li>内存映射 I&#x2F;O 使软件能够将这些寄存器视为内存中的位置。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">三好市民柴桂</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Mokelting.github.io/2023/09/15/xiao-nei-ke-cheng-xue-xi-bi-ji/ji-suan-ji-chong-yao-ji-chu/ji-suan-ji-zu-cheng-yuan-li-xue-xi/">http://Mokelting.github.io/2023/09/15/xiao-nei-ke-cheng-xue-xi-bi-ji/ji-suan-ji-chong-yao-ji-chu/ji-suan-ji-zu-cheng-yuan-li-xue-xi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">三好市民柴桂</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/">
+                                    <span class="chip bg-color">计算机四大件</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/">
+                                    <span class="chip bg-color">大学专业课</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/09/18/xiao-nei-ke-cheng-xue-xi-bi-ji/ji-suan-ji-chong-yao-ji-chu/shu-ju-jie-gou/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/" class="responsive-img" alt="数据结构">
+                        
+                        <span class="card-title">数据结构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据结构学习
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机重要基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/">
+                        <span class="chip bg-color">计算机四大件</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/">
+                        <span class="chip bg-color">大学专业课</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/09/15/xiao-nei-ke-cheng-xue-xi-bi-ji/ji-suan-ji-chong-yao-ji-chu/ji-suan-ji-zu-cheng-yuan-li-xue-xi/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/" class="responsive-img" alt="计算机组成原理">
+                        
+                        <span class="card-title">计算机组成原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            计算机组成原理学习
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E8%A6%81%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    计算机重要基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E5%A4%A7%E4%BB%B6/">
+                        <span class="chip bg-color">计算机四大件</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE/">
+                        <span class="chip bg-color">大学专业课</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2025</span>
+            
+            <a href="/about" target="_blank">Cai Gui</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">192.5k</span>
+            
+            
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "9";
+                        var startDate = "16";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/Mokelting" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1468664118@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1468664118" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1468664118" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+{% if (theme.mermaid.enable) %}
+ <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
+ <script>
+    if (window.mermaid) {
+        mermaid.initialize({ theme: 'forest' });
+    }
+ </script>
+{% endif %}
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+        <!-- <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script> -->
+        <script src='/libs/mermaid/mermaid.min.js'></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
+    
+
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
