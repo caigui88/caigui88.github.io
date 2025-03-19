@@ -1495,6 +1495,7 @@
     <title>rabbitmq 基础篇</title>
     <url>/2025/03/05/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%AD%A6%E4%B9%A0/rabbitmq%E5%9F%BA%E7%A1%80%E7%AF%87/</url>
     <content><![CDATA[<h1 id="rabbitMQ-基础篇"><a class="header-anchor" href="#rabbitMQ-基础篇"></a>rabbitMQ 基础篇</h1>
+<p><img src="" alt="RabbitMQ"></p>
 <p>参考资料：</p>
 <p><a href="https://www.bilibili.com/video/BV1S142197x7?spm_id_from=333.788.player.switch&amp;bvid=BV1S142197x7&amp;vd_source=9fb105320442648b8c6fe466cf6f8b5c&amp;p=85">MQ入门-01.MQ课程介绍_哔哩哔哩_bilibili</a></p>
 <p><a href="https://www.rabbitmq.com/tutorials">RabbitMQ 官方文档</a></p>
@@ -6335,6 +6336,7 @@ try&#123;
     <title>jvm 学习笔记</title>
     <url>/2025/03/01/Java%E5%BA%95%E5%B1%82/JVM/</url>
     <content><![CDATA[<h1 id="JVM"><a class="header-anchor" href="#JVM"></a>JVM</h1>
+<p><img src="" alt="jvm"></p>
 <blockquote>
 <p>本文参考资料：</p>
 <p><a href="https://www.bilibili.com/video/BV1r94y1b7eS?spm_id_from=333.788.videopod.episodes&amp;vd_source=9fb105320442648b8c6fe466cf6f8b5c">黑马程序员JVM虚拟机入门到实战全套视频教程，java大厂面试必会的jvm一套搞定（丰富的实战案例及最热面试题）_哔哩哔哩_bilibili</a></p>
@@ -7844,7 +7846,8 @@ try&#123;
   <entry>
     <title>lombok插件使用</title>
     <url>/2025/03/07/%E6%8F%92%E4%BB%B6/lombok%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>1、lombok简介及安装<br>
+    <content><![CDATA[<h1 id="lombok-插件使用-Java"><a class="header-anchor" href="#lombok-插件使用-Java"></a>lombok 插件使用 Java</h1>
+<p>1、lombok简介及安装<br>
 lombok作用：提高开发效率，通过注解形式使javabean生成get、set、有参数、无参数、toString等方法，无需手动实现。</p>
 <p>倘若不使用lombok可以使用的注解有：<br>
 注解介绍：<br>
