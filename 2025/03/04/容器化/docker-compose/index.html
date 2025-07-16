@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>docker-compose | Moru</title><meta name="author" content="moru"><meta name="copyright" content="moru"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="[TOC] docker-compose 基本语法 docker-compose.yml文件的基本语法可以参考官方文档： https:&#x2F;&#x2F;docs.docker.com&#x2F;compose&#x2F;compose-file&#x2F;compose-file-v3&#x2F; docker-compose文件中可以定义多个相互关联的应用容器，每一个应用容器被称为一个服务（service）。由于service就是在定义某个应用的运">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker-compose">
+<meta property="og:url" content="http://example.com/2025/03/04/%E5%AE%B9%E5%99%A8%E5%8C%96/docker-compose/index.html">
+<meta property="og:site_name" content="Moru">
+<meta property="og:description" content="[TOC] docker-compose 基本语法 docker-compose.yml文件的基本语法可以参考官方文档： https:&#x2F;&#x2F;docs.docker.com&#x2F;compose&#x2F;compose-file&#x2F;compose-file-v3&#x2F; docker-compose文件中可以定义多个相互关联的应用容器，每一个应用容器被称为一个服务（service）。由于service就是在定义某个应用的运">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503200024740.png">
+<meta property="article:published_time" content="2025-03-04T15:28:49.000Z">
+<meta property="article:modified_time" content="2025-04-28T07:27:23.960Z">
+<meta property="article:author" content="moru">
+<meta property="article:tag" content="docker-compose">
+<meta property="article:tag" content="工具">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503200024740.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "docker-compose",
+  "url": "http://example.com/2025/03/04/%E5%AE%B9%E5%99%A8%E5%8C%96/docker-compose/",
+  "image": "https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503200024740.png",
+  "datePublished": "2025-03-04T15:28:49.000Z",
+  "dateModified": "2025-04-28T07:27:23.960Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "墨儒",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/butterfly-icon.png"><link rel="canonical" href="http://example.com/2025/03/04/%E5%AE%B9%E5%99%A8%E5%8C%96/docker-compose/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'docker-compose',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(./img/sky.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">69</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">66</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503200024740.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503011730967.png" alt="Logo"><span class="site-name">Moru</span></a><a class="nav-page-title" href="/"><span class="site-name">docker-compose</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">docker-compose</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-04T15:28:49.000Z" title="发表于 2025-03-04 23:28:49">2025-03-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-28T07:27:23.960Z" title="更新于 2025-04-28 15:27:23">2025-04-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>[TOC]</p>
+<h1 id="docker-compose"><a class="header-anchor" href="#docker-compose"></a>docker-compose</h1>
+<h2 id="基本语法"><a class="header-anchor" href="#基本语法"></a>基本语法</h2>
+<p>docker-compose.yml文件的基本语法可以参考官方文档：</p>
+<p>https://docs.docker.com/compose/compose-file/compose-file-v3/</p>
+<p>docker-compose文件中可以定义多个相互关联的应用容器，每一个应用容器被称为一个服务（service）。由于service就是在定义某个应用的运行时参数，因此与<code>docker run</code>参数非常相似。</p>
+<p>举例来说，用docker run部署MySQL的命令如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name mysql \</span><br><span class="line">  -p 3306:3306 \</span><br><span class="line">  -e TZ=Asia/Shanghai \</span><br><span class="line">  -e MYSQL_ROOT_PASSWORD=123 \</span><br><span class="line">  -v ./mysql/data:/var/lib/mysql \</span><br><span class="line">  -v ./mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">  -v ./mysql/init:/docker-entrypoint-initdb.d \</span><br><span class="line">  --network hmall</span><br><span class="line">  mysql</span><br></pre></td></tr></table></figure>
+<p>如果用<code>docker-compose.yml</code>文件来定义，就是这样：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.8&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;3306:3306&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="number">123</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/conf:/etc/mysql/conf.d&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/data:/var/lib/mysql&quot;</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">new</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">new:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hmall</span></span><br></pre></td></tr></table></figure>
+<p>对比如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>docker run 参数</strong></th>
+<th style="text-align:left"><strong>docker compose 指令</strong></th>
+<th style="text-align:left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">–name</td>
+<td style="text-align:left">container_name</td>
+<td style="text-align:left">容器名称</td>
+</tr>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:left">ports</td>
+<td style="text-align:left">端口映射</td>
+</tr>
+<tr>
+<td style="text-align:left">-e</td>
+<td style="text-align:left">environment</td>
+<td style="text-align:left">环境变量</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">volumes</td>
+<td style="text-align:left">数据卷配置</td>
+</tr>
+<tr>
+<td style="text-align:left">–network</td>
+<td style="text-align:left">networks</td>
+<td style="text-align:left">网络</td>
+</tr>
+</tbody>
+</table>
+<p>明白了其中的对应关系，相信编写<code>docker-compose</code>文件应该难不倒大家。</p>
+<p>黑马商城部署文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3.8&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;3306:3306&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="number">123</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/conf:/etc/mysql/conf.d&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/data:/var/lib/mysql&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./mysql/init:/docker-entrypoint-initdb.d&quot;</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line">  <span class="attr">hmall:</span></span><br><span class="line">    <span class="attr">build:</span> </span><br><span class="line">      <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">hmall</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;8080:8080&quot;</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mysql</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;18080:18080&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;18081:18081&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./nginx/nginx.conf:/etc/nginx/nginx.conf&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;./nginx/html:/usr/share/nginx/html&quot;</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hmall</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">hm-net:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hmall</span></span><br></pre></td></tr></table></figure>
+<h2 id="基础命令"><a class="header-anchor" href="#基础命令"></a>基础命令</h2>
+<p>编写好docker-compose.yml文件，就可以部署项目了。常见的命令：</p>
+<p>https://docs.docker.com/compose/reference/</p>
+<p>基本语法如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose [OPTIONS] [COMMAND]</span><br></pre></td></tr></table></figure>
+<p>其中，OPTIONS和COMMAND都是可选参数，比较常见的有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>类型</strong></th>
+<th style="text-align:left"><strong>参数或指令</strong></th>
+<th style="text-align:left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Options</td>
+<td style="text-align:left">-f</td>
+<td style="text-align:left">指定compose文件的路径和名称</td>
+</tr>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:left">指定project名称。project就是当前compose文件中设置的多个service的集合，是逻辑概念</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Commands</td>
+<td style="text-align:left">up</td>
+<td style="text-align:left">创建并启动所有service容器</td>
+</tr>
+<tr>
+<td style="text-align:left">down</td>
+<td style="text-align:left">停止并移除所有容器、网络</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ps</td>
+<td style="text-align:left">列出所有启动的容器</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">logs</td>
+<td style="text-align:left">查看指定容器的日志</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">stop</td>
+<td style="text-align:left">停止容器</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">启动容器</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">restart</td>
+<td style="text-align:left">重启容器</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">top</td>
+<td style="text-align:left">查看运行的进程</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">exec</td>
+<td style="text-align:left">在指定的运行中容器中执行命令</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>教学演示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.进入root目录</span></span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.删除旧容器</span></span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -qa)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.删除hmall镜像</span></span><br><span class="line">docker rmi hmall</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.清空MySQL数据</span></span><br><span class="line"><span class="built_in">rm</span> -rf mysql/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.启动所有, -d 参数是后台启动</span></span><br><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">[+] Building 15.5s (8/8) FINISHED</span><br><span class="line"> =&gt; [internal] load build definition from Dockerfile                                    0.0s</span><br><span class="line"> =&gt; =&gt; transferring dockerfile: 358B                                                    0.0s</span><br><span class="line"> =&gt; [internal] load .dockerignore                                                       0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 2B                                                         0.0s</span><br><span class="line"> =&gt; [internal] load metadata <span class="keyword">for</span> docker.io/library/openjdk:11.0-jre-buster             15.4s</span><br><span class="line"> =&gt; [1/3] FROM docker.io/library/openjdk:11.0-jre-buster@sha256:3546a17e6fb4ff4fa681c3  0.0s</span><br><span class="line"> =&gt; [internal] load build context                                                       0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 98B                                                        0.0s</span><br><span class="line"> =&gt; CACHED [2/3] RUN <span class="built_in">ln</span> -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; <span class="built_in">echo</span>   0.0s</span><br><span class="line"> =&gt; CACHED [3/3] COPY hm-service.jar /app.jar                                           0.0s</span><br><span class="line"> =&gt; exporting to image                                                                  0.0s</span><br><span class="line"> =&gt; =&gt; exporting layers                                                                 0.0s</span><br><span class="line"> =&gt; =&gt; writing image sha256:32eebee16acde22550232f2eb80c69d2ce813ed099640e4cfed2193f71  0.0s</span><br><span class="line"> =&gt; =&gt; naming to docker.io/library/root-hmall                                           0.0s</span><br><span class="line">[+] Running 4/4</span><br><span class="line"> ✔ Network hmall    Created                                                             0.2s</span><br><span class="line"> ✔ Container mysql  Started                                                             0.5s</span><br><span class="line"> ✔ Container hmall  Started                                                             0.9s</span><br><span class="line"> ✔ Container nginx  Started                                                             1.5s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.查看镜像</span></span><br><span class="line">docker compose images</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">CONTAINER           REPOSITORY          TAG                 IMAGE ID            SIZE</span><br><span class="line">hmall               root-hmall          latest              32eebee16acd        362MB</span><br><span class="line">mysql               mysql               latest              3218b38490ce        516MB</span><br><span class="line">nginx               nginx               latest              605c77e624dd        141MB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.查看容器</span></span><br><span class="line">docker compose ps</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">NAME                IMAGE               COMMAND                  SERVICE             CREATED             STATUS              PORTS</span><br><span class="line">hmall               root-hmall          <span class="string">&quot;java -jar /app.jar&quot;</span>     hmall               54 seconds ago      Up 52 seconds       0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp</span><br><span class="line">mysql               mysql               <span class="string">&quot;docker-entrypoint.s…&quot;</span>   mysql               54 seconds ago      Up 53 seconds       0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp, 33060/tcp</span><br><span class="line">nginx               nginx               <span class="string">&quot;/docker-entrypoint.…&quot;</span>   nginx               54 seconds ago      Up 52 seconds       80/tcp, 0.0.0.0:18080-18081-&gt;18080-18081/tcp, :::18080-18081-&gt;18080-18081/tcp</span><br></pre></td></tr></table></figure>
+<p>打开浏览器，访问：http://192.168.246.129:8080</p>
+<h2 id="配置-MySQL"><a class="header-anchor" href="#配置-MySQL"></a>配置 MySQL</h2>
+<h3 id="编写-cnf-文件"><a class="header-anchor" href="#编写-cnf-文件"></a>编写 cnf 文件</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###### [client]配置模块 ######</span></span><br><span class="line">[<span class="string">client</span>]</span><br><span class="line"><span class="string">default-character-set=utf8mb4</span></span><br><span class="line"><span class="string">socket=/var/lib/mysql/mysql.sock</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###### [mysql]配置模块 ######</span></span><br><span class="line">[<span class="string">mysql</span>]</span><br><span class="line"><span class="comment"># 设置MySQL客户端默认字符集</span></span><br><span class="line"><span class="string">default-character-set=utf8mb4</span></span><br><span class="line"><span class="string">socket=/var/lib/mysql/mysql.sock</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###### [mysqld]配置模块 ######</span></span><br><span class="line">[<span class="string">mysqld</span>]</span><br><span class="line"><span class="string">port=3306</span></span><br><span class="line"><span class="string">user=mysql</span></span><br><span class="line"><span class="comment"># 设置sql模式 sql_mode模式引起的分组查询出现*this is incompatible with sql_mode=only_full_group_by，这里最好剔除ONLY_FULL_GROUP_BY</span></span><br><span class="line"><span class="string">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span></span><br><span class="line"><span class="string">datadir=/var/lib/mysql</span></span><br><span class="line"><span class="string">socket=/var/lib/mysql/mysql.sock</span></span><br><span class="line"><span class="string">server-id</span> <span class="string">=</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># MySQL8 的密码认证插件 如果不设置低版本navicat无法连接</span></span><br><span class="line"><span class="string">default_authentication_plugin=mysql_native_password</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 禁用符号链接以防止各种安全风险</span></span><br><span class="line"><span class="string">symbolic-links=0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line"><span class="string">max_connections=1000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span></span><br><span class="line"><span class="string">character-set-server=utf8mb4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="string">default-storage-engine=INNODB</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 0: 表名将按指定方式存储，并且比较区分大小写;</span></span><br><span class="line"><span class="comment"># 1: 表名以小写形式存储在磁盘上，比较不区分大小写；</span></span><br><span class="line"><span class="string">lower_case_table_names=0</span></span><br><span class="line"></span><br><span class="line"><span class="string">max_allowed_packet=16M</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置时区</span></span><br><span class="line"><span class="string">default-time_zone=&#x27;+8:00&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="编写-sql-文件进行数据库初始化"><a class="header-anchor" href="#编写-sql-文件进行数据库初始化"></a>编写 sql 文件进行数据库初始化</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database if <span class="keyword">not</span> exit init_db;</span><br><span class="line">use init_db;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="编写-yml-文件"><a class="header-anchor" href="#编写-yml-文件"></a>编写 yml 文件</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span> <span class="comment"># 服务名称</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0.18</span> <span class="comment"># 或其它mysql版本</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql8</span> <span class="comment"># 容器名称</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span> <span class="comment"># root用户密码</span></span><br><span class="line"><span class="comment">#      - TZ=Asia/Shanghai # 设置容器时区 我这里通过下面挂载方式同步的宿主机时区和时间了,这里忽略</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/docker/mysql8/log:/var/log/mysql</span> <span class="comment"># 映射日志目录，宿主机:容器</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/docker/mysql8/data:/var/lib/mysql</span> <span class="comment"># 映射数据目录，宿主机:容器</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/docker/mysql8/conf.d:/etc/mysql/conf.d</span> <span class="comment"># 映射配置目录，宿主机:容器</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/etc/localtime:/etc/localtime:ro</span> <span class="comment"># 让容器的时钟与宿主机时钟同步，避免时间的问题，ro是read only的意思，就是只读。</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">3306</span><span class="string">:3306</span> <span class="comment"># 指定宿主机端口与容器端口映射关系，宿主机:容器</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span> <span class="comment"># 容器随docker启动自启</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="配置-redis"><a class="header-anchor" href="#配置-redis"></a>配置 redis</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis:6.0</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">redis</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6379:6379&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./redis/data:/data</span>  <span class="comment"># 挂载 Redis 数据目录到当前目录下的 redis/data</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hmall</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置-Nacos"><a class="header-anchor" href="#配置-Nacos"></a>配置 Nacos</h2>
+<h3 id="编写-env-文件："><a class="header-anchor" href="#编写-env-文件："></a>编写 env 文件：</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PREFER_HOST_MODE=hostname</span><br><span class="line">MODE=standalone</span><br><span class="line">SPRING_DATASOURCE_PLATFORM=mysql</span><br><span class="line">MYSQL_SERVICE_HOST=192.168.246.129</span><br><span class="line">MYSQL_SERVICE_DB_NAME=nacos</span><br><span class="line">MYSQL_SERVICE_PORT=3306</span><br><span class="line">MYSQL_SERVICE_USER=root</span><br><span class="line">MYSQL_SERVICE_PASSWORD=root</span><br><span class="line">MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai</span><br></pre></td></tr></table></figure>
+<h3 id="编写-yml-文件-v2"><a class="header-anchor" href="#编写-yml-文件-v2"></a>编写 yml 文件</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## docker-compose config                  ## 检查当前目录docker-compose.yml文件配置是否正确</span></span><br><span class="line"><span class="comment">## docker-compose up -d                   ## -d 为后台启动</span></span><br><span class="line"><span class="comment">## docker-compose up -d --force-rereate  ## 强制重新创建容器,修改挂载文件后使用该命令启动,谨慎使用,调试时可使用,使用此命令可能造成数据丢失</span></span><br><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nacos:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nacos/nacos-server:v2.0.3</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">nacos2.0.3</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">PREFER_HOST_MODE=hostname</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MODE=standalone</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">JVM_XMX=1g</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">JVM_XMS=1g</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">TOMCAT_ACCESSLOG_ENABLED=false</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">SPRING_DATASOURCE_PLATFORM=mysql</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_SERVICE_HOST=172.16.223.140</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_SERVICE_PORT=3306</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_SERVICE_USER=root</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_SERVICE_PASSWORD=123456</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_SERVICE_DB_NAME=nacos_config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true&amp;useUnicode=true&amp;useSSL=false&amp;serverTimezone=UTC</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NACOS_AUTH_IDENTITY_KEY=nacos2023</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NACOS_AUTH_IDENTITY_VALUE=nacos2023</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NACOS_AUTH_TOKEN=SecretKey345901234567890126785678901234567890123901234567890123445678</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./logs/:/home/nacos/logs</span></span><br><span class="line">      <span class="comment"># - ./conf/custom.properties:/home/nacos/init.d/custom.properties</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8848</span><span class="string">:8848</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">9848</span><span class="string">:9848</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="配置-rabbitMQ"><a class="header-anchor" href="#配置-rabbitMQ"></a>配置 rabbitMQ</h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">rabbitmq:</span></span><br><span class="line">     <span class="attr">image:</span> <span class="string">rabbitmq:3.8-management</span></span><br><span class="line">     <span class="attr">container_name:</span> <span class="string">rabbitmq</span></span><br><span class="line">     <span class="attr">hostname:</span> <span class="string">hmall</span></span><br><span class="line">     <span class="attr">ports:</span></span><br><span class="line">       <span class="bullet">-</span> <span class="number">5672</span><span class="string">:5672</span></span><br><span class="line">       <span class="bullet">-</span> <span class="number">15672</span><span class="string">:15672</span></span><br><span class="line">     <span class="attr">environment:</span></span><br><span class="line">       <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line">       <span class="attr">RABBITMQ_DEFAULT_USER:</span> <span class="string">hmall</span></span><br><span class="line">       <span class="attr">RABBITMQ_DEFAULT_PASS:</span> <span class="string">hmall</span></span><br><span class="line">     <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line"><span class="comment">#     volumes:</span></span><br><span class="line"><span class="comment">#       - ./rabbitmq/plugins:/plugins</span></span><br><span class="line">     <span class="attr">networks:</span></span><br><span class="line">       <span class="bullet">-</span> <span class="string">hmall</span></span><br></pre></td></tr></table></figure>
+<h2 id=""><a class="header-anchor" href="#"></a></h2>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">墨儒</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/03/04/%E5%AE%B9%E5%99%A8%E5%8C%96/docker-compose/">http://example.com/2025/03/04/%E5%AE%B9%E5%99%A8%E5%8C%96/docker-compose/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">转载请注明出处</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker-compose/">docker-compose</a><a class="post-meta__tags" href="/tags/%E5%B7%A5%E5%85%B7/">工具</a></div><div class="post-share"><div class="social-share" data-image="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503200024740.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付寶"/></a><div class="post-qr-code-desc">支付寶</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/03/05/%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%AD%A6%E4%B9%A0/rabbitmq%E5%9F%BA%E7%A1%80%E7%AF%87/" title="rabbitmq 基础篇"><img class="cover" src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202503200029548.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">rabbitmq 基础篇</div></div><div class="info-2"><div class="info-item-1">rabbitMQ 基础篇 参考资料： MQ入门-01.MQ课程介绍_哔哩哔哩_bilibili RabbitMQ 官方文档 RabbitMQ 常见问题与故障排查-CSDN博客 背景引入 一款高性能的异步通信组件 同步通信类似于：人和人之间打电话，没办法在同一时间和多个人打电话 异步通信类似于：人和人之间发微信，一个人可以同时和多个人进行聊天，并发能力强 原本的 openFegin 是一个同步操作，发送的请求必须实时等待返回结果，以下面的登录操作为例：  修改成异步通信：  只需要让其他的微服务监听到 MQ...</div></div></div></a><a class="pagination-related" href="/2025/03/04/Spring/Swagger3.x%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0/" title="Spring 集成 Swagger 3.x 版本使用学习"><img class="cover" src="/./img/1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Spring 集成 Swagger 3.x 版本使用学习</div></div><div class="info-2"><div class="info-item-1">Spring 集成 Swagger 3.x...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">moru</div><div class="author-info-description">道虽迩，不行不至</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">69</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">66</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/caigui88"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/caigui88" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/1468664118@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-compose"><span class="toc-number">1.</span> <span class="toc-text">docker-compose</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-MySQL"><span class="toc-number">1.3.</span> <span class="toc-text">配置 MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99-cnf-%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">编写 cnf 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99-sql-%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.3.2.</span> <span class="toc-text">编写 sql 文件进行数据库初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99-yml-%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.3.</span> <span class="toc-text">编写 yml 文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-redis"><span class="toc-number">1.4.</span> <span class="toc-text">配置 redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-Nacos"><span class="toc-number">1.5.</span> <span class="toc-text">配置 Nacos</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99-env-%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">1.5.1.</span> <span class="toc-text">编写 env 文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99-yml-%E6%96%87%E4%BB%B6-v2"><span class="toc-number">1.5.2.</span> <span class="toc-text">编写 yml 文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-rabbitMQ"><span class="toc-number">1.6.</span> <span class="toc-text">配置 rabbitMQ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.7.</span> <span class="toc-text"></span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/07/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" title="单例模式"><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202507162257118.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单例模式"/></a><div class="content"><a class="title" href="/2025/07/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" title="单例模式">单例模式</a><time datetime="2025-07-10T11:21:01.000Z" title="发表于 2025-07-10 19:21:01">2025-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/10/Go/go%E5%9F%BA%E7%A1%80/" title="go基础"><img src="/./img/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="go基础"/></a><div class="content"><a class="title" href="/2025/07/10/Go/go%E5%9F%BA%E7%A1%80/" title="go基础">go基础</a><time datetime="2025-07-10T05:31:49.000Z" title="发表于 2025-07-10 13:31:49">2025-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/07/redis/Redisson/" title="Redisson"><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202507162257118.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Redisson"/></a><div class="content"><a class="title" href="/2025/07/07/redis/Redisson/" title="Redisson">Redisson</a><time datetime="2025-07-07T07:54:56.000Z" title="发表于 2025-07-07 15:54:56">2025-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/18/%E5%AE%B9%E5%99%A8%E5%8C%96/k8s%20%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="k8s 入门教程"><img src="https://blog-caigui88.oss-cn-shenzhen.aliyuncs.com/imgs/202507162257118.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="k8s 入门教程"/></a><div class="content"><a class="title" href="/2025/06/18/%E5%AE%B9%E5%99%A8%E5%8C%96/k8s%20%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="k8s 入门教程">k8s 入门教程</a><time datetime="2025-06-18T05:55:14.000Z" title="发表于 2025-06-18 13:55:14">2025-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/15/Spring/SpringData/" title="SpringData"><img src="/./img/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringData"/></a><div class="content"><a class="title" href="/2025/06/15/Spring/SpringData/" title="SpringData">SpringData</a><time datetime="2025-06-15T08:30:48.000Z" title="发表于 2025-06-15 16:30:48">2025-06-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By moru</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://caigui88.github.io/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
